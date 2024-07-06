@@ -12,18 +12,20 @@ const icons: ComponentCache = req.keys().reduce((acc: ComponentCache, curr) => {
   return acc;
 }, {});
 
-interface SvgIconProps {
-  name: string;
-  color?: string;
-  size?: string;
-}
+// interface SvgIconProps {
+//   name: string;
+//   color?: string;
+//   size?: string;
+//   onClick?: () => {};
+// }
 
 interface SvgIconProps {
   name: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const SvgIcon: React.FC<SvgIconProps> = ({ name, className }) => {
+const SvgIcon: React.FC<SvgIconProps> = ({ name, ...props }) => {
   const IconComponent = icons[name];
 
   if (!IconComponent) {
@@ -31,7 +33,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({ name, className }) => {
     return null;
   }
 
-  return <IconComponent className={className} />;
+  return <IconComponent {...props} />;
 };
 
 export default SvgIcon;

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import SvgIcon from "@/components/SvgIcon";
@@ -12,7 +10,6 @@ import Technologies from "@/components/Technologies";
 import Benefits from "@/components/Benefits";
 
 export default function Page() {
-  const [curBenefit, setCurBenefit] = useState(0);
   return (
     <>
       <Header />
