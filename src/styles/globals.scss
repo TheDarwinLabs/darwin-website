@@ -165,7 +165,7 @@ body {
 .technology-item-sm{
   background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
   box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(21px);
 }
 .dapp-item{
   border: 1px solid #2C2C2D;
@@ -189,4 +189,27 @@ body {
 
 .scrollbar-y-none::-webkit-scrollbar {
   width: 0;
+}
+
+.embla {
+  overflow: hidden;
+  --slide-spacing: 30px;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  // margin-left: calc(var(--slide-spacing) * -1);
+
+}
+.embla__slide {
+  flex: 0 0 80%; 
+  padding-left: var(--slide-spacing);
+}
+.embla__slide{
+  &.is-snapped {
+    .plus-icon{
+      display: block;
+    }
+  }
 }
