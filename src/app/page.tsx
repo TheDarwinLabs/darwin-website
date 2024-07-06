@@ -42,11 +42,11 @@ export default function Page() {
         </div>
         <Benefits />
         <Technologies />
-        {/* <DappSection /> */}
+        <DappSection />
         {/* <RoadmapSection /> */}
         <div>
           <div className="mx-auto py-[40px] px-5 sm:w-[1200px] sm:h-[800px] sm:py-[100px] sm:px-0">
-            <div className="text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg sm:py-[68px] sm:w-[1000px]">
+            <div className="mx-auto text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg sm:py-[68px] sm:w-[1000px]">
               <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance  sm:text-wrap sm:text-[72px] sm:leading-[84px] sm:w-[726px]">
                 be a part of the revolution
               </div>

@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import SvgIcon from "@/components/SvgIcon";
+import useSmoothProgress from "@/hooks/useSmoothProgress";
+import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
 
 const list = [
@@ -24,7 +26,31 @@ const list = [
 ];
 
 const Benefits = () => {
-  const [curBenefit, setCurBenefit] = useState(0);
+  const [curIndex, setCurIndex] = useState(0);
+
+  const { start, progress, reset, isStart } = useSmoothProgress({
+    duration: 10,
+    autoStart: false,
+    loop: true,
+    onEnd: useCallback(() => {
+      setCurIndex(curIndex + 1 > list.length - 1 ? 0 : curIndex + 1);
+    }, [curIndex]),
+  });
+
+  const { ref, inView } = useInView({
+    threshold: 0.1, // 当 div 10% 可见时触发
+  });
+
+  const onChange = (index: number) => {
+    setCurIndex(index);
+    reset();
+  };
+
+  useEffect(() => {
+    if (inView && !isStart) {
+      start();
+    }
+  }, [inView, isStart, start]);
 
   return (
     <div>
@@ -32,43 +58,41 @@ const Benefits = () => {
         <div className="uppercase text-[36px] leading-[53px] font-bold  sm:text-[64px] sm:leading-[84px] sm:w-[900px]">
           Benefits for Different Users
         </div>
-        <div className="flex sm:gap-10 mt-[88px] sm:mt-[60px]">
+        <div ref={ref} className="flex sm:gap-10 mt-[88px] sm:mt-[60px]">
           <div className="flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 sm:py-5 sm:border-l-[1px]">
             {list.map((item, index) => (
               <div
                 key={index}
-                onClick={() => {
-                  setCurBenefit(index);
-                }}
-                onMouseEnter={() => {
-                  setCurBenefit(index);
-                }}
+                onClick={() => onChange(index)}
                 className={cn(
-                  "relative uppercase text-xs sm:h-[100px] sm:pl-10",
-                  curBenefit == index
+                  "relative uppercase text-xs cursor-pointer sm:h-[100px] sm:pl-10",
+                  curIndex == index
                     ? "text-[#989898] sm:text-primary"
                     : "text-[#989898]"
                 )}
               >
-                {index == 0 && (
+                {index == curIndex && (
                   <div className=" hidden absolute left-0 mt-[6px] bg-primary h-[88px] w-1 sm:block">
-                    <div className="absolute top-0 w-1 bg-brand h-[80%]"></div>
+                    <div
+                      className="absolute top-0 w-1 bg-brand"
+                      style={{ height: `${progress}%` }}
+                    ></div>
                   </div>
                 )}
                 <div
                   className={cn(
-                    "text-base font-bold mb-2 sm:text-[24px] sm:leading-9",
-                    curBenefit == index
+                    "text-base font-bold mb-2 sm:text-[24px] sm:leading-9 transition-all",
+                    curIndex == index
                       ? "text-[var(--white)] sm:text-brand"
                       : "text-[var(--white)] sm:text-[#989898]"
                   )}
                 >
                   {item.title}
                 </div>
-                <div className="mb-2">{item.tags}</div>
-                <div className="mb-5 sm:mb-0">{item.desc}</div>
+                <div className="mb-2 transition-all">{item.tags}</div>
+                <div className="mb-5 transition-all sm:mb-0">{item.desc}</div>
                 <Image
-                  src={`/card-${curBenefit}.svg`}
+                  src={`/card-${curIndex}.svg`}
                   alt=""
                   className="!relative !h-auto backdrop-blur-lg sm:hidden"
                   fill
@@ -78,7 +102,7 @@ const Benefits = () => {
           </div>
           <div
             className="hidden w-[500px] h-[400px] bg-cover benefit-card-item transition-all duration-300 backdrop-blur-lg  sm:block"
-            style={{ backgroundImage: `url(/card-${curBenefit}.svg)` }}
+            style={{ backgroundImage: `url(/card-${curIndex}.svg)` }}
           ></div>
         </div>
       </div>
