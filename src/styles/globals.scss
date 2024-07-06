@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: #6349FF;
+    --white: #ffffff;
+
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: #3F2EA1;
+    // --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  // @media (prefers-color-scheme: dark) {
+  //   :root {
+  //     --foreground-rgb: 255, 255, 255;
+  //     --background-start-rgb: 0, 0, 0;
+  //     --background-end-rgb: 0, 0, 0;
+  //   }
+  // }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  // background: black;
+}
+
+.main-container{
+  background-image: linear-gradient(to right,rgba(0, 0, 0, 0.5),rgba(0,0,0,0) , rgba(0, 0, 0, 0.5)), url('/lattice_01.svg');
+  background-size: 2000px 900px, 2000px 900px;
+  background-position: center 100%, center 100%;
+  // background-image: linear-gradient(to right,rgba(0, 0, 0, 0.5),rgba(0,0,0,0) , rgba(0, 0, 0, 0.5)), url('/lattice_01.svg');
+  // background-size: 2000px 900px, 2000px 900px;
+  // background-position: center 100%, center 100%;
+}
+.footer-nav{
+  font-family: Inter;
+  dt{
+    @apply uppercase text-[#C6C6C6] font-semibold;
+  }
+  dd{
+    @apply mt-[10px] text-[14px] leading-4 text-[#727272] sm:mt-5;
+  }
+}
+.section1{
+  background-image: radial-gradient(47.81% 261.3% at 27.81% 67.61%, #000000 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_01.svg');
+  background-size: 1400px 861px, 1600px 900px;
+  background-position: center 100%, center 100%;
+  background-repeat: no-repeat;
+  .left-box{
+    @apply w-[240px] h-[900px] absolute -left-[240px] bottom-0;
+    background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
+  }
+  .right-box{
+    @apply w-[240px] h-[900px] absolute -right-[240px] bottom-0;
+    background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+.benefit-card-item{
+  // background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%), rgba(27, 26, 27, 0.3);
+  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(21px);
+}
+
+.technology-item{
+  // background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
+  // box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+  // backdrop-filter: blur(4px);
+  // &:hover{
+    background: linear-gradient(278.62deg, rgba(94, 71, 255, 0) 62.5%, rgba(94, 71, 255, 0.05) 100%), linear-gradient(102.68deg, rgba(48, 30, 157, 0) 32.79%, rgba(63, 46, 161, 0.1) 100%), linear-gradient(180deg, rgba(99, 73, 255, 0) 0%, rgba(77, 49, 245, 0.05) 30.49%, rgba(77, 49, 245, 0.08) 100%), linear-gradient(101.67deg, rgba(99, 73, 255, 0.18) 0%, rgba(99, 73, 255, 0.13) 100%), rgba(16, 15, 16, 0.85);
+    box-shadow: 0px 84px 134px rgba(99, 73, 255, 0.16), 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    border: 1px solid;
+    border-image: linear-gradient(to right, #8f41e9, #578aef) 1;
+  //   border: 1px solid;
+  // border-image-source: linear-gradient(to right, #8f41e9, #578aef);
+  // border-image-slice: 1;
+  // }
+}
+.technology-item-sm{
+  background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
+  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+.dapp-item{
+  border: 1px solid #2C2C2D;
+  // border-image: linear-gradient(to right, #8f41e9, #578aef) 1;
+
+  // border-image-source: radial-gradient(146.19% 158.62% at 0% 0%, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 33.55%, rgba(255, 255, 255, 0.2) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.scrollbar-x-none::-webkit-scrollbar {
+  height: 0;
+}
+
+.scrollbar-y-none::-webkit-scrollbar {
+  width: 0;
+}
