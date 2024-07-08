@@ -53,7 +53,7 @@ const Benefits = () => {
   }, [inView, isStart, start]);
 
   return (
-    <div>
+    <div className="section2 gradient-bg">
       <div className=" mx-auto pt-[60px]  px-5 pb-5 sm:w-[1200px] sm:h-[900px] sm:pt-[171px] sm:px-0 sm:pb-0">
         <div className="uppercase text-[36px] leading-[53px] font-bold  sm:text-[64px] sm:leading-[84px] sm:w-[900px]">
           Benefits for Different Users

@@ -22,7 +22,7 @@ const Dapps = [
 ];
 
 const DappSection = () => (
-  <div className="px-5 overflow-hidden sm:px-0">
+  <div className="section4 gradient-bg px-5 overflow-hidden sm:px-0">
     <div className="flex flex-col mx-auto sm:pt-[100px] sm:w-[1200px] sm:h-[900px]">
       <div className="flex gap-[50px]">
         <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase sm:text-[64px] sm:leading-[84px] sm:pt-[60px] sm:pb-[72px] sm:border-y-[1px]">

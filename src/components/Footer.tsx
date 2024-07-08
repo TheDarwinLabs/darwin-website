@@ -1,8 +1,8 @@
 import SvgIcon from "@/components/SvgIcon";
 
 const Footer = () => (
-  <div>
-    <div className="mx-auto py-[30px]  flex flex-col justify-between sm:w-[1200px] sm:py-[60px] sm:h-[598px]">
+  <div className="backdrop-blur-xl gradient-bg">
+    <div className="mx-auto py-[30px]  flex flex-col justify-between  sm:w-[1200px] sm:py-[60px] sm:h-[598px]">
       <div className="flex flex-col border-t-[3px] border-[rgba(255,255,255,0.1)] pt-[60px] px-5 sm:justify-between sm:flex-row sm:gap-[190px]">
         <SvgIcon
           name="logo_header"

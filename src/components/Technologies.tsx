@@ -76,8 +76,8 @@ const Technologies = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col mx-auto pt-[50px] pb-[78px] sm:justify-between sm:flex-row sm:w-[1200px] sm:h-[900px] sm:px-0 sm:pt-[171px] sm:pb-0">
+    <div className="section3 gradient-bg">
+      <div className="flex flex-col mx-auto pt-[50px] pb-[78px] sm:justify-between sm:flex-row sm:w-[1200px] sm:h-[900px] sm:px-0 sm:pt-[100px] sm:pb-0">
         <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 sm:border-y-[1px] sm:p-[60px] sm:w-[600px] sm:h-[500px] sm:mx-0">
           <div className="flex gap-[17px] sm:gap-[30px]">
             <div className="flex-1 h-[2px] w-full bg-white sm:opacity-10 sm:h-1"></div>
@@ -140,7 +140,7 @@ const Technologies = () => {
         <div
           className={cn(
             "fixed top-0 left-0 right-0 bottom-0   bg-black transition-all ease-in",
-            visible ? "z-[9000]" : "-z-[1]"
+            visible ? "z-[9000]" : "-z-[1] opacity-0"
           )}
         ></div>
         <div
