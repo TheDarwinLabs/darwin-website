@@ -112,6 +112,12 @@
       background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
     }
   }
+
+  .technology-modal-content{
+    background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5);
+    box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(21px);
+  }
 }
 
 body {
@@ -176,7 +182,7 @@ body {
 .section1{
   @apply sm:gradient-bg;
   background: radial-gradient(47.81% 261.3% at 27.81% 67.61%, #000000 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/bg/01.svg');
-  block-size:  1400px 861px, 2000px 1400px;
+  background-size:  1400px 861px, 2000px 1400px;
   background-position: bottom center, bottom center;
   // background: radial-gradient(47.81% 261.3% at 27.81% 67.61%, #000000 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_01.svg');
   // background-size: 1400px 861px, 1600px 900px;
@@ -186,7 +192,7 @@ body {
 .section2{
   @apply sm:gradient-bg;
   background: radial-gradient(38.33% 209.14% at 27.81% 67.61%, #000000 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/bg/02_1.svg'), url('/bg/02_2.svg');
-  block-size:  1400px 900px, 2000px 400px, 2000px 400px;
+  background-size:  1400px 900px, 2000px 400px, 2000px 400px;
   background-position: bottom center, top center, bottom center;
   // background-position: bottom center, bottom center;
   // background: radial-gradient(38.33% 209.14% at 27.81% 67.61%, #000000 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_02.svg');
@@ -197,7 +203,7 @@ body {
 .section3{
   @apply sm:gradient-bg;
   background: radial-gradient(43.4% 70.48% at 33.3% 37.17%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.42) 54.47%, rgba(0, 0, 0, 0) 100%),url('/bg/03_1.svg'), url('/bg/03_2.svg');
-  block-size: 1400px 900px, 2000px 500px, 2000px 400px;
+  background-size: 1400px 900px, 2000px 500px, 2000px 400px;
   background-position: bottom center,top center, bottom center;
   // background: radial-gradient(43.4% 70.48% at 33.3% 37.17%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.42) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_03.svg');
   // background-size: 1400px 900px, 1600px 900px;
@@ -207,7 +213,7 @@ body {
 .section4{
   @apply sm:gradient-bg;
   background: radial-gradient(43.4% 70.48% at 33.3% 37.17%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.42) 54.47%, rgba(0, 0, 0, 0) 100%),url('/bg/04_1.svg'), url('/bg/04_2.svg');
-  block-size: 1400px 900px, 2000px 500px, 2000px 400px;
+  background-size: 1400px 900px, 2000px 500px, 2000px 400px;
   background-position: bottom center,top center, bottom center;
   // background: radial-gradient(43.4% 70.48% at 33.3% 37.17%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.42) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_04.svg');
   // background-size: 1400px 900px, 1600px 900px;
@@ -217,7 +223,7 @@ body {
 .section5{
   @apply sm:gradient-bg;
   background: radial-gradient(65.77% 99.36% at 71.76% 52.81%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.24) 54.47%, rgba(0, 0, 0, 0) 100%),url('/bg/05_1.svg'), url('/bg/05_2.svg');
-  block-size: 1400px 900px, 2000px 400px, 2000px 400px;
+  background-size: 1400px 900px, 2000px 400px, 2000px 400px;
   background-position: bottom center,top center, bottom center;
   // background: radial-gradient(65.77% 99.36% at 71.76% 52.81%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.24) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_05.svg');
   // background-size: 1860px 900px, 1600px 900px;
@@ -227,7 +233,7 @@ body {
 .section6{
   @apply sm:gradient-bg;
   background: radial-gradient(47.64% 242.06% at 46.53% 56.68%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%),url('/bg/06_1.svg'), url('/bg/06_2.svg');
-  block-size: 1400px 900px, 2000px 400px, 2000px 400px;
+  background-size: 1400px 900px, 2000px 400px, 2000px 400px;
   background-position: bottom center,top center, bottom center;
   // background: radial-gradient(47.64% 242.06% at 46.53% 56.68%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 54.47%, rgba(0, 0, 0, 0) 100%), url('/branches_06.svg');
   // background-size: 1440px 861px, 1600px 900px;
@@ -268,9 +274,9 @@ body {
   backdrop-filter: blur(21px);
 }
 .technology-modal-content{
-  background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5);
-  box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(21px);
+  background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5) !important;
+  box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(21px) !important;
   
 }
 .dapp-item{
