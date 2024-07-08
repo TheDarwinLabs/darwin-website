@@ -375,3 +375,18 @@ body {
 .shadow-box:hover {
   // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的扩散阴影 */
 }
+
+.roadmap-box{
+  .left-half-on{
+    cursor: url('/cursor/arrow-left-on.svg'), auto;
+  }
+  .left-half-off{
+    cursor: url('/cursor/arrow-left-off.svg'), auto;
+  }
+  .right-half-on{
+    cursor: url('/cursor/arrow-right-on.svg'), auto;
+  }
+  .right-half-off{
+    cursor: url('/cursor/arrow-right-off.svg'), auto;
+  }
+}
