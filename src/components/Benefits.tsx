@@ -33,8 +33,10 @@ const Benefits = () => {
     autoStart: false,
     loop: true,
     onEnd: useCallback(() => {
-      setCurIndex(curIndex + 1 > list.length - 1 ? 0 : curIndex + 1);
-    }, [curIndex]),
+      setCurIndex((prevState) =>
+        prevState + 1 > list.length - 1 ? 0 : prevState + 1
+      );
+    }, []),
   });
 
   const { ref, inView } = useInView({
@@ -53,8 +55,8 @@ const Benefits = () => {
   }, [inView, isStart, start]);
 
   return (
-    <div className="section2 gradient-bg">
-      <div className=" mx-auto pt-[60px]  px-5 pb-5 sm:w-[1200px] sm:h-[900px] sm:pt-[171px] sm:px-0 sm:pb-0">
+    <div className=" section2">
+      <div className="relative z-10 mx-auto pt-[60px]  px-5 pb-5 sm:w-[1200px] sm:h-[900px] sm:pt-[171px] sm:px-0 sm:pb-0">
         <div className="uppercase text-[36px] leading-[53px] font-bold  sm:text-[64px] sm:leading-[84px] sm:w-[900px]">
           Benefits for Different Users
         </div>

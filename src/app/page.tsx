@@ -14,8 +14,9 @@ export default function Page() {
     <>
       <Header />
       <main role="main" className="main-container">
-        <div className="relative section1 gradient-bg">
-          <div className="relative px-5 mx-auto pt-[150px] pb-[116px] sm:h-[900px] sm:w-[1200px] sm:px-0 sm:pt-[362px] sm:pb-0">
+        <div className="shadow-box"></div>
+        <div className="relative section1">
+          <div className="z-10  relative px-5 mx-auto pt-[150px] pb-[116px] sm:h-[900px] sm:w-[1200px] sm:px-0 sm:pt-[362px] sm:pb-0">
             <div className="text-[36px] w-[340px] font-bold leading-[53px] tracking-tight uppercase sm:text-[72px] sm:w-[890px] sm:leading-[84px]">
               The Evolutionary Chain for
               <span className="text-brand"> AI</span>
@@ -42,8 +43,8 @@ export default function Page() {
         <Technologies />
         <DappSection />
         <RoadmapSection />
-        <div className="section6 gradient-bg">
-          <div className="mx-auto py-[40px] px-5 sm:w-[1200px] sm:h-[800px] sm:py-[100px] sm:px-0">
+        <div className="section6">
+          <div className="relative z-10 mx-auto py-[40px] px-5 sm:w-[1200px] sm:h-[800px] sm:py-[100px] sm:px-0">
             <div className="mx-auto text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg sm:py-[68px] sm:w-[1000px]">
               <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance  sm:text-wrap sm:text-[72px] sm:leading-[84px] sm:w-[726px]">
                 be a part of the revolution

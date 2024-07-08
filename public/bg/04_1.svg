@@ -1,0 +1,67 @@
+<svg width="2000" height="500" viewBox="0 0 2000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1973_90161)">
+<path d="M1457.35 50.3516L1508.82 50.3516" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1442.65 35.6484L1391.18 35.6484" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1442.65 20.9414L1391.18 20.9414" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1442.65 7.70704L1391.18 7.70703" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1457.35 35.6484L1508.82 35.6484" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip1_1973_90161)">
+<path d="M457.354 49.6484L508.824 49.6484" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M442.646 49.6484L391.176 49.6484" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M450.383 42.7206L450.383 -8.75" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M450.352 57.3536L450.352 108.824" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip2_1973_90161)">
+<path d="M1350.35 42.6464L1350.35 -8.82422" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1342.65 50.3516L1291.18 50.3516" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1364.35 42.6464L1364.35 -8.82422" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1379.06 42.6464L1379.06 -8.82422" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1392.29 42.6464L1392.29 -8.82422" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip3_1973_90161)">
+<path d="M657.354 450.352L708.824 450.352" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M650.352 457.354L650.352 508.824" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M642.646 435.648L591.176 435.648" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M642.646 420.941L591.176 420.941" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M642.646 407.707L591.176 407.707" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M655.452 454.949L691.848 491.344" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip4_1973_90161)">
+<path d="M1257.35 50.3555L1308.82 50.3555" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1244.55 54.9486L1208.16 91.3438" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip5_1973_90161)">
+<path d="M1542.65 50.3516L1491.18 50.3516" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1550.35 42.6464L1550.35 -8.82422" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M1555.45 45.0515L1591.85 8.65625" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<g clip-path="url(#clip6_1973_90161)">
+<path d="M257.354 250.355L308.824 250.355" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M245.051 244.551L208.656 208.156" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+<path d="M244.551 254.949L208.156 291.344" stroke="#6349FF" stroke-width="4.41177" stroke-linejoin="bevel"/>
+</g>
+<defs>
+<clipPath id="clip0_1973_90161">
+<rect width="100" height="100" fill="white" transform="matrix(1 1.74846e-07 1.74846e-07 -1 1400 100)"/>
+</clipPath>
+<clipPath id="clip1_1973_90161">
+<rect width="100" height="100" fill="white" transform="translate(400)"/>
+</clipPath>
+<clipPath id="clip2_1973_90161">
+<rect width="100" height="100" fill="white" transform="matrix(4.37114e-08 1 1 -4.37114e-08 1300 0)"/>
+</clipPath>
+<clipPath id="clip3_1973_90161">
+<rect width="100" height="100" fill="white" transform="matrix(1 0 0 -1 600 500)"/>
+</clipPath>
+<clipPath id="clip4_1973_90161">
+<rect width="100" height="100" fill="white" transform="translate(1300 100) rotate(-180)"/>
+</clipPath>
+<clipPath id="clip5_1973_90161">
+<rect width="100" height="100" fill="white" transform="translate(1600 100) rotate(180)"/>
+</clipPath>
+<clipPath id="clip6_1973_90161">
+<rect width="100" height="100" fill="white" transform="translate(300 300) rotate(-180)"/>
+</clipPath>
+</defs>
+</svg>
