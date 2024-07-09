@@ -261,7 +261,12 @@ body {
     box-shadow: 0px 84px 134px rgba(99, 73, 255, 0.16), 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
     border: 1px solid;
-    border-image: linear-gradient(to right, #8f41e9, #578aef) 1;
+    border-image: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
+
+// border-image-source: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%),
+// linear-gradient(274.45deg, rgba(106, 85, 227, 0.3) 0%, rgba(99, 73, 255, 0) 40.07%);
+
+
   //   border: 1px solid;
   // border-image-source: linear-gradient(to right, #8f41e9, #578aef);
   // border-image-slice: 1;
@@ -362,20 +367,34 @@ body {
 }
 
 .shadow-box {
-  // @apply hidden sm:block;
   position: fixed;
   top: 450px;
-  left: 1000px;
+  left: 0;
   width: 400px;
-  max-width: 100vw;
-  height: 400px;
-  border-radius: 100%;
+  width: 100vw;
+  height: 300px;
   background-color: transparent; /* 设置一个背景颜色 */
   box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.72); /* 初始阴影 */
-  background: radial-gradient(circle at center, rgba(0,0,0,0.1), rgba(0,0,0,1));
+  background: linear-gradient(to bottom, #000000 0%, #000000 5%, rgba(0, 0, 0, 0) 100%);
   z-index: 1;
   transition: box-shadow 0.5s ease; /* 添加过渡效果 */
 }
+
+// .shadow-box {
+//   // @apply hidden sm:block;
+//   position: fixed;
+//   top: 450px;
+//   left: 1000px;
+//   width: 400px;
+//   max-width: 100vw;
+//   height: 400px;
+//   border-radius: 100%;
+//   background-color: transparent; /* 设置一个背景颜色 */
+//   box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.72); /* 初始阴影 */
+//   background: radial-gradient(circle at center, rgba(0,0,0,0.1), rgba(0,0,0,1));
+//   z-index: 1;
+//   transition: box-shadow 0.5s ease; /* 添加过渡效果 */
+// }
 
 .shadow-box:hover {
   // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的扩散阴影 */
