@@ -4,6 +4,8 @@ import SvgIcon from "@/components/SvgIcon";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
+const step = 150;
+
 const RoadmapSection = () => {
   const imgRef = useRef<HTMLDivElement>(null);
   const [xOffset, setXOffset] = useState(0);
@@ -11,14 +13,16 @@ const RoadmapSection = () => {
   const [isAtEnd, setIsAtEnd] = useState(false);
 
   const scrollLeft = () => {
+    console.log(xOffset);
     if (xOffset < 600) {
-      setXOffset(xOffset + 150);
+      setXOffset(xOffset + step);
     }
   };
 
   const scrollRight = () => {
-    if (xOffset >= 300) {
-      setXOffset(xOffset - 150);
+    console.log(xOffset);
+    if (xOffset >= 0) {
+      setXOffset(xOffset - step);
     }
   };
 
@@ -61,7 +65,7 @@ const RoadmapSection = () => {
                 "Community features launch",
               ]}
               className="bottom-[355px] left-[439px]"
-              active={xOffset > 150}
+              active={xOffset > step}
               lineWidth={310}
             />
             <RoadmapItem
