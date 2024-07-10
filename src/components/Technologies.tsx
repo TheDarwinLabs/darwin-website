@@ -108,7 +108,7 @@ const Technologies = () => {
   return (
     <>
       <div id="core-tect" className="section3">
-        <div className="relative  z-10 flex flex-col mx-auto md:px-[30px] pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row xl:w-[1200px] xl:h-[1000px] xl:px-0 xl:pt-[100px] xl:pb-0">
+        <div className="relative  z-10 flex flex-col mx-auto pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row md:w-[700px] xl:w-[1200px] xl:h-[1000px] md:px-0 xl:pt-[100px] xl:pb-0">
           <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 md:w-[300px] md:border-y-[1px] md:py-[30px] xl:px-[40px] xl:py-[60px] xl:w-[600px] xl:h-[500px] md:mx-0">
             <div className="flex gap-[17px] xl:gap-[30px]">
               <div className="flex-1 h-[2px] w-full bg-white md:opacity-10 xl:h-1"></div>

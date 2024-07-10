@@ -16,7 +16,7 @@ export default function Page() {
       <main role="main" className="main-container">
         <div className="shadow-box"></div>
         <div className="relative section1">
-          <div className="z-10  relative px-5 mx-auto pt-[150px] pb-[116px] md:h-[900px] md:pt-[404px] xl:w-[1200px] xl:px-0 xl:pt-[362px] xl:pb-0">
+          <div className="z-10  relative px-5 mx-auto pt-[150px] pb-[116px] md:h-[900px] md:w-[700px] md:pt-[404px] xl:w-[1200px] md:px-0 xl:pt-[362px] xl:pb-0">
             <div className="text-[36px] w-[340px] font-bold leading-[53px] tracking-tight uppercase text-balance md:w-[600px] xl:text-[72px] xl:w-[890px] xl:leading-[84px]">
               The Evolutionary Chain for
               <span className="text-brand"> AI</span>
@@ -44,7 +44,7 @@ export default function Page() {
         <DappSection />
         <RoadmapSection />
         <div className="section6">
-          <div className="relative z-10 mx-auto py-[40px] px-5 md:px-[30px]  md:h-[750px] xl:w-[1200px] xl:h-[800px] xl:py-[100px] xl:px-0">
+          <div className="relative z-10 mx-auto py-[40px] px-5  md:h-[750px]  md:w-[700px]  xl:w-[1200px] xl:h-[800px] xl:py-[100px] md:px-0">
             <div className="mx-auto text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg md:py-[80px] xl:py-[68px] xl:w-[1000px]">
               <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance md:text-[36px] md:leading-[60px] md:w-[500px] md:text-wrap xl:text-wrap xl:text-[54px] xl:leading-[84px] xl:w-[726px]">
                 be a part of the revolution

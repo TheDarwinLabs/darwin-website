@@ -22,8 +22,8 @@ const Dapps = [
 ];
 
 const DappSection = () => (
-  <div className="section4 px-5 overflow-hidden md:px-[30px] xl:px-0">
-    <div className="relative z-10 flex flex-col mx-auto md:h-[728px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
+  <div className="section4 px-5 overflow-hidden md:px-0">
+    <div className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px]  md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
       <div className="flex gap-[50px]">
         <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[72px] xl:border-y-[1px]">
           <div>D-apps</div>
