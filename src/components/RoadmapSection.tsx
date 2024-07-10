@@ -139,10 +139,10 @@ const RoadmapItem = ({
   lineWidth = 250,
 }: RoadmapItemProps) => (
   <div className={cn("absolute", className)}>
-    <div className="flex items-center mb-5">
+    <div className="bg-[rgba(0,0,0,1)] pl-1 -ml-1 flex items-center mb-5">
       <div
         className={cn(
-          "flex items-center justify-center w-[21px] h-[21px] border-[2px]  rounded-full",
+          "flex  items-center justify-center w-[21px] h-[21px] border-[2px]  rounded-full",
           active ? "border-brand" : "border-[rgba(255,255,255,0.15)]"
         )}
       >
