@@ -16,11 +16,6 @@ const config = {
     },
     extend: {
       screens: {
-        sm: "460px",
-        md: "760px",
-        lg: "960px",
-        xl: "1440px",
-        "2xl": "1920px",
         // sm: "640px",
         // md: "768px",
         // lg: "1024px",

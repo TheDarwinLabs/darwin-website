@@ -2,13 +2,13 @@ import SvgIcon from "@/components/SvgIcon";
 
 const Footer = () => (
   <div className="relative z-10 backdrop-blur-xl">
-    <div className="mx-auto py-[30px]  flex flex-col justify-between  sm:w-[1200px] sm:py-[60px] sm:h-[598px]">
-      <div className="flex flex-col border-t-[3px] border-[rgba(255,255,255,0.1)] pt-[60px] px-5 sm:justify-between sm:flex-row sm:gap-[190px]">
+    <div className="mx-auto py-[30px]  flex flex-col justify-between  xl:w-[1200px] xl:py-[60px] xl:h-[598px]">
+      <div className="flex flex-col border-t-[3px] border-[rgba(255,255,255,0.1)] pt-[60px] px-5 xl:justify-between xl:flex-row xl:gap-[190px]">
         <SvgIcon
           name="logo_header"
-          className="w-[55px] h-[18px] sm:w-[110px] sm:h-[36px]"
+          className="w-[55px] h-[18px] xl:w-[110px] xl:h-[36px]"
         />
-        <div className="flex flex-wrap gap-x-[62px] gap-y-[36px] footer-nav mt-[42px] text-[10px] sm:text-[12px] sm:text-base sm:mt-3 sm:flex-nowrap sm:gap-[13px]">
+        <div className="flex flex-wrap gap-x-[62px] gap-y-[36px] footer-nav mt-[42px] text-[10px] xl:text-[12px] xl:text-base xl:mt-3 xl:flex-nowrap xl:gap-[13px]">
           <dl>
             <dt>Company</dt>
             <dd>Trust</dd>
@@ -70,7 +70,7 @@ const Footer = () => (
           </dl>
         </div>
       </div>
-      <div className="px-5 text-[13px] text-[#727272] mt-[42px] sm:m-0">
+      <div className="px-5 text-[13px] text-[#727272] mt-[42px] xl:m-0">
         <div>Made in NY and the World</div>
         <div>Copyright Ⓒ 2022 – 2024 Darwin Lab, Inc.</div>
       </div>

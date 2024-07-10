@@ -27,8 +27,8 @@ const FaqList = [
 
 const FaqSection = () => (
   <div id="faqs" className="section7">
-    <div className="relative z-10 flex flex-col mx-auto px-5 sm:gap-[100px] sm:w-[1200px] sm:h-[900px] sm:pt-[100px] sm:flex-row sm:px-0">
-      <div className=" bg-[rgba(255,255,255,0.03)] backdrop-blur-lg border-b-[1px] border-[rgba(255,255,255,0.15)] pt-[66px] pb-5 text-[30px] leading-[44px] tracking-tight font-bold uppercase sm:w-[400px] sm:h-[400px] sm:pt-[60px] sm:text-[54px] sm:pl-[40px] sm:leading-[84px] sm:pb-0 sm:border-y-[1px]">
+    <div className="relative z-10 flex flex-col mx-auto px-5 md:px-[30px] md:gap-[20px] xl:gap-[100px] xl:w-[1200px] md:h-[900px] xl:pt-[100px] md:flex-row xl:px-0">
+      <div className=" bg-[rgba(255,255,255,0.03)] backdrop-blur-lg border-b-[1px] border-[rgba(255,255,255,0.15)] pt-[66px] pb-5 text-[30px] leading-[44px] tracking-tight font-bold uppercase md:w-[200px] md:h-[300px] md:text-[42px] md:leading-[60px] xl:w-[400px] xl:h-[400px] xl:pt-[60px] xl:text-[54px] xl:pl-[40px] xl:leading-[84px] xl:pb-0 xl:border-y-[1px]">
         faqs
       </div>
       <div className="flex-1">
@@ -56,14 +56,14 @@ function Faqs() {
             value={key}
             className={cn(isOpen ? "bg-[rgba(255,255,255,0.03)]" : "")}
           >
-            <AccordionTrigger className="uppercase py-[14px] sm:py-[38px] text-xs sm:text-base">
+            <AccordionTrigger className="uppercase py-[14px]  md:py-[30px] xl:py-[38px] text-xs md:text-[14px] md:leading-5 xl:text-base">
               {item.title}
               <SvgIcon
                 name={isOpen ? "minus" : "plus"}
-                className="w-[18px] h-[18px] mr-5 sm:w-[38px] sm:h-[38px]"
+                className="w-[18px] h-[18px] mr-5 md:w-[38px] md:h-[38px]"
               />
             </AccordionTrigger>
-            <AccordionContent className="text-xs text-[#989898] pb-[30px] text-[10px] leading-[15px] sm:text-base sm:w-[550px]">
+            <AccordionContent className="text-xs text-[#989898] pb-[30px] text-[10px] leading-[15px] xl:text-base md:w-[400px] xl:w-[550px]">
               {item.content}
             </AccordionContent>
           </AccordionItem>

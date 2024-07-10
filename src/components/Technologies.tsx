@@ -108,23 +108,23 @@ const Technologies = () => {
   return (
     <>
       <div id="core-tect" className="section3">
-        <div className="relative z-10 flex flex-col mx-auto pt-[50px] pb-[78px] sm:justify-between sm:flex-row sm:w-[1200px] sm:h-[1000px] sm:px-0 sm:pt-[100px] sm:pb-0">
-          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 sm:border-y-[1px] sm:px-[40px] sm:py-[60px] sm:w-[600px] sm:h-[500px] sm:mx-0">
-            <div className="flex gap-[17px] sm:gap-[30px]">
-              <div className="flex-1 h-[2px] w-full bg-white sm:opacity-10 sm:h-1"></div>
-              <div className="w-[58px] h-[14px] bg-white text-[#000000] text-[9px] text-right px-[10px] font-bold sm:text-base sm:h-6 sm:w-[100px]">
+        <div className="relative  z-10 flex flex-col mx-auto md:px-[30px] pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row xl:w-[1200px] xl:h-[1000px] xl:px-0 xl:pt-[100px] xl:pb-0">
+          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 md:w-[300px] md:border-y-[1px] md:py-[30px] xl:px-[40px] xl:py-[60px] xl:w-[600px] xl:h-[500px] md:mx-0">
+            <div className="flex gap-[17px] xl:gap-[30px]">
+              <div className="flex-1 h-[2px] w-full bg-white md:opacity-10 xl:h-1"></div>
+              <div className="w-[58px] h-[14px] bg-white text-[#000000] text-[9px] text-right px-[10px] font-bold md:w-[50px] md:h-[24px] md:text-base xl:h-6 xl:w-[100px]">
                 01
               </div>
             </div>
-            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] sm:w-auto sm:text-[54px] sm:leading-[84px] sm:mt-[188px]">
+            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] xl:w-auto xl:text-[54px] xl:leading-[84px] md:mt-[188px]">
               Core Technologies
             </div>
           </div>
-          <div className="hidden relative h-[900px] overflow-auto scrollbar-none pr-[100px] pl-10 sm:flex flex-col gap-[60px]">
+          <div className="hidden relative h-[800px] overflow-auto scrollbar-none pr-[100px] pl-10 md:pl-5 md:pr-[00px] md:gap-5 md:flex flex-col xl:gap-[60px] xl:h-[900px]">
             {list.map((item, index) => (
               <div
                 key={index}
-                className="technology-item justify-between p-5 w-[440px] h-[200px]"
+                className="technology-item justify-between p-5 w-[380px] h-[200px] xl:w-[440px]"
                 onClick={() => onOpen(index)}
               >
                 <SvgIcon
@@ -137,9 +137,9 @@ const Technologies = () => {
                 </div>
               </div>
             ))}
-            <div className="min-h-[200px] sticky bottom-0 bg-gradient-to-t from-[rgba(0,0,0,1)] to-[rgba(0,0,0,0)]"></div>
+            <div className="min-h-[200px] sticky bottom-0 bg-gradient-to-t from-[rgba(0,0,0,1)] to-[rgba(0,0,0,0)] pointer-events-none"></div>
           </div>
-          <div className="embla px-5 mt-[30px] sm:hidden" ref={emblaRef}>
+          <div className="embla px-5 mt-[30px] md:hidden" ref={emblaRef}>
             <div className="embla__container">
               {list.map((item, index) => (
                 <div key={index} className="embla__slide">
@@ -182,8 +182,8 @@ const Technologies = () => {
             visible ? "z-[9999]" : "-z-[1] opacity-0 invisible"
           )}
         >
-          <div className="flex flex-col-reverse gap-5   mx-auto p-5 sm:w-[1200px] sm:pt-[100px] sm:pb-[60px] sm:flex-row sm:h-full sm:gap-0">
-            <div className="hidden sm:block w-[300px] h-[250px] mr-[60px]  bg-[rgba(255,255,255,0.03)] border-y-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] p-[30px]">
+          <div className="flex flex-col-reverse gap-5   mx-auto p-5 xl:w-[1200px] xl:pt-[100px] xl:pb-[60px] xl:flex-row xl:h-full xl:gap-0">
+            <div className="hidden xl:block w-[300px] h-[250px] mr-[60px]  bg-[rgba(255,255,255,0.03)] border-y-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] p-[30px]">
               <div className="flex gap-[15px]">
                 <div className="flex-1 h-[2px] w-full bg-white opacity-10"></div>
                 <div className="w-[50px] h-6 bg-white text-[#000000] text-right px-[5px] font-bold ">
@@ -194,11 +194,11 @@ const Technologies = () => {
                 Core Technologies
               </div>
             </div>
-            <div className="flex flex-col flex-1 technology-item-sm p-[30px] sm:p-[60px] sm:technology-modal-content">
+            <div className="flex flex-col flex-1 technology-item-sm p-[30px] xl:p-[60px] xl:technology-modal-content">
               <div className="flex items-center text-[rgba(255,255,255,0.4)] uppercase mb-2">
                 <SvgIcon
                   name="technology"
-                  className="w-[18px] h-[18px] mr-1 sm:hidden"
+                  className="w-[18px] h-[18px] mr-1 xl:hidden"
                 />
                 {list[curIndex].title}
               </div>
@@ -221,21 +221,21 @@ const Technologies = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row justify-between  gap-6 sm:flex-col sm:mx-[40px] sm:justify-start">
+            <div className="flex flex-row justify-between  gap-6 xl:flex-col xl:mx-[40px] xl:justify-start">
               <SvgIcon
                 name="close"
-                className="w-[42px] h-[42px] cursor-pointer border-[1px] border-[rgba(255,255,255,0.5)] hover:border-white sm:w-[60px] sm:h-[60px]"
+                className="w-[42px] h-[42px] cursor-pointer border-[1px] border-[rgba(255,255,255,0.5)] hover:border-white xl:w-[60px] xl:h-[60px]"
                 onClick={onClose}
               />
-              <div className="flex gap-6 sm:flex-col">
+              <div className="flex gap-6 xl:flex-col">
                 <SvgIcon
                   name="arrow-up"
-                  className="w-[42px] h-[42px] cursor-pointer border-[1px] border-[rgba(255,255,255,0.5)] -rotate-90 hover:border-white sm:w-[60px] sm:h-[60px] sm:rotate-0"
+                  className="w-[42px] h-[42px] cursor-pointer border-[1px] border-[rgba(255,255,255,0.5)] -rotate-90 hover:border-white xl:w-[60px] xl:h-[60px] xl:rotate-0"
                   onClick={onPrev}
                 />
                 <SvgIcon
                   name="arrow-up"
-                  className="w-[42px] h-[42px] cursor-pointer rotate-90  border-[1px] border-[rgba(255,255,255,0.5)] hover:border-white sm:w-[60px] sm:h-[60px] sm:rotate-180"
+                  className="w-[42px] h-[42px] cursor-pointer rotate-90  border-[1px] border-[rgba(255,255,255,0.5)] hover:border-white xl:w-[60px] xl:h-[60px] xl:rotate-180"
                   onClick={onNext}
                 />
               </div>

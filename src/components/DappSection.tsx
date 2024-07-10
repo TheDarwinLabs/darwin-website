@@ -22,14 +22,14 @@ const Dapps = [
 ];
 
 const DappSection = () => (
-  <div className="section4 px-5 overflow-hidden sm:px-0">
-    <div className="relative z-10 flex flex-col mx-auto sm:pt-[100px] sm:w-[1200px] sm:h-[900px]">
+  <div className="section4 px-5 overflow-hidden md:px-[30px] xl:px-0">
+    <div className="relative z-10 flex flex-col mx-auto md:h-[728px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
       <div className="flex gap-[50px]">
-        <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase sm:pl-10 sm:text-[54px] sm:leading-[84px] sm:pt-[60px] sm:pb-[72px] sm:border-y-[1px]">
+        <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[72px] xl:border-y-[1px]">
           <div>D-apps</div>
           <div>in our eco-system</div>
         </div>
-        <div className="hidden w-[350px]  flex-col justify-between sm:flex">
+        <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex xl:w-[350px]">
           <div className="text-right uppercase">
             <div className="mb-5 text-[#F2F2F2]">Joining the Community</div>
             <div className="text-[#727272]">
@@ -38,19 +38,19 @@ const DappSection = () => (
           </div>
           <a
             href="/"
-            className="flex items-center justify-between mt-[50px] w-[350px] border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand"
+            className="flex items-center justify-between mt-[50px] w-[350px] md:w-[250px] border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand xl:w-[350px]"
           >
             try now
             <SvgIcon name="arrow" className="w-[18px] h-[18px]" />
           </a>
         </div>
       </div>
-      <div className="mt-6 mb-7 flex flex-col gap-5 sm:flex-row sm:mt-[97px] sm:mb-[57px] sm:gap-0">
+      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] xl:gap-0">
         {Dapps.map((item, index) => (
           <div
             key={index}
             className={cn(
-              " relative p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] sm:min-w-[400px] sm:h-[200px] last:hidden sm:last:block"
+              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] md:h-[160px] md:min-w-[310px] md:justify-between xl:min-w-[400px] xl:h-[200px] last:hidden xl:last:block"
             )}
           >
             <Image
@@ -59,16 +59,16 @@ const DappSection = () => (
               height={0}
               alt=""
               sizes="100vw"
-              className="w-6 h-6 object-cover sm:w-[60px] sm:h-[60px]"
+              className="w-6 h-6 object-cover xl:w-[60px] xl:h-[60px]"
             />
-            <div className="flex items-center text-base uppercase mt-5 justify-between sm:mt-[44px] sm:justify-start sm:text-2xl">
+            <div className="flex items-center text-base uppercase mt-5 justify-between xl:mt-[44px] xl:justify-start xl:text-2xl">
               {item.name}
               <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" />
             </div>
             <div
               className={cn(
                 index == 3
-                  ? "hidden absolute -top-[1px] left-0 right-0 -bottom-[1px]  bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.95)] via-20%  to-black sm:block"
+                  ? "hidden absolute -top-[1px] left-0 right-0 -bottom-[1px]  bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.95)] via-20%  to-black md:block"
                   : ""
               )}
             ></div>
