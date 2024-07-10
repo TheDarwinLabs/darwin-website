@@ -24,6 +24,36 @@ const list = [
     desc: "3Scalable and Adaptable Infrastructure",
     content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
   },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
+  {
+    title: "Super usability3",
+    desc: "3Scalable and Adaptable Infrastructure",
+    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+  },
 ];
 
 const Technologies = () => {
@@ -77,20 +107,20 @@ const Technologies = () => {
 
   return (
     <>
-      <div className="section3">
-        <div className="relative z-10 flex flex-col mx-auto pt-[50px] pb-[78px] sm:justify-between sm:flex-row sm:w-[1200px] sm:h-[900px] sm:px-0 sm:pt-[100px] sm:pb-0">
-          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 sm:border-y-[1px] sm:p-[60px] sm:w-[600px] sm:h-[500px] sm:mx-0">
+      <div id="core-tect" className="section3">
+        <div className="relative z-10 flex flex-col mx-auto pt-[50px] pb-[78px] sm:justify-between sm:flex-row sm:w-[1200px] sm:h-[1000px] sm:px-0 sm:pt-[100px] sm:pb-0">
+          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 sm:border-y-[1px] sm:px-[40px] sm:py-[60px] sm:w-[600px] sm:h-[500px] sm:mx-0">
             <div className="flex gap-[17px] sm:gap-[30px]">
               <div className="flex-1 h-[2px] w-full bg-white sm:opacity-10 sm:h-1"></div>
               <div className="w-[58px] h-[14px] bg-white text-[#000000] text-[9px] text-right px-[10px] font-bold sm:text-base sm:h-6 sm:w-[100px]">
                 01
               </div>
             </div>
-            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] sm:w-auto sm:text-[64px] sm:leading-[84px] sm:mt-[188px]">
+            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] sm:w-auto sm:text-[54px] sm:leading-[84px] sm:mt-[188px]">
               Core Technologies
             </div>
           </div>
-          <div className="hidden pr-[100px] pt-[60px] sm:flex flex-col gap-[60px]">
+          <div className="hidden relative h-[900px] overflow-auto scrollbar-none pr-[100px] pl-10 sm:flex flex-col gap-[60px]">
             {list.map((item, index) => (
               <div
                 key={index}
@@ -107,6 +137,7 @@ const Technologies = () => {
                 </div>
               </div>
             ))}
+            <div className="min-h-[200px] sticky bottom-0 bg-gradient-to-t from-[rgba(0,0,0,1)] to-[rgba(0,0,0,0)]"></div>
           </div>
           <div className="embla px-5 mt-[30px] sm:hidden" ref={emblaRef}>
             <div className="embla__container">

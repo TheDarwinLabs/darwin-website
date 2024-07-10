@@ -173,12 +173,11 @@ body {
   // background-position: center 100%, center 100%;
 }
 .footer-nav{
-  font-family: Inter;
   dt{
     @apply uppercase text-[#C6C6C6] font-semibold;
   }
   dd{
-    @apply mt-[10px] text-[14px] leading-4 text-[#727272] sm:mt-5;
+    @apply mt-[10px] text-[14px] leading-4 text-[#727272] whitespace-nowrap sm:mt-5;
   }
 }
 .section1{
@@ -253,24 +252,20 @@ body {
 }
 
 .technology-item{
-  // background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
-  // box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
-  // backdrop-filter: blur(4px);
-  // &:hover{
+  @apply transition-all;
+  background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
+  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid;
+  border-image: linear-gradient(118.18deg, rgba(155, 155, 155, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
+  &:hover{
     background: linear-gradient(278.62deg, rgba(94, 71, 255, 0) 62.5%, rgba(94, 71, 255, 0.05) 100%), linear-gradient(102.68deg, rgba(48, 30, 157, 0) 32.79%, rgba(63, 46, 161, 0.1) 100%), linear-gradient(180deg, rgba(99, 73, 255, 0) 0%, rgba(77, 49, 245, 0.05) 30.49%, rgba(77, 49, 245, 0.08) 100%), linear-gradient(101.67deg, rgba(99, 73, 255, 0.18) 0%, rgba(99, 73, 255, 0.13) 100%), rgba(16, 15, 16, 0.85);
     box-shadow: 0px 84px 134px rgba(99, 73, 255, 0.16), 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
     border: 1px solid;
     border-image: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
-
-// border-image-source: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%),
-// linear-gradient(274.45deg, rgba(106, 85, 227, 0.3) 0%, rgba(99, 73, 255, 0) 40.07%);
-
-
-  //   border: 1px solid;
-  // border-image-source: linear-gradient(to right, #8f41e9, #578aef);
-  // border-image-slice: 1;
-  // }
+    // border-image-source: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%),
+    // linear-gradient(274.45deg, rgba(106, 85, 227, 0.3) 0%, rgba(99, 73, 255, 0) 40.07%);
+  }
 }
 .technology-item-sm{
   background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);

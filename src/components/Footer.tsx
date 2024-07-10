@@ -8,7 +8,7 @@ const Footer = () => (
           name="logo_header"
           className="w-[55px] h-[18px] sm:w-[110px] sm:h-[36px]"
         />
-        <div className="flex flex-wrap gap-x-[72px] gap-y-[36px] footer-nav mt-[42px] text-[10px] sm:text-[12px] sm:text-base sm:mt-3 sm:flex-nowrap sm:gap-[134px]">
+        <div className="flex flex-wrap gap-x-[62px] gap-y-[36px] footer-nav mt-[42px] text-[10px] sm:text-[12px] sm:text-base sm:mt-3 sm:flex-nowrap sm:gap-[13px]">
           <dl>
             <dt>Company</dt>
             <dd>Trust</dd>

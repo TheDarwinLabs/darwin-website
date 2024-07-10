@@ -57,7 +57,7 @@ const Benefits = () => {
   return (
     <div className=" section2">
       <div className="relative z-10 mx-auto pt-[60px]  px-5 pb-5 sm:w-[1200px] sm:h-[900px] sm:pt-[171px] sm:px-0 sm:pb-0">
-        <div className="uppercase text-[36px] leading-[53px] font-bold  sm:text-[64px] sm:leading-[84px] sm:w-[900px]">
+        <div className="uppercase text-[36px] leading-[53px] font-bold  sm:text-[54px] sm:leading-[84px] sm:w-[900px]">
           Benefits for Different Users
         </div>
         <div ref={ref} className="flex sm:gap-10 mt-[88px] sm:mt-[60px]">

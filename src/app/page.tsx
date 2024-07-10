@@ -46,7 +46,7 @@ export default function Page() {
         <div className="section6">
           <div className="relative z-10 mx-auto py-[40px] px-5 sm:w-[1200px] sm:h-[800px] sm:py-[100px] sm:px-0">
             <div className="mx-auto text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg sm:py-[68px] sm:w-[1000px]">
-              <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance  sm:text-wrap sm:text-[72px] sm:leading-[84px] sm:w-[726px]">
+              <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance  sm:text-wrap sm:text-[54px] sm:leading-[84px] sm:w-[726px]">
                 be a part of the revolution
               </div>
               <div className=" mx-auto mt-5 text-[rgba(255,255,255,0.8)] text-[10px] leading-[14px] w-[240px] sm:w-[726px] sm:mt-10 sm:text-base md:text-[#727272]">
