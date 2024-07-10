@@ -23,13 +23,13 @@ const Dapps = [
 
 const DappSection = () => (
   <div className="section4 px-5 overflow-hidden md:px-0">
-    <div className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px]  md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
+    <div className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px] lg:w-[900px]  lg:h-[800px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
       <div className="flex gap-[50px]">
-        <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[72px] xl:border-y-[1px]">
+        <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] lg:pl-[30px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[72px] xl:border-y-[1px]">
           <div>D-apps</div>
           <div>in our eco-system</div>
         </div>
-        <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex xl:w-[350px]">
+        <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex lg:w-[350px] xl:w-[350px]">
           <div className="text-right uppercase">
             <div className="mb-5 text-[#F2F2F2]">Joining the Community</div>
             <div className="text-[#727272]">
@@ -38,19 +38,19 @@ const DappSection = () => (
           </div>
           <a
             href="/"
-            className="flex items-center justify-between mt-[50px] w-[350px] md:w-[250px] border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand xl:w-[350px]"
+            className="flex items-center justify-between mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand"
           >
             try now
             <SvgIcon name="arrow" className="w-[18px] h-[18px]" />
           </a>
         </div>
       </div>
-      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] xl:gap-0">
+      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] lg:gap-0">
         {Dapps.map((item, index) => (
           <div
             key={index}
             className={cn(
-              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] md:h-[160px] md:min-w-[310px] md:justify-between xl:min-w-[400px] xl:h-[200px] last:hidden xl:last:block"
+              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block"
             )}
           >
             <Image
@@ -75,7 +75,7 @@ const DappSection = () => (
           </div>
         ))}
       </div>
-      <div className="uppercase text-[#727272] md:w-[680px]">
+      <div className="uppercase text-[#727272] md:w-[680px] md:text-sm">
         Learn from the experiences of our users. See how they have utilized our
         platform to drive innovation and achieve success.
       </div>

@@ -42,7 +42,7 @@ const Header = () => {
     >
       <div
         className={cn(
-          "relative mx-auto px-[15px] py-[18px] flex items-center justify-between  md:px-[40px]  xl:w-[1200px] xl:py-[30px] "
+          "relative mx-auto px-[15px] py-[18px] flex items-center justify-between md:py-[30px] lg:w-[900px] xl:w-[1200px]"
         )}
       >
         <SvgIcon

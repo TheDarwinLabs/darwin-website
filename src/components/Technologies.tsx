@@ -108,23 +108,23 @@ const Technologies = () => {
   return (
     <>
       <div id="core-tect" className="section3">
-        <div className="relative  z-10 flex flex-col mx-auto pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row md:w-[700px] xl:w-[1200px] xl:h-[1000px] md:px-0 xl:pt-[100px] xl:pb-0">
-          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 md:w-[300px] md:border-y-[1px] md:py-[30px] xl:px-[40px] xl:py-[60px] xl:w-[600px] xl:h-[500px] md:mx-0">
+        <div className="relative  z-10 flex flex-col mx-auto pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row md:w-[700px] lg:w-[900px] lg:h-[900px] xl:w-[1200px] xl:h-[1000px] md:px-0 xl:pt-[100px] xl:pb-0">
+          <div className="bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pb-5 mx-5 md:w-[300px] lg:w-[400px] md:border-y-[1px] md:py-[30px] lg:px-[30px] xl:px-[40px] xl:py-[60px] xl:w-[600px] xl:h-[500px] md:mx-0">
             <div className="flex gap-[17px] xl:gap-[30px]">
               <div className="flex-1 h-[2px] w-full bg-white md:opacity-10 xl:h-1"></div>
               <div className="w-[58px] h-[14px] bg-white text-[#000000] text-[9px] text-right px-[10px] font-bold md:w-[50px] md:h-[24px] md:text-base xl:h-6 xl:w-[100px]">
                 01
               </div>
             </div>
-            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] xl:w-auto xl:text-[54px] xl:leading-[84px] md:mt-[188px]">
+            <div className="text-[30px] leading-[44px] uppercase font-bold mt-[20px] w-[200px] lg:text-[42px] lg:leading-[60px] xl:w-auto xl:text-[54px] xl:leading-[84px] md:mt-[188px]">
               Core Technologies
             </div>
           </div>
-          <div className="hidden relative h-[800px] overflow-auto scrollbar-none pr-[100px] pl-10 md:pl-5 md:pr-[00px] md:gap-5 md:flex flex-col xl:gap-[60px] xl:h-[900px]">
+          <div className="hidden relative h-[800px] overflow-auto scrollbar-none pr-[100px] pl-10 md:pl-5 md:pr-[00] md:gap-5 lg:md:gap-[30px] md:flex flex-col xl:gap-[60px] xl:h-[900px]">
             {list.map((item, index) => (
               <div
                 key={index}
-                className="technology-item justify-between p-5 w-[380px] h-[200px] xl:w-[440px]"
+                className="technology-item justify-between p-5 w-[380px] h-[200px] lg:w-[450px] xl:w-[440px]"
                 onClick={() => onOpen(index)}
               >
                 <SvgIcon
