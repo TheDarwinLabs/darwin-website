@@ -278,7 +278,7 @@ body {
   
 }
 .dapp-item{
-  border: 1px solid #2C2C2D;
+  // border: 1px solid #2C2C2D;
   &:hover{
     background: linear-gradient(263.13deg, rgba(137, 31, 221, 0) -17.1%, rgba(99, 73, 255, 0.12) 4.86%, rgba(137, 31, 221, 0.4) 98.17%);
     border-image:  radial-gradient(69% 100% at 100% 100%, rgba(144, 131, 255, 0.4) 0%, rgba(99, 73, 255, 0.04) 100%);
@@ -410,5 +410,27 @@ body {
   }
   .right-half-off{
     cursor: url('/cursor/arrow-right-off.svg'), auto;
+  }
+}
+
+.try-now-btn{
+  @apply relative flex items-center  justify-center border-y-[1px] border-brand text-brand uppercase;
+  &::before,
+  &::after {
+    @apply absolute left-0 right-0 h-[1px]  transition-all duration-300;
+    content: '';
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0);
+  }
+  &::before {
+    top: -1px;
+  }
+  &::after {
+    bottom: -1px;
+  }
+  &:hover{
+    &::before,
+    &::after {
+      box-shadow: 0px 0px 5px 1px #6349FF;
+    }
   }
 }

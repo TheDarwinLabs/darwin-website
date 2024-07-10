@@ -32,10 +32,17 @@ export default function Page() {
             </div>
             <a
               href="/"
-              className="flex items-center justify-between mt-[83px] w-[200px] border-y-[1px] border-brand px-3 py-4 uppercase text-brand md:mt-[50px] md:w-[300px] md:py-[18px] lg:w-[400px] "
+              className="try-now-btn group mt-[83px] w-[200px] px-3 py-4 md:mt-[50px] md:w-[300px] md:py-[18px] lg:w-[400px] hover:font-bold transition-all duration-300 "
             >
               try now
-              <SvgIcon name="arrow" className="w-[18px] h-[18px]" />
+              <SvgIcon
+                name="arrow"
+                className=" absolute right-3 w-[9px] h-[9px] md:w-[18px] md:h-[18px] transition-all duration-300 group-hover:opacity-0"
+              />
+              <SvgIcon
+                name="arrow-hover"
+                className="absolute w-[102px] h-[18px] right-3 transition-all duration-300 -translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+              />
             </a>
           </div>
         </div>
@@ -59,18 +66,26 @@ export default function Page() {
               </div>
               <a
                 href="/"
-                className="mx-auto flex items-center justify-between mt-[40px] w-[200px] border-y-[1px] border-brand px-[10px] py-[19px] uppercase font-bold text-brand md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:py-[31px]"
+                className="try-now-btn group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:py-[31px]"
               >
                 <SvgIcon
                   name="arrow"
-                  className="w-[9px] h-[9px] md:w-[18px] md:h-[18px]"
+                  className=" absolute left-[10px] xl:left-[20px] w-[9px] h-[9px] md:w-[18px] md:h-[18px] transition-all duration-300 group-hover:opacity-0"
+                />
+                <SvgIcon
+                  name="arrow-hover-sm"
+                  className="absolute w-[102px] h-[18px] left-[10px] xl:left-[20px] transition-all duration-300 -translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
                 />
                 <span className="text-[8px] leading-3 md:text-base">
                   Join now
                 </span>
                 <SvgIcon
                   name="arrow"
-                  className="w-[9px] h-[9px] md:w-[18px] md:h-[18px] rotate-180"
+                  className=" absolute right-[10px] rotate-180 xl:right-[20px] w-[9px] h-[9px] md:w-[18px] md:h-[18px] transition-all duration-300 group-hover:opacity-0"
+                />
+                <SvgIcon
+                  name="arrow-hover-sm"
+                  className="absolute w-[102px] h-[18px] right-[10px] xl:right-[20px] rotate-180 transition-all duration-300 translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
                 />
               </a>
             </div>

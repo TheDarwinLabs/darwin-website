@@ -38,10 +38,17 @@ const DappSection = () => (
           </div>
           <a
             href="/"
-            className="flex items-center justify-between mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand"
+            className="try-now-btn group mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand  hover:font-bold transition-all duration-300 "
           >
             try now
-            <SvgIcon name="arrow" className="w-[18px] h-[18px]" />
+            <SvgIcon
+              name="arrow"
+              className=" absolute right-3 w-[18px] h-[18px] transition-all duration-300 group-hover:opacity-0"
+            />
+            <SvgIcon
+              name="arrow-hover"
+              className="absolute w-[102px] h-[18px] right-3 transition-all duration-300 -translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+            />
           </a>
         </div>
       </div>
@@ -50,7 +57,7 @@ const DappSection = () => (
           <div
             key={index}
             className={cn(
-              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block"
+              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block"
             )}
           >
             <Image
