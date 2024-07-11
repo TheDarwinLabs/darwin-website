@@ -6,7 +6,8 @@
     "dev": "PORT=3001 next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "ssh ubuntu@52.53.233.240 'cd /home/ubuntu/website/ && bash ./deploy_website.sh'"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
