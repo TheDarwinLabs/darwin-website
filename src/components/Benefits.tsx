@@ -61,16 +61,16 @@ const Benefits = () => {
           Benefits for Different Users
         </div>
         <div ref={ref} className="flex md:gap-10 mt-[88px] md:mt-[60px]">
-          <div className="flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-5 xl:py-5 xl:border-l-[1px]">
+          <div className=" flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-5 xl:py-5 xl:border-l-[1px]">
             {list.map((item, index) => (
               <div
                 key={index}
                 onClick={() => onChange(index)}
                 className={cn(
-                  "relative  text-xs cursor-pointer xl:h-[100px] md:pl-10",
+                  "group relative  text-xs cursor-pointer xl:h-[100px] md:pl-10",
                   curIndex == index
-                    ? "text-[#989898] xl:text-primary"
-                    : "text-[#989898]"
+                    ? "text-[#727272]  xl:text-primary"
+                    : "text-[#727272] hover:text-[#989898]"
                 )}
               >
                 {index == curIndex && (
@@ -86,7 +86,7 @@ const Benefits = () => {
                     "text-base uppercase font-bold mb-2 md:text-[20px] md:leading-[30px] xl:text-[24px] xl:leading-9 transition-all",
                     curIndex == index
                       ? "text-[var(--white)] xl:text-brand"
-                      : "text-[var(--white)] xl:text-[#989898]"
+                      : "text-[var(--white)]  xl:text-[#727272] group-hover:text-[#989898]"
                   )}
                 >
                   {item.title}

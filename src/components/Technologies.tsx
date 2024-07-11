@@ -73,8 +73,6 @@ const Technologies = () => {
       if (container) {
         const { scrollTop, scrollHeight, clientHeight } = container;
         const isBottom = scrollTop + clientHeight >= scrollHeight;
-        console.log(isBottom);
-        console.log(scrollTop > 0);
         setShowBottomGradient(!isBottom);
         setShowTopGradient(scrollTop == 0);
       }
@@ -155,12 +153,12 @@ const Technologies = () => {
                           {item.desc}
                         </div>
                       </div>
-                      <div className="hidden mt-[10px] text-right plus-icon">
+                      {/* <div className="hidden mt-[10px] text-right plus-icon">
                         <SvgIcon
                           name="plus-light"
                           className=" inline-block w-[30px] h-[30px] "
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
