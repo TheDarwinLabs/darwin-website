@@ -82,7 +82,7 @@ const DappSection = () => (
           </div>
         ))}
       </div>
-      <div className="uppercase text-[#727272] md:w-[680px] md:text-sm">
+      <div className=" text-[#727272] md:w-[680px] md:text-sm">
         Learn from the experiences of our users. See how they have utilized our
         platform to drive innovation and achieve success.
       </div>

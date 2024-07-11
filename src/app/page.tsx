@@ -21,7 +21,7 @@ export default function Page() {
               The Evolutionary Chain for
               <span className="text-brand"> AI</span>
             </div>
-            <div className="text-xs mt-5 text-[#727272] uppercase text-balance md:w-[600px] md:mt-10 md:text-sm lg:w-[750px] xl:w-[890px] xl:text-base">
+            <div className="text-xs mt-5 text-[#727272]  text-balance md:w-[600px] md:mt-10 md:text-sm lg:w-[750px] xl:w-[890px] xl:text-base">
               We are pioneering a revolutionary approach to the integration of
               AI and blockchain technology, a concept we call &quot;The Chain of
               Evolution.&ldquo; Our mission is to democratize access to AI
@@ -66,7 +66,7 @@ export default function Page() {
               </div>
               <a
                 href="/"
-                className="try-now-btn group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:py-[31px]"
+                className="try-now-btn justify-center group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:py-[31px]"
               >
                 <SvgIcon
                   name="arrow"

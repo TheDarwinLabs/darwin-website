@@ -414,7 +414,7 @@ body {
 }
 
 .try-now-btn{
-  @apply relative flex items-center  justify-center border-y-[1px] border-brand text-brand uppercase;
+  @apply relative flex items-center   border-y-[1px] border-brand text-brand uppercase;
   &::before,
   &::after {
     @apply absolute left-0 right-0 h-[1px]  transition-all duration-300;

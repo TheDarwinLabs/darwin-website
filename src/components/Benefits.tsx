@@ -67,7 +67,7 @@ const Benefits = () => {
                 key={index}
                 onClick={() => onChange(index)}
                 className={cn(
-                  "relative uppercase text-xs cursor-pointer xl:h-[100px] md:pl-10",
+                  "relative  text-xs cursor-pointer xl:h-[100px] md:pl-10",
                   curIndex == index
                     ? "text-[#989898] xl:text-primary"
                     : "text-[#989898]"
@@ -83,7 +83,7 @@ const Benefits = () => {
                 )}
                 <div
                   className={cn(
-                    "text-base font-bold mb-2 md:text-[20px] md:leading-[30px] xl:text-[24px] xl:leading-9 transition-all",
+                    "text-base uppercase font-bold mb-2 md:text-[20px] md:leading-[30px] xl:text-[24px] xl:leading-9 transition-all",
                     curIndex == index
                       ? "text-[var(--white)] xl:text-brand"
                       : "text-[var(--white)] xl:text-[#989898]"

@@ -131,8 +131,8 @@ const Technologies = () => {
                   name="technology-sm"
                   className=" w-[48px] h-[48px] mb-[64px]"
                 />
-                <div className=" uppercase">
-                  <div className="text-[#F2F2F2]">{item.title}</div>
+                <div className=" ">
+                  <div className="uppercase text-[#F2F2F2]">{item.title}</div>
                   <div className="text-[#727272] text-xs mt-2">{item.desc}</div>
                 </div>
               </div>
