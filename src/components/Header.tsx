@@ -85,7 +85,9 @@ const Header = () => {
             >
               FAQs
             </a>
-            <Link href="/">Get Started</Link>
+            <Link href="/" className="text-brand">
+              Get Started
+            </Link>
           </nav>
           <SvgIcon
             name={isOpen ? "menu-close" : "menu"}
@@ -94,8 +96,8 @@ const Header = () => {
           />
           <div
             className={cn(
-              "h-[2px] w-full bg-[#2C2C20] absolute bottom-0 left-0 transition-all duration-300 md:h-[3px]",
-              scrollY > 1 ? "scale-x-150" : "scale-x-150 xl:scale-x-100"
+              "h-[2px] w-full bg-[#2C2C20] absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-300 md:h-[3px]",
+              scrollY > 1 ? "w-screen" : "w-screen xl:w-full"
             )}
           ></div>
         </div>
