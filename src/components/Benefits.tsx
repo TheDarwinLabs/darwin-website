@@ -15,12 +15,12 @@ const list = [
   },
   {
     title: "For Computational Power Providers",
-    tags: "<Explore> <Build> <Earn>",
+    tags: "<host> <validate> <Earn>",
     desc: "Provide computational power to host and run AI models, validate AI operations, and earn substantial rewards in our decentralized network.",
   },
   {
     title: "For dApps Developers",
-    tags: "<Explore> <Build> <Earn>",
+    tags: "<deploy> <integrate> <innovate>",
     desc: "Deploy your decentralized applications on our chain, leverage AI resources for free, and drive innovation with seamless integration.",
   },
 ];

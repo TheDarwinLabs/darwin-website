@@ -12,25 +12,25 @@ import { cn } from "@/lib/utils";
 
 const FaqList = [
   {
-    title: `What is Darwin's Lab?`,
-    content: `Darwin's Lab is a pioneering platform that integrates AI and blockchain technology to democratize AI development and create a decentralized, secure, and inclusive AI ecosystem.`,
+    title: `Who Built Darwin?`,
+    content: `A team of AI and Blockchain experts from Princeton, Harvard, MIT, CMU, Yale, and Stanford.`,
   },
   {
-    title: `What is Darwin's Lab?`,
-    content: `Darwin's Lab is a pioneering platform that integrates AI and blockchain technology to democratize AI development and create a decentralized, secure, and inclusive AI ecosystem.`,
+    title: `What is Real-time Verifiable AI?`,
+    content: `A mechanism that ensures instant validation and transparency of AI-generated outputs.`,
   },
   {
-    title: `What is Darwin's Lab?`,
-    content: `Darwin's Lab is a pioneering platform that integrates AI and blockchain technology to democratize AI development and create a decentralized, secure, and inclusive AI ecosystem.`,
+    title: `Who can contribute?`,
+    content: `Anyone from data creators to AI builders.`,
   },
 ];
 
 const FaqSection = () => (
   <div
     id="faqs"
-    className="section7 md:pt-[75px] md:pb-[64px]lg:pb-10  lg:pt-[100px] "
+    className="section7 md:pt-[75px] md:pb-[64px]lg:pb-10  lg:py-[100px] "
   >
-    <div className="relative z-10 flex flex-col mx-auto px-5 md:gap-[20px]  md:w-[700px] xl:gap-[100px] lg:w-[800px]  xl:w-[1200px] md:h-[900px] xl:pt-[100px] md:flex-row md:px-0">
+    <div className="relative z-10 flex flex-col mx-auto px-5 md:gap-[20px]  md:w-[700px] xl:gap-[100px] lg:w-[800px]  xl:w-[1200px] xl:pt-[100px] md:flex-row md:px-0">
       <div className=" bg-[rgba(255,255,255,0.03)] backdrop-blur-lg border-b-[1px] border-[rgba(255,255,255,0.15)] pt-[66px] pb-5 text-[30px] leading-[44px] tracking-tight font-bold uppercase md:w-[200px] md:h-[300px] md:text-[42px] md:leading-[60px] xl:w-[400px] xl:h-[400px] xl:pt-[60px] xl:text-[54px] xl:pl-[40px] xl:leading-[84px] xl:pb-0 xl:border-y-[1px]">
         faqs
       </div>

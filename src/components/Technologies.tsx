@@ -10,49 +10,75 @@ import { cn } from "@/lib/utils";
 
 const list = [
   {
-    title: "Super usability1",
-    desc: "1Scalable and Adaptable Infrastructure",
-    content: `1SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "Scalable & adaptable",
+    desc: "Supporting the Growing Needs of Diverse Sectors",
+    content: [
+      "Darwin chain is built to scale and adapt, seamlessly supporting the evolving needs for AI. By enabling the widespread adoption of AI technologies across diverse applications, we are paving the way for innovative solutions that drive growth and efficiency.",
+      "With real-time, easy, and free AI inference, we provide a robust foundation for future advancements, making AI accessible and beneficial to everyone.",
+    ],
   },
   {
-    title: "Super usability2",
-    desc: "2Scalable and Adaptable Infrastructure",
-    content: `2SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "LFG-GM algorithm",
+    desc: "Real-time verifiable inference",
+    content: [
+      "LFG-GM stands for “Layered Fingerprinted Grid - Game-Theoretic Mixer”, a groundbreaking approach to ensure inference verifiability in AI operations. By mixing user queries with pre-computed challenge queries using instructional fingerprints, the algorithm makes it impossible for inference nodes to cheat.",
+      "The LFG-GM algorithm provides a reliable real-time verification for ai inference. It’s designed to handle high-throughput demands while maintaining low costs, making it an ideal solution for various AI applications.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "Specter framework",
+    desc: "Fastest Zero-Knowledge Proof for ai",
+    content: [
+      `SPECTER stands for “Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models”.
+specter represents a major leap forward in AI verification technology. Designed specifically for transformer-based models, SPECTER achieves unprecedented speeds and efficiency, providing over 100x faster verification compared to other zk methods.`,
+      "By integrating SPECTER, darwinchain offers the fastest, most reliable zero-knowledge proof system for transformer models, pushing the boundaries of what’s possible in verifiable inference. This advanced framework underpins our commitment to providing secure, efficient, and scalable AI solutions, driving innovation and trust in the AI ecosystem.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "Decentralized inference",
+    desc: "Harnessing Distributed Inference Power",
+    content: [
+      "Darwinchain leverages a global network of computational power to provide scalable, efficient, and cost-effective AI computations. By using a distributed network, we can harness the power of multiple AI nodes spread across the world, ensuring that computational tasks are handled efficiently and effectively.",
+      "Tap into a global network of decentralized AI resources, enabling scalable, efficient, and cost-effective AI computations through distributed inference.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "Gasless MODEL for AI",
+    desc: "Free AI Usage",
+    content: [
+      "Darwinchain introduces a revolutionary hybrid gas model to make AI operations cost-effective and accessible. Our model combines traditional gas fees for regular transactions with a unique stake-to-use system for AI operations.",
+      "Stake-to-Use Model: Users earn points by staking our native tokens. These points can then be used for AI operations without additional costs, making AI usage flexible and affordable",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "PRIVACY-PRESERVING PROTOCOLS",
+    desc: "SECURE AND CONFIDENTIAL",
+    content: [
+      "Maintaining data privacy and security is at the core of darwinchain. Our robust privacy-preserving protocols leverage advanced technologies like distributed inference and zero-knowledge proofs to ensure that AI operations are both secure and confidential.",
+      "By using these cutting-edge techniques, we ensure that sensitive data remains protected throughout the computational process, preventing unauthorized access and preserving the integrity of the information. Our approach provides a secure environment for AI applications, fostering trust and confidence among users.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "community driven AI alignment",
+    desc: "RLcf - shaping the future of ai through community",
+    content: [
+      "Darwinchain empowers its community to actively participate in the governance and alignment of AI models through RLCF (Reinforcement Learning from Community Feedback). This innovative approach ensures that our AI models evolve in a way that aligns with user needs and ethical standards.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "consensus mechanism for ai",
+    desc: "a new paradigm for AI inference verification",
+    content: [
+      "Darwinchain’s consensus mechanism is specially designed to optimize AI inference verification. Using model sharding, our consensus mechanism ensures that inference computations are verified efficiently and accurately.",
+      "Our AI-optimized consensus mechanism is tailored to handle the unique demands of AI workloads, providing a robust and scalable solution for verifying AI inferences. This ensures that our platform can support complex AI applications with high accuracy and reliability.",
+    ],
   },
   {
-    title: "Super usability3",
-    desc: "3Scalable and Adaptable Infrastructure",
-    content: `3SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference. \n\n SPECTER stands for Succinct Zero-Knowledge Proof System for Efficient Inference over Transformer Models in Decentralized Networks. Leverage SPECTER, the world's fastest zero-knowledge proof system for transformer-based large models, offering over 100x speed increase compared to other methods for verifiable AI inference.`,
+    title: "Fair rewards for everyone",
+    desc: "Incentivizing Contributions Across the Network",
+    content: [
+      "Our robust incentive mechanism is designed to reward users for their contributions to the network. Participants can earn substantial rewards through various activities such as contributing models, hosting model layers, and verifying ai inferences.",
+    ],
   },
 ];
 
@@ -126,7 +152,7 @@ const Technologies = () => {
                 onClick={() => onOpen(index)}
               >
                 <SvgIcon
-                  name="technology-sm"
+                  name={`core_${index + 1}`}
                   className=" w-[48px] h-[48px] mb-[64px]"
                 />
                 <div className=" ">
@@ -145,7 +171,10 @@ const Technologies = () => {
                     onClick={() => onOpen(index)}
                     className="flex flex-col justify-between technology-item-sm w-[260px] h-[300px] p-[30px]"
                   >
-                    <SvgIcon name="technology" className="w-[48px] h-[48px]" />
+                    <SvgIcon
+                      name={`core_${index + 1}`}
+                      className="w-[48px] h-[48px]"
+                    />
                     <div>
                       <div className="uppercase mt-[88px]">
                         <div className="text-[#F2F2F2]">{item.title}</div>
@@ -211,7 +240,9 @@ const Technologies = () => {
               >
                 {/* <div className="top-gradient"></div> */}
                 <div className="whitespace-pre-wrap ">
-                  {list[curIndex].content}
+                  {list[curIndex].content.map((text, idx) => (
+                    <p key={idx}>{text}</p>
+                  ))}
                 </div>
                 {/* <div className="bottom-gradient"></div> */}
                 <div className=" mt-10 text-brand font-bold text-right uppercase">
