@@ -1,8 +1,9 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SvgIcon from "@/components/SvgIcon";
 import { cn } from "@/lib/utils";
-import { useEffect, useRef, useState } from "react";
+import InViewAnimation from "@/components/InViewAnimation";
 
 const step = 600;
 
@@ -32,7 +33,7 @@ const RoadmapSection = () => {
 
   return (
     <div className="section5 px-5 md:px-0 overflow-hidden">
-      <div className="relative z-10 flex flex-col mx-auto pt-[100px] md:h-[900px]  md:w-[700px] lg:w-[900px] xl:h-[1000px] xl:w-[1200px]">
+      <InViewAnimation className="relative z-10 flex flex-col mx-auto pt-[100px] md:h-[900px]  md:w-[700px] lg:w-[900px] xl:h-[1000px] xl:w-[1200px]">
         <div className="z-10 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pt-[66px] pb-5 text-[30px] leading-[44px] font-bold  uppercase md:text-[36px] md:leading-[60px] md:pt-[110px] md:pb-[30px] lg:w-[500px] lg:pl-[30px] xl:w-[800px] xl:border-y-[1px] xl:py-[60px] xl:pl-[30px] xl:text-[54px] xl:leading-[84px]">
           Roadmap
         </div>
@@ -118,7 +119,7 @@ const RoadmapSection = () => {
             className="w-full object-cover"
           />
         </div>
-      </div>
+      </InViewAnimation>
     </div>
   );
 };

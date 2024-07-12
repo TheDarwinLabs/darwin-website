@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SvgIcon from "@/components/SvgIcon";
+import InViewAnimation from "@/components/InViewAnimation";
 import { cn } from "@/lib/utils";
 
 const FaqList = [
@@ -30,14 +31,14 @@ const FaqSection = () => (
     id="faqs"
     className="section7 md:pt-[75px] md:pb-[64px]lg:pb-10  lg:py-[100px] "
   >
-    <div className="relative z-10 flex flex-col mx-auto px-5 md:gap-[20px]  md:w-[700px] xl:gap-[100px] lg:w-[800px]  xl:w-[1200px] xl:pt-[100px] md:flex-row md:px-0">
+    <InViewAnimation className="relative z-10 flex flex-col mx-auto px-5 md:gap-[20px]  md:w-[700px] xl:gap-[100px] lg:w-[800px]  xl:w-[1200px] xl:pt-[100px] md:flex-row md:px-0">
       <div className=" bg-[rgba(255,255,255,0.03)] backdrop-blur-lg border-b-[1px] border-[rgba(255,255,255,0.15)] pt-[66px] pb-5 text-[30px] leading-[44px] tracking-tight font-bold uppercase md:w-[200px] md:h-[300px] md:text-[42px] md:leading-[60px] xl:w-[400px] xl:h-[400px] xl:pt-[60px] xl:text-[54px] xl:pl-[40px] xl:leading-[84px] xl:pb-0 xl:border-y-[1px]">
         faqs
       </div>
       <div className="flex-1">
         <Faqs />
       </div>
-    </div>
+    </InViewAnimation>
   </div>
 );
 

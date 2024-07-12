@@ -5,6 +5,8 @@ import Image from "next/image";
 import SvgIcon from "@/components/SvgIcon";
 import useSmoothProgress from "@/hooks/useSmoothProgress";
 import { useInView } from "react-intersection-observer";
+import InViewAnimation from "@/components/InViewAnimation";
+
 import { cn } from "@/lib/utils";
 
 const list = [
@@ -56,7 +58,7 @@ const Benefits = () => {
 
   return (
     <div className=" section2">
-      <div className="relative z-10 mx-auto pt-[60px]  px-5 pb-5 md:h-[750px] md:w-[700px] lg:w-[900px]  lg:h-[800px] xl:w-[1200px] xl:h-[900px] xl:pt-[171px] md:px-0 xl:pb-0">
+      <InViewAnimation className="relative z-10 mx-auto pt-[60px]  px-5 pb-5 md:h-[750px] md:w-[700px] lg:w-[900px]  lg:h-[800px] xl:w-[1200px] xl:h-[900px] xl:pt-[171px] md:px-0 xl:pb-0">
         <div className="uppercase text-[36px] leading-[53px] font-bold md:w-[400px] md:text-[42px] md:leading-[60px] xl:text-[54px] xl:leading-[84px] xl:w-[900px]">
           Benefits for Different Users
         </div>
@@ -107,7 +109,7 @@ const Benefits = () => {
             style={{ backgroundImage: `url(/card-${curIndex}.svg)` }}
           ></div>
         </div>
-      </div>
+      </InViewAnimation>
     </div>
   );
 };
