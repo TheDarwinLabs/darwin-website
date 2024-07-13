@@ -18,10 +18,10 @@ const Dapps = [
     name: "futurewhispers.ai",
     logo: "futurewhispers.png",
   },
-  {
-    name: "futurewhispers.ai",
-    logo: "futurewhispers.png",
-  },
+  // {
+  //   name: "futurewhispers.ai",
+  //   logo: "futurewhispers.png",
+  // },
 ];
 
 const DappSection = () => (
@@ -60,7 +60,7 @@ const DappSection = () => (
           <div
             key={index}
             className={cn(
-              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block transition-all duration-300 ease-in-out"
+              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] [&:nth-child(4)]:hidden xl:last:block transition-all duration-300 ease-in-out"
             )}
           >
             <Image
