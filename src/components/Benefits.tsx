@@ -11,18 +11,18 @@ import { cn } from "@/lib/utils";
 
 const list = [
   {
-    title: "For AI innovators",
-    tags: "<Explore> <Build> <Earn>",
-    desc: "oin our AI ecosystem to explore cutting-edge AI models, contribute innovations, and earn rewards for your creativity and efforts.For dApp Developers",
-  },
-  {
-    title: "For Computational Power Providers",
-    tags: "<host> <validate> <Earn>",
+    title: "FOR COMPUTE NODES",
+    tags: "<HOST> <VALIDATE> <PROFIT>",
     desc: "Provide computational power to host and run AI models, validate AI operations, and earn substantial rewards in our decentralized network.",
   },
   {
-    title: "For dApps Developers",
-    tags: "<deploy> <integrate> <innovate>",
+    title: "FOR AI INNOVATORS",
+    tags: "<EXPLORE> <SHARE> <EARN>",
+    desc: "Join our AI ecosystem to explore cutting-edge AI models, contribute innovations, and earn rewards for your creativity and efforts.",
+  },
+  {
+    title: "FOR DAPP DEVELOPERS",
+    tags: "<DEPLAY> <INTEGRATE> <INNOVATE>",
     desc: "Deploy your decentralized applications on our chain, leverage AI resources for free, and drive innovation with seamless integration.",
   },
 ];
@@ -63,7 +63,7 @@ const Benefits = () => {
           Benefits for Different Users
         </div>
         <div ref={ref} className="flex md:gap-10 mt-[88px] md:mt-[60px]">
-          <div className=" flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-5 xl:py-5 md:border-l-[1px]">
+          <div className=" flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-10 xl:pt-5 md:border-l-[1px]">
             {list.map((item, index) => (
               <div
                 key={index}
