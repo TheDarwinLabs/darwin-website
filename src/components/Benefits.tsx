@@ -63,15 +63,15 @@ const Benefits = () => {
           Benefits for Different Users
         </div>
         <div ref={ref} className="flex md:gap-10 mt-[88px] md:mt-[60px]">
-          <div className=" flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-5 xl:py-5 xl:border-l-[1px]">
+          <div className=" flex flex-col gap-10 border-[rgba(255,255,255,0.15)] flex-1 md:gap-5 xl:py-5 md:border-l-[1px]">
             {list.map((item, index) => (
               <div
                 key={index}
                 onClick={() => onChange(index)}
                 className={cn(
-                  "group relative  text-xs cursor-pointer xl:h-[100px] md:pl-10",
+                  "group relative  text-xs cursor-pointer md:pl-10",
                   curIndex == index
-                    ? "text-[#727272]  xl:text-primary"
+                    ? "text-[#727272]  md:text-primary"
                     : "text-[#727272] hover:text-[#989898]"
                 )}
               >
@@ -87,14 +87,14 @@ const Benefits = () => {
                   className={cn(
                     "text-base uppercase font-bold mb-2 md:text-[20px] md:leading-[30px] xl:text-[24px] xl:leading-9 transition-all",
                     curIndex == index
-                      ? "text-[var(--white)] xl:text-brand"
-                      : "text-[var(--white)]  xl:text-[#727272] group-hover:text-[#989898]"
+                      ? "text-[var(--white)] md:text-brand"
+                      : "text-[var(--white)]  md:text-[#727272] group-hover:text-[#989898]"
                   )}
                 >
                   {item.title}
                 </div>
                 <div className="mb-2 transition-all ">{item.tags}</div>
-                <div className="mb-5 transition-all xl:mb-0">{item.desc}</div>
+                <div className="mb-5 transition-all md:mb-0">{item.desc}</div>
                 <Image
                   src={`/card-${curIndex}.svg`}
                   alt=""

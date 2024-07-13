@@ -145,7 +145,7 @@ const Technologies = () => {
               Core Technologies
             </div>
           </div>
-          <div className="hidden relative h-[800px] overflow-auto scrollbar-none pr-[100px] pl-10 md:pl-5 md:pr-[00] md:gap-5 lg:md:gap-[30px] md:flex flex-col xl:gap-[60px] xl:h-[900px]">
+          <div className="hidden relative h-[800px] overflow-auto scrollbar-none pr-[100px] pl-10 md:pl-5 md:pr-[00] md:gap-5 lg:md:gap-[30px] md:flex flex-col xl:gap-[60px] xl:pl-[60px] xl:pr-[100px] xl:h-[900px]">
             {list.map((item, index) => (
               <div
                 key={index}

@@ -28,7 +28,7 @@ const DappSection = () => (
   <div className="section4 px-5 overflow-hidden md:px-0">
     <InViewAnimation className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px] lg:w-[900px]  lg:h-[800px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
       <div className="flex gap-[50px]">
-        <div className="flex-1 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] lg:pl-[30px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[72px] xl:border-y-[1px]">
+        <div className="flex-1 flex flex-col bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] lg:pl-[30px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[40px] xl:border-y-[1px] md:h-[300px] md:justify-end">
           <div>D-apps</div>
           <div>in our eco-system</div>
         </div>
@@ -60,7 +60,7 @@ const DappSection = () => (
           <div
             key={index}
             className={cn(
-              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block"
+              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] last:hidden xl:last:block transition-all duration-300 ease-in-out"
             )}
           >
             <Image
@@ -73,7 +73,7 @@ const DappSection = () => (
             />
             <div className="flex items-center text-base uppercase mt-5 justify-between xl:mt-[44px] xl:justify-start xl:text-2xl">
               {item.name}
-              <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" />
+              {/* <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" /> */}
             </div>
             <div
               className={cn(

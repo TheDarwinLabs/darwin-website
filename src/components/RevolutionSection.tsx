@@ -6,7 +6,7 @@ import InViewAnimation from "@/components/InViewAnimation";
 const RevolutionSection = () => {
   return (
     <div className="section6">
-      <InViewAnimation className="relative z-10 mx-auto py-[40px] px-5  md:h-[750px]  md:w-[700px] lg:w-[900px] lg:h-[800px]  xl:w-[1200px] xl:h-[800px] xl:py-[100px] md:px-0">
+      <InViewAnimation className="relative z-10 mx-auto py-[40px] px-5  md:w-[700px] lg:w-[900px] xl:w-[1200px] xl:py-[100px] md:px-0">
         <div className="mx-auto text-center bg-[rgba(255,255,255,0.03)] border-x-[1px] border-[rgba(255,255,255,0.15)]  backdrop-blur-lg md:py-[80px] xl:py-[68px]  md:w-[700px] xl:w-[1000px]">
           <div className=" mx-auto uppercase text-[30px] leading-[44px] tracking-tight font-bold text-balance md:text-[36px] md:leading-[60px] md:w-[500px] md:text-wrap lg:text-[42px] xl:text-wrap xl:text-[54px] xl:leading-[84px] xl:w-[726px]">
             be a part of the revolution
@@ -16,7 +16,7 @@ const RevolutionSection = () => {
           </div>
           <a
             href="/"
-            className="try-now-btn justify-center group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:py-[31px]"
+            className="try-now-btn justify-center group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:h-[80px]"
           >
             <SvgIcon
               name="arrow"

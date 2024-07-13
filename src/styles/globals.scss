@@ -99,18 +99,19 @@
   }
   
   .gradient-bg{
-    display: flex;
-    &::before{
-      @apply flex-1;
-      content: ' ';
-      background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-    &::after{
-      @apply flex-1;
-      content: ' ';
-      background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
-    }
+    position: relative;
+    // display: flex;
+    // &::before{
+    //   @apply flex-1;
+    //   content: ' ';
+    //   background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
+    //   transform: matrix(-1, 0, 0, 1, 0, 0);
+    // }
+    // &::after{
+    //   @apply flex-1;
+    //   content: ' ';
+    //   background: linear-gradient(270deg, #000000 0%, #000000 60%, rgba(0, 0, 0, 0) 100%);
+    // }
   }
 
   .technology-modal-content{
@@ -278,14 +279,13 @@ body {
   
 }
 .dapp-item{
-  // border: 1px solid #2C2C2D;
+  border: 1px solid rgba(137, 31, 221, 0);
+  
   &:hover{
     background: linear-gradient(263.13deg, rgba(137, 31, 221, 0) -17.1%, rgba(99, 73, 255, 0.12) 4.86%, rgba(137, 31, 221, 0.4) 98.17%);
-    border-image:  radial-gradient(69% 100% at 100% 100%, rgba(144, 131, 255, 0.4) 0%, rgba(99, 73, 255, 0.04) 100%);
+    border-image: linear-gradient(140deg, rgba(237, 26, 216, 0.9) 14.3%, rgba(99, 73, 255, 0.1) 63.7%, rgba(99, 73, 255, 0.04) 74.16%, rgba(144, 131, 255, 0.4) 100%) 1;
+    border-right: 1px solid rgba(137, 31, 221, 0);
   }
-  // border-image: linear-gradient(to right, #8f41e9, #578aef) 1;
-
-  // border-image-source: radial-gradient(146.19% 158.62% at 0% 0%, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 33.55%, rgba(255, 255, 255, 0.2) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
 
 .body-locked{
@@ -398,20 +398,20 @@ body {
   // box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的扩散阴影 */
 }
 
-.roadmap-box{
-  .left-half-on{
-    cursor: url('/cursor/arrow-left-on.svg'), auto;
-  }
-  .left-half-off{
-    cursor: url('/cursor/arrow-left-off.svg'), auto;
-  }
-  .right-half-on{
-    cursor: url('/cursor/arrow-right-on.svg'), auto;
-  }
-  .right-half-off{
-    cursor: url('/cursor/arrow-right-off.svg'), auto;
-  }
-}
+// .roadmap-box{
+//   .left-half-on{
+//     cursor: url('/cursor/arrow-left-on.svg'), auto;
+//   }
+//   .left-half-off{
+//     cursor: url('/cursor/arrow-left-off.svg'), auto;
+//   }
+//   .right-half-on{
+//     cursor: url('/cursor/arrow-right-on.svg'), auto;
+//   }
+//   .right-half-off{
+//     cursor: url('/cursor/arrow-right-off.svg'), auto;
+//   }
+// }
 
 .try-now-btn{
   @apply relative flex items-center   border-y-[1px] border-brand text-brand uppercase;
