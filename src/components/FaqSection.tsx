@@ -11,6 +11,7 @@ import SvgIcon from "@/components/SvgIcon";
 import InViewAnimation from "@/components/InViewAnimation";
 import { cn } from "@/lib/utils";
 
+
 const FaqList = [
   {
     title: `What is Darwinchain?`,
@@ -29,7 +30,37 @@ const FaqList = [
     content:
       "Darwinchain is designed to be an open-source platform, welcoming contributions from developers, researchers, and enthusiasts from around the world. Whether you are an AI expert, blockchain developer, compute provider, or simply passionate about decentralized AI, there is a place for you in the Darwinchain community.",
   },
-  { title: "What are the core technologies behind Darwinchain?", content: "" },
+  {
+    title: "What are the core technologies behind Darwinchain?",
+    content: (
+      <div key="5" className="leading-[18px] text-[12px] xl:text-base">
+        <div className="mb-[6px]">Our core technologies include:</div>
+        <ul className=" list-outside list-disc pl-5 xl:pl-6">
+          <li>
+            <span className="font-bold">
+              Game Theoretic Mixer (Real-time Verifiable AI Inference)
+            </span>
+            : Ensures trustworthy and transparent AI computations.
+          </li>
+          <li>
+            <span className="font-bold">
+              SPECTER (Zero-Knowledge Proof System)
+            </span>
+            : Delivers AI inference 100x faster than current solutions,
+            enhancing security and privacy.
+          </li>
+          <li>
+            <span className="font-bold">Distributed Inference</span>: Preserves
+            privacy and enhances security while maintaining reasonable runtime.
+          </li>
+          <li>
+            <span className="font-bold">Proof Kernel Container</span>: Offers
+            users freedom in choosing AI verifiability mechanisms.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
   {
     title: "What is the stake-to-use model?",
     content:
@@ -71,7 +102,7 @@ function Faqs() {
             value={key}
             className={cn(isOpen ? "bg-[rgba(255,255,255,0.03)]" : "")}
           >
-            <AccordionTrigger className="uppercase py-[14px]  md:py-[30px] xl:py-[38px] text-xs md:text-[14px] md:leading-5 xl:text-base">
+            <AccordionTrigger className="uppercase py-[14px] text-left  md:py-[30px] xl:py-[38px] text-xs md:text-[14px] md:leading-5 xl:text-base">
               {item.title}
               <SvgIcon
                 name={isOpen ? "minus" : "plus"}
@@ -79,7 +110,7 @@ function Faqs() {
               />
             </AccordionTrigger>
             <AccordionContent className="text-xs text-[#989898] pb-[30px] text-[10px] leading-[15px] md:text-xs xl:text-base md:w-[400px] xl:w-[550px]">
-              {item.content}
+              {typeof item.content === "string" ? item.content : item.content}
             </AccordionContent>
           </AccordionItem>
         );
