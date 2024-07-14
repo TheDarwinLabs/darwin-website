@@ -55,12 +55,12 @@ const list: { title: string; children: { title: string; icon?: string }[] }[] =
 const Footer = () => (
   <div className="relative z-10 backdrop-blur-xl">
     <div className="mx-auto py-[30px]  flex flex-col justify-between xl:w-[1200px] md:py-[60px]  gap-10">
-      <div className="flex flex-col border-t-[3px] border-[rgba(255,255,255,0.1)] pt-[120px]  px-5 lg:justify-between lg:flex-row xl:gap-[190px]">
+      <div className="flex flex-col border-t-[3px] border-[rgba(255,255,255,0.1)] pt-[120px]  md:items-end lg:justify-between lg:flex-row xl:gap-[190px]">
         <SvgIcon
-          name="logo_header"
-          className="w-[55px] h-[18px] lg:w-[110px] lg:h-[36px]"
+          name="logo_footer"
+          className="w-[67px] h-[24px] md:w-[78px] lg:h-7"
         />
-        <div className="px-5 text-[13px] text-[#727272] mt-[42px] xl:m-0">
+        <div className="text-[10px] text-[#727272]  mt-[42px]  md:m-0 md:text-[13px]">
           <div>Copyright Ⓒ 2022 – 2024 Darwin Lab, Inc.</div>
         </div>
       </div>

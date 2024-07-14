@@ -64,7 +64,7 @@ const Header = () => {
         >
           <SvgIcon
             name="logo_header"
-            className="w-[73px] h-6 xl:w-[110px] xl:h-9"
+            className="w-[78px] h-7 md:w-[118px] md:h-[42px]"
           />
           <nav className="hidden gap-[80px] uppercase text-xs md:flex">
             <a
