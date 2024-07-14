@@ -60,7 +60,7 @@ const DappSection = () => (
           <div
             key={index}
             className={cn(
-              " relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl bg-[rgba(44,44,45,0.6)] border-[#2C2C2D] md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] [&:nth-child(4)]:hidden xl:last:block transition-all duration-300 ease-in-out"
+              "relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl  md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] [&:nth-child(4)]:hidden xl:last:block"
             )}
           >
             <Image
@@ -75,13 +75,13 @@ const DappSection = () => (
               {item.name}
               {/* <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" /> */}
             </div>
-            <div
+            {/* <div
               className={cn(
                 index == 3
                   ? "hidden absolute -top-[1px] left-0 right-0 -bottom-[1px]  bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.95)] via-20%  to-black md:block"
                   : ""
               )}
-            ></div>
+            ></div> */}
           </div>
         ))}
       </div>
