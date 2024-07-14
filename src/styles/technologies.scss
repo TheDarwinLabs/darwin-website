@@ -1,0 +1,439 @@
+
+@mixin screens($breakpoint) {
+    @if $breakpoint == sm {
+        @media (max-width: 640px) { @content; }
+    } @else if $breakpoint == md {
+        @media (max-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+        @media (max-width: 960px) { @content; }
+    } @else if $breakpoint == xl {
+        @media (max-width: 1440px) { @content; }
+    } @else if $breakpoint == xxl {
+        @media (max-width: 1536px) { @content; }
+    }
+}
+
+.section3 {
+    .tech-bg,
+    .tech-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .tech-bg {
+        opacity: 0;
+        background-color: black;
+        z-index: -1;
+        transition: opacity .2s ease-in;
+
+        &.tech-visible {
+            z-index: 9000;
+            opacity: 1;
+        }
+    }
+
+    .tech-content {
+        position: initial;
+        display: flex;
+        width: 100%;
+
+        @include screens(md) {
+            flex-direction: column;
+        }
+
+        /* 点击展开 */
+        &.tech-visible {
+            position: fixed;
+            z-index: 9001;
+            top: 100px;
+            max-width: 1200px;
+            left: auto;
+            right: auto;
+
+            @include screens(xl) {
+                max-width: 900px;
+            }
+
+            @include screens(lg) {
+                flex-direction: column-reverse;
+                max-width: 700px;
+                top: 20px;
+            }
+
+            @include screens(md) {
+                flex-direction: column-reverse;
+                justify-content: space-between;
+                top: 0;
+                padding: 20px;
+                min-height: 100vh;
+            }
+
+            .tech-content__left{
+                padding: 30px;
+                height: 250px;
+
+                @include screens(xl) {
+                    display: none;
+                }
+
+                @include screens(lg) {
+                    display: none;
+                }
+
+                @include screens(md) {
+                    display: none;
+                }
+
+                .tech-content__number{
+                    &::after{
+                        width: 50px;
+                    }
+                }
+
+                .tech-content__title{
+                    font-size: 32px;
+                }
+            }
+
+            .tech-content__right {
+                padding:0 0 0 60px;
+                width: 700px;
+                height: initial;
+                overflow-y: hidden;
+
+                @include screens(lg) {
+                    padding: 20px 0 0;
+                    width: 100%;
+                    overflow-x: hidden;
+                }
+                
+                @include screens(md) {
+                    padding: 20px 0 0;
+                    width: 100%;
+                    overflow-x: hidden;
+                }
+                
+                .tech-content-item{
+                    height: calc(100vh - 200px);
+                    cursor: initial;
+                    @extend .technology-modal-content;
+
+                    @include screens(lg) {
+                        width: 100%;
+                        height: calc(100vh - 120px);
+                        margin-right: 0px !important;
+                        overflow-y: auto;
+                        scroll-behavior: smooth;
+                        scrollbar-width:none;
+                    }
+                    
+                    @include screens(md) {
+                        width: 100%;
+                        height: calc(100vh - 120px);
+                        margin-right: 0px !important;
+                        overflow-y: auto;
+                        scroll-behavior: smooth;
+                        scrollbar-width:none;
+                    }
+
+                    .tech-content-wrapper {
+                        padding: 60px;
+
+                        @include screens(md) {
+                            padding: 30px;
+                            position: relative;
+                        }
+
+                        .tech-content-icon {
+                            display: none;
+
+                            @include screens(md) {
+                                position: absolute;
+                                top: 29px;
+                                left: 30px;
+                                display: block;
+                                width: 18px;
+                                height: 18px;
+                                margin-bottom: auto;
+                            }
+                        }
+
+                        .tech-content-desc{
+                            color: rgba(255,255,255,0.4);
+                            @include screens(md) {
+                                position: initial;
+                                font-size: 12px;
+                                margin-left: 22px;
+                            }
+                        }
+
+                        .tech-content-title{
+                            font-size: 36px;
+                            font-weight: bold;
+                            color: white;
+                            line-height: 53px;
+                            margin-bottom: 110px;
+
+                            @include screens(md) {
+                                position: initial;
+                                font-size: 16px;
+                                line-height: normal;
+                            }
+                        }
+
+                        .tech-content-list {
+                            display: block;
+                            margin-bottom: 10px;
+                            
+                            @include screens(md) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                &::after{
+                    content: initial;
+                }
+            }
+
+            .tech-tools {
+                display: flex;
+                margin: 0 40px;
+
+                @include screens(lg) {
+                    margin: 0 0 30px 0;
+                }
+                
+                @include screens(md) {
+                    margin: 0;
+                }
+
+                >svg{
+                   @apply gap-6;
+                }
+            }
+        }
+
+        .tech-content__left {
+            flex: 1;
+            padding: 60px 40px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all .2s ease-out;
+
+            @apply border-y-[1px] bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.15)] backdrop-blur-lg  shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)];
+
+            @include screens(xl) {
+                padding: 30px;
+                height: 400px;
+            }
+
+            @include screens(lg) {
+                padding: 30px 0px;
+                height: 400px;
+            }
+
+            @include screens(md) {
+                padding: 0;
+                margin: 0 20px 30px;
+                border-top: none;
+                transition: initial;
+            }
+
+            .tech-content__number {
+                display: flex;
+                gap: 30px;
+                justify-content: space-evenly;
+
+                &::before{
+                    content: '';
+                    flex: 1;
+                    height: 4px;
+                    display: block;
+                    opacity: 0.1;
+                    background-color: white;
+
+                    @include screens(xl) {
+                        height: 2px;
+                    }
+
+                    @include screens(md) {
+                        opacity: 1;
+                    }
+                }
+                &::after{
+                    content: '01';
+                    display: block;
+                    width: 100px;
+                    border-radius: 2px;
+                    background-color: white;
+                    padding: 0 10px;
+                    color: black;
+                    font-weight: 700;
+                    text-align: right;
+
+                    @include screens(xl) {
+                        width: 50px;
+                    }
+
+                    @include screens(md) {
+                        width: 58px;
+                    }
+                }
+            }
+
+            .tech-content__title {
+                font-size: 54px;
+                text-transform: uppercase;
+                font-weight: bold;
+
+                @include screens(xl) {
+                    font-size: 42px;
+                }
+
+                @include screens(lg) {
+                    font-size: 36px;
+                }
+
+                @include screens(md) {
+                    padding: 20px 0;
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .tech-content__right {
+            padding: 0 100px 0 60px;
+            width: 440px;
+            height: 900px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            scrollbar-width:none;
+            box-sizing: content-box;
+            flex-direction: column;
+            transition: all .2s ease-out;
+
+            @include screens(xl) {
+                width: 450px;
+                padding: 0 0 0 50px;
+            }
+
+            @include screens(lg) {
+                width: 380px;
+                padding: 0 0 0 20px;
+            }
+
+            @include screens(md) {
+                width: auto;
+                height: 320px;
+                padding: 0 20px;
+                flex-direction: row;
+                display: flex;
+                overflow-y: hidden;
+                transition: initial;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: sticky;
+                width: 100%;
+                height: 100px;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(to bottom, rgba(2,0,36,0) 1%, rgba(0,0,0,1) 100%);
+
+                @include screens(md) {
+                    content: initial;
+                }
+            }
+            
+            .tech-content-item {
+                @extend .technology-item;
+                cursor: pointer;
+                margin-bottom: 60px;
+
+                @include screens(xl) {
+                    margin-bottom: 30px;
+                }
+
+                @include screens(md) {
+                    width: 260px;
+                    height: 300px;
+                    flex-shrink: 0;
+                    position: relative;
+
+                    &:not(:last-child) {
+                        margin-right: 30px;
+                    }
+                }
+
+                .tech-mobile-title {
+                    display: none;
+
+                    @include screens(sm) {
+                        display: block;
+                    }
+                }
+
+                .tech-content-wrapper {
+                    padding: 20px;
+
+                    .tech-content-icon {
+                        width: 48px;
+                        height: 48px;
+                        margin-bottom: 64px;
+                        display: block;
+
+                        @include screens(md) {
+                            margin-bottom: 146px;
+                        }
+                    }
+
+                    .tech-content-desc {
+                        color: #F2F2F2;
+                        font-weight: 400;
+                        text-transform: uppercase;
+
+                        @include screens(md) {
+                            position: absolute;
+                            bottom: 60px;
+                            left: 20px;
+                            right: 20px;
+                        }
+                    }
+
+                    .tech-content-title {
+                        @apply text-xs mt-2;
+                        color: #727272;
+                        font-weight: 400;
+                        text-transform: uppercase;
+
+                        @include screens(md) {
+                            position: absolute;
+                            bottom: 20px;
+                            bottom: 20px;
+                            right: 20px;
+                            left: 20px;
+                        }
+                    }
+
+                    .tech-content-list {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .tech-tools {
+            display: none;
+        }
+    }
+}
+  
