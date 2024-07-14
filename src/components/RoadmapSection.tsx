@@ -9,27 +9,51 @@ const step = 600;
 
 const RoadmapSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const imgContainerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
   const [xOffset, setXOffset] = useState(0);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const [maxScroll, setMaxScroll] = useState(0);
+
+  const calculateScrollableDistance = () => {
+    const container = imgContainerRef.current;
+    const image = imgRef.current;
+
+    if (container && image) {
+      const containerWidth = container.clientWidth;
+      const imageWidth = image.clientWidth;
+      const maxScrollableDistance = Math.max(0, imageWidth - containerWidth);
+      setMaxScroll(maxScrollableDistance);
+    }
+  };
+
+  useEffect(() => {
+    calculateScrollableDistance();
+
+    window.addEventListener("resize", calculateScrollableDistance);
+
+    return () => {
+      window.removeEventListener("resize", calculateScrollableDistance);
+    };
+  }, []);
 
   useEffect(() => {
     setIsAtStart(xOffset <= 0);
-    setIsAtEnd(xOffset >= 600);
-  }, [xOffset]);
+    setIsAtEnd(xOffset >= maxScroll);
+  }, [xOffset, maxScroll]);
 
   useEffect(() => {
     const scrollLeft = () => {
-      if (xOffset < 600) {
+      if (xOffset < maxScroll) {
         // TODO 这里要计算最大可以滚动的距离
-        setXOffset(xOffset + step);
+        setXOffset(Math.min(maxScroll, xOffset + step));
       }
     };
 
     const scrollRight = () => {
       if (xOffset >= 0) {
-        setXOffset(xOffset - step);
+        setXOffset(Math.max(0, xOffset - step));
       }
     };
 
@@ -90,7 +114,7 @@ const RoadmapSection = () => {
         currentDiv.removeEventListener("mousedown", handleMouseDown);
       }
     };
-  }, [isAtStart, isAtEnd, xOffset]);
+  }, [isAtStart, isAtEnd, xOffset, maxScroll]);
 
   return (
     <div ref={containerRef} className="section5 px-5 md:px-0 overflow-hidden">
@@ -98,7 +122,10 @@ const RoadmapSection = () => {
         <div className="z-10 bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] pt-[66px] pb-5 text-[30px] leading-[44px] font-bold  uppercase md:text-[36px] md:leading-[60px] md:pt-[86px] md:pb-[30px] lg:w-[500px] lg:pl-[30px] xl:w-[800px] xl:border-y-[1px] xl:text-[54px] xl:leading-[84px]">
           Roadmap
         </div>
-        <div className="relative tran roadmap-box hidden backdrop-blur-lg h-[700px]  -mt-[103px] md:flex">
+        <div
+          ref={imgContainerRef}
+          className="relative tran roadmap-box hidden backdrop-blur-lg h-[700px]  -mt-[103px] md:flex"
+        >
           <div
             ref={imgRef}
             className=" relative transition-all duration-300 ease-in-out"
@@ -186,34 +213,32 @@ const RoadmapItem = ({
   active,
   lineWidth = 250,
 }: RoadmapItemProps) => (
-  <div className={cn("absolute", className)}>
-    <div className="bg-[rgba(0,0,0,1)] pl-1 -ml-1 flex items-center mb-5">
+  <div className={cn("absolute group transition-all", className)}>
+    <div className="bg-[rgba(0,0,0,1)] pl-1 -ml-1 flex items-center mb-5 ">
       <div
         className={cn(
-          "flex  items-center justify-center w-[21px] h-[21px] border-[2px]  rounded-full",
-          active ? "border-brand" : "border-[rgba(255,255,255,0.15)]"
+          "flex  items-center justify-center w-[21px] h-[21px] border-[2px]  rounded-full border-[rgba(255,255,255,0.15)] group-hover:border-brand transition-all"
         )}
       >
         <span
           className={cn(
-            "inline-block w-2 h-2 rounded-full",
-            active ? "bg-brand" : "bg-[#727272]"
+            "inline-block w-2 h-2 rounded-full bg-[#727272] group-hover:bg-brand transition-all"
           )}
         ></span>
       </div>
       <div
         className={cn(
-          "h-[1px] ",
-          active ? "bg-brand" : "bg-[rgba(255,255,255,0.15)]"
+          "h-[1px] bg-[rgba(255,255,255,0.15)] hover:bg-brand transition-all"
         )}
         style={{ width: `${lineWidth}px` }}
       ></div>
     </div>
-    <div className={cn("pl-4", active ? "text-brand" : "text-white")}>
+    <div
+      className={cn("pl-4 text-white group-hover:text-brand transition-all")}
+    >
       <div
         className={cn(
-          "bg-brand w-[159px] h-9 text-[#000000] text-[24px] font-bold pl-[10px] mb-[30px]",
-          active ? "bg-brand" : "bg-white"
+          "w-[159px] h-9 text-[#000000] text-[24px] font-bold pl-[10px] mb-[30px] bg-white group-hover:bg-brand transition-all"
         )}
       >
         {date}

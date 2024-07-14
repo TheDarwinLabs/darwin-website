@@ -61,7 +61,6 @@ const Footer = () => (
           className="w-[55px] h-[18px] lg:w-[110px] lg:h-[36px]"
         />
         <div className="px-5 text-[13px] text-[#727272] mt-[42px] xl:m-0">
-          <div>Made in NY and the World</div>
           <div>Copyright Ⓒ 2022 – 2024 Darwin Lab, Inc.</div>
         </div>
       </div>
