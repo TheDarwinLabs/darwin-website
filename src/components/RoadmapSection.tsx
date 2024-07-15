@@ -142,9 +142,9 @@ const RoadmapSection = () => {
             <RoadmapItem
               date="24 Q3"
               text={["AI Stack PoC"]}
-              className="bottom-[156px] left-[1px]"
+              className="bottom-[180px] left-[1px]"
               active={true}
-              lineWidth={248}
+              lineWidth={249}
             />
             <RoadmapItem
               date="24 Q4"
@@ -213,8 +213,8 @@ const RoadmapItem = ({
   active,
   lineWidth = 250,
 }: RoadmapItemProps) => (
-  <div className={cn("absolute group transition-all", className)}>
-    <div className="bg-[rgba(0,0,0,1)] pl-1 -ml-1 flex items-center mb-5 ">
+  <div className={cn("absolute group ", className)}>
+    <div className="bg-[rgba(0,0,0,1)]  pl-1 -ml-1 flex items-center mb-5 group-hover:opacity-100">
       <div
         className={cn(
           "flex  items-center justify-center w-[21px] h-[21px] border-[2px]  rounded-full border-[rgba(255,255,255,0.15)] group-hover:border-brand transition-all"
@@ -228,7 +228,7 @@ const RoadmapItem = ({
       </div>
       <div
         className={cn(
-          "h-[1px] bg-[rgba(255,255,255,0.15)] hover:bg-brand transition-all"
+          "h-[1px] bg-[rgba(255,255,255,0.15)] hover:bg-brand transition-all group-hover:bg-brand group-hover:w-[var(--width)]"
         )}
         style={{ width: `${lineWidth}px` }}
       ></div>
