@@ -55,22 +55,23 @@ const DappSection = () => (
           </a>
         </div>
       </div>
-      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] lg:gap-0">
+      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] md:gap-[22px]">
         {Dapps.map((item, index) => (
           <div
             key={index}
             className={cn(
-              "relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl  md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] [&:nth-child(4)]:hidden xl:last:block"
+              "relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl  md:h-[140px]  md:justify-between md:flex-1 lg:h-[160px] xl:h-[200px] [&:nth-child(4)]:hidden xl:last:block"
             )}
           >
-            <Image
+            {/* <Image
               src={`/${item.logo}`}
               width={0}
               height={0}
               alt=""
               sizes="100vw"
-              className="w-6 h-6 object-cover xl:w-[60px] xl:h-[60px]"
-            />
+              className="w-6 h-6 object-cover md:w-[60px] md:h-[60px]"
+            /> */}
+            <div className="logo w-6 h-6 object-cover md:w-[36px] md:h-[36px] lg:w-[48px] lg:h-[48px] xl:w-[60px] xl:h-[60px]"></div>
             <div className="flex items-center text-base uppercase mt-5 justify-between xl:mt-[44px] xl:justify-start xl:text-2xl">
               {item.name}
               {/* <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" /> */}

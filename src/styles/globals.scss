@@ -260,7 +260,7 @@ body {
     background: linear-gradient(278.62deg, rgba(94, 71, 255, 0) 62.5%, rgba(94, 71, 255, 0.05) 100%), linear-gradient(102.68deg, rgba(48, 30, 157, 0) 32.79%, rgba(63, 46, 161, 0.1) 100%), linear-gradient(180deg, rgba(99, 73, 255, 0) 0%, rgba(77, 49, 245, 0.05) 30.49%, rgba(77, 49, 245, 0.08) 100%), linear-gradient(101.67deg, rgba(99, 73, 255, 0.18) 0%, rgba(99, 73, 255, 0.13) 100%), rgba(16, 15, 16, 0.85);
     box-shadow: 0px 84px 134px rgba(99, 73, 255, 0.16), 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
     border: 1px solid;
-    border-image: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
+    border-image: linear-gradient(118.18deg, rgba(144, 131, 255, 0.5) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
     // border-image-source: linear-gradient(118.18deg, rgba(144, 131, 255, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%),
     // linear-gradient(274.45deg, rgba(106, 85, 227, 0.3) 0%, rgba(99, 73, 255, 0) 40.07%);
   }
@@ -278,12 +278,51 @@ body {
 }
 .dapp-item{
   // border-[#2C2C2D]
-  @apply bg-[rgba(44,44,45,0.6)] border-[1px] border-[rgba(137,31,221,0)]  transition-all duration-300 ease-out;
-  
-  &:hover{
-    background: linear-gradient(263.13deg, rgba(137, 31, 221, 0) -17.1%, rgba(99, 73, 255, 0.12) 4.86%, rgba(137, 31, 221, 0.4) 98.17%);
-    border-image: linear-gradient(140deg, rgba(237, 26, 216, 0.9) 14.3%, rgba(99, 73, 255, 0.1) 63.7%, rgba(99, 73, 255, 0.04) 74.16%, rgba(144, 131, 255, 0.4) 100%) 1;
-    border-right: 1px solid rgba(137, 31, 221, 0);
+  @apply bg-[rgba(44,44,45,0.6)] border-[1px] transition-all duration-300 ease-out;
+  border-image: radial-gradient(94.7% 103.08% at 8.29% -11.07%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%) 1;
+  .logo{
+    background-size: cover;
+  }
+  &:first-child{
+    .logo{
+      @apply bg-[url('/alicecam.svg')]
+    }
+    &:hover{
+      @apply text-[#D540FA];
+      background: linear-gradient(263.13deg, rgba(137, 31, 221, 0) -17.1%, rgba(99, 73, 255, 0.12) 4.86%, rgba(137, 31, 221, 0.4) 98.17%);
+      border-image: linear-gradient(285.44deg, rgba(189, 22, 112, 0.2) 0%, rgba(88, 11, 125, 0.2) 23.82%, rgba(99, 43, 189, 0) 61.79%, #C85CFA 96.51%) 1;
+      .logo{
+        @apply bg-[url('/alicecam-active.svg')]
+      }
+    }
+  }
+  &:nth-child(2){
+    .logo{
+      @apply bg-[url('/seekandfind.svg')]
+    }
+    &:hover{
+      @apply text-[#EF9B39];
+      background: linear-gradient(264.36deg, rgba(217, 31, 221, 0) -20.02%, rgba(106, 11, 86, 0.12) 5.64%, rgba(183, 55, 0, 0.28) 98.7%);
+      border-image: linear-gradient(285.44deg, rgba(177, 77, 255, 0.2) 0%, rgba(125, 11, 11, 0.2) 23.82%, rgba(189, 59, 43, 0) 61.79%, rgba(255, 109, 77, 0.5) 96.51%) 1;
+      border-right: 1px solid rgba(137, 31, 221, 0);
+      .logo{
+        @apply bg-[url('/seekandfind-active.svg')]
+      }
+    }
+  }
+  &:nth-child(3){
+    .logo{
+      @apply bg-[url('/futurewhispers.svg')]
+    }
+    &:hover{
+      @apply text-[#42F1FF];
+      background: linear-gradient(264.74deg, rgba(99, 73, 255, 0) 2.63%, rgba(99, 73, 255, 0.12) 23%, rgba(29, 166, 225, 0.4) 98.87%);
+      border-image: linear-gradient(281.15deg, rgba(29, 154, 225, 0.2) 0%, rgba(31, 52, 131, 0.2) 17.41%, rgba(30, 147, 187, 0) 59.14%, rgba(29, 211, 225, 0.7) 98.57%) 1;
+      border-right: 1px solid rgba(137, 31, 221, 0);
+      .logo{
+        @apply bg-[url('/futurewhispers-active.svg')]
+      }
+    }
   }
 }
 
