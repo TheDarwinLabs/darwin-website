@@ -141,7 +141,7 @@ const RoadmapSection = () => {
             />
             <RoadmapItem
               date="24 Q3"
-              text={["AI Stack PoC", "Seed round fundraising"]}
+              text={["AI Stack PoC"]}
               className="bottom-[156px] left-[1px]"
               active={true}
               lineWidth={248}
