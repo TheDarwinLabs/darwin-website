@@ -89,12 +89,6 @@
                     display: none;
                 }
 
-                .tech-content__number{
-                    &::after{
-                        width: 50px;
-                    }
-                }
-
                 .tech-content__title{
                     font-size: 32px;
                 }
@@ -104,7 +98,7 @@
                 padding:0 0 0 60px;
                 width: 700px;
                 height: initial;
-                overflow-y: hidden;
+                overflow-y: scroll;
 
                 @include screens(lg) {
                     padding: 20px 0 0;
@@ -115,6 +109,7 @@
                 @include screens(md) {
                     padding: 20px 0 0;
                     width: 100%;
+                    overflow-y: hidden;
                     overflow-x: hidden;
                 }
                 
@@ -270,23 +265,15 @@
                     }
                 }
                 &::after{
-                    content: '01';
+                    content: '';
                     display: block;
-                    width: 100px;
+                    width: 24px;
+                    height: 24px;
                     border-radius: 2px;
                     background-color: white;
-                    padding: 0 10px;
                     color: black;
                     font-weight: 700;
                     text-align: right;
-
-                    @include screens(xl) {
-                        width: 50px;
-                    }
-
-                    @include screens(md) {
-                        width: 58px;
-                    }
                 }
             }
 
