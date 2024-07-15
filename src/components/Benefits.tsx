@@ -96,7 +96,7 @@ const Benefits = () => {
                 <div className="mb-2 transition-all ">{item.tags}</div>
                 <div className="mb-5 transition-all md:mb-0">{item.desc}</div>
                 <Image
-                  src={`/card-${curIndex}.svg`}
+                  src={`/card-${index}.svg`}
                   alt=""
                   className="!relative !h-auto backdrop-blur-lg md:hidden"
                   fill
