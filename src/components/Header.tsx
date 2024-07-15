@@ -110,29 +110,29 @@ const Header = () => {
         <div className="relative bg-[rgba(0,0,0,0.8)] backdrop-blur-lg z-[9999] px-[10px] text-center">
           <span
             onClick={onScrollToTop}
-            className="block #f2f2f2 uppercase py-10"
+            className="block #f2f2f2 uppercase py-10 border-b-[0.5px] border-[#333333] hover:text-[#9083FF]"
           >
             Home
           </span>
           <span
             onClick={() => scrollToAnchor("core-tect")}
-            className="block #f2f2f2 uppercase py-10 "
+            className="block #f2f2f2 uppercase py-10 border-b-[0.5px] border-[#333333] hover:text-[#9083FF]"
           >
             how it Works
           </span>
           <span
             onClick={() => scrollToAnchor("faqs")}
-            className="block #f2f2f2 uppercase py-10"
+            className="block #f2f2f2 uppercase py-10 hover:text-[#9083FF]"
           >
             faqs
           </span>
-          <a
+          {/* <a
             href="#"
             onClick={() => setOpen(false)}
             className="block #f2f2f2 uppercase py-10 text-[#9083FF]"
           >
             get started
-          </a>
+          </a> */}
         </div>
       </motion.div>
     </>
