@@ -5,7 +5,7 @@
     } @else if $breakpoint == md {
         @media (max-width: 768px) { @content; }
     } @else if $breakpoint == lg {
-        @media (max-width: 960px) { @content; }
+        @media (max-width: 1080px) { @content; }
     } @else if $breakpoint == xl {
         @media (max-width: 1440px) { @content; }
     } @else if $breakpoint == xxl {
@@ -91,6 +91,11 @@
 
                 .tech-content__title{
                     font-size: 32px;
+                }
+
+                .tech-content__number::after{
+                    text-align: center;
+                    content: "0" attr(data-val);
                 }
             }
 

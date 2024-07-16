@@ -159,7 +159,7 @@ const Technologies = () => {
         <div className={`tech-bg ${ visible && 'tech-visible'}`}></div>
         <div className={`tech-content ${ visible && 'tech-visible'}`}>
           <div className="tech-content__left">
-            <div className="tech-content__number"></div>
+            <div className="tech-content__number" data-val={curIndex + 1}></div>
             <div className="tech-content__title">Core <br /> Technologies</div>
           </div>
           <div className="tech-content__right" ref={containerRef}>
