@@ -336,6 +336,17 @@ body {
   // padding-right: 15px;
 }
 
+
+.body-top-locked{
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  inset: 0;
+  overflow-y: hidden;
+  position: fixed;
+  z-index: 3999999;
+  // padding-right: 15px;
+}
+
 .scrollbar-none {
   scrollbar-width: none;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "@/styles/globals.scss";
 
 const spaceMono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"] });
@@ -20,7 +21,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/logo.svg" sizes="any" />
       </head>
-      <body className={spaceMono.className}>{children}</body>
+      <body className={cn("body-top-locked", spaceMono.className)}>
+        {children}
+      </body>
     </html>
   );
 }

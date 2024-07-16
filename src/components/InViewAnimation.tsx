@@ -16,7 +16,11 @@ const defaultAnimationVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, type: "cubic-bezier(0.17, 0.55, 0.55, 1)" },
+    transition: {
+      duration: 0.5,
+      type: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+      // delay: 0.5,
+    },
   },
 };
 

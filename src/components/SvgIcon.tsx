@@ -19,7 +19,7 @@ const icons: ComponentCache = req.keys().reduce((acc: ComponentCache, curr) => {
 //   onClick?: () => {};
 // }
 
-interface SvgIconProps {
+export interface SvgIconProps {
   name: string;
   className?: string;
   onClick?: () => void;

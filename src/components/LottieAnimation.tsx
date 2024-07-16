@@ -5,12 +5,14 @@ interface LottieAnimationProps {
   animationData: any;
   loop?: boolean;
   autoplay?: boolean;
+  className?: string;
 }
 
 const LottieAnimation: React.FC<LottieAnimationProps> = ({
   animationData,
   loop = true,
   autoplay = true,
+  className,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +32,7 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({
     }
   }, [animationData, loop, autoplay]);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} className={className} />;
 };
 
 export default LottieAnimation;

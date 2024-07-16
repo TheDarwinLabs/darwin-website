@@ -10,6 +10,7 @@ import Technologies from "@/components/Technologies";
 import Benefits from "@/components/Benefits";
 import TopSection from "@/components/TopSection";
 import RevolutionSection from "@/components/RevolutionSection";
+import Welcome from "@/components/Welcome";
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <Header />
       <main role="main" className="main-container">
         <div className="shadow-box"></div>
+        <Welcome />
         <TopSection />
         <Benefits />
         <Technologies />
