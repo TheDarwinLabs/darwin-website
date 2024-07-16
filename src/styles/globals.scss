@@ -115,9 +115,16 @@
   }
 
   .technology-modal-content{
-    background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5);
-    box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(21px);
+    // background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5);
+    // box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+    // backdrop-filter: blur(21px);
+    &:hover{
+      background: linear-gradient(156.17deg, rgba(99, 73, 255, 0) 15.32%, rgba(99, 73, 255, 0.03) 96.46%), radial-gradient(83.25% 105.63% at 18.6% 16.75%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.3);
+  box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid;
+  border-image: linear-gradient(118.18deg, rgba(155, 155, 155, 0.8) 0%, rgba(99, 73, 255, 0) 85.35%) 1;
+    }
   }
 }
 
@@ -270,12 +277,12 @@ body {
   box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(21px);
 }
-.technology-modal-content{
-  background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5) !important;
-  box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75) !important;
-  backdrop-filter: blur(21px) !important;
+// .technology-modal-content{
+//   background: radial-gradient(37.16% 139.89% at 62.84% 58.75%, rgba(63, 46, 161, 0) 0%, rgba(63, 46, 161, 0.2) 100%)  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(27, 26, 27, 0.5) !important;
+//   box-shadow: 0px 35.0932px 55.982px rgba(99, 73, 255, 0.115017), 0px 18.7625px 29.9307px rgba(99, 73, 255, 0.0953772), 0px 10.5181px 16.7789px rgba(99, 73, 255, 0.08), 0px 5.58609px 8.91114px rgba(99, 73, 255, 0.0646228), 0px 2.3245px 3.70812px rgba(99, 73, 255, 0.0449833), 0px 0px 20px 14px rgba(0, 0, 0, 0.75) !important;
+//   backdrop-filter: blur(21px) !important;
   
-}
+// }
 .dapp-item{
   // border-[#2C2C2D]
   @apply bg-[rgba(44,44,45,0.6)] border-[1px] transition-all duration-300 ease-out;
