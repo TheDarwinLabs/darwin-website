@@ -35,7 +35,7 @@ const Welcome = () => {
       if (logoRef.current) {
         animate(
           logoRef.current,
-          { opacity: [1, 0], y: [0, -50] },
+          { opacity: [1, 0], y: [0, -200] },
           { duration: 0.5 }
         );
       }
@@ -60,10 +60,11 @@ const Welcome = () => {
           setTimeout(() => {
             document.body.classList.remove("body-top-locked");
           }, 200);
+          await animate(scope.current, { duration: 1, delay: 0.4 });
           await animate(
             scope.current,
-            { height: [1, 0] },
-            { duration: 1, delay: 0.4 }
+            { height: [1, 0], width: [1, 0] },
+            { duration: 1 }
           );
           // document.body.style.overflow = "auto";
         };
