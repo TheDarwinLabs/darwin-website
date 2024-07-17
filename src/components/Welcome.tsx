@@ -10,7 +10,6 @@ import arrow from "@/assets/lottie/arrow.json";
 import logo from "@/assets/lottie/logo.json";
 
 const Welcome = () => {
-  const [isTop, setIsTop] = useState(false);
   const [isOpen, setOpen] = useState(true);
   const [scope, animate] = useAnimate();
   const mouseRef = useRef<HTMLDivElement>(null);
@@ -119,7 +118,10 @@ const Welcome = () => {
 
   //
   return (
-    <div ref={scope} className="relative w-screen h-screen bg-black z-[9999]">
+    <div
+      ref={scope}
+      className="relative w-[100%] h-screen bg-black z-[9999] overflow-hidden"
+    >
       <video
         ref={vidRef}
         autoPlay
@@ -154,7 +156,7 @@ const Welcome = () => {
           Slide up to evolve
         </div>
       </div>
-      <div className="absolute w-[92vw] sm:w-[700px] md:w-[900px] xl:w-[1200px] left-1/2 -translate-x-1/2 -translate-y-1/2  top-1/2  md:top-1/3 ">
+      <div className="absolute w-[92vw] sm:w-[700px] md:w-[900px] xl:w-[1200px] left-1/2 -translate-x-1/2 -translate-y-1/2  top-1/2  md:top-[45%] ">
         <div ref={logoRef}>
           <LottieAnimation
             animationData={logo}
