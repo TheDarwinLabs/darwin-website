@@ -4,6 +4,7 @@ import SvgIcon from "@/components/SvgIcon";
 import Image from "next/image";
 import InViewAnimation from "@/components/InViewAnimation";
 import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
 
 const Dapps = [
   {
@@ -24,74 +25,196 @@ const Dapps = [
   // },
 ];
 
-const DappSection = () => (
-  <div className="section4 px-5 overflow-hidden md:px-0">
-    <InViewAnimation className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px] lg:w-[900px]  lg:h-[800px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
-      <div className="flex gap-[50px]">
-        <div className="flex-1 flex flex-col bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] lg:pl-[30px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[40px] xl:border-y-[1px] md:h-[300px] md:justify-end">
-          <div>D-apps</div>
-          <div>in our eco-system</div>
-        </div>
-        <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex lg:w-[350px] xl:w-[350px]">
-          <div className="text-right uppercase">
-            <div className="mb-5 text-[#F2F2F2]">Joining the Community</div>
-            <div className="text-[#727272]">
-              Becoming part of Darwin&apos;s Lab ecosystem
-            </div>
+const step = 600;
+
+const DappSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dappContainerRef = useRef<HTMLDivElement>(null);
+
+  const dappRef = useRef<HTMLDivElement>(null);
+  const [xOffset, setXOffset] = useState(0);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+  const [maxScroll, setMaxScroll] = useState(0);
+
+  const calculateScrollableDistance = () => {
+    const container = dappContainerRef.current;
+    const dapp = dappRef.current;
+
+    if (container && dapp) {
+      const containerWidth = container.clientWidth;
+      const dappWidth = dapp.clientWidth;
+      const maxScrollableDistance = Math.max(0, dappWidth - containerWidth);
+      setMaxScroll(maxScrollableDistance);
+    }
+  };
+
+  useEffect(() => {
+    calculateScrollableDistance();
+
+    window.addEventListener("resize", calculateScrollableDistance);
+
+    return () => {
+      window.removeEventListener("resize", calculateScrollableDistance);
+    };
+  }, []);
+
+  useEffect(() => {
+    setIsAtStart(xOffset <= 0);
+    setIsAtEnd(xOffset >= maxScroll);
+  }, [xOffset, maxScroll]);
+
+  useEffect(() => {
+    const scrollLeft = () => {
+      if (xOffset < maxScroll) {
+        // TODO 这里要计算最大可以滚动的距离
+        setXOffset(Math.min(maxScroll, xOffset + step));
+      }
+    };
+
+    const scrollRight = () => {
+      if (xOffset >= 0) {
+        setXOffset(Math.max(0, xOffset - step));
+      }
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+
+        if (mouseY >= 400 && containerRef.current.clientWidth < 1440) {
+          if (mouseX < rect.width / 2) {
+            if (isAtStart) {
+              containerRef.current.style.cursor =
+                "url('/cursor/arrow-left-on.svg'), auto";
+            } else {
+              containerRef.current.style.cursor =
+                "url('/cursor/arrow-left-off.svg'), auto";
+            }
+          } else {
+            if (isAtEnd) {
+              containerRef.current.style.cursor =
+                "url('/cursor/arrow-right-on.svg'), auto";
+            } else {
+              containerRef.current.style.cursor =
+                "url('/cursor/arrow-right-off.svg'), auto";
+            }
+          }
+        } else {
+          containerRef.current.style.cursor = "default"; // 其他区域恢复默认图标
+        }
+      }
+    };
+
+    const handleMouseDown = (event: MouseEvent) => {
+      if (containerRef.current && containerRef.current.clientWidth < 1440) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+        if (mouseY >= 0) {
+          if (mouseX < rect.width / 2) {
+            scrollLeft();
+          } else {
+            scrollRight();
+          }
+        }
+      }
+    };
+
+    const currentDiv = containerRef.current;
+    if (currentDiv) {
+      currentDiv.addEventListener("mousemove", handleMouseMove);
+      currentDiv.addEventListener("mousedown", handleMouseDown);
+    }
+
+    return () => {
+      if (currentDiv) {
+        currentDiv.removeEventListener("mousemove", handleMouseMove);
+        currentDiv.removeEventListener("mousedown", handleMouseDown);
+      }
+    };
+  }, [isAtStart, isAtEnd, xOffset, maxScroll]);
+
+  return (
+    <div ref={containerRef} className="section4 px-5 overflow-hidden md:px-0">
+      <InViewAnimation className="relative z-10 flex flex-col mx-auto md:h-[728px]  md:w-[700px] lg:w-[900px]  lg:h-[800px] md:pt-[100px] xl:w-[1200px] xl:h-[900px]">
+        <div className="flex gap-[50px]">
+          <div className="flex-1 flex flex-col bg-[rgba(255,255,255,0.03)] border-b-[1px] border-[rgba(255,255,255,0.15)] backdrop-blur-lg shadow-[0px_0px_30px_14px_rgba(0,0,0,0.9)] py-5 text-[30px] leading-[44px] font-bold  uppercase md:pt-[150px] lg:pl-[30px] xl:pl-10 xl:text-[54px] xl:leading-[84px] xl:pt-[60px] xl:pb-[40px] xl:border-y-[1px] md:h-[300px] md:justify-end">
+            <div>D-apps</div>
+            <div>in our eco-system</div>
           </div>
-          <a
-            href="/"
-            className="try-now-btn group mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand  hover:font-bold transition-all duration-300 "
-          >
-            try now
-            <SvgIcon
-              name="arrow"
-              className=" absolute right-3 w-[18px] h-[18px] transition-all duration-300 group-hover:opacity-0"
-            />
-            <SvgIcon
-              name="arrow-hover"
-              className="absolute w-[102px] h-[18px] right-3 transition-all duration-300 -translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
-            />
-          </a>
+          <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex lg:w-[350px] xl:w-[350px]">
+            <div className="text-right uppercase">
+              <div className="mb-5 text-[#F2F2F2]">Joining the Community</div>
+              <div className="text-[#727272]">
+                Becoming part of Darwin&apos;s Lab ecosystem
+              </div>
+            </div>
+            <a
+              href="/"
+              className="try-now-btn group mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand  hover:font-bold transition-all duration-300 "
+            >
+              try now
+              <SvgIcon
+                name="arrow"
+                className=" absolute right-3 w-[18px] h-[18px] transition-all duration-300 group-hover:opacity-0"
+              />
+              <SvgIcon
+                name="arrow-hover"
+                className="absolute w-[102px] h-[18px] right-3 transition-all duration-300 -translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+              />
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="mt-6 mb-7 flex flex-col gap-5 md:flex-row md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] md:gap-[22px]">
-        {Dapps.map((item, index) => (
+        <div
+          ref={dappContainerRef}
+          className="mt-6 mb-7   md:mt-[30px] md:mb-[30px]  xl:mt-[97px] xl:mb-[57px] md:gap-[22px]"
+        >
           <div
-            key={index}
-            className={cn(
-              "relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl  md:h-[140px]  md:justify-between md:flex-1 lg:h-[160px] xl:h-[200px] [&:nth-child(4)]:hidden xl:last:block"
-            )}
+            ref={dappRef}
+            className="flex flex-col gap-5 md:flex-row transition-all duration-300 ease-in-out md:min-w-[970px] lg:min-w-[1240px] xl:min-w-[970px]"
+            style={{ transform: `translateX(-${xOffset}px)` }}
           >
-            {/* <Image
-              src={`/${item.logo}`}
-              width={0}
-              height={0}
-              alt=""
-              sizes="100vw"
-              className="w-6 h-6 object-cover md:w-[60px] md:h-[60px]"
-            /> */}
-            <div className="logo w-6 h-6 object-cover md:w-[36px] md:h-[36px] lg:w-[48px] lg:h-[48px] xl:w-[60px] xl:h-[60px]"></div>
-            <div className="flex items-center text-base uppercase mt-5 justify-between xl:mt-[44px] xl:justify-start xl:text-2xl">
-              {item.name}
-              {/* <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" /> */}
-            </div>
-            {/* <div
-              className={cn(
-                index == 3
-                  ? "hidden absolute -top-[1px] left-0 right-0 -bottom-[1px]  bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.95)] via-20%  to-black md:block"
-                  : ""
-              )}
-            ></div> */}
+            {Dapps.map((item, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "relative flex flex-col p-[30px] h-[128px] dapp-item backdrop-blur-xl  md:h-[160px] md:min-w-[310px] md:justify-between lg:min-w-[400px] lg:h-[200px] [&:nth-child(4)]:hidden xl:last:block"
+                )}
+              >
+                {/* <Image
+                src={`/${item.logo}`}
+                width={0}
+                height={0}
+                alt=""
+                sizes="100vw"
+                className="w-6 h-6 object-cover md:w-[60px] md:h-[60px]"
+              /> */}
+                <div className="logo w-6 h-6 object-cover md:w-[36px] md:h-[36px] lg:w-[48px] lg:h-[48px] xl:w-[60px] xl:h-[60px]"></div>
+                <div className="flex items-center text-base uppercase mt-5 justify-between xl:mt-[44px] xl:justify-start xl:text-2xl">
+                  {item.name}
+                  {/* <SvgIcon name="arrow_link" className="ml-5 w-9 h-9" /> */}
+                </div>
+                <div
+                  className={cn(
+                    index == 3
+                      ? "hidden absolute -top-[1px] left-0 right-0 -bottom-[1px]  bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.95)] via-20%  to-black md:block"
+                      : ""
+                  )}
+                ></div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className=" text-[#727272] md:w-[680px] md:text-sm">
-        Supporting dapps through real-time verifiable AI inference using cutting
-        edge LFG-GM
-      </div>
-    </InViewAnimation>
-  </div>
-);
+        </div>
+        <div className=" text-[#727272] md:w-[680px] md:text-sm">
+          Supporting dapps through real-time verifiable AI inference using
+          cutting edge LFG-GM
+        </div>
+      </InViewAnimation>
+    </div>
+  );
+};
 
 export default DappSection;
