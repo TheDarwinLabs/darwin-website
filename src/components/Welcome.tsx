@@ -15,7 +15,7 @@ const Welcome = () => {
   const mouseRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const vidRef = useRef<HTMLVideoElement>(null);
+  const vidRef = useRef<HTMLDivElement>(null);
 
   useBodyScrollLock(isOpen);
 
@@ -44,6 +44,7 @@ const Welcome = () => {
           {
             opacity: [1, 0],
             y: [0, -100],
+            x: ["-50%", "-50%"],
             filter: ["blur(0px)", "blur(90px)"],
           },
           { duration: 0.5 }
@@ -122,17 +123,31 @@ const Welcome = () => {
       ref={scope}
       className="relative w-[100%] h-screen bg-black z-[9999] overflow-hidden"
     >
-      <video
+      <div
         ref={vidRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full object-cover"
+        className=" left-1/2 -translate-x-1/2 top-0 sm:top-auto sm:bottom-0 absolute min-w-[100vw] sm:min-w-[768px] md:min-w-[1080px] lg:min-w-[1440px] xl:min-w-[1920px]"
       >
-        <source src="/w-bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className=" hidden md:block w-full object-cover "
+        >
+          <source src="/w-bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full object-cover md:hidden"
+        >
+          <source src="/w-bg-sm.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="absolute w-full left-1/2 text-xs md:text-base -translate-x-1/2 bottom-[220px] text-center md:text-left  md:bottom-[185px] uppercase xl:w-[1200px]">
         <div ref={titleRef}>
           The Evolutionary Chain for <span className="text-brand">AI</span>
