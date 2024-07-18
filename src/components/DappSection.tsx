@@ -209,8 +209,7 @@ const DappSection = () => {
           </div>
         </div>
         <div className=" text-[#727272] md:w-[680px] md:text-sm">
-          Supporting dapps through real-time verifiable AI inference using
-          cutting edge LFG-GM
+          Supporting dapps through real-time verifiable AI inference
         </div>
       </InViewAnimation>
     </div>
