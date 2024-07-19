@@ -85,9 +85,9 @@ const Header = () => {
             >
               FAQs
             </a>
-            <Link href="/" className="text-brand">
+            {/* <Link href="/" className="text-brand">
               Get Started
-            </Link>
+            </Link> */}
           </nav>
           <SvgIcon
             name={isOpen ? "menu-close" : "menu"}
