@@ -12,7 +12,7 @@ const RevolutionSection = () => {
             be a part of the revolution
           </div>
           <div className=" mx-auto mt-5 text-[rgba(255,255,255,0.8)] text-[10px] leading-[14px] md:w-[580px] md:text-[14px] md:leading-[21px] w-[240px] xl:w-[726px] md:mt-10 xl:text-base md:text-[#727272]">
-            {`Let's be part of our journey building better AI for everyone`}
+            {`Join our journey to build better AI for everyone`}
           </div>
           <a
             href="/"

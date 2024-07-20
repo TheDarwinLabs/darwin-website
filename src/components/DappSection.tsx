@@ -147,9 +147,9 @@ const DappSection = () => {
           </div>
           <div className="hidden w-[350px] md:w-[250px] flex-col justify-between md:flex lg:w-[350px] xl:w-[350px]">
             <div className="text-right uppercase">
-              <div className="mb-5 text-[#F2F2F2]">Joining the Community</div>
+              <div className="mb-5 text-[#F2F2F2]">JOIN the Community</div>
               <div className="text-[#727272]">
-                Becoming part of Darwin&apos;s Lab ecosystem
+                {`BECOME part of DARWIN'S LAB Lab ecosystem`}
               </div>
             </div>
             <a
