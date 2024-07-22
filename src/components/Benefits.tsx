@@ -29,6 +29,7 @@ const list = [
 
 const Benefits = () => {
   const [curIndex, setCurIndex] = useState(0);
+  const [videoSrc, setVideoSrc] = useState("card0.mp4");
 
   const { start, progress, reset, isStart } = useSmoothProgress({
     duration: 10,
@@ -48,6 +49,7 @@ const Benefits = () => {
   const onChange = (index: number) => {
     setCurIndex(index);
     reset();
+    setVideoSrc(`card${index}.mp4`);
   };
 
   useEffect(() => {
@@ -95,19 +97,45 @@ const Benefits = () => {
                 </div>
                 <div className="mb-2 transition-all ">{item.tags}</div>
                 <div className="mb-5 transition-all md:mb-0">{item.desc}</div>
-                <Image
+                {/* <Image
                   src={`/card-${index}.svg`}
                   alt=""
                   className="!relative !h-auto backdrop-blur-lg md:hidden"
                   fill
-                />
+                /> */}
+                <div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full object-cover"
+                  >
+                    <source src={`card${index}.mp4`} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             ))}
           </div>
           <div
-            className="hidden self-end w-[260px] h-[208px] bg-cover benefit-card-item transition-all duration-300 backdrop-blur-lg  md:block lg:w-[400px] lg:h-[320px] xl:w-[500px] xl:h-[400px]"
-            style={{ backgroundImage: `url(/card-${curIndex}.svg)` }}
-          ></div>
+            className={cn(
+              "hidden self-end w-[260px] h-[208px] bg-cover benefit-card-item transition-all  duration-500 backdrop-blur-lg  md:block lg:w-[400px] lg:h-[320px] xl:w-[500px] xl:h-[400px]"
+            )}
+            // style={{ backgroundImage: `url(/card-${curIndex}.svg)` }}
+          >
+            <video
+              key={videoSrc}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full object-cover"
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </InViewAnimation>
     </div>
