@@ -103,7 +103,7 @@ const Benefits = () => {
                   className="!relative !h-auto backdrop-blur-lg md:hidden"
                   fill
                 /> */}
-                <div>
+                <div className="md:hidden">
                   <video
                     autoPlay
                     loop
