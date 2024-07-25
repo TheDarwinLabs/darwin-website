@@ -5,11 +5,14 @@ import SvgIcon, { SvgIconProps } from "@/components/SvgIcon";
 import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import { useAnimate } from "framer-motion";
 import LottieAnimation from "@/components/LottieAnimation";
+import { useMediaQuery } from "react-responsive";
 import mouse from "@/assets/lottie/mouse.json";
 import arrow from "@/assets/lottie/arrow.json";
 import logo from "@/assets/lottie/logo.json";
+import { cn } from "@/lib/utils";
 
 const Welcome = () => {
+  const [orientation, setOrientation] = useState("portrait");
   const [isOpen, setOpen] = useState(true);
   const [scope, animate] = useAnimate();
   const mouseRef = useRef<HTMLDivElement>(null);
@@ -17,7 +20,28 @@ const Welcome = () => {
   const logoRef = useRef<HTMLDivElement>(null);
   const vidRef = useRef<HTMLDivElement>(null);
 
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
   useBodyScrollLock(isOpen);
+
+  useEffect(() => {
+    const updateOrientation = () => {
+      const { type } = screen.orientation;
+      setOrientation(type.includes("portrait") ? "portrait" : "landscape");
+    };
+
+    // 初始化时设置方向
+    updateOrientation();
+
+    // 监听屏幕方向变化
+    screen.orientation.addEventListener("change", updateOrientation);
+
+    return () => {
+      screen.orientation.removeEventListener("change", updateOrientation);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isOpen) {
@@ -44,7 +68,7 @@ const Welcome = () => {
           {
             opacity: [1, 0],
             y: [0, -100],
-            x: ["-50%", "-50%"],
+            x: isMobile ? [0, 0] : ["-50%", "-50%"],
             filter: ["blur(0px)", "blur(90px)"],
           },
           { duration: 0.5 }
@@ -71,7 +95,7 @@ const Welcome = () => {
         exitAnimation();
       }
     }
-  }, [isOpen, animate, mouseRef, titleRef, vidRef, scope]);
+  }, [isOpen, animate, mouseRef, titleRef, vidRef, scope, isMobile]);
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -118,6 +142,7 @@ const Welcome = () => {
   // }, []);
 
   //
+  console.log(orientation);
   return (
     <div
       ref={scope}
@@ -125,28 +150,31 @@ const Welcome = () => {
     >
       <div
         ref={vidRef}
-        className=" left-1/2 -translate-x-1/2 top-0 sm:top-auto sm:bottom-0 absolute min-w-[100vw] sm:min-w-[768px] md:min-w-[1080px] lg:min-w-[1440px] xl:min-w-[1920px]"
+        className={cn(
+          "absolute min-w-[100vw] sm:min-w-[768px] md:min-w-[1080px] lg:min-w-[1440px] xl:min-w-[1920px]",
+          orientation == "landscape"
+            ? "bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 sm:bottom-0  "
+            : "bottom-0 left-0"
+        )}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className=" hidden md:block w-full object-cover "
+        <div
+          className={cn(
+            orientation == "landscape"
+              ? "w-[240vw] sm:w-[220vw] md:w-[180vw]"
+              : "w-[240vw] sm:w-[220vw] md:w-[200vw]"
+          )}
         >
-          <source src="/w-bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full object-cover md:hidden"
-        >
-          <source src="/w-bg-sm.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full"
+          >
+            <source src="/bg-circle.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div className="absolute w-full left-1/2 text-xs md:text-base -translate-x-1/2 bottom-[220px] text-center md:text-left  md:bottom-[185px] uppercase xl:w-[1200px]">
         <div ref={titleRef}>

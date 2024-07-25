@@ -155,21 +155,44 @@ const Technologies = () => {
 
   return (
     <div id="core-tect" className="section3">
-      <InViewAnimation className={`${!visible && 'relative'} z-10 flex flex-col mx-auto pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row md:w-[700px] lg:w-[900px] lg:h-[900px] xl:w-[1200px] xl:h-[1000px] xl:pt-[100px] xl:pb-0 md:px-0 md:py-0`}>
-        <div className={`tech-bg ${ visible && 'tech-visible'}`}></div>
-        <div className={`tech-content ${ visible && 'tech-visible'}`}>
+      <InViewAnimation
+        className={`${
+          !visible && "relative"
+        } z-10 flex flex-col mx-auto pt-[50px] pb-[78px] md:justify-between md:items-start md:flex-row md:w-[700px] lg:w-[900px] lg:h-[900px] xl:w-[1200px] xl:h-[1000px] xl:pt-[100px] xl:pb-0 md:px-0 md:py-0`}
+      >
+        <div className={`tech-bg ${visible && "tech-visible"}`}></div>
+        <div className={`tech-content ${visible && "tech-visible"}`}>
           <div className="tech-content__left">
             <div className="tech-content__number" data-val={curIndex + 1}></div>
-            <div className="tech-content__title">Core <br /> Technologies</div>
+            <div className="tech-content__title">
+              Core <br /> Technologies
+            </div>
           </div>
           <div className="tech-content__right" ref={containerRef}>
             {list.map((item, index) => (
-              <div className="tech-content-item" key={index} onClick={() => onOpen(index)}>
+              <div
+                className="tech-content-item "
+                key={index}
+                onClick={() => onOpen(index)}
+              >
                 <div className="tech-content-wrapper">
-                  <SvgIcon className="tech-content-icon" name={`core_${index + 1}`} />
-                  <p className="tech-content-desc">{visible ? item.info_title: item.title}</p>
-                  <h1 className="tech-content-title">{visible ? item.info_desc: item.desc}</h1>
-                  {item.content.map((contentItem, contentIndex) => <p className="tech-content-list" key={contentIndex}>{contentItem}</p>)}
+                  <SvgIcon
+                    className="tech-content-icon"
+                    name={`core_${index + 1}`}
+                  />
+                  <p className="tech-content-desc">
+                    {visible ? item.info_title : item.title}
+                  </p>
+                  <h1 className="tech-content-title">
+                    {visible ? item.info_desc : item.desc}
+                  </h1>
+                  <div className="overflow-auto flex-1 scrollbar-none">
+                    {item.content.map((contentItem, contentIndex) => (
+                      <p className="tech-content-list" key={contentIndex}>
+                        {contentItem}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
