@@ -186,7 +186,7 @@ const Technologies = () => {
                   <h1 className="tech-content-title">
                     {visible ? item.info_desc : item.desc}
                   </h1>
-                  <div className="overflow-auto flex-1 scrollbar-none">
+                  <div className="overflow-auto flex-1 scrollbar-none shadow-b">
                     {item.content.map((contentItem, contentIndex) => (
                       <p className="tech-content-list" key={contentIndex}>
                         {contentItem}
