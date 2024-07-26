@@ -16,7 +16,7 @@ const Section1 = () => {
           {`We are pioneering a revolutionary approach to the integration of AI and blockchain technology, a concept we call "The Chain of Evolution." Darwinchain empowers developers to build AI apps with free, verifiable AI inference and seamless dApp deployment on a decentralized, Layer-1 blockchain. By driving innovation and mass adoption of AI technology, we are building a smarter digital economy where AI and blockchain seamlessly integrate for transformative impact.`}
         </div>
         <a
-          href="/"
+          href="https://439ypl6lll6.typeform.com/to/KmqVq1pQ"
           className="try-now-btn group mt-[83px] w-[200px] px-3 py-4 md:mt-[50px] md:w-[300px] md:py-[18px] lg:w-[400px] hover:font-bold transition-all duration-300 "
         >
           try now

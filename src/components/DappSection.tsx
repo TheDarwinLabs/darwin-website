@@ -153,7 +153,7 @@ const DappSection = () => {
               </div>
             </div>
             <a
-              href="/"
+              href="https://439ypl6lll6.typeform.com/to/KmqVq1pQ"
               className="try-now-btn group mt-[50px] w-full border-y-[1px] border-brand px-3 py-[18px] uppercase text-brand  hover:font-bold transition-all duration-300 "
             >
               try now

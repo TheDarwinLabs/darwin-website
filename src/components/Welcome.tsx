@@ -12,7 +12,7 @@ import logo from "@/assets/lottie/logo.json";
 import { cn } from "@/lib/utils";
 
 const Welcome = () => {
-  const [orientation, setOrientation] = useState("portrait");
+  const [orientation, setOrientation] = useState("");
   const [isOpen, setOpen] = useState(true);
   const [scope, animate] = useAnimate();
   const mouseRef = useRef<HTMLDivElement>(null);
@@ -154,7 +154,9 @@ const Welcome = () => {
           "absolute min-w-[100vw] sm:min-w-[768px] md:min-w-[1080px] lg:min-w-[1440px] xl:min-w-[1920px]",
           orientation == "landscape"
             ? "bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 sm:bottom-0  "
-            : "bottom-0 left-0"
+            : orientation == "portrait"
+            ? "bottom-0 left-0"
+            : "opacity-0"
         )}
       >
         <div
