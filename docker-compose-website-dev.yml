@@ -1,0 +1,20 @@
+version: '3'
+services:
+  nextjs:
+    image: darwin-website-dev:latest
+    container_name: darwin-website-dev
+    restart: always
+    expose:
+      - "3000"
+    environment:
+      url: https://test-website.darwinchain.ai
+      VIRTUAL_HOST: test-website.darwinchain.ai
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: test-website.darwinchain.ai
+      LETSENCRYPT_EMAIL: tonokimm@gmail.com
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
