@@ -15,7 +15,7 @@ const RevolutionSection = () => {
             {`Join our journey to build better AI for everyone`}
           </div>
           <a
-            href="/"
+            href="/https://439ypl6lll6.typeform.com/to/KmqVq1pQ"
             className="try-now-btn justify-center group mx-auto mt-[40px] w-[200px] px-[10px] py-[19px] font-bold md:w-[400px] md:mt-[116px] md:py-7 xl:mt-[80px] xl:px-5 xl:h-[80px]"
           >
             <SvgIcon
