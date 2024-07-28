@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import SvgIcon from "@/components/SvgIcon";
 import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import InViewAnimation from "@/components/InViewAnimation";
+import { cn } from "@/lib/utils";
 
 const list = [{
   title: "Game Theoretic Mixer ALGORITHM",
@@ -186,7 +187,12 @@ const Technologies = () => {
                   <h1 className="tech-content-title">
                     {visible ? item.info_desc : item.desc}
                   </h1>
-                  <div className="overflow-auto flex-1 scrollbar-none shadow-b">
+                  <div
+                    className={cn(
+                      "overflow-auto flex-1 scrollbar-none ",
+                      visible ? "shadow-b" : ""
+                    )}
+                  >
                     {item.content.map((contentItem, contentIndex) => (
                       <p className="tech-content-list" key={contentIndex}>
                         {contentItem}
