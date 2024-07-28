@@ -36,3 +36,7 @@ yarn-error.log*
 next-env.d.ts
 *.tar
 docker
+
+# wrangler files
+.wrangler
+.dev.vars

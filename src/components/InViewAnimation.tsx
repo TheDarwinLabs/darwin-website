@@ -2,12 +2,16 @@
 import React, { ReactNode, useEffect, useRef } from "react";
 import { motion, useAnimation, Variants, useInView } from "framer-motion";
 
+type MarginType =
+  | `${number}px ${number}px ${number}px ${number}px`
+  | `${number}px ${number}px`;
+
 interface InViewComponentProps {
   children: ReactNode;
   animationVariants?: Variants;
   once?: boolean;
   threshold?: number;
-  rootMargin?: string;
+  rootMargin?: MarginType;
   className?: string;
 }
 
@@ -35,7 +39,7 @@ const InViewComponent: React.FC<InViewComponentProps> = ({
   animationVariants = defaultAnimationVariants,
   once = true,
   threshold = 0.1,
-  rootMargin = "-10px",
+  rootMargin = "-10px" as MarginType,
   className = "",
 }) => {
   const controls = useAnimation();

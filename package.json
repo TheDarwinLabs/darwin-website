@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
     "deploy-dev": "ssh ubuntu@52.53.233.240 'cd /home/ubuntu/website/ && bash ./deploy_website_dev.sh'",
     "deploy": "ssh ubuntu@52.53.233.240 'cd /home/ubuntu/website/ && bash ./deploy_website.sh'"
   },
