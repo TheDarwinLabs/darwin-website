@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 import { fileURLToPath } from "url";
 import path, { dirname } from "path";
+import { setupDevPlatform } from "@cloudflare/next-on-pages/next-dev";
+
+if (process.env.NODE_ENV === "development") {
+  await setupDevPlatform();
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
