@@ -73,7 +73,7 @@ const Benefits = () => {
                 className={cn(
                   "group relative  text-xs cursor-pointer md:pl-10",
                   curIndex == index
-                    ? "text-[#727272]  md:text-primary"
+                    ? "text-[#727272]  md:text-primary-800"
                     : "text-[#727272] hover:text-[#989898]"
                 )}
               >

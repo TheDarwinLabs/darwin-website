@@ -1,6 +1,5 @@
 import SvgIcon from "@/components/SvgIcon";
-
-
+import Link from "next/link";
 
 const list: { title: string; children: { title: string; icon?: string }[] }[] =
   [
@@ -60,7 +59,36 @@ const Footer = () => (
           name="logo_footer"
           className="w-[60px] h-[24px] sm:w-[78px] sm:h-7"
         />
-        <div className="text-[10px] text-[#727272]  mt-[42px]  sm:m-0 sm:text-[13px]">
+        {/* <div className="text-[10px] md:text-[12px] text-[#727272]">
+          Presskit Download
+        </div> */}
+
+        {/* <div className="grow flex flex-wrap gap-x-[62px] gap-y-[36px] footer-nav mt-[42px]  lg:mt-0 xl:text-base xl:mt-3 xl:flex-nowrap lg:gap-[70px] xl:gap-[130px]">
+          {list.map((item, index) => (
+            <dl key={index} className="flex flex-col gap-5">
+              <dt className="text-[10px] md:text-[12px]">{item.title}</dt>
+              {item.children?.map((t, i) => (
+                <dd
+                  key={i}
+                  className="flex items-center text-[10px] lg:text-[14px]"
+                >
+                  {t.icon && (
+                    <SvgIcon name={t.icon} className="w-[14px] h-[14px] mr-2" />
+                  )}
+                  {t.title}
+                </dd>
+              ))}
+            </dl>
+          ))}
+        </div> */}
+        <div className="text-[10px] text-[#727272]   mt-[42px] sm:text-right  sm:m-0 sm:text-[13px]">
+          <a
+            href="/PressKit.zip"
+            download
+            className="cursor-pointer  inline-block mb-6 sm:mb-10 hover:text-[#888]"
+          >
+            <button>Presskit Download</button>
+          </a>
           <div>Copyright Ⓒ 2022 – 2024 Darwin Lab, Inc.</div>
         </div>
       </div>

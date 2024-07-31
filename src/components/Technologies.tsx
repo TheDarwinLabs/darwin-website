@@ -189,7 +189,7 @@ const Technologies = () => {
                   </h1>
                   <div
                     className={cn(
-                      "overflow-auto flex-1 scrollbar-none ",
+                      "overflow-auto flex-1 scrollbar-none",
                       visible ? "shadow-b" : ""
                     )}
                   >
