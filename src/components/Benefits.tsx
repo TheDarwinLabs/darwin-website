@@ -22,7 +22,7 @@ const list = [
   },
   {
     title: "FOR DAPP DEVELOPERS",
-    tags: "<DEPLAY> <INTEGRATE> <INNOVATE>",
+    tags: "<DEPLOY> <INTEGRATE> <INNOVATE>",
     desc: "Deploy your decentralized applications on our chain, leverage AI resources for free, and drive innovation with seamless integration.",
   },
 ];
