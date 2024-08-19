@@ -82,10 +82,24 @@ const Footer = () => (
           ))}
         </div> */}
         <div className="text-[10px] text-[#727272]   mt-[42px] sm:text-right  sm:m-0 sm:text-[13px]">
+          <Link
+            href="https://darwinchain.gitbook.io/darwin-ai"
+            target="_blank"
+            className="cursor-pointer block mb-1 sm:mb-2 hover:text-[#888]"
+          >
+            Gitbook
+          </Link>
+          {/* <Link
+            href="https://darwinchain.gitbook.io/darwin-ai"
+            target="_blank"
+            className="cursor-pointer block mb-1 sm:mb-2 hover:text-[#888]"
+          >
+            BlockScreener
+          </Link> */}
           <a
             href="/PressKit.zip"
             download
-            className="cursor-pointer  inline-block mb-6 sm:mb-10 hover:text-[#888]"
+            className="cursor-pointer block mb-6 sm:mb-10 hover:text-[#888]"
           >
             <button>Presskit Download</button>
           </a>
