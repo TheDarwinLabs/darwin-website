@@ -2,6 +2,7 @@
 import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 import { setupDevPlatform } from "@cloudflare/next-on-pages/next-dev";
+import bundleAnalyzer from "@next/bundle-analyzer";
 
 if (process.env.NODE_ENV === "development") {
   await setupDevPlatform();
@@ -9,6 +10,10 @@ if (process.env.NODE_ENV === "development") {
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig = {
   output: "standalone",
@@ -35,4 +40,4 @@ const nextConfig = {
     return config;
   },
 };
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

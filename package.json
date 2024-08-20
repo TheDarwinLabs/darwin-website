@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
     "pages:build": "npx @cloudflare/next-on-pages",
     "preview": "npm run pages:build && wrangler pages dev",
     "deploy-dev": "ssh ubuntu@52.53.233.240 'cd /home/ubuntu/website/ && bash ./deploy_website_dev.sh'",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.12.1",
     "@cloudflare/workers-types": "^4.20240725.0",
+    "@next/bundle-analyzer": "^14.2.5",
     "@svgr/webpack": "^8.1.0",
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^20",

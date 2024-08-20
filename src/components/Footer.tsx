@@ -89,13 +89,13 @@ const Footer = () => (
           >
             Gitbook
           </Link>
-          {/* <Link
-            href="https://darwinchain.gitbook.io/darwin-ai"
+          <Link
+            href="https://explorer.darwinchain.ai/"
             target="_blank"
             className="cursor-pointer block mb-1 sm:mb-2 hover:text-[#888]"
           >
             BlockScreener
-          </Link> */}
+          </Link>
           <a
             href="/PressKit.zip"
             download
