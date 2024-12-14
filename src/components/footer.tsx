@@ -1,0 +1,59 @@
+import SvgIcon from "./SvgIcon";
+
+const Footer = () => {
+  return (
+    <div>
+      <div className="w-[1100px] pt-5 pb-[30px] border-t border-[#757575] flex-col justify-start items-start flex">
+        <div className="self-stretch justify-between items-end inline-flex">
+          <div className="flex-col justify-end items-start inline-flex">
+            <div className="w-[370px] text-[#494949] text-sm leading-snug">
+              Disclaimer
+            </div>
+            <div className="w-[370px] text-[#757575] text-xs leading-[17px]">
+              Darwin Labs is a technology services provider. Before using the
+              Darwin Protocol, you should review our documentation to ensure you
+              fully understand how the Protocol works. As described in our
+              Terms, Darwin Protocol is provided on an “as is” and “as
+              available” basis, at your own risk. Use of the Darwin Protocol
+              involves risks, including but not limited to the potential loss of
+              digital assets. Nothing in Darwin Protocol is intended to be
+              construed as a solicitation of any individual in restricted
+              jurisdictions. We explicitly disclaim any representation or
+              warranties of any kind relating to the Protocol or usage of the
+              Protocol, and no developer or entity will be liable for claims or
+              damages of any kind associated with use or inability to use the
+              Protocol.
+            </div>
+          </div>
+          <div className="self-stretch flex-col justify-between items-end inline-flex">
+            <SvgIcon name="logo-color" />
+            <div className="flex-col items-end gap-2.5 flex">
+              <div className="items-center gap-5 flex text-[#727272] text-sm">
+                <div className="items-center gap-2 flex">
+                  <SvgIcon name="x" />
+                  <div className="font-['Space Mono']">x.com</div>
+                </div>
+                <div className="items-center gap-2 flex">
+                  <SvgIcon name="in" />
+                  <div className="font-['Inter']">LinkedIn</div>
+                </div>
+                <div className="items-center gap-2 flex">
+                  <SvgIcon name="github" />
+                  <div className="font-['Inter']">GitHub</div>
+                </div>
+              </div>
+              <div className="justify-end items-center gap-[50px] flex">
+                <div className="justify-center gap-[59px] inline-flex text-right text-[#727272] text-xs capitalize leading-none tracking-wider">
+                  <span>Terms of Use</span>
+                  <span>©2024 Darwin Labs | All Rights Reserved.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
