@@ -36,6 +36,18 @@ const Section2 = () => {
   const pic6Ref = useRef<HTMLDivElement | null>(null);
   const pic7Ref = useRef<HTMLDivElement | null>(null);
 
+  const m_picBoxRef = useRef<HTMLDivElement | null>(null);
+  const m_pic1Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic2Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic3Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic4Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic5Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic6Ref = useRef<HTMLDivElement | null>(null);
+  const m_pic7Ref = useRef<HTMLDivElement | null>(null);
+
+  const mcontainerRef = useRef<HTMLDivElement | null>(null);
+  const m_blackCardRef = useRef<HTMLDivElement | null>(null);
+
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -72,9 +84,477 @@ const Section2 = () => {
       const pic6 = pic6Ref.current;
       const pic7 = pic7Ref.current;
       const maps = mapRef.current;
+
+      const m_blackCard = m_blackCardRef.current;
+      const m_pic1 = m_pic1Ref.current;
+      const m_pic2 = m_pic2Ref.current;
+      const m_pic3 = m_pic3Ref.current;
+      const m_pic4 = m_pic4Ref.current;
+      const m_pic5 = m_pic5Ref.current;
+      const m_pic6 = m_pic6Ref.current;
+      const m_pic7 = m_pic7Ref.current;
+
+      const mcontainer = mcontainerRef.current;
+
       if (!container || !blackContainer) return;
-      gsap
-        .timeline({
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1280px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=3500",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnter: () => {
+                paths.forEach((el, index) => {
+                  gsap.to(el, {
+                    fill: originalColors[index] ?? "",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#121212",
+                  duration: 1,
+                });
+              },
+              onLeaveBack: () => {
+                paths.forEach((el) => {
+                  gsap.to(el, {
+                    fill: "#ffffff",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#ffffff",
+                  duration: 1,
+                });
+              },
+            },
+          })
+          .to(
+            blackCard,
+            {
+              rotate: 2,
+              x: -210,
+              y: 50,
+              duration: 4,
+            },
+            1
+          )
+          .to(
+            orangeCard,
+            {
+              rotate: 34,
+              x: 200,
+              y: -80,
+              zIndex: 0,
+              duration: 4,
+            },
+            1
+          )
+          .to(
+            silverCard,
+            {
+              rotate: -43,
+              duration: 2,
+            },
+            1
+          )
+          .to(blackContainer, { y: 0, duration: 5 }, 5)
+          .to(
+            blackCard,
+            {
+              y: 240,
+              x: -220,
+              rotate: -4,
+              scale: 0.9,
+              duration: 4,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            9
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            9
+          )
+          .to(title1, { y: 0, opacity: 1, duration: 2 }, 9)
+          .to(content1, { y: 0, opacity: 1, duration: 2 }, 9)
+          .to(
+            cardTop,
+            {
+              opacity: 0,
+              y: -200,
+              duration: 2,
+            },
+            12
+          )
+          .to(
+            cardBottom,
+            {
+              opacity: 0,
+              y: -200,
+              duration: 2,
+            },
+            12
+          )
+          .to(content1, { y: -200, opacity: 0, duration: 2 }, 13)
+          .to(
+            blackCard,
+            {
+              rotate: 0,
+              y: 230,
+              x: -200,
+              scale: 0.68,
+              duration: 3,
+            },
+            13
+          )
+          .to(
+            phoneBox,
+            {
+              y: 0,
+              duration: 3,
+            },
+            13
+          )
+          .to(
+            content2,
+            {
+              opacity: 1,
+              duration: 3,
+              y: 0,
+            },
+            14
+          )
+          .to(
+            phoneCx1,
+            {
+              opacity: 0,
+              duration: 3,
+            },
+            18
+          )
+
+          .to(
+            blackCard,
+            {
+              opacity: 0,
+              duration: 3,
+            },
+            18
+          )
+          .to(
+            phoneCx2,
+            {
+              opacity: 1,
+              duration: 3,
+            },
+            18
+          )
+          .to(title1, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(content2, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(cardCircle, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(title2, { opacity: 1, duration: 2 }, 21)
+          .to(content3, { y: 0, opacity: 1, duration: 3 }, 21)
+          .to(binance, { y: 0, opacity: 1, duration: 3 }, 21)
+          .to(title2, { opacity: 0, duration: 2 }, 26)
+          .to(title3, { y: 0, opacity: 1, duration: 2 }, 26)
+          .to(binance, { y: -100, opacity: 0, duration: 2 }, 26)
+          .to(content3, { y: -100, opacity: 0, duration: 2 }, 26)
+          .to(content4, { y: 0, opacity: 1, duration: 2 }, 26)
+          .to(phoneBox, { y: "100%", duration: 3 }, 26)
+          .to(picBox, { opacity: 1, duration: 2 }, 27)
+          .to(maps, { opacity: 1, y: 0, duration: 2 }, 27)
+          .to(pic1, { x: -200, y: -100, duration: 2 }, 28)
+          .to(pic2, { rotate: -15, duration: 2 }, 28)
+          .to(pic3, { x: 170, y: -100, duration: 2 }, 28)
+          .to(pic4, { rotate: 17, y: -320, duration: 2 }, 28)
+          .to(pic5, { rotate: -10, x: -240, y: 200, duration: 2 }, 28)
+          .to(pic6, { rotate: 16, y: 300, duration: 2 }, 28)
+          .to(pic7, { x: 180, y: 180, duration: 2 }, 28)
+          .add(() => {}, "+=5");
+      });
+      mm.add("(min-width: 1024px) and (max-width: 1279px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=3500",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnter: () => {
+                paths.forEach((el, index) => {
+                  gsap.to(el, {
+                    fill: originalColors[index] ?? "",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#121212",
+                  duration: 1,
+                });
+              },
+              onLeaveBack: () => {
+                paths.forEach((el) => {
+                  gsap.to(el, {
+                    fill: "#ffffff",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#ffffff",
+                  duration: 1,
+                });
+              },
+            },
+          })
+          .to(
+            blackCard,
+            {
+              rotate: 2,
+              x: -210,
+              y: 0,
+              duration: 4,
+            },
+            1
+          )
+          .to(
+            orangeCard,
+            {
+              rotate: 34,
+              x: 260,
+              y: -10,
+              zIndex: 0,
+              duration: 4,
+            },
+            1
+          )
+          .to(
+            silverCard,
+            {
+              rotate: -43,
+              duration: 2,
+            },
+            1
+          )
+          .to(blackContainer, { y: 0, duration: 5 }, 5)
+          .to(
+            blackCard,
+            {
+              y: 130,
+              x: -300,
+              rotate: -4,
+              scale: 1.5,
+              duration: 4,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            9
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            9
+          )
+          .to(title1, { y: 0, opacity: 1, duration: 2 }, 9)
+          .to(content1, { y: 0, opacity: 1, duration: 2 }, 9)
+          .to(
+            cardTop,
+            {
+              opacity: 0,
+              y: -200,
+              duration: 2,
+            },
+            12
+          )
+          .to(
+            cardBottom,
+            {
+              opacity: 0,
+              y: -200,
+              duration: 2,
+            },
+            12
+          )
+          .to(content1, { y: -200, opacity: 0, duration: 2 }, 13)
+          .to(
+            blackCard,
+            {
+              rotate: 0,
+              y: 240,
+              x: -210,
+              scale: 0.75,
+              duration: 3,
+            },
+            13
+          )
+          .to(
+            phoneBox,
+            {
+              y: 0,
+              duration: 3,
+            },
+            13
+          )
+          .to(
+            content2,
+            {
+              opacity: 1,
+              duration: 3,
+              y: 0,
+            },
+            14
+          )
+          .to(
+            phoneCx1,
+            {
+              opacity: 0,
+              duration: 3,
+            },
+            18
+          )
+
+          .to(
+            blackCard,
+            {
+              opacity: 0,
+              duration: 3,
+            },
+            18
+          )
+          .to(
+            phoneCx2,
+            {
+              opacity: 1,
+              duration: 3,
+            },
+            18
+          )
+          .to(title1, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(content2, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(cardCircle, { y: -100, opacity: 0, duration: 3 }, 18)
+          .to(title2, { opacity: 1, duration: 2 }, 21)
+          .to(content3, { y: 0, opacity: 1, duration: 3 }, 21)
+          .to(binance, { y: 0, opacity: 1, duration: 3 }, 21)
+          .to(title2, { opacity: 0, duration: 2 }, 26)
+          .to(title3, { y: 0, opacity: 1, duration: 2 }, 26)
+          .to(binance, { y: -100, opacity: 0, duration: 2 }, 26)
+          .to(content3, { y: -100, opacity: 0, duration: 2 }, 26)
+          .to(content4, { y: 0, opacity: 1, duration: 2 }, 26)
+          .to(phoneBox, { y: "100%", duration: 3 }, 26)
+          .to(picBox, { opacity: 1, duration: 2 }, 27)
+          .to(maps, { opacity: 1, y: 0, duration: 2 }, 27)
+          .to(pic1, { x: -200, y: -100, duration: 2 }, 28)
+          .to(pic2, { rotate: -15, duration: 2 }, 28)
+          .to(pic3, { x: 170, y: -100, duration: 2 }, 28)
+          .to(pic4, { rotate: 17, y: -320, duration: 2 }, 28)
+          .to(pic5, { rotate: -10, x: -240, y: 200, duration: 2 }, 28)
+          .to(pic6, { rotate: 16, y: 300, duration: 2 }, 28)
+          .to(pic7, { x: 180, y: 180, duration: 2 }, 28)
+          .add(() => {}, "+=5");
+      });
+      mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: mcontainer,
+              start: "top top",
+              end: "bottom",
+              // pin: true,
+              scrub: true,
+              markers: true,
+              onEnter: () => {
+                paths.forEach((el, index) => {
+                  gsap.to(el, {
+                    fill: originalColors[index] ?? "",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#121212",
+                  duration: 1,
+                });
+              },
+              onLeaveBack: () => {
+                paths.forEach((el) => {
+                  gsap.to(el, {
+                    fill: "#ffffff",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#ffffff",
+                  duration: 1,
+                });
+              },
+            },
+          })
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            m_blackCard,
+            { x: 0, y: 600, rotate: 0, scale: 0.9, duration: 3 },
+            3.5
+          )
+          .to(
+            m_blackCard,
+            { x: 75, y: 980, rotate: 0, scale: 0.55, duration: 3 },
+            6
+          )
+          .to(m_pic1, { x: -180, y: -100, duration: 2 }, 15)
+          .to(m_pic2, { rotate: -15, duration: 2 }, 15)
+          .to(m_pic3, { x: 170, y: -100, duration: 2 }, 15)
+          .to(m_pic4, { rotate: 17, y: -270, duration: 2 }, 15)
+          .to(m_pic5, { rotate: -10, x: -180, y: 170, duration: 2 }, 15)
+          .to(m_pic6, { rotate: 16, y: 280, duration: 2 }, 15)
+          .to(m_pic7, { x: 160, y: 160, duration: 2 }, 15)
+          .add(() => {}, "+=4");
+      });
+      mm.add("(max-width: 767px)", () => {
+        gsap.timeline({
           scrollTrigger: {
             trigger: container,
             start: "top top",
@@ -107,161 +587,8 @@ const Section2 = () => {
               });
             },
           },
-        })
-        .to(
-          blackCard,
-          {
-            rotate: 2,
-            x: -210,
-            y: 50,
-            duration: 4,
-          },
-          1
-        )
-        .to(
-          orangeCard,
-          {
-            rotate: 34,
-            x: 200,
-            y: -80,
-            zIndex: 0,
-            duration: 4,
-          },
-          1
-        )
-        .to(
-          silverCard,
-          {
-            rotate: -43,
-            duration: 2,
-          },
-          1
-        )
-        .to(blackContainer, { y: 0, duration: 5 }, 5)
-        .to(
-          blackCard,
-          {
-            y: 240,
-            x: -220,
-            rotate: -4,
-            scale: 0.9,
-            duration: 4,
-          },
-          5
-        )
-        .to(
-          ".darwin-logo path",
-          {
-            attr: { fill: "#ffffff" },
-            fill: "#ffffff",
-            duration: 1,
-          },
-          9
-        )
-        .to(
-          ".header",
-          {
-            color: "#ffffff",
-            duration: 1,
-          },
-          9
-        )
-        .to(title1, { y: 0, opacity: 1, duration: 2 }, 9)
-        .to(content1, { y: 0, opacity: 1, duration: 2 }, 9)
-        .to(
-          cardTop,
-          {
-            opacity: 0,
-            y: -200,
-            duration: 2,
-          },
-          12
-        )
-        .to(
-          cardBottom,
-          {
-            opacity: 0,
-            y: -200,
-            duration: 2,
-          },
-          12
-        )
-        .to(content1, { y: -200, opacity: 0, duration: 2 }, 13)
-        .to(
-          blackCard,
-          {
-            rotate: 0,
-            y: 230,
-            x: -200,
-            scale: 0.68,
-            duration: 3,
-          },
-          13
-        )
-        .to(
-          phoneBox,
-          {
-            y: 0,
-            duration: 3,
-          },
-          13
-        )
-        .to(
-          content2,
-          {
-            opacity: 1,
-            duration: 3,
-            y: 0,
-          },
-          14
-        )
-        .to(
-          phoneCx1,
-          {
-            opacity: 0,
-            duration: 3,
-          },
-          18
-        )
-
-        .to(
-          blackCard,
-          {
-            opacity: 0,
-            duration: 3,
-          },
-          18
-        )
-        .to(
-          phoneCx2,
-          {
-            opacity: 1,
-            duration: 3,
-          },
-          18
-        )
-        .to(title1, { y: -100, opacity: 0, duration: 3 }, 18)
-        .to(content2, { y: -100, opacity: 0, duration: 3 }, 18)
-        .to(cardCircle, { y: -100, opacity: 0, duration: 3 }, 18)
-        .to(title2, { opacity: 1, duration: 2 }, 21)
-        .to(content3, { y: 0, opacity: 1, duration: 3 }, 21)
-        .to(binance, { y: 0, opacity: 1, duration: 3 }, 21)
-        .to(title2, { opacity: 0, duration: 2 }, 26)
-        .to(title3, { y: 0, opacity: 1, duration: 2 }, 26)
-        .to(binance, { y: -100, opacity: 0, duration: 2 }, 26)
-        .to(content3, { y: -100, opacity: 0, duration: 2 }, 26)
-        .to(content4, { y: 0, opacity: 1, duration: 2 }, 26)
-        .to(phoneBox, { y: "100%", duration: 3 }, 26)
-        .to(picBox, { opacity: 1, duration: 2 }, 27)
-        .to(maps, { opacity: 1, y: 0, duration: 2 }, 27)
-        .to(pic1, { x: -200, y: -100, duration: 2 }, 28)
-        .to(pic2, { rotate: -15, duration: 2 }, 28)
-        .to(pic3, { x: 170, y: -100, duration: 2 }, 28)
-        .to(pic4, { rotate: 17, y: -320, duration: 2 }, 28)
-        .to(pic5, { rotate: -10, x: -240, y: 200, duration: 2 }, 28)
-        .to(pic6, { rotate: 16, y: 300, duration: 2 }, 28)
-        .to(pic7, { x: 180, y: 180, duration: 2 }, 28)
-        .add(() => {}, "+=5");
+        });
+      });
     },
     {
       // scope: containerRef
@@ -274,268 +601,528 @@ const Section2 = () => {
     }, 0);
   }, []);
   return (
-    <div ref={containerRef} className=" w-full h-screen relative min-h-[760px]">
+    <>
       <div
-        ref={blackContainerRef}
-        className="absolute translate-y-full bottom-0 left-0 right-0 h-screen bg-[#202020] overflow-hidden flex items-end justify-center pb-[100px] z-20"
+        ref={containerRef}
+        className="w-full h-screen relative min-h-[760px]  hidden lg:block"
       >
-        <div className="relative w-[556px] h-[394px] z-[25]">
-          <div
-            ref={title1Ref}
-            className="text-[39px] font-semibold text-white absolute -left-[320px] -top-[200px] w-[476px] translate-y-full opacity-0"
-          >
-            Double Rewards on Every Single Swipe
-          </div>
-          <div
-            ref={title2Ref}
-            className="text-[39px] leading-[47px] font-semibold text-white absolute -left-[320px] -top-[200px] w-[358px]  opacity-0"
-          >
-            THE FIRST CARD POWERED BY{" "}
-            <span className="text-[#ff870f]">BNB CHAIN</span>
-          </div>
+        <div
+          ref={blackContainerRef}
+          className="absolute translate-y-full bottom-0 left-0 right-0 h-screen bg-[#202020] overflow-hidden flex  items-end justify-center pb-[100px] z-20"
+        >
+          <div className="relative w-[556px] h-[394px] z-[25]">
+            <div
+              ref={title1Ref}
+              className="text-[39px] font-semibold text-white absolute -left-[170px] -top-[130px] w-[476px] translate-y-full opacity-0 xl:-left-[320px] xl:-top-[200px]"
+            >
+              Double Rewards on Every Single Swipe
+            </div>
+            <div
+              ref={title2Ref}
+              className="text-[39px] leading-[47px] font-semibold text-white absolute -left-[170px] -top-[130px] w-[358px]  opacity-0 xl:-left-[320px] xl:-top-[200px]"
+            >
+              THE FIRST CARD POWERED BY{" "}
+              <span className="text-[#ff870f]">BNB CHAIN</span>
+            </div>
 
-          <div
-            ref={title3Ref}
-            className="text-[39px] leading-[47px] font-semibold text-white absolute -left-[320px] -top-[200px] w-[463px] translate-y-1/3 opacity-0"
-          >
-            BORDERLESS SPENDING, LIMITLESS REWARDS
-          </div>
+            <div
+              ref={title3Ref}
+              className="text-[39px] leading-[47px] font-semibold text-white absolute -left-[170px] -top-[130px] w-[463px] translate-y-1/3 opacity-0 xl:-left-[320px] xl:-top-[200px] z-10"
+            >
+              BORDERLESS SPENDING, LIMITLESS REWARDS
+            </div>
 
+            <Image
+              ref={cardTopRef}
+              src="/images/card-top.png"
+              alt=""
+              width={520}
+              height={220}
+              className="absolute top-0 right-0"
+            ></Image>
+            <Image
+              ref={cardBottomRef}
+              src="/images/card-bottom.png"
+              alt=""
+              width={520}
+              height={220}
+              className="absolute bottom-0 left-0 z-50"
+            ></Image>
+            <Image
+              ref={cardCircleRef}
+              src="/images/circle.png"
+              width={532}
+              height={418}
+              className="absolute bottom-0 left-[82px] xl:bottom-8"
+              alt=""
+            ></Image>
+            <Image
+              ref={binanceRef}
+              src="/images/binance.png"
+              width={356}
+              height={419}
+              className="absolute bottom-0 left-[230px] opacity-0 translate-y-1/2 xl:bottom-[80px]"
+              alt=""
+            ></Image>
+
+            <div
+              ref={picBoxRef}
+              className="absolute bottom-[250px] left-[200px] opacity-0 xl:bottom-[350px]"
+            >
+              <div
+                ref={pic1Ref}
+                className="absolute w-[126px] h-[126px] xl:w-[155px] xl:h-[166px]"
+              >
+                <Image src="/images/pic1.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic2Ref}
+                className="absolute w-[126px] h-[126px] -left-1 -top-1 xl:w-[162px] xl:h-[178px]"
+              >
+                <Image src="/images/pic2.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic3Ref}
+                className="absolute w-[126px] h-[126px] -left-4 -top-2 xl:w-[185px] xl:h-[189px]"
+              >
+                <Image src="/images/pic3.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic4Ref}
+                className="absolute w-[126px] h-[126px] -left-3 -top-1 xl:w-[176px] xl:h-[176px]"
+              >
+                <Image src="/images/pic4.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic5Ref}
+                className="absolute w-[126px] h-[126px] -left-6 -top-4 xl:w-[200px] xl:h-[200px]"
+              >
+                <Image src="/images/pic5.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic6Ref}
+                className="absolute w-[126px] h-[126px] -left-3.5 -top-3.5 xl:w-[179px] xl:h-[196px]"
+              >
+                <Image src="/images/pic6.jpg" fill alt=""></Image>
+              </div>
+              <div
+                ref={pic7Ref}
+                className="absolute w-[126px] h-[126px] -left-2.5 -top-0.5 xl:w-[169px] xl:h-[173px]"
+              >
+                <Image src="/images/pic7.jpg" fill alt=""></Image>
+              </div>
+            </div>
+            <div
+              ref={content1Ref}
+              className="absolute -right-[220px] top-[50px] translate-y-full opacity-0 xl:-right-[325px]"
+            >
+              <div className="text-white text-xl font-medium mb-4 xl:text-2xl">
+                SAVE → EARN in $GRID
+              </div>
+              <ul className="text-[#c9c8c8] text-sm leading-6 mb-[80px] list-disc list-inside">
+                <li>Save more earn more</li>
+                <li>Higher tiers for larger balances</li>
+                <li>Access to premium yields</li>
+                <li>Long-term wealth building</li>
+              </ul>
+              <div className="text-white text-xl font-medium mb-4 xl:text-2xl">
+                SPEND → EARN in $REAL
+              </div>
+              <ul className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside">
+                <li>Instant rewards on every purchase</li>
+                <li>Global acceptance</li>
+                <li>Low fees</li>
+                <li>Compound yield opportunities </li>
+              </ul>
+            </div>
+            <div
+              ref={content2Ref}
+              className="absolute -right-[280px] bottom-[180px] translate-y-[150%] opacity-0 md:w-[276px] lg:w-[344px] lg:-right-[230px] xl:w-[339px] xl:-right-[325px]"
+            >
+              <div className="text-white text-2xl font-medium mb-4">
+                Earn Both Ways: $REAL on Spending + $GRID on Savings
+              </div>
+              <div className="text-[#c9c8c8] text-sm leading-6 ">
+                Turn Every Financial Move into a Wealth-Building Moment. The
+                REAL Card Uniquely Rewards You Twice - On Spending AND Savings:
+              </div>
+            </div>
+            <div
+              ref={content3Ref}
+              className="absolute -right-[270px] bottom-[0px] translate-y-[80%] opacity-0 md:w-[271px] lg:-right-[180px] xl:w-[339px] xl:-right-[325px]"
+            >
+              <div className="text-white text-2xl font-medium mb-4">
+                Where REAL Finance Meets BNB Chain
+              </div>
+              <div className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside mb-10">
+                REAL Card links world’s largest web3 ecosystem to your everyday
+                spending. Each transaction unlocks rewards in $REAL and $GRID
+                tokens, immediately accessible in your BNB Chain wallet for
+                trading, staking, or yield farming.
+              </div>
+              <ul className="text-[#c9c8c8] text-sm">
+                <li>
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    01
+                  </span>
+                  Instant Settlement on BNB Chain
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    02
+                  </span>{" "}
+                  Zero Gas Fee Rewards
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    03
+                  </span>{" "}
+                  Direct Access to BNB DeFi
+                </li>
+              </ul>
+            </div>
+            <div
+              ref={content4Ref}
+              className="absolute -right-[280px] bottom-[20px] translate-y-[50%] opacity-0 lg:w-[279px] lg:-right-[230px] xl:w-[339px] xl:-right-[325px] xl:bottom-[53px]"
+            >
+              <div className="text-white text-2xl font-medium mb-4">
+                Your Global Payment Power, Amplified by Crypto
+              </div>
+              <div className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside mb-10">
+                Achieve financial freedom across 200+ countries and 60+ million
+                merchants worldwide.
+              </div>
+              <ul className="text-[#c9c8c8] text-sm">
+                <li>
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    01
+                  </span>
+                  Low Transaction Fees
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    02
+                  </span>{" "}
+                  Real-Time Currency Conversion
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    03
+                  </span>{" "}
+                  Global Acceptance
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    03
+                  </span>{" "}
+                  Dual Crypto Rewards Everywhere
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            ref={phoneBoxRef}
+            className="phone-box z-40 w-[296px] h-[583px] absolute -bottom-[160px] left-1/2 -translate-x-1/2 translate-y-full xl:w-[397px] xl:h-[772px] xl:-bottom-[200px]"
+          >
+            <div
+              ref={phoneCx1Ref}
+              className="absolute left-[8%] w-[84%] h-[92%] top-[4%] rounded-[45px] overflow-hidden"
+            >
+              <Image src="/images/phone1.jpg" fill alt="phone1"></Image>
+            </div>
+            <div
+              ref={phoneCx2Ref}
+              className="absolute left-[8%] w-[84%] h-[92%] top-[4%] rounded-[45px] overflow-hidden opacity-0"
+            >
+              <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
+            </div>
+          </div>
           <Image
-            ref={cardTopRef}
-            src="/images/card-top.png"
+            src="/images/noise.png"
+            fill
             alt=""
-            width={520}
-            height={220}
-            className="absolute top-0 right-0"
+            className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
           ></Image>
-          <Image
-            ref={cardBottomRef}
-            src="/images/card-bottom.png"
-            alt=""
-            width={520}
-            height={220}
-            className="absolute bottom-0 left-0 z-50"
-          ></Image>
-          <Image
-            ref={cardCircleRef}
-            src="/images/circle.png"
-            width={532}
-            height={418}
-            className="absolute bottom-8 left-[82px]"
-            alt=""
-          ></Image>
-          <Image
-            ref={binanceRef}
-            src="/images/binance.png"
-            width={356}
-            height={419}
-            className="absolute bottom-[80px] left-[230px] opacity-0 translate-y-1/2"
-            alt=""
-          ></Image>
-          <div
-            ref={mapRef}
-            className="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[735px] h-[585px] opacity-0 translate-y-1/3"
-          >
-            <Image src="/images/map.png" fill alt=""></Image>
+        </div>
+        <div className="mx-auto relative h-full md:w-[688px] lg:w-[900px] xl:w-[1216px]">
+          <div className="absolute w-[442px] flex flex-col gap-6 top-[120px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:bottom-[95px]">
+            <SvgIcon name="read-card" className="w-[106px]"></SvgIcon>
+            <div className="text-[34px] tracking-wider">
+              SPEND <span className="font-bold">ANYWHERE</span>, EARN{" "}
+              <span className="font-bold">EVERYWHERE</span>
+            </div>
+            <div className="text-[17px] leading-snug tracking-wide">
+              The first global payment card that turns every swipe into dual
+              crypto rewards.
+            </div>
+            <Button className="rounded-[70px] w-[180px] h-[56px] text-[#202020] text-sm font-medium leading-none tracking-wider">
+              APPLY NOW
+            </Button>
           </div>
           <div
-            ref={picBoxRef}
-            className="absolute bottom-[350px] left-[200px] opacity-0"
+            ref={blackCardRef}
+            className="absolute bottom-[360px] right-[81px] w-[252px] h-[159px] origin-top-left rotate-[32deg] rounded-2xl z-30 xl:w-[400px] xl:h-[255px] xl:right-[141px] "
           >
-            <div ref={pic1Ref} className="absolute w-[155px] h-[166px]">
-              <Image src="/images/pic1.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic2Ref}
-              className="absolute w-[162px] h-[178px] -left-1 -top-1 "
-            >
-              <Image src="/images/pic2.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic3Ref}
-              className="absolute w-[185px] h-[189px] -left-4 -top-2 "
-            >
-              <Image src="/images/pic3.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic4Ref}
-              className="absolute w-[176px] h-[176px] -left-3 -top-1"
-            >
-              <Image src="/images/pic4.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic5Ref}
-              className="absolute w-[200px] h-[200px] -left-6 -top-4"
-            >
-              <Image src="/images/pic5.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic6Ref}
-              className="absolute w-[179px] h-[196px] -left-3.5 -top-3.5 "
-            >
-              <Image src="/images/pic6.jpg" fill alt=""></Image>
-            </div>
-            <div
-              ref={pic7Ref}
-              className="absolute w-[169px] h-[173px] -left-2.5 -top-0.5 "
-            >
-              <Image src="/images/pic7.jpg" fill alt=""></Image>
-            </div>
+            <Image src="/images/blackcard.png" fill alt="BlackCard"></Image>
           </div>
           <div
-            ref={content1Ref}
-            className="absolute -right-[325px] top-[50px] translate-y-full opacity-0 "
+            ref={orangeCardRef}
+            className="absolute right-[278px] bottom-[380px] w-[234px] h-[147px] origin-top-left rotate-[49deg] rounded-2xl border border-[#ffddc9] z-10 scale-y-95 skew-x-[18deg] translate-x-[390px] translate-y-[64px] xl:w-[375px] xl:h-[236px]"
           >
-            <div className="text-white text-2xl font-medium mb-4">
-              SAVE → EARN in $IOST
-            </div>
-            <ul className="text-[#c9c8c8] text-sm leading-6 mb-[80px] list-disc list-inside">
-              <li>Save more earn more</li>
-              <li>Higher tiers for larger balances</li>
-              <li>Access to premium yields</li>
-              <li>Long-term wealth building</li>
-            </ul>
-            <div className="text-white text-2xl font-medium mb-4">
-              SPEND → EARN in $DARWIN
-            </div>
-            <ul className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside">
-              <li>Instant rewards on every purchase</li>
-              <li>Global acceptance</li>
-              <li>Low fees</li>
-              <li>Compound yield opportunities </li>
-            </ul>
+            <Image src="/images/orangecard.png" fill alt="OrangeCard"></Image>
           </div>
           <div
-            ref={content2Ref}
-            className="absolute -right-[325px] bottom-[180px] translate-y-[150%] opacity-0 w-[374px] "
+            ref={silverCardRef}
+            className="absolute -right-[90px] bottom-[100px] w-[234px] h-[148px] origin-top-left rotate-[-32deg] shadow border border-white rounded-2xl scale-y-95 skew-x-[-18deg] xl:w-[400px] xl:h-[255px] xl:bottom-0"
           >
-            <div className="text-white text-2xl font-medium mb-4">
-              Earn Both Ways: $REAL on Spending + $GRID on Savings
-            </div>
-            <div className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside">
-              Turn Every Financial Move into a Wealth-Building Moment. The REAL
-              Card Uniquely Rewards You Twice - On Spending AND Savings:
-            </div>
-          </div>
-          <div
-            ref={content3Ref}
-            className="absolute -right-[325px] bottom-[0px] translate-y-[80%] opacity-0 w-[352px] "
-          >
-            <div className="text-white text-2xl font-medium mb-4">
-              Where REAL Finance Meets BNB Chain
-            </div>
-            <div className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside mb-10">
-              REAL Card links world’s largest web3 ecosystem to your everyday
-              spending. Each transaction unlocks rewards in $REAL and $GRID
-              tokens, immediately accessible in your BNB Chain wallet for
-              trading, staking, or yield farming.
-            </div>
-            <ul className="text-[#c9c8c8] text-sm">
-              <li>
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">01</span>
-                Instant Settlement on BNB Chain
-              </li>
-              <li className="mt-4">
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">02</span>{" "}
-                Zero Gas Fee Rewards
-              </li>
-              <li className="mt-4">
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">03</span>{" "}
-                Direct Access to BNB DeFi
-              </li>
-            </ul>
-          </div>
-          <div
-            ref={content4Ref}
-            className="absolute -right-[325px] bottom-[53px] translate-y-[50%] opacity-0 w-[339px]"
-          >
-            <div className="text-white text-2xl font-medium mb-4">
-              Your Global Payment Power, Amplified by Crypto
-            </div>
-            <div className="text-[#c9c8c8] text-sm leading-6 list-disc list-inside mb-10">
-              Achieve financial freedom across 200+ countries and 60+ million
-              merchants worldwide.
-            </div>
-            <ul className="text-[#c9c8c8] text-sm">
-              <li>
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">01</span>
-                Low Transaction Fees
-              </li>
-              <li className="mt-4">
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">02</span>{" "}
-                Real-Time Currency Conversion
-              </li>
-              <li className="mt-4">
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">03</span>{" "}
-                Global Acceptance
-              </li>
-              <li className="mt-4">
-                <span className="w-6 inline-block mr-1 text-[#ff764a]">03</span>{" "}
-                Dual Crypto Rewards Everywhere
-              </li>
-            </ul>
+            <Image src="/images/silvercard.png" fill alt="SilverCard"></Image>
           </div>
         </div>
-        <div
-          ref={phoneBoxRef}
-          className="phone-box z-40 w-[397px] h-[772px] absolute -bottom-[200px] left-1/2 -translate-x-1/2 translate-y-full"
-        >
-          <div
-            ref={phoneCx1Ref}
-            className="absolute left-[8%] w-[84%] h-[92%] top-[4%] rounded-[45px] overflow-hidden"
-          >
-            <Image src="/images/phone1.jpg" fill alt="phone1"></Image>
-          </div>
-          <div
-            ref={phoneCx2Ref}
-            className="absolute left-[8%] w-[84%] h-[92%] top-[4%] rounded-[45px] overflow-hidden opacity-0"
-          >
-            <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
-          </div>
-        </div>
-        <Image
-          src="/images/noise.png"
-          fill
-          alt=""
-          className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
-        ></Image>
       </div>
-      <div className="w-[1216px] mx-auto relative h-full">
-        <div className="absolute bottom-[95px] left-0 w-[442px] flex flex-col gap-6">
-          <SvgIcon name="read-card" className="w-[106px]"></SvgIcon>
-          <div className="text-[34px] tracking-wider">
-            SPEND <span className="font-bold">ANYWHERE</span>, EARN{" "}
-            <span className="font-bold">EVERYWHERE</span>
+      <div ref={mcontainerRef} className="lg:hidden">
+        <div className="min-h-[760px] flex flex-col items-center px-5 md:px-0 pt-[50px] md:pt-[140px] gap-[75px]">
+          <div className="w-full md:w-[442px] flex flex-col gap-6">
+            <SvgIcon name="read-card" className="w-[106px]"></SvgIcon>
+            <div className="text-[34px] tracking-wider">
+              SPEND <span className="font-bold">ANYWHERE</span>, EARN{" "}
+              <span className="font-bold">EVERYWHERE</span>
+            </div>
+            <div className="text-[17px] leading-snug tracking-wide">
+              The first global payment card that turns every swipe into dual
+              crypto rewards.
+            </div>
+            <Button className="rounded-[70px] w-[180px] h-[56px] text-[#202020] text-sm font-medium leading-none tracking-wider">
+              APPLY NOW
+            </Button>
           </div>
-          <div className="text-[17px] leading-snug tracking-wide">
-            The first global payment card that turns every swipe into dual
-            crypto rewards.
+          <div className="w-full md:w-[516px] h-[423px] relative">
+            <Image src="/images/3card.png" fill alt=""></Image>
           </div>
-          <Button className="rounded-[70px] w-[180px] h-[56px] text-[#202020] text-sm font-medium leading-none tracking-wider">
-            APPLY NOW
-          </Button>
         </div>
-        <div
-          ref={blackCardRef}
-          className="absolute bottom-[360px] right-[141px] w-[400px] h-[255px] origin-top-left rotate-[32deg] rounded-2xl z-30"
-        >
-          <Image src="/images/blackcard.png" fill alt="BlackCard"></Image>
-        </div>
-        <div
-          ref={orangeCardRef}
-          className="absolute right-[278px] bottom-[380px] w-[375px] h-[236px] origin-top-left rotate-[49deg] rounded-2xl border border-[#ffddc9] z-10 scale-y-95 skew-x-[18deg] translate-x-[390px] translate-y-[64px]"
-        >
-          <Image src="/images/orangecard.png" fill alt="OrangeCard"></Image>
-        </div>
-        <div
-          ref={silverCardRef}
-          className="absolute -right-[90px] bottom-0 w-[400px] h-[255px] origin-top-left rotate-[-32deg] shadow border border-white rounded-2xl scale-y-95 skew-x-[-18deg]"
-        >
-          <Image src="/images/silvercard.png" fill alt="SilverCard"></Image>
+        <div className="bg-[#202020] relative">
+          <Image
+            src="/images/noise.png"
+            fill
+            alt=""
+            className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
+          ></Image>
+          <div className="min-h-[760px] text-white relative flex flex-col pt-[50px] md:pt-[140px] p-5 md:p-10">
+            <div className="w-full md:w-[476px] text-2xl md:text-[39px] font-semibold">
+              Double Rewards on Every Single Swipe
+            </div>
+            <div
+              className=" relative w-full md:w-[556px] md:h-[394px] mx-auto mt-[49px]  mb-[96px]"
+              style={{ aspectRatio: "556 / 394" }}
+            >
+              <div
+                className="absolute top-0 right-0 w-full md:w-[520px] md:h-[220px]"
+                style={{ aspectRatio: "520 / 220" }}
+              >
+                <Image
+                  src="/images/card-top.png"
+                  alt=""
+                  fill
+                  objectFit="contain"
+                ></Image>
+              </div>
+              <div
+                className="absolute bottom-0 left-0 z-50 w-full  md:w-[520px] md:h-[220px]"
+                style={{ aspectRatio: "520 / 220" }}
+              >
+                <Image src="/images/card-bottom.png" alt="" fill></Image>
+              </div>
+              <div className="w-full md:w-[532px] h-[418px]  absolute bottom-0 md:left-[82px] xl:bottom-8">
+                <Image src="/images/circle.png" fill alt=""></Image>
+              </div>
+              <div
+                ref={m_blackCardRef}
+                className="absolute bottom-[40px] md:bottom-[60px] right-[60px] md:right-[81px] w-[225px] md:w-[367px] h-[141px] md:h-[231px] origin-top-left -rotate-[4deg] rounded-2xl z-30"
+              >
+                <Image src="/images/blackcard.png" fill alt="BlackCard"></Image>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row mx-auto gap-[70px] ">
+              <div>
+                <div className=" text-xl font-medium">SAVE → EARN in $GRID</div>
+                <ul className="mt-4 list-disc list-inside text-[#c9c8c8]">
+                  <li>Save more earn more</li>
+                  <li>Higher tiers for larger balances</li>
+                  <li>Access to premium yields</li>
+                  <li>Long-term wealth building</li>
+                </ul>
+              </div>
+              <div>
+                <div className=" text-xl font-medium">
+                  SPEND → EARN in $REAL
+                </div>
+                <ul className="mt-4 list-disc list-inside text-[#c9c8c8]">
+                  <li>Instant rewards on every purchase</li>
+                  <li>Global acceptance</li>
+                  <li>Low fees</li>
+                  <li>Compound yield opportunities </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
+            <div className="w-full md:w-[476px] text-2xl md:text-[39px] font-semibold">
+              Double Rewards on Every Single Swipe
+            </div>
+            <div className="phone-box w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
+              <div className="rounded-[30px] overflow-hidden left-[9%] absolute w-[86%] h-[92%] top-[4%]">
+                <Image src="/images/phone1.jpg" fill alt="phone1"></Image>
+              </div>
+            </div>
+            <div className="w-full md:w-[390px] mx-auto">
+              <div className="text-white text-xl font-medium mb-4">
+                Earn Both Ways: $REAL on Spending + $GRID on Savings
+              </div>
+              <div className="text-[#c9c8c8] text-sm leading-6 ">
+                Turn Every Financial Move into a Wealth-Building Moment. The
+                REAL Card Uniquely Rewards You Twice - On Spending AND Savings:
+              </div>
+            </div>
+          </div>
+          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5: p-10">
+            <div className="text-2xl md:text-[39px] leading-[34px] md:leading-[47px] font-semibold text-white w-full md:w-[358px] ">
+              THE FIRST CARD POWERED BY{" "}
+              <span className="text-[#ff870f]">BNB CHAIN</span>
+            </div>
+            <div className="phone-box w-[252px] h-[512px] mx-auto relative my-9">
+              <div className="rounded-[30px] overflow-hidden left-[9%] absolute w-[86%] h-[92%] top-[4%]">
+                <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-[30px] mx-auto">
+              <div className="w-full md:w-[418px]">
+                <div className="text-xl font-medium mb-4">
+                  Where REAL Finance Meets BNB Chain
+                </div>
+                <div className="text-[#c9c8c8] text-sm leading-snug">
+                  REAL Card links world’s largest web3 ecosystem to your
+                  everyday spending. <br /> Each transaction unlocks rewards in
+                  $REAL and $GRID tokens, immediately accessible in your BNB
+                  Chain wallet for trading, staking, or yield farming.{" "}
+                </div>
+              </div>
+              <ul className="text-[#c9c8c8] text-sm">
+                <li>
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    01
+                  </span>
+                  Instant Settlement on BNB Chain
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    02
+                  </span>{" "}
+                  Zero Gas Fee Rewards
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    03
+                  </span>{" "}
+                  Direct Access to BNB DeFi
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
+            <div className="text-xl md:text-[39px] font-semibold w-full md:w-[539px] z-10">
+              BORDERLESS SPENDING, LIMITLESS REWARDS
+            </div>
+
+            <div
+              className=" relative w-full md:w-[677px] md:h-[600px] mx-auto z-0 "
+              style={{ aspectRatio: "677 / 600" }}
+            >
+              <Image src="/images/map.png" fill alt=""></Image>
+              <div
+                ref={m_picBoxRef}
+                className="absolute top-[200px] left-[250px] opacity-1 z-0 overflow-hidden"
+              >
+                <div ref={m_pic1Ref} className="absolute w-[126px] h-[126px]">
+                  <Image src="/images/pic1.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic2Ref}
+                  className="absolute w-[126px] h-[126px] -left-1 -top-1"
+                >
+                  <Image src="/images/pic2.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic3Ref}
+                  className="absolute w-[126px] h-[126px] -left-4 -top-2"
+                >
+                  <Image src="/images/pic3.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic4Ref}
+                  className="absolute w-[126px] h-[126px] -left-3 -top-1"
+                >
+                  <Image src="/images/pic4.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic5Ref}
+                  className="absolute w-[126px] h-[126px] -left-6 -top-4"
+                >
+                  <Image src="/images/pic5.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic6Ref}
+                  className="absolute w-[126px] h-[126px] -left-3.5 -top-3.5"
+                >
+                  <Image src="/images/pic6.jpg" fill alt=""></Image>
+                </div>
+                <div
+                  ref={m_pic7Ref}
+                  className="absolute w-[126px] h-[126px] -left-2.5 -top-0.5 xl:w-[169px] xl:h-[173px]"
+                >
+                  <Image src="/images/pic7.jpg" fill alt=""></Image>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-[30px] mx-auto  z-10">
+              <div className="w-full md:w-[372px]">
+                <div className="text-2xl font-medium mb-4">
+                  Your Global Payment Power, Amplified by Crypto
+                </div>
+                <div className="text-[#c9c8c8] text-[17px] leading-snug">
+                  Achieve financial freedom across 200+ countries and 60+
+                  million merchants worldwide.
+                </div>
+              </div>
+              <ul className="text-[#c9c8c8] text-sm">
+                <li>
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    01
+                  </span>
+                  Low Transaction Fees
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    02
+                  </span>{" "}
+                  Real-Time Currency Conversion
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    03
+                  </span>{" "}
+                  Global Acceptance
+                </li>
+                <li className="mt-4">
+                  <span className="w-6 inline-block mr-1 text-[#ff764a]">
+                    04
+                  </span>{" "}
+                  Dual Crypto Rewards Everywhere
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

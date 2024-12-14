@@ -48,124 +48,364 @@ const Section1 = () => {
       const patternBox = patternBoxRef.current;
       const slider = sliderRef.current;
       if (!container) return;
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "+=2000",
-            pin: true,
-            scrub: true,
-            // markers: true,
-            onEnterBack: () => {},
-            onLeaveBack: () => {
-              // gsap.to(".darwin-logo path", {
-              //   fill: "#ffffff",
-              //   duration: 1,
-              // });
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=2000",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnterBack: () => {},
+              onLeaveBack: () => {
+                // gsap.to(".darwin-logo path", {
+                //   fill: "#ffffff",
+                //   duration: 1,
+                // });
+              },
             },
-          },
-        })
-        .to(
-          container,
-          {
-            backgroundColor: "#202020",
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          box,
-          {
-            rotateX: 5,
-            rotateY: 5,
-            y: "+=5",
-            duration: 3,
-          },
-          1
-        )
-        .to(
-          ".sec1-box-item",
-          {
-            borderColor: "#0d0d0d",
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          patternBox,
-          {
-            color: "#0d0d0d",
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          p1,
-          {
-            y: -100,
-            opacity: 0,
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          icons,
-          {
-            y: -100,
-            opacity: 0,
-            duration: 1,
-          },
-          5
-        )
-        .fromTo(
-          p2,
-          {
-            y: "+=50",
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 3,
-          },
-          5
-        )
-        .to(
-          ".darwin-logo path",
-          {
-            attr: { fill: "#ffffff" },
-            fill: "#ffffff",
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          ".header",
-          {
-            color: "#ffffff",
-            duration: 1,
-          },
-          5
-        )
-        .to(
-          p2,
-          {
-            y: "-=50",
-            opacity: 0,
-            duration: 3,
-          },
-          10
-        )
-        .to(
-          slider,
-          {
-            x: 0,
-            duration: 8,
-          },
-          10
-        )
-        .add(() => {}, "+=2");
+          })
+          .to(
+            container,
+            {
+              backgroundColor: "#202020",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            box,
+            {
+              rotateX: 5,
+              rotateY: 5,
+              y: "+=5",
+              duration: 3,
+            },
+            1
+          )
+          // .to(
+          //   ".sec1-box-item",
+          //   {
+          //     borderColor: "#0d0d0d",
+          //     duration: 1,
+          //   },
+          //   5
+          // )
+          .to(
+            patternBox,
+            {
+              color: "#0d0d0d",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p1,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            icons,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .fromTo(
+            p2,
+            {
+              y: "+=50",
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 3,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p2,
+            {
+              y: "-=50",
+              opacity: 0,
+              duration: 3,
+            },
+            10
+          )
+          .to(
+            slider,
+            {
+              x: 0,
+              duration: 8,
+            },
+            10
+          )
+          .add(() => {}, "+=2");
+      });
+      mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=2000",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnterBack: () => {},
+              onLeaveBack: () => {
+                // gsap.to(".darwin-logo path", {
+                //   fill: "#ffffff",
+                //   duration: 1,
+                // });
+              },
+            },
+          })
+          .to(
+            container,
+            {
+              backgroundColor: "#202020",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            box,
+            {
+              rotateX: 5,
+              rotateY: 5,
+              y: "+=5",
+              duration: 3,
+            },
+            1
+          )
+          // .to(
+          //   ".sec1-box-item",
+          //   {
+          //     borderColor: "#0d0d0d",
+          //     duration: 1,
+          //   },
+          //   5
+          // )
+          .to(
+            patternBox,
+            {
+              color: "#0d0d0d",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p1,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            icons,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .fromTo(
+            p2,
+            {
+              y: "+=50",
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 3,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p2,
+            {
+              y: "-=50",
+              opacity: 0,
+              duration: 3,
+            },
+            10
+          )
+          .to(
+            slider,
+            {
+              y: 0,
+              duration: 8,
+            },
+            10
+          )
+          .add(() => {}, "+=2");
+      });
+      mm.add("(max-width: 767px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=2000",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnterBack: () => {},
+              onLeaveBack: () => {
+                // gsap.to(".darwin-logo path", {
+                //   fill: "#ffffff",
+                //   duration: 1,
+                // });
+              },
+            },
+          })
+          .to(
+            container,
+            {
+              backgroundColor: "#202020",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            box,
+            {
+              rotateX: 5,
+              rotateY: 5,
+              y: "+=5",
+              duration: 3,
+            },
+            1
+          )
+          // .to(
+          //   ".sec1-box-item",
+          //   {
+          //     borderColor: "#0d0d0d",
+          //     duration: 1,
+          //   },
+          //   5
+          // )
+          .to(
+            patternBox,
+            {
+              color: "#0d0d0d",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p1,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            icons,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .fromTo(
+            p2,
+            {
+              y: "+=0",
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 3,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p2,
+            {
+              y: "-=20",
+              opacity: 0,
+              duration: 3,
+            },
+            10
+          )
+          .to(
+            slider,
+            {
+              y: -160,
+              duration: 8,
+            },
+            10
+          )
+          .add(() => {}, "+=2");
+      });
     },
     {}
     // scope: containerRef
@@ -233,7 +473,7 @@ const Section1 = () => {
   return (
     <div
       ref={containerRef}
-      className="section1 w-full flex flex-col items-center justify-center h-screen relative bg-[#ebeae8] overflow-hidden min-h-[760px]"
+      className="section1 w-full flex flex-col items-center justify-center md:h-screen relative bg-[#ebeae8] overflow-hidden min-h-[760px]"
     >
       <div
         ref={patternBoxRef}
@@ -243,23 +483,24 @@ const Section1 = () => {
       </div>
       <div
         ref={p1Ref}
-        className="z-10 mt-10"
+        className="z-10 mt-10 px-5 md:px-0"
         style={{
           perspective: "1000px",
         }}
       >
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center flex-col pt-[80px] md:flex-row">
           <div className="text-[#1a1a1a]">
-            <div className="text-5xl font-semibold tracking-wide">
+            <div className="text-[32px] font-semibold tracking-wide leading-10 md:leading-[65px] md:text-[40px] xl:leading-[56px]">
               Where
               <span className="text-[#ff764a]"> Real </span>
+              <br className=" hidden md:block xl:hidden" />
               Value Evolves
               <SvgIcon name="arrow-right" className="inline-block ml-6 w-20" />
             </div>
-            <div className="mt-3 text-[28px] font-medium leading-[34px] tracking-wide">
+            <div className="mt-3 text-2xl font-medium leading-[34px] tracking-wide xl:text-[28px] md:w-[420px] lg:w-full">
               Bridging Traditional Assets with Digital Finance
             </div>
-            <div className="mt-3 w-[695px] text-[17px] leading-snug tracking-wide">
+            <div className="mt-3 w-full leading-snug tracking-wide text-sm md:text-sm md:w-[420px] xl:w-[695px] xl:text-base">
               {`We're creating a new financial paradigm where real-world value and
             digital innovation meet. Through REALFi and the REAL Card, we're
             making high-yield investments accessible and everyday spending more
@@ -269,7 +510,7 @@ const Section1 = () => {
           </div>
           <div
             ref={boxRef}
-            className="relative w-[380px] h-[340px] rotate-[18deg] -translate-y-4"
+            className="relative rotate-[18deg] mt-10 md:mt-0 -translate-y-4 w-[218px] h-[197px] lg:w-[255px] lg:h-[231px] xl:w-[380px] xl:h-[340px] ml-10 xl:ml-0"
             style={{
               transformStyle: "preserve-3d",
             }}
@@ -284,9 +525,9 @@ const Section1 = () => {
             ></Image>
           </div>
         </div>
-        <div className="text-left flex items-center gap-6">
+        <div className="text-left flex flex-col md:flex-row items-center gap-6 mt-[60px] text-sm md:text-xl xl:mt-0">
           <span>Strategic Partnership with / Trusted by/team from</span>
-          <div className="w-[265px] h-[1px] bg-[#757575]"></div>
+          <div className="w-full  h-[1px] bg-[#757575] md:w-[210px] lg:w-[265px]"></div>
         </div>
       </div>
       <div
@@ -322,7 +563,7 @@ const Section1 = () => {
       </div>
       <div
         ref={p2Ref}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[940px] z-10 text-center text-white text-[40px] font-bold leading-[65px] tracking-wider opacity-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-10 text-center text-white text-[32px] md:text-[40px] font-bold leading-[48px]  md:leading-[65px] tracking-wider opacity-0 md:w-[710px] xl:w-[940px]"
       >
         <span className="text-[#ff764a]">REAL</span> Access,{" "}
         <span className="text-[#ff764a]">REAL</span> Impact <br />
@@ -330,26 +571,26 @@ const Section1 = () => {
       </div>
       <div
         ref={sliderRef}
-        className="absolute bottom-[80px] flex text-white pl-[112px] right-0 min-w-full flex-nowrap justify-end z-10 translate-x-[150%]"
+        className="absolute bottom-0 translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 grid md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%] md:grid lg:pl-[112px] lg:flex lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
       >
-        <div className="flex gap-6">
-          {list.map((item, index) => (
-            <div
-              className="flex-shrink-0 w-[356px] h-[480px] bg-[#0d0d0d] tracking-wide rounded-[18px] overflow-hidden flex-col justify-start items-start relative"
-              key={index}
-            >
-              <div className="relative h-[364px]">
-                <Image src={`/images/${item.image}`} fill alt=""></Image>
+        {list.map((item, index) => (
+          <div
+            className="flex-shrink-0 w-[332px] h-[378px] bg-[#0d0d0d] tracking-wide rounded-[18px] overflow-hidden flex-col justify-start items-start relative lg:w-[356px] lg:h-[480px]"
+            key={index}
+          >
+            <div className="relative h-[292px] lg:h-[364px]">
+              <Image src={`/images/${item.image}`} fill alt=""></Image>
+            </div>
+            <div className="relative px-6 pb-4 gap-3 flex flex-col -mt-6 lg:-mt-4 z-10">
+              <div className="text-2xl font-medium leading-[34px] lg:text-[28px] ">
+                {item.title}
               </div>
-              <div className="relative px-6 pb-4 gap-3 flex flex-col -mt-4 z-10">
-                <div className="text-[28px] font-medium leading-[34px]">
-                  {item.title}
-                </div>
-                <div className="text-[17px] leading-snug">{item.desc}</div>
+              <div className="text-sm  leading-snug lg:text-[17px]">
+                {item.desc}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

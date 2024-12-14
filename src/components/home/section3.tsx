@@ -57,17 +57,106 @@ const Section3 = () => {
 
       gsap.registerPlugin(ScrollTrigger);
       const container = containerRef.current;
+
+      const mm = gsap.matchMedia();
+
       const p1 = p1Ref.current;
       const p2 = p2Ref.current;
       const p3 = p3Ref.current;
 
-      gsap
-        .timeline({
+      mm.add("(min-width: 1024px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=1500",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnter: () => {
+                paths.forEach((el, index) => {
+                  gsap.to(el, {
+                    fill: originalColors[index] ?? "",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#121212",
+                  duration: 1,
+                });
+                gsap.to(".real-card-p", {
+                  backgroundColor: "transparent",
+                });
+                gsap.to(".real-fi-p", {
+                  backgroundColor: "#ff764a",
+                });
+              },
+              onLeaveBack: () => {
+                paths.forEach((el) => {
+                  gsap.to(el, {
+                    fill: "#ffffff",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#ffffff",
+                  duration: 1,
+                });
+                gsap.to(".real-card-p", {
+                  backgroundColor: "#ff764a",
+                });
+                gsap.to(".real-fi-p", {
+                  backgroundColor: "transparent",
+                });
+              },
+            },
+          })
+          .to(
+            p1,
+            {
+              y: -50,
+              opacity: 0,
+              duration: 3,
+            },
+            3
+          )
+          .to(
+            p2,
+            {
+              y: "-50%",
+              opacity: 1,
+              duration: 3,
+            },
+            3
+          )
+          .to(
+            p3,
+            {
+              y: 0,
+              opacity: 1,
+              duration: 3,
+            },
+            9
+          )
+          .to(
+            p2,
+            {
+              y: "-80%",
+              opacity: 0,
+              duration: 3,
+            },
+            9
+          )
+          .add(() => {}, "+=3");
+      });
+      mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+        gsap.timeline({
           scrollTrigger: {
             trigger: container,
             start: "top top",
-            end: "+=1500",
-            pin: true,
+            end: "bottom",
+            // pin: true,
             scrub: true,
             // markers: true,
             onEnter: () => {
@@ -107,44 +196,8 @@ const Section3 = () => {
               });
             },
           },
-        })
-        .to(
-          p1,
-          {
-            y: -50,
-            opacity: 0,
-            duration: 3,
-          },
-          3
-        )
-        .to(
-          p2,
-          {
-            y: "-50%",
-            opacity: 1,
-            duration: 3,
-          },
-          3
-        )
-        .to(
-          p3,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 3,
-          },
-          9
-        )
-        .to(
-          p2,
-          {
-            y: "-80%",
-            opacity: 0,
-            duration: 3,
-          },
-          9
-        )
-        .add(() => {}, "+=3");
+        });
+      });
     },
     {
       // scope: containerRef
@@ -153,28 +206,28 @@ const Section3 = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen relative flex flex-col items-center justify-center overflow-hidden min-h-[760px]"
+      className="w-full  relative flex flex-col items-center justify-center  min-h-[760px] pt-[160px] lg:pt-0 lg:h-screen lg:overflow-hidden"
     >
       <div
         ref={p1Ref}
-        className=" flex w-[1168px] mx-auto z-10 gap-[65px] translate-y-50"
+        className=" w-full mx-auto z-10 gap-[30px] translate-y-50 px-5 md:px-10 lg:px-0 lg:flex lg:w-[900px] lg:items-center  xl:w-[1168px] xl:gap-[65px]"
       >
-        <div className="w-[560px]   flex flex-col gap-6">
-          <SvgIcon name="realfi"></SvgIcon>
-          <div className="text-[#121212] text-[34px] font-medium leading-[42px] tracking-wider">
+        <div className="w-full flex flex-col gap-6 lg:w-[510px] xl:w-[560px] ">
+          <SvgIcon name="realfi" className="w-[128px] md:w-[172px]"></SvgIcon>
+          <div className="text-[#121212] text-[28px] md:text-[34px] font-medium leading-9 md:leading-[42px] tracking-wider">
             Where REAL Premium Returns Meet Tokenization For Open Access.
           </div>
-          <div className="text-black text-[17px] leading-snug tracking-wide pr-6">
+          <div className="text-black text-xs md:text-[17px] leading-snug tracking-wide lg:pr-6 lg:w-[466px] xl:w-full">
             Tokenized, real-world value—accessible to all. Premium bonds,
             professionally managed, digitally delivered. Our tokens, backed by
             verified Brazilian bonds, transform institutional-grade investments
             into assets for everyone, globally accessible and secure.
           </div>
-          <Button className="w-[180px] px-10 py-7 rounded-[70px] text-black text-sm font-medium  tracking-wider leading-none">
+          <Button className="w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] text-black text-sm font-medium  tracking-wider leading-none">
             APPLY NOW
           </Button>
         </div>
-        <div className="flex-1 grid grid-cols-2 gap-[18px]">
+        <div className="flex-1 grid grid-cols-2 md:grid-cols-4 mt-[75px] lg:mt-0 lg:grid-cols-2 gap-[18px]">
           {list.map((item, index) => (
             <div
               key={index}
@@ -186,9 +239,12 @@ const Section3 = () => {
           ))}
         </div>
       </div>
-      <div ref={p2Ref} className=" top-1/2 translate-y-50 absolute opacity-0">
-        <SvgIcon name="realfi" className="mb-10" />
-        <div className="w-[1134px] grid grid-cols-3 gap-6">
+      <div
+        ref={p2Ref}
+        className="px-5 md:px-10  pt-[160px] lg:pt-0 lg:px-0 lg:top-1/2 lg:translate-y-50 lg:absolute lg:opacity-0 "
+      >
+        <SvgIcon name="realfi" className="mb-10 w-[128px] md:w-[172px]" />
+        <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3  lg:w-[900px] xl:w-[1134px]">
           <div className="flex flex-col justify-start p-6 text-[#181818] items-end h-[400px] relative rounded-[18px] border border-[#d7b094] bg-[#E2C7B2] overflow-hidden ">
             <div className="absolute z-0 top-0 left-0 right-0 bottom-0 mix-blend-multiply opacity-50">
               <SvgIcon name="pattern" className=" text-[#E6C7AE] scale-110" />
@@ -216,7 +272,7 @@ const Section3 = () => {
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
-              <span className="text-sm font-medium font-['DM Sans'] leading-none tracking-wider">
+              <span className="text-sm font-medium leading-none tracking-wider">
                 Learn More
               </span>
               <SvgIcon name="circle-arrow-right"></SvgIcon>
@@ -292,13 +348,13 @@ const Section3 = () => {
       </div>
       <div
         ref={p3Ref}
-        className=" bottom-0 absolute opacity-0 translate-y-[100%]"
+        className="px-5 md:px-10 pt-[160px] lg:pt-0 lg:px-0 lg:bottom-0 lg:absolute lg:opacity-0 lg:translate-y-[100%] "
       >
-        <div className="w-[1100px] text-center text-black text-[34px] font-medium font-['Montserrat'] leading-[42px] tracking-wider mb-6">
+        <div className="w-full text-center text-black text-[34px] font-medium leading-[42px] tracking-wider mb-6 xl:w-[1100px]">
           Real Value Starts Here
         </div>
-        <div className="w-[1100px] flex items-center justify-center ">
-          <div className="flex gap-6 w-[888px] mb-[18px]  items-center">
+        <div className="flex items-center justify-center xl:w-[1100px] ">
+          <div className="flex flex-col gap-6  mb-[18px]  items-center lg:w-[888px]">
             {list2.map((item, index) => (
               <div key={index} className="bg-white rounded-[18px] flex-1">
                 <div className="h-[150px] relative">

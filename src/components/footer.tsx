@@ -3,13 +3,13 @@ import SvgIcon from "./SvgIcon";
 const Footer = () => {
   return (
     <div>
-      <div className="w-[1100px] pt-5 pb-[30px] border-t border-[#757575] flex-col justify-start items-start flex">
-        <div className="self-stretch justify-between items-end inline-flex">
-          <div className="flex-col justify-end items-start inline-flex">
+      <div className="w-full mx-auto pt-5 pb-[30px] border-t border-[#757575] flex-col justify-start items-start flex md:-[688px] lg:w-[900px] xl:w-[1100px]">
+        <div className="self-stretch justify-end md:justify-between items-end inline-flex">
+          <div className="flex-col justify-end items-start  hidden md:inline-flex">
             <div className="w-[370px] text-[#494949] text-sm leading-snug">
               Disclaimer
             </div>
-            <div className="w-[370px] text-[#757575] text-xs leading-[17px]">
+            <div className="w-[370px] text-[#757575] text-xs leading-[17px] ">
               Darwin Labs is a technology services provider. Before using the
               Darwin Protocol, you should review our documentation to ensure you
               fully understand how the Protocol works. As described in our
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="self-stretch flex-col justify-between items-end inline-flex">
             <SvgIcon name="logo-color" />
-            <div className="flex-col items-end gap-2.5 flex">
+            <div className="flex-col items-end gap-2.5 flex mt-3 md:mt-0">
               <div className="items-center gap-5 flex text-[#727272] text-sm">
                 <div className="items-center gap-2 flex">
                   <SvgIcon name="x" />
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="justify-end items-center gap-[50px] flex">
-                <div className="justify-center gap-[59px] inline-flex text-right text-[#727272] text-xs capitalize leading-none tracking-wider">
+                <div className="justify-center gap-2 md:gap-[59px] inline-flex text-right text-[#727272] text-xs capitalize leading-none tracking-wider flex-col md:flex-col">
                   <span>Terms of Use</span>
                   <span>©2024 Darwin Labs | All Rights Reserved.</span>
                 </div>
