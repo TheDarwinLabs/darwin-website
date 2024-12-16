@@ -1,14 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SvgIcon from "@/components/SvgIcon";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Link from "next/link";
-import Section1 from "./section1";
 import Section2 from "./section2";
 import Section3 from "./section3";
 

@@ -29,6 +29,59 @@ const list = [
   },
 ];
 
+const images = [
+  {
+    src: "/images/logo/bnbchain.png",
+    width: 170,
+    height: 30,
+  },
+  {
+    src: "/images/logo/mastercard.png",
+    width: 68,
+    height: 40,
+  },
+  {
+    src: "/images/logo/kulipa.png",
+    width: 101,
+    height: 33,
+  },
+  {
+    src: "/images/logo/capitalone.png",
+    width: 136,
+    height: 58,
+  },
+  {
+    src: "/images/logo/stanford.png",
+    width: 104,
+    height: 64,
+  },
+  {
+    src: "/images/logo/princeton.png",
+    width: 166,
+    height: 94,
+  },
+  {
+    src: "/images/logo/carnegie.png",
+    width: 116,
+    height: 80,
+  },
+  {
+    src: "/images/logo/massa.png",
+    width: 216,
+    height: 88,
+  },
+  {
+    src: "/images/logo/chicago.png",
+    width: 224,
+    height: 80,
+  },
+  {
+    src: "/images/logo/immersve.png",
+    width: 171,
+    height: 30,
+  },
+];
+
 const Section1 = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const boxRef = useRef<HTMLDivElement | null>(null);
@@ -410,65 +463,13 @@ const Section1 = () => {
     {}
     // scope: containerRef
   );
-  const images = [
-    {
-      src: "/images/logo/bnbchain.png",
-      width: 170,
-      height: 30,
-    },
-    {
-      src: "/images/logo/mastercard.png",
-      width: 68,
-      height: 40,
-    },
-    {
-      src: "/images/logo/kulipa.png",
-      width: 101,
-      height: 33,
-    },
-    {
-      src: "/images/logo/capitalone.png",
-      width: 136,
-      height: 58,
-    },
-    {
-      src: "/images/logo/stanford.png",
-      width: 104,
-      height: 64,
-    },
-    {
-      src: "/images/logo/princeton.png",
-      width: 166,
-      height: 94,
-    },
-    {
-      src: "/images/logo/carnegie.png",
-      width: 116,
-      height: 80,
-    },
-    {
-      src: "/images/logo/massa.png",
-      width: 216,
-      height: 88,
-    },
-    {
-      src: "/images/logo/chicago.png",
-      width: 224,
-      height: 80,
-    },
-    {
-      src: "/images/logo/immersve.png",
-      width: 171,
-      height: 30,
-    },
-  ];
 
   const totalWidth = useMemo(() => {
     return (
       images.reduce((acc, item) => acc + (item.width || 0), 0) +
       32 * images.length
     );
-  }, []);
+  }, [images]);
 
   return (
     <div

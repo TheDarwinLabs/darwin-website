@@ -172,46 +172,46 @@ const SignUp = () => {
   );
 };
 
-const SendEmail = () => {
-  return (
-    <div className="w-[487px] flex-col justify-start items-center gap-[87px] inline-flex">
-      <div className="self-stretch flex-col justify-start items-start gap-2 flex">
-        <div className="self-stretch text-center text-black text-2xl font-semibold">
-          {`You're almost there...`}
-        </div>
-        <div className="self-stretch text-center text-[#181818] text-sm font-normal leading-[18px]">
-          We’ve just sent you an email – open it and click on the confirmation
-          link to get varified.
-        </div>
-      </div>
-      <SvgIcon name="email"></SvgIcon>
-      <div className="h-[100px] flex-col justify-start items-center gap-2 flex">
-        <div className="w-full h-[52px] px-6 py-3.5 bg-[#ff764a] rounded-lg justify-center items-center gap-2 inline-flex text-black text-sm font-medium leading-none tracking-wider">
-          Create My Account
-        </div>
-        <div className="text-[#606060] text-xs leading-tight text-center">
-          <span>By continuing, you agree to </span>
-          <span className="underline">Darwin Labs Terms of Service</span>
-          <span> and</span>
-          <span className="underline"> Privacy Policy</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+// const SendEmail = () => {
+//   return (
+//     <div className="w-[487px] flex-col justify-start items-center gap-[87px] inline-flex">
+//       <div className="self-stretch flex-col justify-start items-start gap-2 flex">
+//         <div className="self-stretch text-center text-black text-2xl font-semibold">
+//           {`You're almost there...`}
+//         </div>
+//         <div className="self-stretch text-center text-[#181818] text-sm font-normal leading-[18px]">
+//           We’ve just sent you an email – open it and click on the confirmation
+//           link to get varified.
+//         </div>
+//       </div>
+//       <SvgIcon name="email"></SvgIcon>
+//       <div className="h-[100px] flex-col justify-start items-center gap-2 flex">
+//         <div className="w-full h-[52px] px-6 py-3.5 bg-[#ff764a] rounded-lg justify-center items-center gap-2 inline-flex text-black text-sm font-medium leading-none tracking-wider">
+//           Create My Account
+//         </div>
+//         <div className="text-[#606060] text-xs leading-tight text-center">
+//           <span>By continuing, you agree to </span>
+//           <span className="underline">Darwin Labs Terms of Service</span>
+//           <span> and</span>
+//           <span className="underline"> Privacy Policy</span>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
-const Successfully = () => {
-  return (
-    <div className="w-[487px] flex-col justify-start items-center gap-[98px] inline-flex mb-[150px]">
-      <div className="self-stretch h-[55px] flex-col justify-start items-start gap-2 flex">
-        <div className="self-stretch text-center text-black text-2xl font-semibold">
-          Email Verificaiton
-        </div>
-        <div className="self-stretch text-center text-[#181818] text-sm font-normal leading-[18px]">
-          Email confirmed successfully
-        </div>
-      </div>
-      <SvgIcon name="email-check"></SvgIcon>
-    </div>
-  );
-};
+// const Successfully = () => {
+//   return (
+//     <div className="w-[487px] flex-col justify-start items-center gap-[98px] inline-flex mb-[150px]">
+//       <div className="self-stretch h-[55px] flex-col justify-start items-start gap-2 flex">
+//         <div className="self-stretch text-center text-black text-2xl font-semibold">
+//           Email Verificaiton
+//         </div>
+//         <div className="self-stretch text-center text-[#181818] text-sm font-normal leading-[18px]">
+//           Email confirmed successfully
+//         </div>
+//       </div>
+//       <SvgIcon name="email-check"></SvgIcon>
+//     </div>
+//   );
+// };

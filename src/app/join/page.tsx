@@ -2,7 +2,7 @@
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import SvgIcon from "@/components/SvgIcon";
+// import SvgIcon from "@/components/SvgIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -126,35 +126,35 @@ const JoinWiatList = () => {
   );
 };
 
-const Joined = () => {
-  return (
-    <div className="w-[488px]  flex-col justify-start items-start gap-[79px] inline-flex mb-[196px]">
-      <div className="w-full h-[73px] flex-col justify-start items-start gap-2 flex text-2xl  text-black text-center">
-        <div className="w-full font-semibold">
-          <span>{`You're `}</span>
-          <span className="text-[#ff764a]">#30474 </span>
-          <span>on the List!</span>
-        </div>
-        <div className="w-full text-[#181818] text-sm leading-[18px]">
-          {`Thank you for joining the waitlist for Real Card. We're excited to bring you the future of payments soon!`}
-        </div>
-      </div>
-      <div className="self-stretch h-[100px] flex-col justify-start items-center gap-2 flex">
-        <div className="w-full text-center text-[#181818] text-sm leading-[18px]">
-          Invite 1 friend to climb to #4499
-        </div>
-        <div className="w-full text-center text-[#181818] text-sm leading-[18px]">
-          Your invite link
-        </div>
-        <div className="h-12 px-[30px] py-2 bg-[#dfdfdf] rounded-[11px] border border-[#757575] text-[#494949] flex-col justify-center items-center gap-2.5 flex">
-          <div className="items-center flex gap-[34px]">
-            <div className="text-[15px] leading-7">
-              http://realcard.darwinlabs.xyz?m=1234
-            </div>
-            <SvgIcon name="copy" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+//  const Joined = () => {
+//    return (
+//      <div className="w-[488px]  flex-col justify-start items-start gap-[79px] inline-flex mb-[196px]">
+//        <div className="w-full h-[73px] flex-col justify-start items-start gap-2 flex text-2xl  text-black text-center">
+//          <div className="w-full font-semibold">
+//            <span>{`You're `}</span>
+//            <span className="text-[#ff764a]">#30474 </span>
+//            <span>on the List!</span>
+//          </div>
+//          <div className="w-full text-[#181818] text-sm leading-[18px]">
+//            {`Thank you for joining the waitlist for Real Card. We're excited to bring you the future of payments soon!`}
+//          </div>
+//        </div>
+//        <div className="self-stretch h-[100px] flex-col justify-start items-center gap-2 flex">
+//          <div className="w-full text-center text-[#181818] text-sm leading-[18px]">
+//            Invite 1 friend to climb to #4499
+//          </div>
+//          <div className="w-full text-center text-[#181818] text-sm leading-[18px]">
+//            Your invite link
+//          </div>
+//          <div className="h-12 px-[30px] py-2 bg-[#dfdfdf] rounded-[11px] border border-[#757575] text-[#494949] flex-col justify-center items-center gap-2.5 flex">
+//            <div className="items-center flex gap-[34px]">
+//              <div className="text-[15px] leading-7">
+//                http://realcard.darwinlabs.xyz?m=1234
+//              </div>
+//              <SvgIcon name="copy" />
+//            </div>
+//          </div>
+//        </div>
+//      </div>
+//    );
+//  };
