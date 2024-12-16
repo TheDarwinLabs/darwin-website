@@ -46,7 +46,6 @@ const Section2 = () => {
   const m_pic7Ref = useRef<HTMLDivElement | null>(null);
 
   const mcontainerRef = useRef<HTMLDivElement | null>(null);
-  const m_blackCardRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -85,7 +84,6 @@ const Section2 = () => {
       const pic7 = pic7Ref.current;
       const maps = mapRef.current;
 
-      const m_blackCard = m_blackCardRef.current;
       const m_pic1 = m_pic1Ref.current;
       const m_pic2 = m_pic2Ref.current;
       const m_pic3 = m_pic3Ref.current;
@@ -151,7 +149,6 @@ const Section2 = () => {
               rotate: 34,
               x: 200,
               y: -80,
-              zIndex: 0,
               duration: 4,
             },
             1
@@ -342,7 +339,6 @@ const Section2 = () => {
               rotate: 34,
               x: 260,
               y: -10,
-              zIndex: 0,
               duration: 4,
             },
             1
@@ -490,7 +486,7 @@ const Section2 = () => {
               end: "bottom",
               // pin: true,
               scrub: true,
-              markers: true,
+              // markers: true,
               onEnter: () => {
                 paths.forEach((el, index) => {
                   gsap.to(el, {
@@ -533,16 +529,6 @@ const Section2 = () => {
               duration: 1,
             },
             4
-          )
-          .to(
-            m_blackCard,
-            { x: 0, y: 600, rotate: 0, scale: 0.9, duration: 3 },
-            4
-          )
-          .to(
-            m_blackCard,
-            { x: 75, y: 860, rotate: 0, scale: 0.55, duration: 3 },
-            6
           )
           .to(m_pic1, { x: -180, y: -100, duration: 2 }, 15)
           .to(m_pic2, { rotate: -15, duration: 2 }, 15)
@@ -606,23 +592,13 @@ const Section2 = () => {
             },
             4
           )
-          .to(
-            m_blackCard,
-            { x: 0, y: 600, rotate: 0, scale: 0.9, duration: 4 },
-            6
-          )
-          .to(
-            m_blackCard,
-            { x: 50, y: 980, rotate: 0, scale: 0.55, duration: 3 },
-            10
-          )
-          .to(m_pic1, { x: -180, y: -100, duration: 2 }, 17)
+          .to(m_pic1, { x: -90, y: -50, duration: 2 }, 17)
           .to(m_pic2, { rotate: -15, duration: 2 }, 17)
-          .to(m_pic3, { x: 170, y: -100, duration: 2 }, 17)
-          .to(m_pic4, { rotate: 17, y: -270, duration: 2 }, 17)
-          .to(m_pic5, { rotate: -10, x: -180, y: 170, duration: 2 }, 17)
-          .to(m_pic6, { rotate: 16, y: 280, duration: 2 }, 17)
-          .to(m_pic7, { x: 160, y: 160, duration: 2 }, 17);
+          .to(m_pic3, { x: 85, y: -50, duration: 2 }, 17)
+          .to(m_pic4, { rotate: 17, y: -130, duration: 2 }, 17)
+          .to(m_pic5, { rotate: -10, x: -90, y: 85, duration: 2 }, 17)
+          .to(m_pic6, { rotate: 16, y: 140, duration: 2 }, 17)
+          .to(m_pic7, { x: 80, y: 80, duration: 2 }, 17);
       });
     },
     {
@@ -699,7 +675,12 @@ const Section2 = () => {
               className="absolute bottom-0 left-[230px] opacity-0 translate-y-1/2 xl:bottom-[80px]"
               alt=""
             ></Image>
-
+            <div
+              ref={mapRef}
+              className="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[735px] h-[585px] opacity-0 translate-y-1/3"
+            >
+              <Image src="/images/map.png" fill alt=""></Image>
+            </div>
             <div
               ref={picBoxRef}
               className="absolute bottom-[250px] left-[200px] opacity-0 xl:bottom-[350px]"
@@ -930,7 +911,10 @@ const Section2 = () => {
               APPLY NOW
             </Button>
           </div>
-          <div className="w-full md:w-[516px] h-[423px] relative">
+          <div
+            className="w-full md:w-[516px] md:h-[423px] relative"
+            style={{ aspectRatio: "516 / 423" }}
+          >
             <Image src="/images/3card.png" fill alt=""></Image>
           </div>
         </div>
@@ -946,34 +930,25 @@ const Section2 = () => {
               Double Rewards on Every Single Swipe
             </div>
             <div
-              className=" relative w-full md:w-[556px] md:h-[394px] mx-auto mt-[49px]  mb-[96px]"
+              className=" relative w-full max-w-[400px] md:max-w-[556px] md:w-[556px] md:h-[394px] mx-auto mt-[150px]  mb-[96px]"
               style={{ aspectRatio: "556 / 394" }}
             >
               <div
-                className="absolute top-0 right-0 w-full md:w-[520px] md:h-[220px]"
-                style={{ aspectRatio: "520 / 220" }}
+                className="absolute top-0 left-[5%] md:left-0 w-[90%]  md:w-[556px] md:h-[394px] z-10"
+                style={{ aspectRatio: "556 / 394" }}
               >
                 <Image
-                  src="/images/card-top.png"
+                  src="/images/m_card-box.png"
                   alt=""
                   fill
                   objectFit="contain"
                 ></Image>
               </div>
               <div
-                className="absolute bottom-0 left-0 z-50 w-full  md:w-[520px] md:h-[220px]"
-                style={{ aspectRatio: "520 / 220" }}
+                className="w-full md:w-[532px] md:h-[418px]  absolute bottom-0 md:left-[82px] xl:bottom-8"
+                style={{ aspectRatio: "532 / 418" }}
               >
-                <Image src="/images/card-bottom.png" alt="" fill></Image>
-              </div>
-              <div className="w-full md:w-[532px] h-[418px]  absolute bottom-0 md:left-[82px] xl:bottom-8">
                 <Image src="/images/circle.png" fill alt=""></Image>
-              </div>
-              <div
-                ref={m_blackCardRef}
-                className="absolute bottom-[40px] md:bottom-[60px] right-[60px] md:right-[81px] w-[225px] md:w-[367px] h-[141px] md:h-[231px] origin-top-left -rotate-[4deg] rounded-2xl z-30"
-              >
-                <Image src="/images/blackcard.png" fill alt="BlackCard"></Image>
               </div>
             </div>
             <div className="flex flex-col md:flex-row mx-auto gap-[70px] ">
@@ -1003,10 +978,8 @@ const Section2 = () => {
             <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px]  font-semibold">
               Double Rewards on Every Single Swipe
             </div>
-            <div className="phone-box w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
-              <div className="rounded-[30px] overflow-hidden left-[9%] absolute w-[86%] h-[92%] top-[4%]">
-                <Image src="/images/phone1.jpg" fill alt="phone1"></Image>
-              </div>
+            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
+              <Image src="/images/phonecard1.png" fill alt="phone1"></Image>
             </div>
             <div className="w-full md:w-[390px] mx-auto">
               <div className="text-white text-xl font-medium mb-4">
@@ -1018,15 +991,13 @@ const Section2 = () => {
               </div>
             </div>
           </div>
-          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5: p-10">
+          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
             <div className="text-2xl md:text-[39px] leading-[34px] md:leading-[47px] font-semibold text-white w-full md:w-[358px] ">
               THE FIRST CARD POWERED BY{" "}
               <span className="text-[#ff870f]">BNB CHAIN</span>
             </div>
-            <div className="phone-box w-[252px] h-[512px] mx-auto relative my-9">
-              <div className="rounded-[30px] overflow-hidden left-[9%] absolute w-[86%] h-[92%] top-[4%]">
-                <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
-              </div>
+            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
+              <Image src="/images/phonecard2.png" fill alt="phone2"></Image>
             </div>
             <div className="flex flex-col md:flex-row gap-[30px] mx-auto">
               <div className="w-full md:w-[418px]">
@@ -1068,50 +1039,53 @@ const Section2 = () => {
             </div>
 
             <div
-              className=" relative w-full md:w-[677px] md:h-[600px] mx-auto z-0 "
+              className=" relative w-full md:w-[677px] md:h-[600px] mx-auto z-0  overflow-hidden"
               style={{ aspectRatio: "677 / 600" }}
             >
               <Image src="/images/map.png" fill alt=""></Image>
               <div
                 ref={m_picBoxRef}
-                className="absolute top-[100px] md:top-[200px] left-1/3 md:left-[250px] opacity-1 z-0"
+                className="absolute top-[100px] md:top-[200px] left-1/2 md:left-[250px] opacity-1 z-0"
               >
-                <div ref={m_pic1Ref} className="absolute w-[126px] h-[126px]">
+                <div
+                  ref={m_pic1Ref}
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px]"
+                >
                   <Image src="/images/pic1.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic2Ref}
-                  className="absolute w-[126px] h-[126px] -left-1 -top-1"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-1 -top-1"
                 >
                   <Image src="/images/pic2.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic3Ref}
-                  className="absolute w-[126px] h-[126px] -left-4 -top-2"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-4 -top-2"
                 >
                   <Image src="/images/pic3.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic4Ref}
-                  className="absolute w-[126px] h-[126px] -left-3 -top-1"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-3 -top-1"
                 >
                   <Image src="/images/pic4.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic5Ref}
-                  className="absolute w-[126px] h-[126px] -left-6 -top-4"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-6 -top-4"
                 >
                   <Image src="/images/pic5.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic6Ref}
-                  className="absolute w-[126px] h-[126px] -left-3.5 -top-3.5"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-3.5 -top-3.5"
                 >
                   <Image src="/images/pic6.jpg" fill alt=""></Image>
                 </div>
                 <div
                   ref={m_pic7Ref}
-                  className="absolute w-[126px] h-[126px] -left-2.5 -top-0.5 xl:w-[169px] xl:h-[173px]"
+                  className="absolute w-[76px] h-[76px] md:w-[126px] md:h-[126px] -left-2.5 -top-0.5 xl:w-[169px] xl:h-[173px]"
                 >
                   <Image src="/images/pic7.jpg" fill alt=""></Image>
                 </div>

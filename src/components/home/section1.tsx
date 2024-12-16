@@ -33,17 +33,17 @@ const images = [
   {
     src: "/images/logo/bnbchain.png",
     width: 170,
-    height: 30,
+    height: 77,
   },
   {
     src: "/images/logo/mastercard.png",
-    width: 68,
-    height: 40,
+    width: 136,
+    height: 80,
   },
   {
     src: "/images/logo/kulipa.png",
-    width: 101,
-    height: 33,
+    width: 202,
+    height: 66,
   },
   {
     src: "/images/logo/capitalone.png",
@@ -52,18 +52,18 @@ const images = [
   },
   {
     src: "/images/logo/stanford.png",
-    width: 104,
-    height: 64,
+    width: 144,
+    height: 84,
   },
   {
     src: "/images/logo/princeton.png",
-    width: 166,
+    width: 206,
     height: 94,
   },
   {
     src: "/images/logo/carnegie.png",
     width: 116,
-    height: 80,
+    height: 88,
   },
   {
     src: "/images/logo/massa.png",
@@ -73,7 +73,7 @@ const images = [
   {
     src: "/images/logo/chicago.png",
     width: 224,
-    height: 80,
+    height: 88,
   },
   {
     src: "/images/logo/immersve.png",
@@ -527,7 +527,7 @@ const Section1 = () => {
           </div>
         </div>
         <div className="text-left flex flex-col md:flex-row items-center gap-6 mt-[60px] text-sm md:text-xl xl:mt-0">
-          <span>Strategic Partnership with / Trusted by/team from</span>
+          <span>Strategic Partnership with / Trusted by team from</span>
           <div className="w-full  h-[1px] bg-[#757575] md:w-[210px] lg:w-[265px]"></div>
         </div>
       </div>
@@ -580,7 +580,12 @@ const Section1 = () => {
             key={index}
           >
             <div className="relative h-[292px] lg:h-[364px]">
-              <Image src={`/images/${item.image}`} fill alt=""></Image>
+              <Image
+                src={`/images/${item.image}`}
+                fill
+                alt=""
+                style={{ objectFit: "cover" }}
+              ></Image>
             </div>
             <div className="relative px-6 pb-4 gap-3 flex flex-col -mt-6 lg:-mt-4 z-10">
               <div className="text-2xl font-medium leading-[34px] lg:text-[28px] ">

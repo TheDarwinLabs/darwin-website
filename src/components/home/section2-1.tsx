@@ -32,7 +32,7 @@ const Section2 = () => {
             end: "+=3000",
             pin: true,
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         })
         .to(blackContainer, { y: 0, duration: 5 }, 5)
