@@ -198,6 +198,54 @@ const Section3 = () => {
           },
         });
       });
+      mm.add("(max-width: 767px)", () => {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "bottom",
+            // pin: true,
+            scrub: true,
+            // markers: true,
+            onEnter: () => {
+              paths.forEach((el, index) => {
+                gsap.to(el, {
+                  fill: originalColors[index] ?? "",
+                  duration: 1,
+                });
+              });
+              gsap.to(".header", {
+                color: "#121212",
+                duration: 1,
+              });
+              gsap.to(".real-card-p", {
+                backgroundColor: "transparent",
+              });
+              gsap.to(".real-fi-p", {
+                backgroundColor: "#ff764a",
+              });
+            },
+            onLeaveBack: () => {
+              paths.forEach((el) => {
+                gsap.to(el, {
+                  fill: "#ffffff",
+                  duration: 1,
+                });
+              });
+              gsap.to(".header", {
+                color: "#ffffff",
+                duration: 1,
+              });
+              gsap.to(".real-card-p", {
+                backgroundColor: "#ff764a",
+              });
+              gsap.to(".real-fi-p", {
+                backgroundColor: "transparent",
+              });
+            },
+          },
+        });
+      });
     },
     {
       // scope: containerRef

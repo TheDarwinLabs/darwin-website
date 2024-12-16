@@ -619,7 +619,7 @@ const Section2 = () => {
       >
         <div
           ref={blackContainerRef}
-          className="absolute translate-y-full bottom-0 left-0 right-0 h-screen bg-[#202020] overflow-hidden flex  items-end justify-center pb-[100px] z-20"
+          className="absolute translate-y-full bottom-0 left-0 right-0 h-screen min-h-[760px] bg-[#202020] overflow-hidden flex  items-end justify-center pb-[100px] z-20"
         >
           <div className="relative w-[556px] h-[394px] z-[25]">
             <div
