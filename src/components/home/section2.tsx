@@ -537,11 +537,11 @@ const Section2 = () => {
           .to(
             m_blackCard,
             { x: 0, y: 600, rotate: 0, scale: 0.9, duration: 3 },
-            3.5
+            4
           )
           .to(
             m_blackCard,
-            { x: 75, y: 980, rotate: 0, scale: 0.55, duration: 3 },
+            { x: 75, y: 860, rotate: 0, scale: 0.55, duration: 3 },
             6
           )
           .to(m_pic1, { x: -180, y: -100, duration: 2 }, 15)
@@ -554,40 +554,75 @@ const Section2 = () => {
           .add(() => {}, "+=4");
       });
       mm.add("(max-width: 767px)", () => {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "+=3500",
-            pin: true,
-            scrub: true,
-            // markers: true,
-            onEnter: () => {
-              paths.forEach((el, index) => {
-                gsap.to(el, {
-                  fill: originalColors[index] ?? "",
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=3500",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              onEnter: () => {
+                paths.forEach((el, index) => {
+                  gsap.to(el, {
+                    fill: originalColors[index] ?? "",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#121212",
                   duration: 1,
                 });
-              });
-              gsap.to(".header", {
-                color: "#121212",
-                duration: 1,
-              });
-            },
-            onLeaveBack: () => {
-              paths.forEach((el) => {
-                gsap.to(el, {
-                  fill: "#ffffff",
+              },
+              onLeaveBack: () => {
+                paths.forEach((el) => {
+                  gsap.to(el, {
+                    fill: "#ffffff",
+                    duration: 1,
+                  });
+                });
+                gsap.to(".header", {
+                  color: "#ffffff",
                   duration: 1,
                 });
-              });
-              gsap.to(".header", {
-                color: "#ffffff",
-                duration: 1,
-              });
+              },
             },
-          },
-        });
+          })
+          .to(
+            ".darwin-logo path",
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            m_blackCard,
+            { x: 0, y: 600, rotate: 0, scale: 0.9, duration: 4 },
+            6
+          )
+          .to(
+            m_blackCard,
+            { x: 50, y: 980, rotate: 0, scale: 0.55, duration: 3 },
+            10
+          )
+          .to(m_pic1, { x: -180, y: -100, duration: 2 }, 17)
+          .to(m_pic2, { rotate: -15, duration: 2 }, 17)
+          .to(m_pic3, { x: 170, y: -100, duration: 2 }, 17)
+          .to(m_pic4, { rotate: 17, y: -270, duration: 2 }, 17)
+          .to(m_pic5, { rotate: -10, x: -180, y: 170, duration: 2 }, 17)
+          .to(m_pic6, { rotate: 16, y: 280, duration: 2 }, 17)
+          .to(m_pic7, { x: 160, y: 160, duration: 2 }, 17);
       });
     },
     {
@@ -907,7 +942,7 @@ const Section2 = () => {
             className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
           ></Image>
           <div className="min-h-[760px] text-white relative flex flex-col pt-[50px] md:pt-[140px] p-5 md:p-10">
-            <div className="w-full md:w-[476px] text-2xl md:text-[39px] font-semibold">
+            <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px] font-semibold">
               Double Rewards on Every Single Swipe
             </div>
             <div
@@ -965,7 +1000,7 @@ const Section2 = () => {
             </div>
           </div>
           <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
-            <div className="w-full md:w-[476px] text-2xl md:text-[39px] font-semibold">
+            <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px]  font-semibold">
               Double Rewards on Every Single Swipe
             </div>
             <div className="phone-box w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
@@ -1028,7 +1063,7 @@ const Section2 = () => {
             </div>
           </div>
           <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
-            <div className="text-xl md:text-[39px] font-semibold w-full md:w-[539px] z-10">
+            <div className="text-xl md:text-[39px] md:leading-[47px]  font-semibold w-full md:w-[539px] z-10">
               BORDERLESS SPENDING, LIMITLESS REWARDS
             </div>
 
@@ -1039,7 +1074,7 @@ const Section2 = () => {
               <Image src="/images/map.png" fill alt=""></Image>
               <div
                 ref={m_picBoxRef}
-                className="absolute top-[200px] left-[250px] opacity-1 z-0 overflow-hidden"
+                className="absolute top-[100px] md:top-[200px] left-1/3 md:left-[250px] opacity-1 z-0"
               >
                 <div ref={m_pic1Ref} className="absolute w-[126px] h-[126px]">
                   <Image src="/images/pic1.jpg" fill alt=""></Image>

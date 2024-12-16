@@ -354,7 +354,7 @@ const Section3 = () => {
           Real Value Starts Here
         </div>
         <div className="flex items-center justify-center xl:w-[1100px] ">
-          <div className="flex flex-col gap-6  mb-[18px]  items-center lg:w-[888px]">
+          <div className="flex flex-col md:flex-row gap-6  mb-[18px]  items-center lg:w-[888px]">
             {list2.map((item, index) => (
               <div key={index} className="bg-white rounded-[18px] flex-1">
                 <div className="h-[150px] relative">

@@ -394,7 +394,7 @@ const Section1 = () => {
               opacity: 0,
               duration: 3,
             },
-            10
+            8
           )
           .to(
             slider,
@@ -402,7 +402,7 @@ const Section1 = () => {
               y: -160,
               duration: 8,
             },
-            10
+            8
           )
           .add(() => {}, "+=2");
       });
