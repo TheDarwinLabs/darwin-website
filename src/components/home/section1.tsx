@@ -32,54 +32,54 @@ const list = [
 const images = [
   {
     src: "/images/logo/bnbchain.png",
-    width: 170,
-    height: 77,
-  },
-  {
-    src: "/images/logo/mastercard.png",
-    width: 136,
-    height: 80,
-  },
-  {
-    src: "/images/logo/kulipa.png",
-    width: 202,
-    height: 66,
-  },
-  {
-    src: "/images/logo/capitalone.png",
-    width: 136,
-    height: 58,
-  },
-  {
-    src: "/images/logo/stanford.png",
-    width: 144,
-    height: 84,
-  },
-  {
-    src: "/images/logo/princeton.png",
     width: 206,
     height: 94,
   },
   {
+    src: "/images/logo/mastercard.png",
+    width: 140,
+    height: 94,
+  },
+  {
+    src: "/images/logo/kulipa.png",
+    width: 144,
+    height: 94,
+  },
+  {
+    src: "/images/logo/capitalone.png",
+    width: 200,
+    height: 94,
+  },
+  {
+    src: "/images/logo/stanford.png",
+    width: 148,
+    height: 94,
+  },
+  {
+    src: "/images/logo/princeton.png",
+    width: 230,
+    height: 94,
+  },
+  {
     src: "/images/logo/carnegie.png",
-    width: 116,
-    height: 88,
+    width: 166,
+    height: 94,
   },
   {
     src: "/images/logo/massa.png",
-    width: 216,
-    height: 88,
+    width: 271,
+    height: 94,
   },
   {
     src: "/images/logo/chicago.png",
-    width: 224,
-    height: 88,
+    width: 273,
+    height: 94,
   },
-  {
-    src: "/images/logo/immersve.png",
-    width: 171,
-    height: 30,
-  },
+  // {
+  //   src: "/images/logo/immersve.png",
+  //   width: 171,
+  //   height: 30,
+  // },
 ];
 
 const Section1 = () => {
@@ -544,7 +544,7 @@ const Section1 = () => {
           } as React.CSSProperties
         }
       >
-        <div className="flex flex-nowrap gap-8 h-full loop items-center">
+        <div className="flex flex-nowrap h-full loop items-center">
           {images.map((item, index) => (
             <div
               className="relative flex-shrink-0"
