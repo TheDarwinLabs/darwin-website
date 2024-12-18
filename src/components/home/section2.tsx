@@ -118,6 +118,12 @@ const Section2 = () => {
                   color: "#121212",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#121212",
+                  fill: "#121212",
+                  stroke: "#121212",
+                  duration: 1,
+                });
               },
               onLeaveBack: () => {
                 paths.forEach((el) => {
@@ -128,6 +134,12 @@ const Section2 = () => {
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
+                  duration: 1,
+                });
+                gsap.to(".header-menu path", {
+                  color: "#ffffff",
+                  fill: "#ffffff",
+                  stroke: "#ffffff",
                   duration: 1,
                 });
               },
@@ -174,10 +186,11 @@ const Section2 = () => {
             5
           )
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             9
@@ -308,6 +321,12 @@ const Section2 = () => {
                   color: "#121212",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#121212",
+                  fill: "#121212",
+                  stroke: "#121212",
+                  duration: 1,
+                });
               },
               onLeaveBack: () => {
                 paths.forEach((el) => {
@@ -318,6 +337,12 @@ const Section2 = () => {
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
+                  duration: 1,
+                });
+                gsap.to(".header-menu path", {
+                  color: "#ffffff",
+                  fill: "#ffffff",
+                  stroke: "#ffffff",
                   duration: 1,
                 });
               },
@@ -364,10 +389,11 @@ const Section2 = () => {
             5
           )
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             9
@@ -498,6 +524,12 @@ const Section2 = () => {
                   color: "#121212",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#121212",
+                  fill: "#121212",
+                  stroke: "#121212",
+                  duration: 1,
+                });
               },
               onLeaveBack: () => {
                 paths.forEach((el) => {
@@ -510,14 +542,21 @@ const Section2 = () => {
                   color: "#ffffff",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#ffffff",
+                  fill: "#ffffff",
+                  stroke: "#ffffff",
+                  duration: 1,
+                });
               },
             },
           })
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             4
@@ -560,6 +599,12 @@ const Section2 = () => {
                   color: "#121212",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#121212",
+                  fill: "#121212",
+                  stroke: "#121212",
+                  duration: 1,
+                });
               },
               onLeaveBack: () => {
                 paths.forEach((el) => {
@@ -572,14 +617,21 @@ const Section2 = () => {
                   color: "#ffffff",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#ffffff",
+                  fill: "#ffffff",
+                  stroke: "#ffffff",
+                  duration: 1,
+                });
               },
             },
           })
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             4
@@ -612,7 +664,7 @@ const Section2 = () => {
     }, 0);
   }, []);
   return (
-    <>
+    <div id="realcard">
       <div
         ref={containerRef}
         className="w-full h-screen relative min-h-[760px]  hidden lg:block"
@@ -941,7 +993,7 @@ const Section2 = () => {
                   src="/images/m_card-box.png"
                   alt=""
                   fill
-                  objectFit="contain"
+                  // objectFit="contain"
                 ></Image>
               </div>
               <div
@@ -1131,7 +1183,7 @@ const Section2 = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

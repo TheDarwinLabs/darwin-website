@@ -132,9 +132,9 @@ const Section1 = () => {
           .to(
             box,
             {
-              rotateX: 5,
-              rotateY: 5,
-              y: "+=5",
+              rotateX: 6,
+              rotateY: 6,
+              y: "+=10",
               duration: 3,
             },
             1
@@ -186,10 +186,11 @@ const Section1 = () => {
             5
           )
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             5
@@ -305,10 +306,11 @@ const Section1 = () => {
             5
           )
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             5
@@ -424,10 +426,11 @@ const Section1 = () => {
             5
           )
           .to(
-            ".darwin-logo path",
+            [".darwin-logo path", ".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
+              stroke: "#ffffff",
               duration: 1,
             },
             5
@@ -526,7 +529,7 @@ const Section1 = () => {
             ></Image>
           </div>
         </div>
-        <div className="text-left flex flex-col md:flex-row items-center gap-6 mt-[60px] text-sm md:text-xl xl:mt-0">
+        <div className="text-left flex flex-col md:flex-row items-center gap-6 mt-[60px] text-sm md:text-base xl:mt-0">
           <span>Strategic Partnership with / Trusted by team from</span>
           <div className="w-full  h-[1px] bg-[#757575] md:w-[210px] lg:w-[265px]"></div>
         </div>
