@@ -85,6 +85,12 @@ const Section3 = () => {
                   color: "#121212",
                   duration: 1,
                 });
+                gsap.to(".header-menu path", {
+                  color: "#121212",
+                  fill: "#121212",
+                  stroke: "#121212",
+                  duration: 1,
+                });
                 gsap.to(".real-card-p", {
                   backgroundColor: "transparent",
                 });
@@ -101,6 +107,12 @@ const Section3 = () => {
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
+                  duration: 1,
+                });
+                gsap.to(".header-menu path", {
+                  color: "#ffffff",
+                  fill: "#ffffff",
+                  stroke: "#ffffff",
                   duration: 1,
                 });
                 gsap.to(".real-card-p", {
@@ -170,6 +182,12 @@ const Section3 = () => {
                 color: "#121212",
                 duration: 1,
               });
+              gsap.to(".header-menu path", {
+                color: "#121212",
+                fill: "#121212",
+                stroke: "#121212",
+                duration: 1,
+              });
               gsap.to(".real-card-p", {
                 backgroundColor: "transparent",
               });
@@ -186,6 +204,12 @@ const Section3 = () => {
               });
               gsap.to(".header", {
                 color: "#ffffff",
+                duration: 1,
+              });
+              gsap.to(".header-menu path", {
+                color: "#ffffff",
+                fill: "#ffffff",
+                stroke: "#ffffff",
                 duration: 1,
               });
               gsap.to(".real-card-p", {
@@ -218,6 +242,12 @@ const Section3 = () => {
                 color: "#121212",
                 duration: 1,
               });
+              gsap.to(".header-menu path", {
+                color: "#121212",
+                fill: "#121212",
+                stroke: "#121212",
+                duration: 1,
+              });
               gsap.to(".real-card-p", {
                 backgroundColor: "transparent",
               });
@@ -234,6 +264,12 @@ const Section3 = () => {
               });
               gsap.to(".header", {
                 color: "#ffffff",
+                duration: 1,
+              });
+              gsap.to(".header-menu path", {
+                color: "#ffffff",
+                fill: "#ffffff",
+                stroke: "#ffffff",
                 duration: 1,
               });
               gsap.to(".real-card-p", {
@@ -253,6 +289,7 @@ const Section3 = () => {
   );
   return (
     <div
+      id="realfi"
       ref={containerRef}
       className="w-full  relative flex flex-col items-center justify-center  min-h-[760px] pt-[160px] lg:pt-0 lg:h-screen lg:overflow-hidden"
     >
@@ -315,8 +352,7 @@ const Section3 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#333333]"></div>
               <div className="text-[#333333] text-sm leading-snug">
-                Minimum: $XXX Ideal for: Institutions & HNWI seeking stable
-                yields
+                Ideal for: Institutions & HNWI seeking stable yields
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
@@ -347,8 +383,7 @@ const Section3 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#333333]"></div>
               <div className="text-[#333333] text-sm leading-snug">
-                Minimum: $XX Ideal for: Experienced investors seeking optimized
-                returns
+                Ideal for: Experienced investors seeking optimized returns
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
@@ -381,8 +416,7 @@ const Section3 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#757575]"></div>
               <div className="text-[#ebeae8] text-sm leading-snug">
-                Minimum: $1,000 Ideal for: Smart traders seeking amplified
-                opportunities
+                Ideal for: Smart traders seeking amplified opportunities
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
@@ -398,7 +432,10 @@ const Section3 = () => {
         ref={p3Ref}
         className="px-5 md:px-10 pt-[160px] lg:pt-0 lg:px-0 lg:bottom-0 lg:absolute lg:opacity-0 lg:translate-y-[100%] "
       >
-        <div className="w-full text-center text-black text-[34px] font-medium leading-[42px] tracking-wider mb-6 xl:w-[1100px]">
+        <div
+          id="apply"
+          className="w-full text-center text-black text-[34px] font-medium leading-[42px] tracking-wider mb-6 xl:w-[1100px]"
+        >
           Real Value Starts Here
         </div>
         <div className="flex items-center justify-center xl:w-[1100px] ">

@@ -60,8 +60,7 @@ const Section4 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#333333]"></div>
               <div className="text-[#333333] text-sm leading-snug">
-                Minimum: $XXX Ideal for: Institutions & HNWI seeking stable
-                yields
+                Ideal for: Institutions & HNWI seeking stable yields
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
@@ -92,8 +91,7 @@ const Section4 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#333333]"></div>
               <div className="text-[#333333] text-sm leading-snug">
-                Minimum: $XX Ideal for: Experienced investors seeking optimized
-                returns
+                Ideal for: Experienced investors seeking optimized returns
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
@@ -126,8 +124,7 @@ const Section4 = () => {
               </div>
               <div className="w-full h-[1px] bg-[#757575]"></div>
               <div className="text-[#ebeae8] text-sm leading-snug">
-                Minimum: $1,000 Ideal for: Smart traders seeking amplified
-                opportunities
+                Ideal for: Smart traders seeking amplified opportunities
               </div>
             </div>
             <div className="mt-4 items-center gap-[9px] inline-flex z-20">
