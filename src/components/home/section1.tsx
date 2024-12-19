@@ -139,16 +139,12 @@ const Section1 = () => {
             },
             1
           )
-          // .to(
-          //   ".sec1-box-item",
-          //   {
-          //     borderColor: "#0d0d0d",
-          //     duration: 1,
-          //   },
-          //   5
-          // )
-          .to(
-            patternBox,
+          .fromTo(
+            ".pattern path",
+            {
+              color: "#F5F4F6",
+              duration: 1,
+            },
             {
               color: "#0d0d0d",
               duration: 1,
@@ -208,7 +204,7 @@ const Section1 = () => {
             {
               y: "-=50",
               opacity: 0,
-              duration: 3,
+              duration: 6,
             },
             10
           )
@@ -218,7 +214,7 @@ const Section1 = () => {
               x: 0,
               duration: 8,
             },
-            10
+            15
           )
           .add(() => {}, "+=2");
       });
@@ -481,7 +477,7 @@ const Section1 = () => {
     >
       <div
         ref={patternBoxRef}
-        className="w-[1000px] h-[1000px] left-[50%] -ml-[500px] top-[50%] -mt-[500px] fixed z-0 text-[#f5f4f6]"
+        className="pattern w-[1000px] h-[1000px] left-[50%] -ml-[500px] top-[50%] -mt-[500px] fixed z-0 text-[#f5f4f6]"
       >
         <Pattern />
       </div>

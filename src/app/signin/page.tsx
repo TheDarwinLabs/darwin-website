@@ -1,15 +1,19 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import SvgIcon from "@/components/SvgIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { cn, encryptStr } from "@/lib/utils";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { Checkbox } from "@/components/ui/checkbox";
+import Divider from "@/components/divider";
+import Link from "next/link";
+import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 interface IFormInput {
   email: string;
-  password: string;
+  passwd: string;
 }
 
 export default function SignIn() {
@@ -17,157 +21,154 @@ export default function SignIn() {
     control,
     handleSubmit,
     trigger,
-    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
       email: "",
-      password: "",
+      passwd: "",
+    },
+  });
+  const router = useRouter();
+
+  const signinMutation = useMutation({
+    mutationFn: async (data: IFormInput) => {
+      const response = await fetch("/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Signup failed");
+      }
+
+      return response.json();
+    },
+    onSuccess: (res) => {
+      if (res.code === 0) {
+        router.push(`/account`);
+      }
     },
   });
 
-  const password = watch("password");
-
-  const passwordRules = [
-    { label: "At least 8 characters", isValid: password.length >= 8 },
-    { label: "Number or symbol", isValid: /[0-9!@#$%^&*]/.test(password) },
-    {
-      label: "Lower or uppercase letter",
-      isValid: /[a-z]/.test(password) && /[A-Z]/.test(password),
-    },
-  ];
-
-  const isPasswordValid = passwordRules.every((rule) => rule.isValid);
-
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
+    signinMutation.mutate({ ...data, passwd: encryptStr(data.passwd) });
   };
 
   return (
     <>
       <Header olnyLogo />
-      <div className="w-full min-h-screen flex flex-col items-center justify-end">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex-col items-center gap-[34px] flex"
-        >
-          <div className="w-full flex-col gap-6 flex">
-            <div className="flex-col gap-2 flex text-center">
-              <span className="text-black text-2xl font-semibold">
-                Sign up and get started
-              </span>
-              <span className="text-[#181818] text-sm leading-[18px]">
-                Sign up today and start earning real returns.
-              </span>
-            </div>
-            <div className="flex-col items-start gap-8 flex">
-              <div className="w-full flex-col justify-start items-start gap-2 flex">
-                <div className="px-2 text-[#757575] text-sm text-left leading-[23px]">
-                  Email
-                </div>
-                <Controller
-                  name="email"
-                  control={control}
-                  rules={{
-                    required: "Email is required",
-                    pattern: {
-                      value:
-                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                      message: "Invalid email address",
-                    },
-                  }}
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      placeholder="Enter your Email"
-                      className={cn(
-                        "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0",
-                        errors.email
-                          ? ""
-                          : field.value
-                          ? "border-green-500"
-                          : ""
-                      )}
-                      onChange={(e) => {
-                        field.onChange(e);
-                        trigger("email");
-                      }}
-                    />
-                  )}
-                />
+      <div className="w-full min-h-screen flex flex-col items-center justify-end ">
+        <div className="flex-1 flex items-center pt-[96px]">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex-col items-center gap-[34px] flex w-full md:w-[420px]"
+          >
+            <div className="w-full flex-col gap-6 flex">
+              <div className="flex-col gap-2 flex text-center">
+                <span className="text-black text-2xl font-semibold">
+                  Sign In
+                </span>
               </div>
-              <div className="w-full flex-col justify-start items-start gap-2 flex">
-                <div className="px-2 text-[#757575] text-sm text-left leading-[23px]">
-                  Password
-                </div>
-                <Controller
-                  name="password"
-                  control={control}
-                  rules={{
-                    required: "Password is required",
-                  }}
-                  render={({ field }) => (
-                    <div className="w-full">
+              <div className="flex-col items-start gap-8 flex">
+                <div className="w-full flex-col justify-start items-start gap-2 flex">
+                  <div className="px-2 text-[#757575] text-sm text-left leading-[23px]">
+                    Email
+                  </div>
+                  <Controller
+                    name="email"
+                    control={control}
+                    rules={{
+                      required: "Email is required",
+                      pattern: {
+                        value:
+                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                        message: "Invalid email address",
+                      },
+                    }}
+                    render={({ field }) => (
                       <Input
                         {...field}
-                        type="password"
-                        placeholder="Enter your Password"
+                        placeholder="Enter your Email"
                         className={cn(
-                          "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0",
-                          errors.password
+                          "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0",
+                          errors.email
                             ? ""
-                            : isPasswordValid
+                            : field.value
                             ? "border-green-500"
                             : ""
                         )}
+                        onChange={(e) => {
+                          field.onChange(e);
+                          trigger("email");
+                        }}
                       />
-                      <div
-                        className={cn(
-                          "mt-2 space-y-1 grid grid-cols-2 transition-all",
-                          password.length ? "opacity-100" : "opacity-0"
-                        )}
-                      >
-                        {passwordRules.map((rule, index) => (
-                          <div key={index} className="flex items-center  gap-2">
-                            {rule.isValid ? (
-                              <SvgIcon name="circle-check" />
-                            ) : (
-                              <div
-                                className={`w-[18px] h-[18px] rounded-full border-[2px] border-gray-300 m-[1px]`}
-                              />
-                            )}
-                            <span
-                              className={`text-sm ${
-                                rule.isValid
-                                  ? "text-[#212121]"
-                                  : "text-[#757575]"
-                              }`}
-                            >
-                              {rule.label}
-                            </span>
-                          </div>
-                        ))}
+                    )}
+                  />
+                </div>
+                <div className="w-full flex-col justify-start items-start gap-2 flex">
+                  <div className="px-2 text-[#757575] text-sm text-left leading-[23px]">
+                    Password
+                  </div>
+                  <Controller
+                    name="passwd"
+                    control={control}
+                    rules={{
+                      required: "Password is required",
+                    }}
+                    render={({ field }) => (
+                      <div className="w-full">
+                        <Input
+                          {...field}
+                          type="password"
+                          placeholder="Enter your Password"
+                          className={cn(
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0",
+                            errors.passwd
+                              ? ""
+                              : field.value
+                              ? "border-green-500"
+                              : ""
+                          )}
+                        />
                       </div>
-                    </div>
-                  )}
-                />
+                    )}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex-col h-[100px] justify-start items-start gap-2 flex">
-            <Button className="w-full h-[52px] text-black text-sm rounded-lg bg-[#cac9c9] hover:bg-[#cac9c9]">
-              Create My Account
-            </Button>
-            <div className="text-[#606060] text-xs text-center leading-tight">
-              <span>By continuing, you agree to </span>
-              <span className="underline">Darwin Labs Terms of Service</span>
-              <span> and</span>
-              <span className="underline"> Privacy Policy</span>
+            <div className="w-full text-sm flex items-center justify-between">
+              <div className="items-top flex items-center space-x-2">
+                <Checkbox id="terms1" />
+                <label
+                  htmlFor="terms1"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Remember me
+                </label>
+              </div>
+              <Link href="/forgotPwd" className=" underline">
+                Forgot password?
+              </Link>
             </div>
-          </div>
-        </form>
+            <Button className="w-full h-[52px] text-black text-sm rounded-lg bg-[#cac9c9] hover:bg-[#cac9c9]">
+              Sign in
+            </Button>
+            <Divider lineColor="#111111" text="Or" />
+            <div className="text-sm">
+              {`Don't have an account? `}
+              <Link href="/signup" className="text-[#ff764a] font-bold">
+                Sign Up
+              </Link>
+            </div>
+          </form>
+        </div>
         <Footer />
       </div>
     </>
   );
 }
+
