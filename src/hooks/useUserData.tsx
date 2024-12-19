@@ -1,5 +1,5 @@
 import { fetcher } from "@/lib/fetcher";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 interface Product {
   product: string;
