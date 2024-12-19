@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/providers/ReactQueryProvider";
 
 const tabs = [
   { title: "Dashboard", icon: "app", component: Dashboard },
@@ -128,6 +129,7 @@ function Dashboard() {
 
 function Settings() {
   const { data: user } = useUserData();
+  const router = useRouter();
 
   const logoutMutation = useMutation({
     mutationFn: async () => {
@@ -141,6 +143,14 @@ function Settings() {
       }
 
       return response.json();
+    },
+    onSuccess: (res) => {
+      if (res.code === 0) {
+        queryClient.invalidateQueries({
+          queryKey: ["user", "info"],
+        });
+        router.replace("/signin");
+      }
     },
   });
   const logout = () => {
