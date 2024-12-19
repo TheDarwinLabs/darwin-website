@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Divider from "@/components/divider";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 interface IFormInput {
   email: string;
@@ -20,7 +21,6 @@ export default function SignIn() {
     control,
     handleSubmit,
     trigger,
-    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -28,19 +28,7 @@ export default function SignIn() {
       passwd: "",
     },
   });
-
-  const password = watch("passwd");
-
-  const passwordRules = [
-    { label: "At least 8 characters", isValid: password.length >= 8 },
-    { label: "Number or symbol", isValid: /[0-9!@#$%^&*]/.test(password) },
-    {
-      label: "Lower or uppercase letter",
-      isValid: /[a-z]/.test(password) && /[A-Z]/.test(password),
-    },
-  ];
-
-  const isPasswordValid = passwordRules.every((rule) => rule.isValid);
+  const router = useRouter();
 
   const signinMutation = useMutation({
     mutationFn: async (data: IFormInput) => {
@@ -58,6 +46,11 @@ export default function SignIn() {
       }
 
       return response.json();
+    },
+    onSuccess: (res) => {
+      if (res.code === 0) {
+        router.push(`/account`);
+      }
     },
   });
 
@@ -136,7 +129,7 @@ export default function SignIn() {
                             "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0",
                             errors.passwd
                               ? ""
-                              : isPasswordValid
+                              : field.value
                               ? "border-green-500"
                               : ""
                           )}

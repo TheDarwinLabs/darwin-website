@@ -69,9 +69,11 @@ export default function SignUp() {
 
       return response.json();
     },
-    onSuccess: () => {
-      setIsSend(true);
-      startCountdown();
+    onSuccess: (res) => {
+      if (res.code === 0) {
+        setIsSend(true);
+        startCountdown();
+      }
     },
   });
 

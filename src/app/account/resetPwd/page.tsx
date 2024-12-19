@@ -8,26 +8,23 @@ import { cn, encryptStr } from "@/lib/utils";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 interface IFormInput {
+  passwd: string;
   newpasswd: string;
   confirmPasswd: string;
 }
 
 interface IFormData {
+  passwd: string;
   newpasswd: string;
-  verifyToken: string;
 }
 
 export default function ResetPwdPage() {
   return (
     <>
       <Header olnyLogo />
-      <Suspense fallback={<div>Loading...</div>}>
-        <ResetPwd />
-      </Suspense>
+      <ResetPwd />
     </>
   );
 }
@@ -40,13 +37,12 @@ const ResetPwd = () => {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
+      passwd: "",
       newpasswd: "",
       confirmPasswd: "",
     },
   });
 
-  const searchParams = useSearchParams();
-  const verifyToken = searchParams.get("token") ?? "";
   const password = watch("newpasswd");
   const confirmPasswd = watch("confirmPasswd");
 
@@ -63,7 +59,7 @@ const ResetPwd = () => {
 
   const resetMutation = useMutation({
     mutationFn: async (data: IFormData) => {
-      const response = await fetch("/api/passwd/reset", {
+      const response = await fetch("/api/user/passwd/modify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,8 +79,8 @@ const ResetPwd = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     resetMutation.mutate({
+      passwd: encryptStr(data.passwd),
       newpasswd: encryptStr(data.newpasswd),
-      verifyToken,
     });
   };
   return (
@@ -105,7 +101,7 @@ const ResetPwd = () => {
               asChild
               className="bg-[#ff764a] hover:bg-[#ff764a] h-[52px] w-full text-black"
             >
-              <Link href="/signin">Go to login</Link>
+              <Link href="/account">Back to My Info Page</Link>
             </Button>
           </div>
         ) : (
@@ -122,6 +118,27 @@ const ResetPwd = () => {
               <div className="flex-col items-start gap-8 flex">
                 <div className="w-full flex-col justify-start items-start gap-2 flex">
                   <Controller
+                    name="passwd"
+                    control={control}
+                    rules={{
+                      required: "Password is required",
+                    }}
+                    render={({ field }) => (
+                      <div className="w-full">
+                        <Input
+                          {...field}
+                          type="password"
+                          placeholder="Previous Password"
+                          className={cn(
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0"
+                          )}
+                        />
+                      </div>
+                    )}
+                  />
+                </div>
+                <div className="w-full flex-col justify-start items-start gap-2 flex">
+                  <Controller
                     name="newpasswd"
                     control={control}
                     rules={{
@@ -132,7 +149,7 @@ const ResetPwd = () => {
                         <Input
                           {...field}
                           type="password"
-                          placeholder="Password"
+                          placeholder="New Password"
                           className={cn(
                             "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0",
                             errors.newpasswd
