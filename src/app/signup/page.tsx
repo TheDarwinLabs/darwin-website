@@ -110,8 +110,8 @@ export default function SignUp() {
                   Resend Confirmation Email ({timeLeft}s)
                 </Button>
                 <div className="text-[#606060] text-xs leading-tight text-center mt-[14px]">
-                  Didn't receive the email? Check your spam or junk folder, or
-                  click the button to resend a new confirmation email."
+                  {`Didn't receive the email? Check your spam or junk folder, or
+                  click the button to resend a new confirmation email.`}
                 </div>
               </div>
             </div>

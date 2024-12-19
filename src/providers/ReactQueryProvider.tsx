@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  MutationCache,
   QueryCache,
   QueryClient,
   QueryClientProvider,

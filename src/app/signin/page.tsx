@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import SvgIcon from "@/components/SvgIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn, encryptStr } from "@/lib/utils";
@@ -167,7 +166,7 @@ export default function SignIn() {
             </Button>
             <Divider lineColor="#111111" text="Or" />
             <div className="text-sm">
-              Don't have an account?{" "}
+              {`Don't have an account? `}
               <Link href="/signup" className="text-[#ff764a] font-bold">
                 Sign Up
               </Link>

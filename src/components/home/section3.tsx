@@ -62,7 +62,6 @@ const Section3 = () => {
 
       const p1 = p1Ref.current;
       const p2 = p2Ref.current;
-      const p3 = p3Ref.current;
 
       mm.add("(min-width: 1024px)", () => {
         gsap
@@ -142,24 +141,6 @@ const Section3 = () => {
             },
             3
           )
-          // .to(
-          //   p3,
-          //   {
-          //     y: 0,
-          //     opacity: 1,
-          //     duration: 3,
-          //   },
-          //   9
-          // )
-          // .to(
-          //   p2,
-          //   {
-          //     y: "-80%",
-          //     opacity: 0,
-          //     duration: 3,
-          //   },
-          //   9
-          // )
           .add(() => {}, "+=3");
       });
       mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
