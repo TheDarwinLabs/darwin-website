@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
             </Link>
           </div>
           <Button
-            className="px-6 py-6 rounded-[70px] text-black text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
+            className="px-6 py-6 rounded-[70px] bg-[#ff764a] hover:bg-[#ff764a] text-black text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
             onClick={scrollToApply}
           >
             APPLY NOW
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
             olnyLogo ? "hidden" : ""
           )}
         >
-          <Button className="px-5 py-4 rounded-[70px] h-12 text-black text-sm font-medium tracking-wider cursor-pointer">
+          <Button className="px-5 py-4 rounded-[70px] h-12 bg-[#ff764a] hover:bg-[#ff764a] text-black text-sm font-medium tracking-wider cursor-pointer">
             APPLY
           </Button>
           <SvgIcon name="menu" className="header-menu" />

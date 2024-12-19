@@ -923,7 +923,7 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#ff764a] text-[#202020] text-sm font-medium leading-none tracking-wider">
               APPLY NOW
             </Button>
           </div>
@@ -959,7 +959,7 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#ff764a] text-[#202020] text-sm font-medium leading-none tracking-wider">
               APPLY NOW
             </Button>
           </div>

@@ -1,8 +1,7 @@
-<svg viewBox="0 0 1018 1018" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="5.65794" width="711.128" height="711.128" transform="matrix(0.706971 0.707243 -0.706971 0.707243 512.609 1.6564)" fill="none" stroke="currentColor" stroke-width="8"/>
-<rect x="508.609" y="129.439" width="536.073" height="536.073" transform="rotate(45 508.609 129.439)" stroke="currentColor" stroke-width="12"/>
-<rect x="508.609" y="387.405" width="171.255" height="171.255" transform="rotate(45 508.609 387.405)" stroke="currentColor" stroke-width="19"/>
-<rect x="508.609" y="459.463" width="69.3507" height="69.3507" transform="rotate(45 508.609 459.463)" fill="currentColor" stroke="currentColor"/>
-<rect x="508.609" y="259.392" width="352.291" height="352.291" transform="rotate(45 508.609 259.392)" stroke="currentColor" stroke-width="16"/>
-<rect x="508.5" y="0.390625" width="718.42" height="719.128" transform="rotate(45 508.5 0.390625)" fill="url(#paint0_linear_2010_9489)"/>
+<svg width="1017" height="1018" viewBox="0 0 1017 1018" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="5.65794" width="711.128" height="711.128" transform="matrix(0.706971 0.707243 -0.706971 0.707243 512.402 1.6564)" stroke="currentColor" stroke-width="8"/>
+<rect x="508.402" y="129.439" width="536.073" height="536.073" transform="rotate(45 508.402 129.439)" stroke="currentColor" stroke-width="12"/>
+<rect x="508.402" y="387.405" width="171.255" height="171.255" transform="rotate(45 508.402 387.405)" stroke="currentColor" stroke-width="19"/>
+<rect id="fillRect" x="508.402" y="458.755" width="70.3507" height="70.3507" transform="rotate(45 508.402 458.755)" fill="currentColor"/>
+<rect x="508.402" y="259.392" width="352.291" height="352.291" transform="rotate(45 508.402 259.392)" stroke="currentColor" stroke-width="16"/>
 </svg>

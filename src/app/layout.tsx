@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { ReactLenis } from "lenis/react";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +34,9 @@ export default function RootLayout({
           `${montserrat.className} antialiased bg-[#ebeae8] text-[#1a1a1a]`
         )}
       >
-        <ReactLenis root>{children}</ReactLenis>
+        <ReactQueryProvider>
+          <ReactLenis root>{children}</ReactLenis>
+        </ReactQueryProvider>
       </body>
     </html>
   );
