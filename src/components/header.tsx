@@ -5,6 +5,7 @@ import SvgIcon from "./SvgIcon";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/providers/AuthProvider";
+import { useState } from "react";
 
 interface HeaderProps {
   olnyLogo?: boolean;
@@ -12,6 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
   const { user } = useAuth();
+  const [open, setOpen] = useState(false);
 
   const scrollToRealCard = () => {
     const target = document.getElementById("realcard");
@@ -115,7 +117,10 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
             olnyLogo ? "hidden" : ""
           )}
         >
-          <Button className="px-5 py-4 rounded-[70px] h-12 bg-[#ff764a] hover:bg-[#ff764a] text-black text-sm font-medium tracking-wider cursor-pointer">
+          <Button
+            onClick={scrollToApply}
+            className="px-5 py-4 rounded-[70px] h-12 bg-[#ff764a] hover:bg-[#ff764a] text-black text-sm font-medium tracking-wider cursor-pointer"
+          >
             APPLY
           </Button>
           <SvgIcon name="menu" className="header-menu" />

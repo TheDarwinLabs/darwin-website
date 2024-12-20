@@ -524,7 +524,7 @@ const Section3 = () => {
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-[18px] flex-1 w-[432px]"
+                  className="bg-white rounded-[18px] flex-1 w-full md:w-[432px]"
                 >
                   <div className="h-[150px] relative">
                     <Image src={item.image} fill alt={item.title}></Image>

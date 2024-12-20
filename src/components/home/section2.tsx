@@ -971,7 +971,7 @@ const Section2 = () => {
             </div>
             <div
               ref={content4Ref}
-              className="absolute -right-[280px] bottom-[20px] translate-y-[50%] opacity-0 lg:w-[279px] lg:-right-[230px] xl:w-[339px] xl:-right-[325px] xl:bottom-[53px]"
+              className="absolute -right-[280px] bottom-[20px] translate-y-[50%] opacity-0 lg:w-[279px] lg:-right-[230px] xl:w-[339px] xl:-right-[345px] xl:bottom-[53px]"
             >
               <div className="text-white text-2xl font-medium mb-4">
                 Your Global Payment Power, Amplified by Crypto
