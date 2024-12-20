@@ -63,7 +63,7 @@ const ResetPwd = () => {
 
   const resetMutation = useMutation({
     mutationFn: async (data: IFormData) => {
-      const response = await fetch("/api/passwd/reset", {
+      const response = await fetch("/api/user/passwd/reset", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
