@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -35,7 +36,9 @@ export default function RootLayout({
         )}
       >
         <ReactQueryProvider>
-          <ReactLenis root>{children}</ReactLenis>
+          <AuthProvider>
+            <ReactLenis root>{children}</ReactLenis>
+          </AuthProvider>
         </ReactQueryProvider>
       </body>
     </html>

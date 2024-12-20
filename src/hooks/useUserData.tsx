@@ -6,7 +6,7 @@ interface Product {
   waitingQueueNum: number;
 }
 
-interface User {
+export interface User {
   email: string;
   products: Product[];
 }
@@ -16,7 +16,7 @@ export function useUserData() {
     queryKey: ["user", "info"],
     queryFn: () => fetcher("/api/user"),
     staleTime: 5 * 1000,
-    gcTime: 15 * 60 * 1000,
+    gcTime: 5 * 1000,
     retry: false,
   });
 }

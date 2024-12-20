@@ -468,7 +468,7 @@ const Section1 = () => {
       images.reduce((acc, item) => acc + (item.width || 0), 0) +
       32 * images.length
     );
-  }, [images]);
+  }, []);
 
   return (
     <div

@@ -2,15 +2,15 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SvgIcon from "@/components/SvgIcon";
-import { useUserData } from "@/hooks/useUserData";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/providers/ReactQueryProvider";
+import { useAuth } from "@/providers/AuthProvider";
 
 const tabs = [
   { title: "Dashboard", icon: "app", component: Dashboard },
@@ -21,9 +21,17 @@ const tabs = [
 ];
 
 const Account = () => {
+  const router = useRouter();
+  const { user, loading } = useAuth();
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.replace("/");
+    }
+  }, [loading, user, router]);
+
   const [active, setActive] = useState(0);
   const ActiveComponent = tabs[active]?.component;
-  const router = useRouter();
 
   const onTabClick = (index: number) => {
     if (tabs[index].link) {
@@ -32,6 +40,8 @@ const Account = () => {
     }
     setActive(index);
   };
+
+  if (loading) return;
 
   return (
     <>
@@ -81,15 +91,15 @@ const list2 = [
 ];
 
 function Dashboard() {
-  const { data } = useUserData();
+  const { user } = useAuth();
   return (
     <div className="">
       <div className="text-[28px] font-medium ">Your Account</div>
       <div className="mt-3 bg-white rounded-[18px] p-5 text-[17px] flex gap-2 items-center">
         <div className="bg-[#d49e80] rounded-full w-[46px] h-[46px] flex items-center justify-center uppercase">
-          {data?.email.substring(0, 1)}
+          {user?.email.substring(0, 1)}
         </div>
-        <span className="flex-1">{data?.email}</span>
+        <span className="flex-1">{user?.email}</span>
       </div>
       <div className="text-[28px] font-medium mt-8 mb-5">Your Application</div>
       <div className="flex gap-6 flex-col sm:flex-row">
@@ -128,8 +138,7 @@ function Dashboard() {
 }
 
 function Settings() {
-  const { data: user } = useUserData();
-  const router = useRouter();
+  const { user, logout } = useAuth();
 
   const logoutMutation = useMutation({
     mutationFn: async () => {
@@ -144,16 +153,16 @@ function Settings() {
 
       return response.json();
     },
-    onSuccess: (res) => {
+    onSuccess: async (res) => {
       if (res.code === 0) {
-        queryClient.invalidateQueries({
+        await queryClient.invalidateQueries({
           queryKey: ["user", "info"],
         });
-        router.replace("/signin");
+        logout();
       }
     },
   });
-  const logout = () => {
+  const onLogout = () => {
     logoutMutation.mutate();
   };
   return (
@@ -173,7 +182,7 @@ function Settings() {
       <Button
         variant="ghost"
         className="underline mx-auto block mt-10 text-[17px] hover:bg-transparent "
-        onClick={logout}
+        onClick={onLogout}
         disabled={logoutMutation.isPending}
       >
         Sign out

@@ -4,15 +4,14 @@ import Link from "next/link";
 import SvgIcon from "./SvgIcon";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { useUserData } from "@/hooks/useUserData";
+import { useAuth } from "@/providers/AuthProvider";
 
 interface HeaderProps {
   olnyLogo?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
-  const { data: user } = useUserData();
-  console.log(user);
+  const { user } = useAuth();
 
   const scrollToRealCard = () => {
     const target = document.getElementById("realcard");

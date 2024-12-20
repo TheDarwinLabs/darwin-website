@@ -10,6 +10,7 @@ import Divider from "@/components/divider";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { queryClient } from "@/providers/ReactQueryProvider";
 
 interface IFormInput {
   email: string;
@@ -47,8 +48,11 @@ export default function SignIn() {
 
       return response.json();
     },
-    onSuccess: (res) => {
+    onSuccess: async (res) => {
       if (res.code === 0) {
+        await queryClient.invalidateQueries({
+          queryKey: ["user", "info"],
+        });
         router.push(`/account`);
       }
     },
