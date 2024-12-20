@@ -22,7 +22,7 @@ export default function SignIn() {
     control,
     handleSubmit,
     trigger,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       email: "",
@@ -158,7 +158,14 @@ export default function SignIn() {
                 Forgot password?
               </Link>
             </div>
-            <Button className="w-full h-[52px] text-black text-sm rounded-lg bg-[#cac9c9] hover:bg-[#cac9c9]">
+            <Button
+              className={cn(
+                "w-full h-[52px] text-black text-sm rounded-lg",
+                isValid
+                  ? "bg-[#ff764a] hover:bg-[#ff764a]"
+                  : "bg-[#cac9c9] hover:bg-[#cac9c9]"
+              )}
+            >
               Sign in
             </Button>
             <Divider lineColor="#111111" text="Or" />

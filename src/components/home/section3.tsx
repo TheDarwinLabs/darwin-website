@@ -64,7 +64,7 @@ const Section3 = () => {
       const p2 = p2Ref.current;
 
       mm.add("(min-width: 1024px)", () => {
-        gsap
+        const smoother = gsap
           .timeline({
             scrollTrigger: {
               trigger: container,
@@ -156,6 +156,10 @@ const Section3 = () => {
             3
           )
           .add(() => {}, "+=3");
+
+        setTimeout(() => {
+          // smoother.scrollTo(500);
+        }, 5000);
       });
       mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
         gsap.timeline({

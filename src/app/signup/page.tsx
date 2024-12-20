@@ -24,7 +24,7 @@ export default function SignUp() {
     handleSubmit,
     trigger,
     watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       email: "",
@@ -231,9 +231,15 @@ export default function SignUp() {
               <div className="flex-col justify-start items-start gap-2 flex">
                 <Button
                   type="submit"
-                  disabled={signupMutation.isPending}
-                  className="w-full h-[52px] text-black text-sm rounded-lg bg-[#ff764a] hover:bg-[#ff764a]"
-                  // bg-[#cac9c9] hover:bg-[#cac9c9]
+                  disabled={
+                    signupMutation.isPending || !isValid || !isPasswordValid
+                  }
+                  className={cn(
+                    "w-full h-[52px] text-black text-sm rounded-lg ",
+                    isValid && isPasswordValid
+                      ? "bg-[#ff764a] hover:bg-[#ff764a]"
+                      : "bg-[#cac9c9] hover:bg-[#cac9c9]"
+                  )}
                 >
                   Create My Account
                 </Button>

@@ -245,7 +245,7 @@ const ResetPwd = () => {
               type="submit"
               disabled={resetMutation.isPending || !isValid || !isPasswordValid}
               className={cn(
-                "w-full h-[52px] text-black text-sm rounded-lg bg-[#ff764a] hover:bg-[#ff764a]",
+                "w-full h-[52px] text-black text-sm rounded-lg ",
                 isValid && isPasswordValid
                   ? "bg-[#ff764a] hover:bg-[#ff764a]"
                   : "bg-[#cac9c9] hover:bg-[#cac9c9]"
