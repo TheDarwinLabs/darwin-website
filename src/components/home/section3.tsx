@@ -50,10 +50,10 @@ const Section3 = () => {
 
   useGSAP(
     () => {
-      const paths = document.querySelectorAll(".darwin-logo path");
-      const originalColors = Array.from(paths).map((path) =>
-        path.getAttribute("fill")
-      );
+      // const paths = document.querySelectorAll(".darwin-logo path");
+      // const originalColors = Array.from(paths).map((path) =>
+      //   path.getAttribute("fill")
+      // );
 
       gsap.registerPlugin(ScrollTrigger);
       const container = containerRef.current;
