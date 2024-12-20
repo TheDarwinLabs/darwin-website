@@ -50,10 +50,10 @@ const Section2 = () => {
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
-      const paths = document.querySelectorAll(".darwin-logo path");
-      const originalColors = Array.from(paths).map((path) =>
-        path.getAttribute("fill")
-      );
+      // const paths = document.querySelectorAll(".darwin-logo path");
+      // const originalColors = Array.from(paths).map((path) =>
+      //   path.getAttribute("fill")
+      // );
 
       const container = containerRef.current;
       const blackContainer = blackContainerRef.current;
@@ -108,11 +108,19 @@ const Section2 = () => {
               scrub: true,
               // markers: true,
               onEnter: () => {
-                paths.forEach((el, index) => {
-                  gsap.to(el, {
-                    fill: originalColors[index] ?? "",
-                    duration: 1,
-                  });
+                // paths.forEach((el, index) => {
+                //   gsap.to(el, {
+                //     fill: originalColors[index] ?? "",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 1,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 0,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#121212",
@@ -126,11 +134,19 @@ const Section2 = () => {
                 });
               },
               onLeaveBack: () => {
-                paths.forEach((el) => {
-                  gsap.to(el, {
-                    fill: "#ffffff",
-                    duration: 1,
-                  });
+                // paths.forEach((el) => {
+                //   gsap.to(el, {
+                //     fill: "#ffffff",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 0,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 1,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
@@ -186,7 +202,23 @@ const Section2 = () => {
             5
           )
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
+            {
+              opacity: 0,
+              duration: 1,
+            },
+            9
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
+            },
+            9
+          )
+          .to(
+            [".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
@@ -311,11 +343,19 @@ const Section2 = () => {
               scrub: true,
               // markers: true,
               onEnter: () => {
-                paths.forEach((el, index) => {
-                  gsap.to(el, {
-                    fill: originalColors[index] ?? "",
-                    duration: 1,
-                  });
+                // paths.forEach((el, index) => {
+                //   gsap.to(el, {
+                //     fill: originalColors[index] ?? "",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 1,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 0,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#121212",
@@ -329,11 +369,19 @@ const Section2 = () => {
                 });
               },
               onLeaveBack: () => {
-                paths.forEach((el) => {
-                  gsap.to(el, {
-                    fill: "#ffffff",
-                    duration: 1,
-                  });
+                // paths.forEach((el) => {
+                //   gsap.to(el, {
+                //     fill: "#ffffff",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 0,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 1,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
@@ -389,7 +437,23 @@ const Section2 = () => {
             5
           )
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
+            {
+              opacity: 0,
+              duration: 1,
+            },
+            9
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
+            },
+            9
+          )
+          .to(
+            [".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
@@ -514,12 +578,12 @@ const Section2 = () => {
               scrub: true,
               // markers: true,
               onEnter: () => {
-                paths.forEach((el, index) => {
-                  gsap.to(el, {
-                    fill: originalColors[index] ?? "",
-                    duration: 1,
-                  });
-                });
+                // paths.forEach((el, index) => {
+                //   gsap.to(el, {
+                //     fill: originalColors[index] ?? "",
+                //     duration: 1,
+                //   });
+                // });
                 gsap.to(".header", {
                   color: "#121212",
                   duration: 1,
@@ -532,11 +596,19 @@ const Section2 = () => {
                 });
               },
               onLeaveBack: () => {
-                paths.forEach((el) => {
-                  gsap.to(el, {
-                    fill: "#ffffff",
-                    duration: 1,
-                  });
+                // paths.forEach((el) => {
+                //   gsap.to(el, {
+                //     fill: "#ffffff",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 0,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 1,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
@@ -552,7 +624,23 @@ const Section2 = () => {
             },
           })
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
+            {
+              opacity: 0,
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
+            },
+            4
+          )
+          .to(
+            [".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
@@ -589,11 +677,19 @@ const Section2 = () => {
               scrub: true,
               // markers: true,
               onEnter: () => {
-                paths.forEach((el, index) => {
-                  gsap.to(el, {
-                    fill: originalColors[index] ?? "",
-                    duration: 1,
-                  });
+                // paths.forEach((el, index) => {
+                //   gsap.to(el, {
+                //     fill: originalColors[index] ?? "",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 1,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 0,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#121212",
@@ -607,11 +703,19 @@ const Section2 = () => {
                 });
               },
               onLeaveBack: () => {
-                paths.forEach((el) => {
-                  gsap.to(el, {
-                    fill: "#ffffff",
-                    duration: 1,
-                  });
+                // paths.forEach((el) => {
+                //   gsap.to(el, {
+                //     fill: "#ffffff",
+                //     duration: 1,
+                //   });
+                // });
+                gsap.to(".darwin-logo-color", {
+                  opacity: 0,
+                  duration: 1,
+                });
+                gsap.to(".darwin-logo-white", {
+                  opacity: 1,
+                  duration: 1,
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
@@ -627,7 +731,23 @@ const Section2 = () => {
             },
           })
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
+            {
+              opacity: 0,
+              duration: 1,
+            },
+            4
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
+            },
+            5
+          )
+          .to(
+            [".header-menu path"],
             {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",

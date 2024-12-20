@@ -46,11 +46,22 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
   return (
     <div className="header w-full z-50 fixed top-0 left-0 py-6 h-24 text-[#121212] px-5 md:px-0 md:py-5">
       <div className="mx-auto justify-between items-center flex md:w-[688px] lg:w-[900px] xl:w-[1216px]">
-        <Link href="/" className="w-10 md:w-[126px]">
-          <SvgIcon name="logo-mini" className="darwin-logo md:hidden" />
+        <Link href="/" className=" relative w-10 md:w-[126px] ">
+          <SvgIcon
+            name="logo-color-mini"
+            className="darwin-logo-color md:hidden"
+          />
+          <SvgIcon
+            name="logo-white-mini"
+            className="darwin-logo-white md:hidden absolute top-0 left-0 opacity-0"
+          />
           <SvgIcon
             name="logo-color"
-            className="darwin-logo hidden md:inline-block"
+            className="darwin-logo-color hidden md:inline-block "
+          />
+          <SvgIcon
+            name="logo-white"
+            className="darwin-logo-white absolute top-0 left-0  hidden md:inline-block opacity-0"
           />
         </Link>
         <div
