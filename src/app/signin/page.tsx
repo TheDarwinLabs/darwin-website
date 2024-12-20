@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { queryClient } from "@/providers/ReactQueryProvider";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
 
 interface IFormInput {
   email: string;
@@ -30,10 +32,11 @@ export default function SignIn() {
     },
   });
   const router = useRouter();
+  const { toast } = useToast();
 
   const signinMutation = useMutation({
     mutationFn: async (data: IFormInput) => {
-      const response = await fetch("/api/user/login", {
+      const response = await fetcher("/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,20 +44,24 @@ export default function SignIn() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Signup failed");
-      }
+      // if (!response.ok) {
+      //   const errorData = await response.json();
+      //   throw new Error(errorData.message || "Signup failed");
+      // }
 
-      return response.json();
+      return response;
     },
-    onSuccess: async (res) => {
-      if (res.code === 0) {
-        await queryClient.invalidateQueries({
-          queryKey: ["user", "info"],
-        });
-        router.push(`/account`);
-      }
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: ["user", "info"],
+      });
+      router.push(`/account`);
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
     },
   });
 
@@ -146,9 +153,9 @@ export default function SignIn() {
             </div>
             <div className="w-full text-sm flex items-center justify-between">
               <div className="items-top flex items-center space-x-2">
-                <Checkbox id="terms1" />
+                <Checkbox id="remember" />
                 <label
-                  htmlFor="terms1"
+                  htmlFor="remember"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   Remember me
@@ -159,6 +166,7 @@ export default function SignIn() {
               </Link>
             </div>
             <Button
+              disabled={signinMutation.isPending || !isValid}
               className={cn(
                 "w-full h-[52px] text-black text-sm rounded-lg",
                 isValid

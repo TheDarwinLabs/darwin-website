@@ -1,12 +1,26 @@
-import Link from "next/link";
 import SvgIcon from "../SvgIcon";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Footer from "../footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
+import { useAuth } from "@/providers/AuthProvider";
+import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/providers/ReactQueryProvider";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { productList } from "@/lib/utils";
+import CopyToClipboard from "../copyToClipboard";
+import { useToast } from "@/hooks/use-toast";
+import { fetcher } from "@/lib/fetcher";
 
 const list = [
   {
@@ -26,27 +40,25 @@ const list = [
     icon: "realfi_4",
   },
 ];
-const list2 = [
-  {
-    image: "/images/waitlist.png",
-    title: "Join the Waitlist",
-    desc: "Global spending, local rewards. Be the first to experience seamless payments.",
-    button: "Join Waitlist",
-    href: "/join",
-  },
-  {
-    image: "/images/investing.png",
-    title: "Start Investing",
-    desc: "Tokenized assets, real-world returns. Create your account and earn 20%+ yields today.",
-    button: "Get Started",
-    href: "/start",
-  },
-];
+
 const Section3 = () => {
+  const { user } = useAuth();
+  const { toast } = useToast();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const p1Ref = useRef<HTMLDivElement | null>(null);
   const p2Ref = useRef<HTMLDivElement | null>(null);
   const p3Ref = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [queueNum, setQueueNum] = useState("");
+  const [inviteCode, setInviteCode] = useState("");
+
+  const inviteUrl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return `${location.origin}?m=${inviteCode}`;
+    }
+    return ``;
+  }, [inviteCode]);
 
   useGSAP(
     () => {
@@ -64,7 +76,7 @@ const Section3 = () => {
       const p2 = p2Ref.current;
 
       mm.add("(min-width: 1024px)", () => {
-        const smoother = gsap
+        gsap
           .timeline({
             scrollTrigger: {
               trigger: container,
@@ -318,6 +330,47 @@ const Section3 = () => {
       // scope: containerRef
     }
   );
+
+  const joinMutation = useMutation({
+    mutationFn: async (product: string) => {
+      const response = await fetcher<{ queueNum: number; inviteCode: string }>(
+        "/api/user/join",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ product }),
+        }
+      );
+
+      return response;
+    },
+    onSuccess: async (res) => {
+      // router.push(`/account`);
+      setQueueNum(res.queueNum + "");
+      setInviteCode(res.inviteCode);
+      setOpen(true);
+      await queryClient.invalidateQueries({
+        queryKey: ["user", "info"],
+      });
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
+    },
+  });
+
+  const onClickItem = (item: { href: string; product: string }) => {
+    if (user?.email) {
+      joinMutation.mutate(item.product);
+    } else {
+      router.push(`/signin`);
+    }
+  };
+
   return (
     <div id="realfi" ref={containerRef} className="w-full  ">
       <div className=" relative flex flex-col items-center justify-center    lg:overflow-hidden min-h-[760px] lg:min-h-screen pt-[160px] lg:pt-0">
@@ -464,31 +517,87 @@ const Section3 = () => {
         </div>
         <div className="flex items-center justify-center mx-auto xl:w-[1100px] ">
           <div className="flex flex-col md:flex-row gap-6  mb-[18px]  items-center lg:w-[888px]">
-            {list2.map((item, index) => (
-              <div key={index} className="bg-white rounded-[18px] flex-1">
-                <div className="h-[150px] relative">
-                  <Image src={item.image} fill alt={item.title}></Image>
-                </div>
-                <div className="px-6 pb-6 pt-[18px] flex flex-col gap-3">
-                  <div className="text-[#0d0d0d] text-2xl font-medium leading-[34px]">
-                    {item.title}
+            {productList.map((item, index) => {
+              const product = user?.products.find(
+                (t) => t.product === item.product
+              );
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-[18px] flex-1 w-[432px]"
+                >
+                  <div className="h-[150px] relative">
+                    <Image src={item.image} fill alt={item.title}></Image>
                   </div>
-                  <div className="text-[#212121] text-sm font-normal leading-snug">
-                    {item.desc}
+                  <div className="px-6 pb-6 pt-[18px] flex flex-col gap-3">
+                    <div className="text-[#0d0d0d] text-2xl font-medium leading-[34px] flex items-center gap-3">
+                      {product ? item.productName : item.title}
+                      {!!product && (
+                        <span className="flex text-[#ff764a] text-xs px-[7px] py-0.5 bg-white rounded border border-[#ff764a] justify-center items-center">
+                          Applied
+                        </span>
+                      )}
+                    </div>
+                    {product ? (
+                      <div className="text-sm">
+                        <div>
+                          {`You're `}
+                          <span className="text-[#ff764a] font-bold">
+                            #{product.waitingQueueNum}
+                          </span>{" "}
+                          on the List!
+                        </div>
+                        <div>Share the link to invite friends!</div>
+                      </div>
+                    ) : (
+                      <div className="text-[#212121] text-sm font-normal leading-snug">
+                        {item.desc}
+                      </div>
+                    )}
+                    {product ? (
+                      <div className="p-2.5 bg-[#dfdfdf] rounded-lg border border-[#757575] justify-between text-xs items-center gap-2.5 flex">
+                        <span>{inviteUrl}</span>
+                        <CopyToClipboard
+                          textToCopy={inviteUrl}
+                        ></CopyToClipboard>
+                      </div>
+                    ) : (
+                      <Button
+                        className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#ff764a] text-black"
+                        onClick={() => onClickItem(item)}
+                      >
+                        {item.button}
+                      </Button>
+                    )}
                   </div>
-                  <Button
-                    asChild
-                    className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#ff764a] text-black"
-                  >
-                    <Link href={item.href}> {item.button}</Link>
-                  </Button>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         <Footer />
       </div>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent>
+          <DialogHeader className="hidden">
+            <DialogTitle></DialogTitle>
+            <DialogDescription></DialogDescription>
+          </DialogHeader>
+          <div className="flex gap-2 flex-col items-center px-10">
+            <SvgIcon name="success" className="mx-auto"></SvgIcon>
+            <div className="text-black text-2xl font-semibold ">
+              {`You're `}
+              <span className="text-[#ff764a]">#{queueNum}</span> on the List!
+            </div>
+            <div>Thank you for joining the waitlist </div>
+            <div>Share the link to invite friends!</div>
+            <div className="mt-4 px-[30px] py-2 bg-[#dfdfdf] w-full rounded-xl flex items-center justify-between">
+              <span>{inviteUrl}</span>
+              <CopyToClipboard textToCopy={inviteUrl}></CopyToClipboard>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

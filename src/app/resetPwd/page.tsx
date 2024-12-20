@@ -10,6 +10,8 @@ import Link from "next/link";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
 
 interface IFormInput {
   newpasswd: string;
@@ -33,6 +35,8 @@ export default function ResetPwdPage() {
 }
 
 const ResetPwd = () => {
+  const { toast } = useToast();
+
   const {
     control,
     handleSubmit,
@@ -63,7 +67,7 @@ const ResetPwd = () => {
 
   const resetMutation = useMutation({
     mutationFn: async (data: IFormData) => {
-      const response = await fetch("/api/user/passwd/reset", {
+      const response = await fetcher("/api/user/passwd/reset", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,14 +75,15 @@ const ResetPwd = () => {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Signup failed");
-      }
-
-      return response.json();
+      return response;
     },
     onSuccess: () => {},
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
+    },
   });
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {

@@ -8,6 +8,8 @@ import { cn, encryptStr } from "@/lib/utils";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
 
 interface IFormInput {
   passwd: string;
@@ -30,6 +32,7 @@ export default function ResetPwdPage() {
 }
 
 const ResetPwd = () => {
+  const { toast } = useToast();
   const {
     control,
     handleSubmit,
@@ -59,22 +62,22 @@ const ResetPwd = () => {
 
   const resetMutation = useMutation({
     mutationFn: async (data: IFormData) => {
-      const response = await fetch("/api/user/passwd/modify", {
+      const response = await fetcher("/api/user/passwd/modify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Signup failed");
-      }
-
-      return response.json();
+      return response;
     },
     onSuccess: () => {},
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
+    },
   });
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
