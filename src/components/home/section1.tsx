@@ -182,12 +182,18 @@ const Section1 = () => {
             5
           )
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
             {
-              attr: { fill: "#ffffff" },
-              fill: "#ffffff",
-              stroke: "#ffffff",
+              opacity: 0,
               duration: 1,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
             },
             5
           )
@@ -302,12 +308,18 @@ const Section1 = () => {
             5
           )
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
             {
-              attr: { fill: "#ffffff" },
-              fill: "#ffffff",
-              stroke: "#ffffff",
+              opacity: 0,
               duration: 1,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
             },
             5
           )
@@ -422,12 +434,18 @@ const Section1 = () => {
             5
           )
           .to(
-            [".darwin-logo path", ".header-menu path"],
+            ".darwin-logo-color",
             {
-              attr: { fill: "#ffffff" },
-              fill: "#ffffff",
-              stroke: "#ffffff",
+              opacity: 0,
               duration: 1,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              duration: 1,
+              opacity: 1,
             },
             5
           )
