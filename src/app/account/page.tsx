@@ -2,15 +2,18 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SvgIcon from "@/components/SvgIcon";
-import { cn } from "@/lib/utils";
+import { cn, productList } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/providers/ReactQueryProvider";
 import { useAuth } from "@/providers/AuthProvider";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
+import CopyToClipboard from "@/components/copyToClipboard";
 
 const tabs = [
   { title: "Dashboard", icon: "app", component: Dashboard },
@@ -73,25 +76,52 @@ const Account = () => {
   );
 };
 
-const list2 = [
-  {
-    image: "/images/waitlist.png",
-    title: "Join the Waitlist",
-    desc: "Global spending, local rewards. Be the first to experience seamless payments.",
-    button: "Join Waitlist",
-    href: "/join",
-  },
-  {
-    image: "/images/investing.png",
-    title: "Start Investing",
-    desc: "Tokenized assets, real-world returns. Create your account and earn 20%+ yields today.",
-    button: "Get Started",
-    href: "/start",
-  },
-];
-
 function Dashboard() {
   const { user } = useAuth();
+  const { toast } = useToast();
+  const [inviteCode, setInviteCode] = useState("");
+
+  const inviteUrl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return `${location.origin}?m=${inviteCode}`;
+    }
+    return ``;
+  }, [inviteCode]);
+
+  const joinMutation = useMutation({
+    mutationFn: async (product: string) => {
+      const response = await fetcher<{ queueNum: number; inviteCode: string }>(
+        "/api/user/join",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ product }),
+        }
+      );
+
+      return response;
+    },
+    onSuccess: async (res) => {
+      await queryClient.invalidateQueries({
+        queryKey: ["user", "info"],
+      });
+      setInviteCode(res.inviteCode);
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
+    },
+  });
+
+  const onClickItem = (item: { href: string; product: string }) => {
+    if (user?.email) {
+      joinMutation.mutate(item.product);
+    }
+  };
   return (
     <div className="">
       <div className="text-[28px] font-medium ">Your Account</div>
@@ -103,35 +133,65 @@ function Dashboard() {
       </div>
       <div className="text-[28px] font-medium mt-8 mb-5">Your Application</div>
       <div className="flex gap-6 flex-col sm:flex-row">
-        {list2.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-[18px] overflow-hidden flex-1"
-          >
-            <div className="h-[150px] relative ">
-              <Image
-                src={item.image}
-                fill
-                alt={item.title}
-                className="object-cover"
-              ></Image>
-            </div>
-            <div className="px-6 pb-6 pt-[18px] flex flex-col gap-3">
-              <div className="text-[#0d0d0d] text-2xl font-medium leading-[34px]">
-                {item.title}
+        {productList.map((item, index) => {
+          const product = user?.products.find(
+            (t) => t.product === item.product
+          );
+          return (
+            <div
+              key={index}
+              className="bg-white rounded-[18px] overflow-hidden flex-1"
+            >
+              <div className="h-[150px] relative ">
+                <Image
+                  src={item.image}
+                  fill
+                  alt={item.title}
+                  className="object-cover"
+                ></Image>
               </div>
-              <div className="text-[#212121] text-sm font-normal leading-snug">
-                {item.desc}
+              <div className="px-6 pb-6 pt-[18px] flex flex-col gap-3">
+                <div className="text-[#0d0d0d] text-2xl font-medium leading-[34px] flex items-center gap-3">
+                  {product ? item.productName : item.title}
+                  {!!product && (
+                    <span className="flex text-[#ff764a] text-xs px-[7px] py-0.5 bg-white rounded border border-[#ff764a] justify-center items-center">
+                      Applied
+                    </span>
+                  )}
+                </div>
+                {product ? (
+                  <div className="text-sm">
+                    <div>
+                      {`You're `}
+                      <span className="text-[#ff764a] font-bold">
+                        #{product.waitingQueueNum}
+                      </span>{" "}
+                      on the List!
+                    </div>
+                    <div>Share the link to invite friends!</div>
+                  </div>
+                ) : (
+                  <div className="text-[#212121] text-sm font-normal leading-snug">
+                    {item.desc}
+                  </div>
+                )}
+                {product ? (
+                  <div className="p-2.5 bg-[#dfdfdf] rounded-lg border border-[#757575] justify-between text-xs items-center gap-2.5 flex">
+                    <span>{inviteUrl}</span>
+                    <CopyToClipboard textToCopy={inviteUrl}></CopyToClipboard>
+                  </div>
+                ) : (
+                  <Button
+                    className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#ff764a] text-black"
+                    onClick={() => onClickItem(item)}
+                  >
+                    {item.button}
+                  </Button>
+                )}
               </div>
-              <Button
-                asChild
-                className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#ff764a] text-black"
-              >
-                <Link href={item.href}> {item.button}</Link>
-              </Button>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -139,27 +199,27 @@ function Dashboard() {
 
 function Settings() {
   const { user, logout } = useAuth();
+  const { toast } = useToast();
 
   const logoutMutation = useMutation({
     mutationFn: async () => {
-      const response = await fetch("/api/user/logout", {
+      const response = await fetcher("/api/user/logout", {
         method: "POST",
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "logout failed");
-      }
-
-      return response.json();
+      return response;
     },
-    onSuccess: async (res) => {
-      if (res.code === 0) {
-        await queryClient.invalidateQueries({
-          queryKey: ["user", "info"],
-        });
-        logout();
-      }
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: ["user", "info"],
+      });
+      logout();
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
     },
   });
   const onLogout = () => {

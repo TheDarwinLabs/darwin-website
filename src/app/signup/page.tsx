@@ -11,6 +11,8 @@ import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
 
 interface IFormInput {
   email: string;
@@ -18,6 +20,8 @@ interface IFormInput {
 }
 
 export default function SignUp() {
+  const { toast } = useToast();
+
   const [isSend, setIsSend] = useState(false);
   const {
     control,
@@ -54,7 +58,7 @@ export default function SignUp() {
 
   const signupMutation = useMutation({
     mutationFn: async (data: IFormInput) => {
-      const response = await fetch("/api/user/signup", {
+      const response = await fetcher("/api/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,18 +66,17 @@ export default function SignUp() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Signup failed");
-      }
-
-      return response.json();
+      return response;
     },
-    onSuccess: (res) => {
-      if (res.code === 0) {
-        setIsSend(true);
-        startCountdown();
-      }
+    onSuccess: () => {
+      setIsSend(true);
+      startCountdown();
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
     },
   });
 

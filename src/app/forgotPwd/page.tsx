@@ -7,12 +7,16 @@ import { cn } from "@/lib/utils";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import SvgIcon from "@/components/SvgIcon";
+import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/hooks/use-toast";
 
 interface IFormInput {
   email: string;
 }
 
 export default function ForgotPwd() {
+  const { toast } = useToast();
+
   const {
     control,
     handleSubmit,
@@ -26,7 +30,7 @@ export default function ForgotPwd() {
 
   const sendMutation = useMutation({
     mutationFn: async (data: IFormInput) => {
-      const response = await fetch("/api/user/email/send", {
+      const response = await fetcher("/api/user/email/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,12 +38,13 @@ export default function ForgotPwd() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "send failed");
-      }
-
-      return response.json();
+      return response;
+    },
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
     },
   });
 
