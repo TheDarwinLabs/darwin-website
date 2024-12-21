@@ -72,8 +72,8 @@ export default function SignIn() {
   return (
     <>
       <Header olnyLogo />
-      <div className="w-full min-h-screen flex flex-col items-center justify-end ">
-        <div className="flex-1 flex items-center pt-[96px] pb-10">
+      <div className="w-full min-h-screen flex flex-col items-center justify-end px-5 md:px-0">
+        <div className="flex-1 flex items-center pt-[96px] pb-10 w-full md:w-auto ">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex-col items-center gap-[34px] flex w-full md:w-[420px]"

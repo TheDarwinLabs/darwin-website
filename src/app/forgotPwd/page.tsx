@@ -55,8 +55,8 @@ export default function ForgotPwd() {
   return (
     <>
       <Header olnyLogo />
-      <div className="w-full min-h-screen flex flex-col items-center justify-end ">
-        <div className="flex-1 flex items-center pt-[96px]">
+      <div className="w-full min-h-screen flex flex-col items-center justify-end  px-5 md:px-0">
+        <div className="flex-1 flex items-center pt-[96px] w-full md:w-auto">
           {sendMutation.isSuccess ? (
             <div className="w-full md:w-[487px] flex-col justify-start items-center gap-[87px] inline-flex">
               <div className="self-stretch flex-col justify-start items-start gap-2 flex">
