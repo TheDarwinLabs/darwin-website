@@ -50,7 +50,7 @@ const Account = () => {
     <>
       <Header olnyLogo />
       <div className="w-full min-h-screen flex flex-col pt-[96px]  px-5 md:px-0 ">
-        <div className="flex-1 flex gap-7 pb-[88px]">
+        <div className="flex-1 flex gap-7 xl:gap-[90px] pb-[88px]">
           <div className="hidden flex-col sm:flex sm:w-[90px] md:w-[260px] lg:w-[380px] xl:w-[560px] text-[17px] py-1">
             {tabs.map((item, index) => (
               <div
@@ -66,7 +66,7 @@ const Account = () => {
               </div>
             ))}
           </div>
-          <div className="flex-1 sm:pr-[43px]">
+          <div className="flex-1 sm:pr-[43px] xl:pr-[300px]">
             {ActiveComponent && <ActiveComponent />}
           </div>
         </div>
