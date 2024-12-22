@@ -40,8 +40,11 @@ export default function Home() {
   useEffect(() => {
     document.body.classList.add("body-top-locked");
 
-    const handleScroll = (event: any) => {
-      if (event.deltaY > 0 || (event.touches && event.touches.length > 0)) {
+    const handleScroll = (event: WheelEvent | TouchEvent) => {
+      if (
+        (event instanceof WheelEvent && event.deltaY > 0) ||
+        (event instanceof TouchEvent && event.touches.length > 0)
+      ) {
         setIsHidden(true);
         document.body.classList.remove("body-top-locked");
       }
