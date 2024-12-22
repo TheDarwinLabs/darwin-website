@@ -14,6 +14,7 @@ import { useAuth } from "@/providers/AuthProvider";
 import { fetcher } from "@/lib/fetcher";
 import { useToast } from "@/hooks/use-toast";
 import CopyToClipboard from "@/components/copyToClipboard";
+import Cookies from "js-cookie";
 
 const tabs = [
   { title: "Dashboard", icon: "app", component: Dashboard },
@@ -210,10 +211,10 @@ function Settings() {
       return response;
     },
     onSuccess: async () => {
-      await queryClient.invalidateQueries({
-        queryKey: ["user", "info"],
-      });
-      logout();
+      // await queryClient.invalidateQueries({
+      //   queryKey: ["user", "info"],
+      // });
+      // logout();
     },
     onError: (err) => {
       toast({
@@ -224,6 +225,8 @@ function Settings() {
   });
   const onLogout = () => {
     logoutMutation.mutate();
+    Cookies.remove("token");
+    logout();
   };
   return (
     <div>
