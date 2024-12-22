@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
 import Section1 from "@/components/home/section1";
 import Section2 from "@/components/home/section2";
@@ -8,9 +8,56 @@ import Section3 from "@/components/home/section3";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
+  const [videoSrc, setVideoSrc] = useState<string>("");
+  const [isHidden, setIsHidden] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const updateVideoSrc = () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 1024) {
+      setVideoSrc("/images/web.mp4");
+    } else if (screenWidth >= 768) {
+      setVideoSrc("/images/pad.mp4");
+    } else {
+      setVideoSrc("/images/mobile.mp4");
+    }
+  };
+
+  useEffect(() => {
+    updateVideoSrc();
+
+    window.addEventListener("resize", updateVideoSrc);
+
+    return () => {
+      window.removeEventListener("resize", updateVideoSrc);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.add("body-top-locked");
+
+    const handleScroll = (event: WheelEvent | TouchEvent) => {
+      if (
+        (event instanceof WheelEvent && event.deltaY > 0) ||
+        (event instanceof TouchEvent && event.touches.length > 0)
+      ) {
+        setIsHidden(true);
+        document.body.classList.remove("body-top-locked");
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+    window.addEventListener("touchstart", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleScroll);
+    };
+  }, []);
 
   useGSAP(
     () => {
@@ -94,6 +141,25 @@ export default function Home() {
   return (
     <div ref={containerRef}>
       <Header />
+      <div
+        id="responsive-video"
+        className={cn(
+          "h-screen bg-black  fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-[1000] transition-all duration-500",
+          isHidden ? "opacity-0 z-0 pointer-events-none" : "opacity-100"
+        )}
+      >
+        <video
+          key={videoSrc}
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       {/* <SvgIcon
         name="pattern"
         className="w-[1000px] h-[1000px] left-[50%] -ml-[500px] top-[50%] -mt-[500px] fixed z-0 text-[#f5f4f6]"
