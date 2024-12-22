@@ -105,3 +105,12 @@ input[type="password"] {
   background-image: url(/images/phone.png);
   background-size: cover;
 }
+
+.body-top-locked{
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  inset: 0;
+  overflow-y: hidden;
+  position: fixed;
+  z-index: 3999999;
+}
