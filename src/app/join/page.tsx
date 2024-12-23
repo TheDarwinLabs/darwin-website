@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 export default function Join() {
@@ -117,9 +118,13 @@ const JoinWiatList = () => {
         </Button>
         <div className="text-[#606060] text-xs text-center leading-tight">
           <span>By continuing, you agree to </span>
-          <span className="underline">Darwin Labs Terms of Service</span>
-          <span> and</span>
-          <span className="underline"> Privacy Policy</span>
+          <Link href="/terms" className="underline">
+            Darwin Labs Terms of Service
+          </Link>
+          <span> and </span>
+          <Link href="/privacy" className="underline">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </form>
