@@ -1,17 +1,5 @@
 import Link from "next/link";
 import SvgIcon from "./SvgIcon";
-import { Space_Mono, Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-});
 
 const Footer = () => {
   return (
