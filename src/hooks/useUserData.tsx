@@ -8,6 +8,7 @@ interface Product {
 
 export interface User {
   email: string;
+  inviteCode: string;
   products: Product[];
 }
 
