@@ -172,7 +172,7 @@ const SignUp = () => {
                         {...field}
                         placeholder="Enter your Email"
                         className={cn(
-                          "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black",
+                          "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]",
                           errors.email
                             ? ""
                             : field.value
@@ -204,7 +204,7 @@ const SignUp = () => {
                           type="password"
                           placeholder="Enter your Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black",
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]",
                             errors.passwd
                               ? ""
                               : isPasswordValid
