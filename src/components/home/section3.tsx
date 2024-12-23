@@ -4,7 +4,7 @@ import Image from "next/image";
 import Footer from "../footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { useAuth } from "@/providers/AuthProvider";
 import { useRouter } from "next/navigation";
@@ -56,6 +56,10 @@ const Section3 = () => {
     }
     return ``;
   }, [inviteCode]);
+
+  useEffect(() => {
+    setInviteCode(user?.inviteCode ?? "");
+  }, [user]);
 
   useGSAP(
     () => {
@@ -357,7 +361,7 @@ const Section3 = () => {
     if (user?.email) {
       joinMutation.mutate(item.product);
     } else {
-      router.push(`/signin`);
+      router.push(`/signup`);
     }
   };
 

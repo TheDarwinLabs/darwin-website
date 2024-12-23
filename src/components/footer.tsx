@@ -1,17 +1,5 @@
 import Link from "next/link";
 import SvgIcon from "./SvgIcon";
-import { Space_Mono, Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-});
 
 const Footer = () => {
   return (
@@ -44,15 +32,15 @@ const Footer = () => {
               <div className="items-center gap-5 flex text-[#727272] text-sm">
                 <div className="items-center gap-2 flex">
                   <SvgIcon name="x" />
-                  <div className={spaceMono.className}>x.com</div>
+                  <div>x.com</div>
                 </div>
                 <div className="items-center gap-2 flex">
                   <SvgIcon name="in" />
-                  <div className={inter.className}>LinkedIn</div>
+                  <div>LinkedIn</div>
                 </div>
                 <div className="items-center gap-2 flex">
                   <SvgIcon name="github" />
-                  <div className={inter.className}>GitHub</div>
+                  <div>GitHub</div>
                 </div>
               </div>
               <div className="justify-end items-center gap-[50px] flex">

@@ -124,6 +124,7 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
             >
               APPLY
             </Button>
+
             <SvgIcon
               name={open ? "cancel" : "menu"}
               className="header-menu"

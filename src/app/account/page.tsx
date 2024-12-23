@@ -82,6 +82,10 @@ function Dashboard() {
   const { toast } = useToast();
   const [inviteCode, setInviteCode] = useState("");
 
+  useEffect(() => {
+    setInviteCode(user?.inviteCode ?? "");
+  }, [user]);
+
   const inviteUrl = useMemo(() => {
     if (typeof window !== "undefined") {
       return `${location.origin}?m=${inviteCode}`;
