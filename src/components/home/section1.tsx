@@ -404,6 +404,16 @@ const Section1 = () => {
             5
           )
           .to(
+            [".header-menu path"],
+            {
+              attr: { fill: "#ffffff" },
+              fill: "#ffffff",
+              stroke: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
             p1,
             {
               y: -100,

@@ -114,22 +114,21 @@ export default function Home() {
         .timeline({
           scrollTrigger: {
             trigger: ".realfi-box3",
-            start: "top 75%",
-            end: "bottom 25%",
+            start: "-=300",
+            end: "+=200",
             scrub: 1,
           },
         })
         .fromTo(
           ".realfi-box3 .realfi-box3-item",
           {
-            opacity: 0,
+            opacity: 0.6,
             y: 50,
           },
           {
             opacity: 1,
             y: 0,
-            duration: 2,
-            stagger: 0.3,
+            duration: 3,
             ease: "power2.out",
           }
         );

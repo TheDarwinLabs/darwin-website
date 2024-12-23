@@ -29,7 +29,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/logo.svg" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon.png"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
       </head>
       <body
         className={cn(

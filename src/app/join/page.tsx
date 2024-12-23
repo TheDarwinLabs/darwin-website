@@ -76,7 +76,7 @@ const JoinWiatList = () => {
                   {...field}
                   placeholder="Enter your Email"
                   className={cn(
-                    "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0",
+                    "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0 shadow-none",
                     errors.email ? "" : field.value ? "border-green-500" : ""
                   )}
                   onChange={(e) => {
@@ -103,7 +103,7 @@ const JoinWiatList = () => {
                   type="password"
                   placeholder="Enter your Password"
                   className={cn(
-                    "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0"
+                    "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0"
                   )}
                 />
               )}

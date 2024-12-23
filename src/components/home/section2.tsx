@@ -791,7 +791,7 @@ const Section2 = () => {
       >
         <div
           ref={blackContainerRef}
-          className="absolute translate-y-full bottom-0 left-0 right-0 h-screen min-h-[760px] bg-[#202020] overflow-hidden flex  items-end justify-center pb-[100px] z-20"
+          className="black-container absolute translate-y-full bottom-0 left-0 right-0 h-screen min-h-[760px] bg-[#202020] overflow-hidden flex  items-end justify-center pb-[100px] z-20"
         >
           <div className="relative w-[556px] h-[394px] z-[25]">
             <div
@@ -1025,12 +1025,6 @@ const Section2 = () => {
               <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
             </div>
           </div>
-          <Image
-            src="/images/noise.png"
-            fill
-            alt=""
-            className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
-          ></Image>
         </div>
         <div className="mx-auto relative h-full md:w-[688px] lg:w-[900px] xl:w-[1216px]">
           <div className="absolute w-[442px] flex flex-col gap-6 top-[120px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 lg:bottom-[95px]">
@@ -1043,7 +1037,7 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#ff764a] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider">
               APPLY NOW
             </Button>
           </div>
@@ -1068,7 +1062,7 @@ const Section2 = () => {
         </div>
       </div>
       <div ref={mcontainerRef} className="lg:hidden">
-        <div className="min-h-[760px] flex flex-col items-center px-5 md:px-0 pt-[50px] md:pt-[140px] gap-[75px]">
+        <div className="min-h-[760px] flex flex-col items-center px-5 md:px-0 pt-[96px] md:pt-[140px] gap-[75px]">
           <div className="w-full md:w-[442px] flex flex-col gap-6">
             <SvgIcon name="read-card" className="w-[106px]"></SvgIcon>
             <div className="text-[34px] tracking-wider">
@@ -1079,7 +1073,7 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#ff764a] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider">
               APPLY NOW
             </Button>
           </div>
@@ -1090,13 +1084,7 @@ const Section2 = () => {
             <Image src="/images/3card.png" fill alt=""></Image>
           </div>
         </div>
-        <div className="bg-[#202020] relative">
-          <Image
-            src="/images/noise.png"
-            fill
-            alt=""
-            className="mix-blend-soft-light absolute top-0 bottom-0 left-0 right-0 "
-          ></Image>
+        <div className="bg-[#202020] relative black-container ">
           <div className="min-h-[760px] text-white relative flex flex-col pt-[50px] md:pt-[140px] p-5 md:p-10">
             <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px] font-semibold">
               Double Rewards on Every Single Swipe

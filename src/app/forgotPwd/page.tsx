@@ -101,11 +101,11 @@ export default function ForgotPwd() {
                           {...field}
                           placeholder="Enter your Email"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0",
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black",
                             errors.email
                               ? ""
                               : field.value
-                              ? "border-green-500"
+                              ? "border-green-500 focus:border-green-500"
                               : ""
                           )}
                           onChange={(e) => {
@@ -123,7 +123,7 @@ export default function ForgotPwd() {
                 className={cn(
                   "w-full h-[52px] text-black text-sm rounded-lg",
                   isValid
-                    ? "bg-[#ff764a] hover:bg-[#ff764a]"
+                    ? "bg-[#ff764a] hover:bg-[#FFA58A]"
                     : "bg-[#cac9c9] hover:bg-[#cac9c9]"
                 )}
                 disabled={!isValid || sendMutation.isPending}

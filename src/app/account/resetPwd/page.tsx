@@ -102,7 +102,7 @@ const ResetPwd = () => {
             <SvgIcon name="success"></SvgIcon>
             <Button
               asChild
-              className="bg-[#ff764a] hover:bg-[#ff764a] h-[52px] w-full text-black"
+              className="bg-[#ff764a] hover:bg-[#FFA58A] h-[52px] w-full text-black"
             >
               <Link href="/account">Back to My Info Page</Link>
             </Button>
@@ -133,7 +133,7 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="Previous Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0"
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black"
                           )}
                         />
                       </div>
@@ -154,11 +154,11 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="New Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0",
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black",
                             errors.newpasswd
                               ? ""
                               : isPasswordValid
-                              ? "border-green-500"
+                              ? "border-green-500 focus:border-green-500"
                               : ""
                           )}
                         />
@@ -212,7 +212,7 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="Confirm Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0"
+                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-black"
                           )}
                         />
                       </div>
@@ -250,7 +250,7 @@ const ResetPwd = () => {
               className={cn(
                 "w-full h-[52px] text-black text-sm rounded-lg ",
                 isValid && isPasswordValid
-                  ? "bg-[#ff764a] hover:bg-[#ff764a]"
+                  ? "bg-[#ff764a] hover:bg-[#FFA58A]"
                   : "bg-[#cac9c9] hover:bg-[#cac9c9]"
               )}
             >

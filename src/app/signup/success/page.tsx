@@ -19,7 +19,7 @@ const EmailVerificationSuccess = () => {
             <SvgIcon name="email-success" className="my-[50px]"></SvgIcon>
             <Button
               asChild
-              className="bg-[#FF764A] hover:bg-[#FF764A] w-full h-[52px] text-black"
+              className="bg-[#FF764A] hover:bg-[#FFA58A] w-full h-[52px] text-black"
             >
               <Link href="/signin">Go to login</Link>
             </Button>

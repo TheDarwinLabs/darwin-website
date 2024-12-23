@@ -78,7 +78,7 @@ const Section3 = () => {
           .timeline({
             scrollTrigger: {
               trigger: container,
-              start: "top top",
+              start: "-=10",
               end: "bottom bottom",
               // pin: true,
               scrub: true,
@@ -171,7 +171,7 @@ const Section3 = () => {
         gsap.timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "-=10",
             end: "bottom",
             // pin: true,
             scrub: true,
@@ -247,7 +247,7 @@ const Section3 = () => {
         gsap.timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "-=10",
             end: "bottom",
             // pin: true,
             scrub: true,
@@ -379,7 +379,7 @@ const Section3 = () => {
             verified Brazilian bonds, transform institutional-grade investments
             into assets for everyone, globally accessible and secure.
           </div>
-          <Button className="w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#ff764a] text-black text-sm font-medium  tracking-wider leading-none">
+          <Button className="w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none">
             APPLY NOW
           </Button>
         </div>
@@ -550,7 +550,7 @@ const Section3 = () => {
                       </div>
                     ) : (
                       <Button
-                        className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#ff764a] text-black"
+                        className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#FFA58A] text-black"
                         onClick={() => onClickItem(item)}
                       >
                         {item.button}
