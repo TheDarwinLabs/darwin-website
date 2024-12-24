@@ -19,6 +19,7 @@ interface IFormInput {
   email: string;
   passwd: string;
   inviteCode?: string;
+  product?: string;
 }
 
 export default function SignUpPage() {
@@ -36,6 +37,7 @@ const SignUp = () => {
   const { toast } = useToast();
   const searchParams = useSearchParams();
   const inviteCode = searchParams.get("m") ?? "";
+  const product = searchParams.get("p") ?? "";
 
   const [isSend, setIsSend] = useState(false);
   const {
@@ -100,6 +102,7 @@ const SignUp = () => {
       ...data,
       passwd: encryptStr(data.passwd),
       inviteCode,
+      product,
     });
   };
 

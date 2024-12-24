@@ -361,7 +361,7 @@ const Section3 = () => {
     if (user?.email) {
       joinMutation.mutate(item.product);
     } else {
-      router.push(`/signup`);
+      router.push(`/signup?p=${item.product}`);
     }
   };
 
