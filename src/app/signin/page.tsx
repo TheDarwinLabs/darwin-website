@@ -105,7 +105,7 @@ export default function SignIn() {
                         {...field}
                         placeholder="Enter your Email"
                         className={cn(
-                          "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] focus-visible:outline-none focus-visible:ring-0 shadow-none focus:border-[#757575]",
+                          "px-7 h-12 bg-[#dfdfdf] text-base rounded-[11px] focus-visible:outline-none focus-visible:ring-0 shadow-none focus:border-[#757575]",
                           errors.email
                             ? ""
                             : field.value
@@ -121,7 +121,7 @@ export default function SignIn() {
                   />
                 </div>
                 <div className="w-full flex-col justify-start items-start gap-2 flex">
-                  <div className="px-2 text-[#757575] text-sm text-left leading-[23px]">
+                  <div className="px-2 text-[#757575] text-base text-left leading-[23px]">
                     Password
                   </div>
                   <Controller
@@ -137,7 +137,7 @@ export default function SignIn() {
                           type="password"
                           placeholder="Enter your Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px]  focus-visible:outline-none focus-visible:ring-0 shadow-none focus:border-[#757575]",
+                            "px-7 h-12 bg-[#dfdfdf] text-base rounded-[11px]  focus-visible:outline-none focus-visible:ring-0 shadow-none focus:border-[#757575]",
                             errors.passwd
                               ? ""
                               : field.value

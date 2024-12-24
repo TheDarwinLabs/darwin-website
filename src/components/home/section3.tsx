@@ -429,7 +429,10 @@ const Section3 = () => {
               <span className="text-sm font-medium leading-none tracking-wider">
                 Learn More
               </span>
-              <SvgIcon name="circle-arrow-right"></SvgIcon>
+              <SvgIcon
+                name="circle-arrow-right"
+                className=" cursor-pointer text-[#FF764A] hover:text-[#FFA58A]"
+              ></SvgIcon>
             </div>
           </div>
           <div className="flex flex-col justify-start p-6 text-[#181818] items-end h-[400px] relative rounded-[18px] border border-[#b3b3b3] bg-[#d3d3d3] overflow-hidden ">
@@ -460,7 +463,10 @@ const Section3 = () => {
               <span className="text-sm font-medium font-['DM Sans'] leading-none tracking-wider">
                 Learn More
               </span>
-              <SvgIcon name="circle-arrow-right"></SvgIcon>
+              <SvgIcon
+                name="circle-arrow-right"
+                className=" cursor-pointer text-[#FF764A] hover:text-[#FFA58A]"
+              ></SvgIcon>
             </div>
           </div>
           <div className="flex flex-col justify-start p-6 text-white items-end h-[400px] relative rounded-[18px] border bg-[#303030] border-[#202020] overflow-hidden ">
@@ -493,7 +499,10 @@ const Section3 = () => {
               <span className="text-sm font-medium font-['DM Sans'] leading-none tracking-wider">
                 Learn More
               </span>
-              <SvgIcon name="circle-arrow-right"></SvgIcon>
+              <SvgIcon
+                name="circle-arrow-right"
+                className=" cursor-pointer text-[#FF764A] hover:text-[#FFA58A]"
+              ></SvgIcon>
             </div>
           </div>
         </div>

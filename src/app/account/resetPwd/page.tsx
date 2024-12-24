@@ -133,7 +133,7 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="Previous Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]"
+                            "px-7 h-12 bg-[#dfdfdf] text-base rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]"
                           )}
                         />
                       </div>
@@ -154,7 +154,7 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="New Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]",
+                            "px-7 h-12 bg-[#dfdfdf] text-base rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]",
                             errors.newpasswd
                               ? ""
                               : isPasswordValid
@@ -212,7 +212,7 @@ const ResetPwd = () => {
                           type="password"
                           placeholder="Confirm Password"
                           className={cn(
-                            "px-7 h-12 bg-[#dfdfdf] text-sm rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]"
+                            "px-7 h-12 bg-[#dfdfdf] text-base rounded-[11px] shadow-none focus-visible:outline-none focus-visible:ring-0 focus:border-[#757575]"
                           )}
                         />
                       </div>

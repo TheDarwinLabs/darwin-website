@@ -168,7 +168,7 @@ export default function Home() {
         </video>
         <div className="slide-up absolute z-10 bottom-[80px] left-1/2 inline-flex flex-col items-center gap-3 -translate-x-1/2">
           <SvgIcon name="mouse"></SvgIcon>
-          <div className="capitalize text-xs">Slide up to evolve</div>
+          <div className="capitalize text-xs">Scroll to Evolve</div>
         </div>
       </div>
       {/* <SvgIcon
