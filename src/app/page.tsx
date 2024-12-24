@@ -10,10 +10,11 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import SvgIcon from "@/components/SvgIcon";
+import { useGlobal } from "@/providers/GlobalProvider";
 
 export default function Home() {
+  const { showSplash, setShowSplash } = useGlobal();
   const [videoSrc, setVideoSrc] = useState<string>("");
-  const [isHidden, setIsHidden] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const updateVideoSrc = () => {
@@ -46,7 +47,7 @@ export default function Home() {
         (event instanceof WheelEvent && event.deltaY > 0) ||
         (event instanceof TouchEvent && event.touches.length > 0)
       ) {
-        setIsHidden(true);
+        setShowSplash(false);
         document.body.classList.remove("body-top-locked");
       }
     };
@@ -152,7 +153,7 @@ export default function Home() {
         id="responsive-video"
         className={cn(
           "h-screen bg-black  fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-[1000] transition-all duration-500",
-          isHidden ? "opacity-0 z-0 pointer-events-none" : "opacity-100"
+          !showSplash ? "opacity-0 z-0 pointer-events-none" : "opacity-100"
         )}
       >
         <video

@@ -6,6 +6,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { GlobalProvider } from "@/providers/GlobalProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -45,9 +46,11 @@ export default function RootLayout({
         )}
       >
         <ReactQueryProvider>
-          <AuthProvider>
-            <ReactLenis root>{children}</ReactLenis>
-          </AuthProvider>
+          <GlobalProvider>
+            <AuthProvider>
+              <ReactLenis root>{children}</ReactLenis>
+            </AuthProvider>
+          </GlobalProvider>
         </ReactQueryProvider>
         <Toaster />
       </body>
