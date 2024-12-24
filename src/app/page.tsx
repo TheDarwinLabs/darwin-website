@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+import SvgIcon from "@/components/SvgIcon";
 
 export default function Home() {
   const [videoSrc, setVideoSrc] = useState<string>("");
@@ -62,6 +63,13 @@ export default function Home() {
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
+      gsap.to(".slide-up", {
+        opacity: 0,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
       gsap
         .timeline({
           scrollTrigger: {
@@ -158,6 +166,10 @@ export default function Home() {
           <source src={videoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div className="slide-up absolute z-10 bottom-[80px] left-1/2 inline-flex flex-col items-center gap-3 -translate-x-1/2">
+          <SvgIcon name="mouse"></SvgIcon>
+          <div className="capitalize text-xs">Slide up to evolve</div>
+        </div>
       </div>
       {/* <SvgIcon
         name="pattern"
