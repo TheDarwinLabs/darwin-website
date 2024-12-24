@@ -5,7 +5,9 @@ export default function Terms() {
     <>
       <Header olnyLogo />
       <div className="px-5 sm:px-10 md:px-0 md:w-[898px] pt-[96px] mx-auto tracking-wider text-base pb-10">
-        <div className=" text-[34px] font-bold pt-9 mb-6">Privacy Policy</div>
+        <div className=" text-[34px] font-bold pt-9 mb-6 leading-10">
+          Privacy Policy
+        </div>
         <div>Last Modified:</div>
         <div className="mb-10">December 1st, 2024</div>
         <div className="font-bold mb-2">Introduction</div>

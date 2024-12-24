@@ -20,7 +20,7 @@ const tabs = [
   { title: "Dashboard", icon: "app", component: Dashboard },
   { title: "Settings", icon: "setting", component: Settings },
   { title: "Terms", icon: "terms", link: "/terms" },
-  { title: "Services", icon: "file-check", link: "" },
+  { title: "Services", icon: "file-check", link: "/privacy" },
   { title: "Documentation", icon: "app" },
 ];
 
@@ -45,11 +45,16 @@ const Account = () => {
     setActive(index);
   };
 
-  if (loading) return;
+  if (loading || !user) return;
 
   return (
     <>
-      <Header olnyLogo />
+      <Header
+        olnyLogo
+        isAccount
+        accountTabs={tabs}
+        onAccountTabClick={onTabClick}
+      />
       <div className="w-full min-h-screen flex flex-col pt-[96px]  px-5 md:px-0 ">
         <div className="flex-1 flex gap-7 xl:gap-[90px] pb-[88px]">
           <div className="hidden flex-col sm:flex sm:w-[90px] md:w-[260px] lg:w-[380px] xl:w-[560px] text-[17px] py-1">
@@ -235,8 +240,8 @@ function Settings() {
   return (
     <div>
       <div className="text-[28px] font-medium ">Your Account</div>
-      <div className="mt-3 bg-white rounded-[18px] p-7 text-[17px] flex flex-col gap-9">
-        <div className="flex gap-[53px] items-center">
+      <div className="mt-3 bg-white rounded-[18px] px-2 py-4 sm:p-7 text-sm sm:text-[17px] flex flex-col gap-9">
+        <div className="flex sm:gap-[53px] items-center">
           <span className="w-[144px]">Email Address</span>
           <span>{user?.email}</span>
         </div>

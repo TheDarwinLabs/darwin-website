@@ -17,13 +17,15 @@ const AuthContext = createContext<{
 export function AuthProvider({ children }: React.PropsWithChildren) {
   const router = useRouter();
   const [user, setUser] = useState<User | null>();
-  const { data, isLoading: loading, error } = useUserData();
+  const [loading, setLoading] = useState(true);
+  const { data, isLoading, error } = useUserData();
 
   useEffect(() => {
-    if (!loading) {
+    if (!isLoading) {
+      setLoading(isLoading);
       setUser(error ? null : data);
     }
-  }, [error, loading, data]);
+  }, [error, isLoading, data]);
 
   const logout = () => {
     setUser(null);

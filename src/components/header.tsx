@@ -9,9 +9,17 @@ import { useState } from "react";
 
 interface HeaderProps {
   olnyLogo?: boolean;
+  isAccount?: boolean;
+  accountTabs?: { title: string; icon: string; link?: string }[];
+  onAccountTabClick?: (index: number) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
+const Header: React.FC<HeaderProps> = ({
+  olnyLogo,
+  isAccount,
+  accountTabs,
+  onAccountTabClick,
+}) => {
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
 
@@ -131,60 +139,93 @@ const Header: React.FC<HeaderProps> = ({ olnyLogo }) => {
               onClick={() => setOpen((preValue) => !preValue)}
             />
           </div>
-        </div>
-        <div
-          className={cn(
-            "bg-[#ebeae8] fixed top-0 left-0 right-0 bottom-0 pt-[96px] text-[#1a1a1a]",
-            open ? "" : "hidden"
-          )}
-        >
-          <div
-            onClick={() => {
-              setOpen(false);
-              scrollToRealCard();
-            }}
-            className=" relative flex items-center justify-between text-xl font-medium py-5  pl-5 pr-6"
-          >
-            <span>Real Card</span>
-            <SvgIcon name="right"></SvgIcon>
-            <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
-          </div>
-          <div
-            onClick={() => {
-              setOpen(false);
-              scrollToRealfi();
-            }}
-            className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
-          >
-            <span>RealFi</span>
-            <SvgIcon name="right"></SvgIcon>
-            <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
-          </div>
-          {user?.email ? (
-            <Link
-              href="/account"
-              className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
-            >
-              <div className="bg-[#d49e80] rounded-full w-[46px] h-[46px] text-[17px]  flex items-center justify-center uppercase">
-                {user?.email.substring(0, 1)}
-              </div>
-              <div className="text-[#202020] text-sm font-normal flex-1 ml-2">
-                {user.email}
-              </div>
-              <SvgIcon name="right"></SvgIcon>
-              <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
-            </Link>
-          ) : (
-            <Link
-              href="/signin"
-              className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
-            >
-              <span>Sign in</span>
-              <SvgIcon name="right"></SvgIcon>
-              <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
-            </Link>
+          {isAccount && (
+            <div className="sm:hidden">
+              <SvgIcon
+                name={open ? "cancel" : "menu"}
+                className="header-menu"
+                onClick={() => setOpen((preValue) => !preValue)}
+              />
+            </div>
           )}
         </div>
+        {isAccount ? (
+          <div
+            className={cn(
+              "bg-[#ebeae8] fixed top-0 left-0 right-0 bottom-0 pt-[96px] text-[#1a1a1a]",
+              open ? "" : "hidden"
+            )}
+          >
+            {accountTabs?.map((item, index) => (
+              <div
+                key={item.title}
+                onClick={() => {
+                  onAccountTabClick?.(index);
+                  setOpen((preValue) => !preValue);
+                }}
+                className=" relative flex items-center justify-between text-xl font-medium py-5  pl-5 pr-6"
+              >
+                <span>{item.title}</span>
+                <SvgIcon name="right"></SvgIcon>
+                <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "bg-[#ebeae8] fixed top-0 left-0 right-0 bottom-0 pt-[96px] text-[#1a1a1a]",
+              open ? "" : "hidden"
+            )}
+          >
+            <div
+              onClick={() => {
+                setOpen(false);
+                scrollToRealCard();
+              }}
+              className=" relative flex items-center justify-between text-xl font-medium py-5  pl-5 pr-6"
+            >
+              <span>Real Card</span>
+              <SvgIcon name="right"></SvgIcon>
+              <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
+            </div>
+            <div
+              onClick={() => {
+                setOpen(false);
+                scrollToRealfi();
+              }}
+              className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
+            >
+              <span>RealFi</span>
+              <SvgIcon name="right"></SvgIcon>
+              <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
+            </div>
+            {user?.email ? (
+              <Link
+                href="/account"
+                className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
+              >
+                <div className="bg-[#d49e80] rounded-full w-[46px] h-[46px] text-[17px]  flex items-center justify-center uppercase">
+                  {user?.email.substring(0, 1)}
+                </div>
+                <div className="text-[#202020] text-sm font-normal flex-1 ml-2">
+                  {user.email}
+                </div>
+                <SvgIcon name="right"></SvgIcon>
+                <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
+              </Link>
+            ) : (
+              <Link
+                href="/signin"
+                className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
+              >
+                <span>Sign in</span>
+                <SvgIcon name="right"></SvgIcon>
+                <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
