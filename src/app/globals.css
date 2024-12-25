@@ -124,7 +124,6 @@ input[type="password"] {
 }
 
 @layer utilities {
-  /* 发光效果的动画 */
   @keyframes glow {
     0%, 100% {
       box-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00, 0 0 30px #ff6a00;
@@ -134,7 +133,6 @@ input[type="password"] {
     }
   }
 
-  /* 闪亮滑过效果的动画 */
   @keyframes shine {
     0% {
       transform: translateX(-150%);

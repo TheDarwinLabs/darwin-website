@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import SvgIcon from "../SvgIcon";
 import { Button } from "../ui/button";
