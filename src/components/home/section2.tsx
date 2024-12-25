@@ -1016,7 +1016,7 @@ const Section2 = () => {
               crypto rewards.
             </div>
             <Button
-              className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider"
+              className="btn-glow  rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider"
               onClick={scrollToApply}
             >
               APPLY NOW

@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({
               )}
             </div>
             <Button
-              className="px-6 py-6 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
+              className="btn-glow px-6 py-6 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
               onClick={scrollToApply}
             >
               APPLY NOW
