@@ -48,7 +48,12 @@ export default function RootLayout({
         <ReactQueryProvider>
           <GlobalProvider>
             <AuthProvider>
-              <ReactLenis root>{children}</ReactLenis>
+              <ReactLenis
+                root
+                options={{ duration: 2, lerp: 0.1, smoothWheel: true }}
+              >
+                {children}
+              </ReactLenis>
             </AuthProvider>
           </GlobalProvider>
         </ReactQueryProvider>

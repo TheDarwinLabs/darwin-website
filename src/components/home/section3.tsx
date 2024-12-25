@@ -63,11 +63,6 @@ const Section3 = () => {
 
   useGSAP(
     () => {
-      // const paths = document.querySelectorAll(".darwin-logo path");
-      // const originalColors = Array.from(paths).map((path) =>
-      //   path.getAttribute("fill")
-      // );
-
       gsap.registerPlugin(ScrollTrigger);
       const container = containerRef.current;
 
@@ -84,65 +79,59 @@ const Section3 = () => {
               scrub: true,
               // markers: true,
               onEnter: () => {
-                // paths.forEach((el, index) => {
-                //   gsap.to(el, {
-                //     fill: originalColors[index] ?? "",
-                //     duration: 1,
-                //   });
-                // });
                 gsap.to(".darwin-logo-color", {
                   opacity: 1,
+                  duration: 0,
                 });
                 gsap.to(".darwin-logo-white", {
                   opacity: 0,
+                  duration: 0,
                 });
                 gsap.to(".header", {
                   color: "#121212",
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".header-menu path", {
                   color: "#121212",
                   fill: "#121212",
                   stroke: "#121212",
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".real-card-p", {
                   backgroundColor: "transparent",
+                  duration: 0,
                 });
                 gsap.to(".real-fi-p", {
                   backgroundColor: "#ff764a",
+                  duration: 0,
                 });
               },
               onLeaveBack: () => {
-                // paths.forEach((el) => {
-                //   gsap.to(el, {
-                //     fill: "#ffffff",
-                //     duration: 1,
-                //   });
-                // });
                 gsap.to(".darwin-logo-color", {
                   opacity: 0,
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".darwin-logo-white", {
                   opacity: 1,
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".header", {
                   color: "#ffffff",
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".header-menu path", {
                   color: "#ffffff",
                   fill: "#ffffff",
                   stroke: "#ffffff",
-                  duration: 1,
+                  duration: 0,
                 });
                 gsap.to(".real-card-p", {
                   backgroundColor: "#ff764a",
+                  duration: 0,
                 });
                 gsap.to(".real-fi-p", {
                   backgroundColor: "transparent",
+                  duration: 0,
                 });
               },
             },
@@ -177,67 +166,59 @@ const Section3 = () => {
             scrub: true,
             // markers: true,
             onEnter: () => {
-              // paths.forEach((el, index) => {
-              //   gsap.to(el, {
-              //     fill: originalColors[index] ?? "",
-              //     duration: 1,
-              //   });
-              // });
               gsap.to(".darwin-logo-color", {
                 opacity: 1,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".darwin-logo-white", {
                 opacity: 0,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header", {
                 color: "#121212",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header-menu path", {
                 color: "#121212",
                 fill: "#121212",
                 stroke: "#121212",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".real-card-p", {
                 backgroundColor: "transparent",
+                duration: 0,
               });
               gsap.to(".real-fi-p", {
                 backgroundColor: "#ff764a",
+                duration: 0,
               });
             },
             onLeaveBack: () => {
-              // paths.forEach((el) => {
-              //   gsap.to(el, {
-              //     fill: "#ffffff",
-              //     duration: 1,
-              //   });
-              // });
               gsap.to(".darwin-logo-color", {
                 opacity: 0,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".darwin-logo-white", {
                 opacity: 1,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header", {
                 color: "#ffffff",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header-menu path", {
                 color: "#ffffff",
                 fill: "#ffffff",
                 stroke: "#ffffff",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".real-card-p", {
                 backgroundColor: "#ff764a",
+                duration: 0,
               });
               gsap.to(".real-fi-p", {
                 backgroundColor: "transparent",
+                duration: 0,
               });
             },
           },
@@ -253,67 +234,59 @@ const Section3 = () => {
             scrub: true,
             // markers: true,
             onEnter: () => {
-              // paths.forEach((el, index) => {
-              //   gsap.to(el, {
-              //     fill: originalColors[index] ?? "",
-              //     duration: 1,
-              //   });
-              // });
               gsap.to(".darwin-logo-color", {
                 opacity: 1,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".darwin-logo-white", {
                 opacity: 0,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header", {
                 color: "#121212",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header-menu path", {
                 color: "#121212",
                 fill: "#121212",
                 stroke: "#121212",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".real-card-p", {
                 backgroundColor: "transparent",
+                duration: 0,
               });
               gsap.to(".real-fi-p", {
                 backgroundColor: "#ff764a",
+                duration: 0,
               });
             },
             onLeaveBack: () => {
-              // paths.forEach((el) => {
-              //   gsap.to(el, {
-              //     fill: "#ffffff",
-              //     duration: 1,
-              //   });
-              // });
               gsap.to(".darwin-logo-color", {
                 opacity: 0,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".darwin-logo-white", {
                 opacity: 1,
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header", {
                 color: "#ffffff",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".header-menu path", {
                 color: "#ffffff",
                 fill: "#ffffff",
                 stroke: "#ffffff",
-                duration: 1,
+                duration: 0,
               });
               gsap.to(".real-card-p", {
                 backgroundColor: "#ff764a",
+                duration: 0,
               });
               gsap.to(".real-fi-p", {
                 backgroundColor: "transparent",
+                duration: 0,
               });
             },
           },

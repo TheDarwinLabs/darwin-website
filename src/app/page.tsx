@@ -59,7 +59,7 @@ export default function Home() {
       window.removeEventListener("wheel", handleScroll);
       window.removeEventListener("touchstart", handleScroll);
     };
-  }, []);
+  }, [setShowSplash]);
 
   useGSAP(
     () => {
@@ -141,6 +141,16 @@ export default function Home() {
             ease: "power2.out",
           }
         );
+
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".section1-container",
+            start: "top top",
+          },
+        });
+      });
     },
     {
       scope: containerRef,

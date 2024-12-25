@@ -103,124 +103,124 @@ const Section1 = () => {
       if (!container) return;
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
-       gsap
-         .timeline({
-           scrollTrigger: {
-             trigger: container,
-             start: "top top",
-             end: "+=2000",
-             pin: true,
-             scrub: true,
-             // markers: true,
-             //  onEnterBack: () => {},
-             //  onLeaveBack: () => {},
-             //  onUpdate: (self) => {
-             //    console.log(self);
-             //  },
-           },
-         })
-         .to(
-           container,
-           {
-             backgroundColor: "#202020",
-             duration: 1,
-           },
-           5
-         )
-         .to(
-           box,
-           {
-             rotateX: 6,
-             rotateY: 6,
-             y: "+=10",
-             duration: 3,
-           },
-           1
-         )
-         .fromTo(
-           ".pattern path",
-           {
-             color: "#F5F4F6",
-             duration: 1,
-           },
-           {
-             color: "#0d0d0d",
-             duration: 1,
-           },
-           5
-         )
-         .to(
-           p1,
-           {
-             y: -100,
-             opacity: 0,
-             duration: 1,
-           },
-           5
-         )
-         .to(
-           icons,
-           {
-             y: -100,
-             opacity: 0,
-             duration: 1,
-           },
-           5
-         )
-         .fromTo(
-           p2,
-           {
-             y: "+=50",
-           },
-           {
-             y: 0,
-             opacity: 1,
-             duration: 3,
-           },
-           5
-         )
-         .to(
-           ".darwin-logo-color",
-           {
-             opacity: 0,
-             duration: 1,
-           },
-           5
-         )
-         .to(
-           ".darwin-logo-white",
-           {
-             duration: 1,
-             opacity: 1,
-           },
-           5
-         )
-         .to(
-           ".header",
-           {
-             color: "#ffffff",
-             duration: 1,
-           },
-           5
-         )
-         .to(
-           p2,
-           {
-             y: "-=50",
-             opacity: 0,
-             duration: 6,
-           },
-           10
-         )
-         .to(
-           slider,
-           {
-             x: 0,
-             duration: 8,
-           },
-           15
-         )
-         .add(() => {}, "+=2");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "+=2000",
+              pin: true,
+              scrub: true,
+              // markers: true,
+              //  onEnterBack: () => {},
+              //  onLeaveBack: () => {},
+              //  onUpdate: (self) => {
+              //    console.log(self);
+              //  },
+            },
+          })
+          .to(
+            container,
+            {
+              backgroundColor: "#202020",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            box,
+            {
+              rotateX: 6,
+              rotateY: 6,
+              y: "+=10",
+              duration: 3,
+            },
+            1
+          )
+          .fromTo(
+            ".pattern path",
+            {
+              color: "#F5F4F6",
+              duration: 1,
+            },
+            {
+              color: "#0d0d0d",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p1,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            icons,
+            {
+              y: -100,
+              opacity: 0,
+              duration: 1,
+            },
+            5
+          )
+          .fromTo(
+            p2,
+            {
+              y: "+=50",
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 3,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo-color",
+            {
+              opacity: 0,
+              duration: 0,
+            },
+            5
+          )
+          .to(
+            ".darwin-logo-white",
+            {
+              opacity: 1,
+              duration: 0,
+            },
+            5
+          )
+          .to(
+            ".header",
+            {
+              color: "#ffffff",
+              duration: 1,
+            },
+            5
+          )
+          .to(
+            p2,
+            {
+              y: "-=50",
+              opacity: 0,
+              duration: 6,
+            },
+            10
+          )
+          .to(
+            slider,
+            {
+              x: 0,
+              duration: 8,
+            },
+            15
+          )
+          .add(() => {}, "+=2");
       });
       mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
         gsap
@@ -233,12 +233,7 @@ const Section1 = () => {
               scrub: true,
               // markers: true,
               onEnterBack: () => {},
-              onLeaveBack: () => {
-                // gsap.to(".darwin-logo path", {
-                //   fill: "#ffffff",
-                //   duration: 1,
-                // });
-              },
+              onLeaveBack: () => {},
             },
           })
           .to(
@@ -309,15 +304,15 @@ const Section1 = () => {
             ".darwin-logo-color",
             {
               opacity: 0,
-              duration: 1,
+              duration: 0,
             },
             5
           )
           .to(
             ".darwin-logo-white",
             {
-              duration: 1,
               opacity: 1,
+              duration: 0,
             },
             5
           )
@@ -325,7 +320,7 @@ const Section1 = () => {
             ".header",
             {
               color: "#ffffff",
-              duration: 1,
+              duration: 0,
             },
             5
           )
@@ -359,12 +354,7 @@ const Section1 = () => {
               scrub: true,
               // markers: true,
               onEnterBack: () => {},
-              onLeaveBack: () => {
-                // gsap.to(".darwin-logo path", {
-                //   fill: "#ffffff",
-                //   duration: 1,
-                // });
-              },
+              onLeaveBack: () => {},
             },
           })
           .to(
@@ -407,7 +397,7 @@ const Section1 = () => {
               attr: { fill: "#ffffff" },
               fill: "#ffffff",
               stroke: "#ffffff",
-              duration: 1,
+              duration: 0,
             },
             5
           )
@@ -445,15 +435,15 @@ const Section1 = () => {
             ".darwin-logo-color",
             {
               opacity: 0,
-              duration: 1,
+              duration: 0,
             },
             5
           )
           .to(
             ".darwin-logo-white",
             {
-              duration: 1,
               opacity: 1,
+              duration: 0,
             },
             5
           )
@@ -461,7 +451,7 @@ const Section1 = () => {
             ".header",
             {
               color: "#ffffff",
-              duration: 1,
+              duration: 0,
             },
             5
           )
@@ -499,7 +489,7 @@ const Section1 = () => {
   return (
     <div
       ref={containerRef}
-      className="section1 w-full flex flex-col items-center justify-center md:h-screen relative bg-[#ebeae8] overflow-hidden min-h-[760px]"
+      className="section1-container w-full flex flex-col items-center justify-center md:h-screen relative bg-[#ebeae8] overflow-hidden min-h-[760px]"
     >
       <div
         ref={patternBoxRef}

@@ -268,11 +268,11 @@ const SignUp = () => {
               </Button>
               <div className="text-[#606060] text-xs text-center leading-tight">
                 <span>By continuing, you agree to </span>
-                <Link href="/terms" className="underline">
+                <Link href="/terms" target="_blank" className="underline">
                   Darwin Labs Terms of Service
                 </Link>
                 <span> and </span>
-                <Link href="/privacy" className="underline">
+                <Link href="/privacy" target="_blank" className="underline">
                   Privacy Policy
                 </Link>
               </div>
