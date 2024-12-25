@@ -9,6 +9,7 @@ import gsap from "gsap";
 const Section2 = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const blackContainerRef = useRef<HTMLDivElement | null>(null);
+  const cardBottomContainerRef = useRef<HTMLDivElement | null>(null);
   const blackCardRef = useRef<HTMLDivElement | null>(null);
   const orangeCardRef = useRef<HTMLDivElement | null>(null);
   const silverCardRef = useRef<HTMLDivElement | null>(null);
@@ -53,6 +54,7 @@ const Section2 = () => {
 
       const container = containerRef.current;
       const blackContainer = blackContainerRef.current;
+      const cardBottomContainer = cardBottomContainerRef.current;
       const blackCard = blackCardRef.current;
       const cardTop = cardTopRef.current;
       const cardBottom = cardBottomRef.current;
@@ -90,7 +92,7 @@ const Section2 = () => {
 
       const mcontainer = mcontainerRef.current;
 
-      if (!container || !blackContainer) return;
+      if (!container || !blackContainer || !cardBottomContainer) return;
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 1280px)", () => {
@@ -173,11 +175,11 @@ const Section2 = () => {
             },
             1
           )
-          .to(blackContainer, { y: 0, duration: 5 }, 5)
+          .to([blackContainer, cardBottomContainer], { y: 0, duration: 5 }, 5)
           .to(
             blackCard,
             {
-              y: 240,
+              y: 230,
               x: -220,
               rotate: -4,
               scale: 0.9,
@@ -244,7 +246,7 @@ const Section2 = () => {
             blackCard,
             {
               rotate: 0,
-              y: 230,
+              y: 220,
               x: -200,
               scale: 0.68,
               duration: 3,
@@ -396,11 +398,11 @@ const Section2 = () => {
             },
             1
           )
-          .to(blackContainer, { y: 0, duration: 5 }, 5)
+          .to([blackContainer, cardBottomContainer], { y: 0, duration: 5 }, 5)
           .to(
             blackCard,
             {
-              y: 130,
+              y: 120,
               x: -300,
               rotate: -4,
               scale: 1.5,
@@ -467,7 +469,7 @@ const Section2 = () => {
             blackCard,
             {
               rotate: 0,
-              y: 240,
+              y: 230,
               x: -210,
               scale: 0.75,
               duration: 3,
@@ -779,14 +781,14 @@ const Section2 = () => {
               height={220}
               className="absolute top-0 right-0"
             ></Image>
-            <Image
+            {/* <Image
               ref={cardBottomRef}
               src="/images/card-bottom.png"
               alt=""
               width={520}
               height={220}
               className="absolute bottom-0 left-0 z-50"
-            ></Image>
+            ></Image> */}
             <Image
               ref={cardCircleRef}
               src="/images/circle.png"
@@ -980,6 +982,21 @@ const Section2 = () => {
             >
               <Image src="/images/phone2.jpg" fill alt="phone2"></Image>
             </div>
+          </div>
+        </div>
+        <div
+          ref={cardBottomContainerRef}
+          className="absolute translate-y-full bottom-[10px] left-0 right-0 h-screen min-h-[760px] bg-transparent overflow-hidden flex  items-end justify-center pb-[100px] z-40"
+        >
+          <div className="relative w-[556px] h-[394px] z-[25]">
+            <Image
+              ref={cardBottomRef}
+              src="/images/card-bottom.png"
+              alt=""
+              width={520}
+              height={220}
+              className="absolute bottom-0  z-50"
+            ></Image>
           </div>
         </div>
         <div className="mx-auto relative h-full md:w-[688px] lg:w-[900px] xl:w-[1216px]">
