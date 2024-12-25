@@ -736,11 +736,16 @@ const Section2 = () => {
     }
   );
 
-  useEffect(() => {
-    setTimeout(() => {
-      // window.scrollTo({ top: 0 });
-    }, 0);
-  }, []);
+
+  const scrollToApply = () => {
+    const target = document.getElementById("apply");
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     <div id="realcard">
       <div
@@ -1010,7 +1015,10 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button
+              className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider"
+              onClick={scrollToApply}
+            >
               APPLY NOW
             </Button>
           </div>

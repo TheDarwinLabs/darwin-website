@@ -338,6 +338,16 @@ const Section3 = () => {
     }
   };
 
+  const scrollToApply = () => {
+    const target = document.getElementById("apply");
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <div id="realfi" ref={containerRef} className="w-full  ">
       <div className="realfi-box1 w-full mx-auto z-10 gap-[30px] px-5 min-h-[760px] pt-[96px] lg:min-h-screen md:px-10 lg:px-0 lg:flex lg:w-[900px] lg:items-center  xl:w-[1168px] xl:gap-[65px]">
@@ -352,7 +362,10 @@ const Section3 = () => {
             verified Brazilian bonds, transform institutional-grade investments
             into assets for everyone, globally accessible and secure.
           </div>
-          <Button className="w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none">
+          <Button
+            className="w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none"
+            onClick={scrollToApply}
+          >
             APPLY NOW
           </Button>
         </div>
