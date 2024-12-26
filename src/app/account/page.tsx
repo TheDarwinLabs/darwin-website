@@ -57,7 +57,7 @@ const Account = () => {
       />
       <div className="w-full min-h-screen flex flex-col pt-[96px]  px-5 md:px-0 ">
         <div className="flex-1 flex gap-7 xl:gap-[90px] pb-[88px]">
-          <div className="hidden flex-col sm:flex sm:w-[90px] md:w-[260px] lg:w-[380px] xl:w-[560px] text-[17px] py-1">
+          <div className="hidden flex-col sm:flex sm:w-[50px] md:w-[100px] lg:w-[28%] xl:w-[25%] text-[17px] py-1">
             {tabs.map((item, index) => (
               <div
                 key={item.title}
@@ -68,7 +68,7 @@ const Account = () => {
                 onClick={() => onTabClick(index)}
               >
                 <SvgIcon name={item.icon}></SvgIcon>
-                <div className="w-[150px] hidden md:block">{item.title}</div>
+                <div className="w-[150px] hidden lg:block">{item.title}</div>
               </div>
             ))}
           </div>

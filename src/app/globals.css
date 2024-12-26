@@ -126,10 +126,10 @@ input[type="password"] {
 @layer utilities {
   @keyframes glow {
     0%, 100% {
-      box-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00, 0 0 30px #ff6a00;
+      box-shadow: 0 0 8px #FF764A, 0 0 16px #FF764A, 0 0 24px #FF764A;
     }
     50% {
-      box-shadow: 0 0 20px #ff9900, 0 0 40px #ff9900, 0 0 60px #ff9900;
+      box-shadow: 0 0 16px #FF764A, 0 0 8px #FF764A, 0 0 12px #FF764A;
     }
   }
 
@@ -148,19 +148,15 @@ input[type="password"] {
   }
 
   .btn-glow:hover {
-    @apply scale-105 shadow-xl;
+    @apply scale-105;
+    box-shadow: none; 
   }
 
   .btn-glow:before {
-    @apply absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 opacity-10;
+    @apply absolute top-0 left-0 w-full h-full rounded-lg bg-[#FF764A] opacity-20;
     content: "";
-    filter: blur(5px);
+    filter: blur(16px);
+    animation: glow 1.5s infinite ease-in-out; 
   }
 
-  .btn-glow:after {
-    @apply absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-r from-yellow-300 to-white opacity-0;
-    content: "";
-    transform: translateX(-150%);
-    animation: shine 2s infinite ease-in-out;
-  }
 }
