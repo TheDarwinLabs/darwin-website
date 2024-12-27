@@ -126,10 +126,10 @@ input[type="password"] {
 @layer utilities {
   @keyframes glow {
     0%, 100% {
-      box-shadow: 0 0 8px #FF764A, 0 0 16px #FF764A, 0 0 24px #FF764A;
+      box-shadow: 0 0 4px #FF764A, 0 0 8px #FF764A, 0 0 12px #FF764A;
     }
     50% {
-      box-shadow: 0 0 16px #FF764A, 0 0 8px #FF764A, 0 0 12px #FF764A;
+      box-shadow: 0 0 8px #FF764A, 0 0 4px #FF764A, 0 0 6px #FF764A;
     }
   }
 
