@@ -142,15 +142,15 @@ export default function Home() {
           }
         );
 
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 1024px)", () => {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".section1-container",
-            start: "top top",
-          },
-        });
-      });
+      // const mm = gsap.matchMedia();
+      // mm.add("(min-width: 1024px)", () => {
+      //   gsap.timeline({
+      //     scrollTrigger: {
+      //       trigger: ".section1-container",
+      //       start: "top top",
+      //     },
+      //   });
+      // });
     },
     {
       scope: containerRef,
