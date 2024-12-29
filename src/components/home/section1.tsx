@@ -101,6 +101,15 @@ const Section1 = () => {
       const patternBox = patternBoxRef.current;
       const slider = sliderRef.current;
       if (!container) return;
+
+      gsap.to(box, {
+        rotateX: 6,
+        rotateY: 6,
+        y: "+=30",
+        duration: 2,
+        yoyo: true,
+        repeat: -1,
+      });
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
         gsap
@@ -127,16 +136,7 @@ const Section1 = () => {
             },
             5
           )
-          .to(
-            box,
-            {
-              rotateX: 6,
-              rotateY: 6,
-              y: "+=10",
-              duration: 3,
-            },
-            1
-          )
+
           .fromTo(
             ".pattern path",
             {
@@ -244,16 +244,16 @@ const Section1 = () => {
             },
             5
           )
-          .to(
-            box,
-            {
-              rotateX: 5,
-              rotateY: 5,
-              y: "+=5",
-              duration: 3,
-            },
-            1
-          )
+          // .to(
+          //   box,
+          //   {
+          //     rotateX: 5,
+          //     rotateY: 5,
+          //     y: "+=5",
+          //     duration: 3,
+          //   },
+          //   1
+          // )
           // .to(
           //   ".sec1-box-item",
           //   {
@@ -365,16 +365,16 @@ const Section1 = () => {
             },
             5
           )
-          .to(
-            box,
-            {
-              rotateX: 5,
-              rotateY: 5,
-              y: "+=5",
-              duration: 3,
-            },
-            1
-          )
+          // .to(
+          //   box,
+          //   {
+          //     rotateX: 5,
+          //     rotateY: 5,
+          //     y: "+=5",
+          //     duration: 3,
+          //   },
+          //   1
+          // )
           // .to(
           //   ".sec1-box-item",
           //   {

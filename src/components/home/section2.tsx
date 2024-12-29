@@ -247,7 +247,7 @@ const Section2 = () => {
             {
               rotate: 0,
               y: 220,
-              x: -200,
+              x: -203,
               scale: 0.68,
               duration: 3,
             },
