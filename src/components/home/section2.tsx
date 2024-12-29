@@ -1119,8 +1119,14 @@ const Section2 = () => {
             <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px]  font-semibold">
               Double Rewards on Every Single Swipe
             </div>
-            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
+            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9 z-10">
               <Image src="/images/phonecard1.png" fill alt="phone1"></Image>
+            </div>
+            <div
+              className="w-full md:w-[532px] md:h-[418px]  absolute -translate-y-1/2 scale-125 top-1/2 md:left-[82px] xl:bottom-8"
+              style={{ aspectRatio: "532 / 418" }}
+            >
+              <Image src="/images/circle.png" fill alt=""></Image>
             </div>
             <div className="w-full md:w-[390px] mx-auto">
               <div className="text-white text-xl font-medium mb-4">
@@ -1137,8 +1143,14 @@ const Section2 = () => {
               THE FIRST CARD POWERED BY{" "}
               <span className="text-[#ff870f]">BNB CHAIN</span>
             </div>
-            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9">
+            <div className="w-[175px] h-[380px] md:w-[252px] md:h-[512px] mx-auto relative my-9 z-10">
               <Image src="/images/phonecard2.png" fill alt="phone2"></Image>
+            </div>
+            <div
+              className="w-[60%] md:w-[356px] md:h-[419px] absolute right-0 scale-125 top-1/4 md:top-[200px] md:right-[15%] xl:bottom-8"
+              style={{ aspectRatio: "356 / 419" }}
+            >
+              <Image src="/images/binance.png" fill alt=""></Image>
             </div>
             <div className="flex flex-col md:flex-row gap-[30px] mx-auto">
               <div className="w-full md:w-[418px]">
