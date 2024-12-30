@@ -6,7 +6,7 @@ export default function Terms() {
       <Header olnyLogo />
       <div className="px-5 sm:px-10 md:px-0 md:w-[898px] pt-[96px] mx-auto tracking-wider text-base pb-10">
         <div className=" text-[34px] font-bold pt-9 mb-6 leading-10">
-          Privacy Policy
+          Darwin Privacy Policy
         </div>
         <div>Last Modified:</div>
         <div className="mb-10">December 1st, 2024</div>
@@ -342,7 +342,8 @@ export default function Terms() {
           or any screen name or username you may use. If we learn we have
           collected or received personal information from a child under 18, we
           will delete that information. If you believe we might have any
-          information from or about a child under 18, please contact us at [ ].
+          information from or about a child under 18, please contact us at
+          [contact@darwinlabs.io].
         </p>
         <p>Contact Information</p>
         <p>

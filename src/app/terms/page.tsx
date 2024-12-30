@@ -11,27 +11,11 @@ export default function Terms() {
         <div>Last Modified:</div>
         <div className="mb-10">December 1st, 2024</div>
         <p className="mb-10">
-          {`These Terms of Use ("Terms") describe your rights and obligations
-          while using the Darwin website, software, services, and other
-          offerings (collectively, "Services"). Please read these Terms
-          carefully and in their entirety, as they include important information
-          about your legal rights, remedies, and obligations. These Terms,
-          together with our Privacy Policy constitute an agreement between the
-          user ("you") and Darwin Labs, CORP ("Darwin", "we", "us", "our").`}
+          {`These Terms of Use ("Terms") describe your rights and obligations while using the Darwin website, software, services, and other offerings (collectively, "Services"). Please read these Terms carefully and in their entirety, as they include important information about your legal rights, remedies, and obligations. These Terms, together with our Privacy Policy constitute an agreement between the user ("you") and Darwin Labs, CORP ("Darwin", "we", "us", "our"). `}
         </p>
         <div className="font-bold mb-2">1. Acceptance of Terms</div>
         <p className="mb-3">
-          {`By accessing or using our Services, you acknowledge that you have
-          read, understand, and agree to be bound by these Terms. We may, in our
-          sole discretion, revise the Terms from time to time with the new terms
-          taking effect on the "Last updated" date. By continuing to use our
-          Services after the changes become effective, you agree to be bound by
-          the revised Terms. We may operate additional programs or services
-          which require separate or additional terms. In such cases, you agree
-          to be further bound by the terms specific to the additional program or
-          service, and such terms shall control to the extent there is a
-          conflict with these Terms. IF YOU DO NOT AGREE TO THESE TERMS, YOU
-          SHALL NOT ACCESS OR USE OUR SERVICES.`}
+          {`By accessing or using our Services, you acknowledge that you have read, understand, and agree to be bound by these Terms. We may, in our sole discretion, revise the Terms from time to time with the new terms taking effect on the "Last updated" date. By continuing to use our Services after the changes become effective, you agree to be bound by the revised Terms. We may operate additional programs or services which require separate or additional terms.  In such cases, you agree to be further bound by the terms specific to the additional program or service, and such terms shall control to the extent there is a conflict with these Terms. IF YOU DO NOT AGREE TO THESE TERMS, YOU SHALL NOT ACCESS OR USE OUR SERVICES.`}
         </p>
 
         <div className="font-bold mb-2 mt-6">2. Privacy</div>
@@ -42,7 +26,6 @@ export default function Terms() {
         </p>
 
         <div className="font-bold mb-2 mt-10">3. Use of Services</div>
-        <p className="mb-2">Directly from you when you provide it to us.</p>
         <p className="mb-2">
           You agree to use our Services only for purposes that are permitted by
           these Terms and any applicable law, regulation, or generally accepted
