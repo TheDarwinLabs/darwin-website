@@ -158,7 +158,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className="flex-col h-[100px] justify-start items-start gap-2 flex">
-        <Button className="w-full h-[52px] text-black text-sm rounded-lg bg-[#cac9c9] hover:bg-[#cac9c9]">
+        <Button className="w-full h-[52px] text-white text-sm rounded-lg bg-[#cac9c9] hover:bg-[#cac9c9]">
           Create My Account
         </Button>
         <div className="text-[#606060] text-xs text-center leading-tight">

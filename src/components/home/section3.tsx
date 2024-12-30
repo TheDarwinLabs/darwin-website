@@ -363,7 +363,7 @@ const Section3 = () => {
             into assets for everyone, globally accessible and secure.
           </div>
           <Button
-            className="btn-glow  w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none"
+            className=" w-[133px] md:w-[180px] px-10 py-5 md:py-7 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-white text-sm font-medium  tracking-wider leading-none"
             onClick={scrollToApply}
           >
             APPLY NOW
@@ -545,7 +545,7 @@ const Section3 = () => {
                       </div>
                     ) : (
                       <Button
-                        className="btn-glow  self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#FFA58A] text-black"
+                        className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#FFA58A] text-white"
                         onClick={() => onClickItem(item)}
                       >
                         {item.button}

@@ -102,7 +102,7 @@ const ResetPwd = () => {
             <SvgIcon name="success"></SvgIcon>
             <Button
               asChild
-              className="bg-[#ff764a] hover:bg-[#FFA58A] h-[52px] w-full text-black"
+              className="bg-[#ff764a] hover:bg-[#FFA58A] h-[52px] w-full text-white"
             >
               <Link href="/account">Back to My Info Page</Link>
             </Button>
@@ -248,7 +248,7 @@ const ResetPwd = () => {
               type="submit"
               disabled={resetMutation.isPending || !isValid || !isPasswordValid}
               className={cn(
-                "w-full h-[52px] text-black text-sm rounded-lg ",
+                "w-full h-[52px] text-white text-sm rounded-lg ",
                 isValid && isPasswordValid
                   ? "bg-[#ff764a] hover:bg-[#FFA58A]"
                   : "bg-[#cac9c9] hover:bg-[#cac9c9]"

@@ -159,4 +159,27 @@ input[type="password"] {
     animation: glow 1.5s infinite ease-in-out; 
   }
 
+  @keyframes scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .btn-scale {
+    @apply transition-transform duration-300;
+    animation: scale 1.5s infinite ease-in-out;
+  }
+
+  .btn-scale:hover {
+    animation: none;
+    @apply scale-105 bg-orange-600;
+  }
+
+  .btn-scale:active {
+    @apply scale-95 bg-orange-700; 
+  }
+
 }

@@ -126,7 +126,7 @@ const SignUp = () => {
                 disabled={timeLeft > 0 || signupMutation.isPending}
                 onClick={handleSubmit(onSubmit)}
                 className={cn(
-                  "h-[52px] text-black text-sm tracking-wider inline-block px-6",
+                  "h-[52px] text-white text-sm tracking-wider inline-block px-6",
                   timeLeft > 0
                     ? "bg-[#cac9c9] hover:bg-[#cac9c9]"
                     : " bg-transparent hover:bg-transparent border border-[#ff764a] text-[#ff764a]"
@@ -258,7 +258,7 @@ const SignUp = () => {
                   signupMutation.isPending || !isValid || !isPasswordValid
                 }
                 className={cn(
-                  "w-full h-[52px] text-black text-sm rounded-lg ",
+                  "w-full h-[52px] text-white text-sm rounded-lg ",
                   isValid && isPasswordValid
                     ? "bg-[#ff764a] hover:bg-[#FFA58A]"
                     : "bg-[#cac9c9] hover:bg-[#cac9c9]"

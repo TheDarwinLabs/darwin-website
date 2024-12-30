@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/providers/AuthProvider";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   olnyLogo?: boolean;
@@ -22,6 +23,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const scrollToRealCard = () => {
     const target = document.getElementById("realcard");
@@ -43,14 +45,18 @@ const Header: React.FC<HeaderProps> = ({
     }
   };
 
-  const scrollToApply = () => {
-    const target = document.getElementById("apply");
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+  // const scrollToApply = () => {
+  //   const target = document.getElementById("apply");
+  //   if (target) {
+  //     target.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // };
+
+  const signUp = () => {
+    router.push(`/signup`);
   };
 
   return (
@@ -105,12 +111,14 @@ const Header: React.FC<HeaderProps> = ({
                 </Link>
               )}
             </div>
-            <Button
-              className="btn-glow px-6 py-6 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
-              onClick={scrollToApply}
-            >
-              APPLY NOW
-            </Button>
+            {!user?.email && (
+              <Button
+                className="btn-scale px-6 py-6 rounded-[70px] bg-[#ff764a] hover:bg-[#FFA58A] text-white text-sm font-medium  tracking-wider leading-none cursor-pointer xl:px-10 xl:py-7"
+                onClick={signUp}
+              >
+                APPLY NOW
+              </Button>
+            )}
             {user?.email && (
               <Link
                 href="/account"
@@ -126,12 +134,14 @@ const Header: React.FC<HeaderProps> = ({
               olnyLogo ? "hidden" : ""
             )}
           >
-            <Button
-              onClick={scrollToApply}
-              className="px-5 py-4 rounded-[70px] h-12 bg-[#ff764a] hover:bg-[#FFA58A] text-black text-sm font-medium tracking-wider cursor-pointer"
-            >
-              APPLY
-            </Button>
+            {!user?.email && (
+              <Button
+                onClick={signUp}
+                className="px-5 py-4 rounded-[70px] h-12 bg-[#ff764a] hover:bg-[#FFA58A] text-white text-sm font-medium tracking-wider cursor-pointer"
+              >
+                APPLY
+              </Button>
+            )}
 
             <SvgIcon
               name={open ? "cancel" : "menu"}

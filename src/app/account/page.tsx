@@ -192,7 +192,7 @@ function Dashboard() {
                   </div>
                 ) : (
                   <Button
-                    className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#FFA58A] text-black"
+                    className="self-start w-[136px] h-10 rounded-[99px] bg-[#ff764a] hover:bg-[#FFA58A] text-white"
                     onClick={() => onClickItem(item)}
                   >
                     {item.button}

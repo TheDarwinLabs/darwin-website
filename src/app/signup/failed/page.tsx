@@ -22,7 +22,7 @@ const EmailVerificationSuccess = () => {
             <SvgIcon name="email-failed" className="my-[50px]"></SvgIcon>
             <Button
               asChild
-              className="bg-[#FF764A] hover:bg-[#FFA58A] w-full h-[52px] text-black"
+              className="bg-[#FF764A] hover:bg-[#FFA58A] w-full h-[52px] text-white"
             >
               <Link href="/signup">Sign Up Again</Link>
             </Button>

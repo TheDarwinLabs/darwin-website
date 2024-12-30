@@ -1016,7 +1016,7 @@ const Section2 = () => {
               crypto rewards.
             </div>
             <Button
-              className="btn-glow  rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider"
+              className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-white text-sm font-medium leading-none tracking-wider"
               onClick={scrollToApply}
             >
               APPLY NOW
@@ -1054,7 +1054,7 @@ const Section2 = () => {
               The first global payment card that turns every swipe into dual
               crypto rewards.
             </div>
-            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-[#202020] text-sm font-medium leading-none tracking-wider">
+            <Button className="rounded-[70px] w-[180px] h-[56px] bg-[#ff764a] hover:bg-[#FFA58A] text-white text-sm font-medium leading-none tracking-wider">
               APPLY NOW
             </Button>
           </div>
@@ -1115,7 +1115,7 @@ const Section2 = () => {
               </div>
             </div>
           </div>
-          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
+          <div className="min-h-[760px] overflow-hidden text-white relative flex flex-col pt-[140px] p-5 md:p-10">
             <div className="w-full md:w-[476px] text-2xl md:text-[39px] md:leading-[48px]  font-semibold">
               Double Rewards on Every Single Swipe
             </div>
@@ -1138,7 +1138,7 @@ const Section2 = () => {
               </div>
             </div>
           </div>
-          <div className="min-h-[760px] text-white relative flex flex-col pt-[140px] p-5 md:p-10">
+          <div className="min-h-[760px] overflow-hidden text-white relative flex flex-col pt-[140px] p-5 md:p-10">
             <div className="text-2xl md:text-[39px] leading-[34px] md:leading-[47px] font-semibold text-white w-full md:w-[358px] ">
               THE FIRST CARD POWERED BY{" "}
               <span className="text-[#ff870f]">BNB CHAIN</span>
