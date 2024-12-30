@@ -617,7 +617,7 @@ const Section1 = () => {
       </div>
       <div
         ref={mSliderRef}
-        className="absolute bottom-0 translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 grid lg:hidden md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%]  lg:pl-[112px]  lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
+        className="absolute bottom-[20px] translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 grid lg:hidden md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%]  lg:pl-[112px]  lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
       >
         {list.map((item, index) => (
           <div
