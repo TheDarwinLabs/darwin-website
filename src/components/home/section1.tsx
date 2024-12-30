@@ -90,6 +90,7 @@ const Section1 = () => {
   const iconsRef = useRef<HTMLDivElement | null>(null);
   const patternBoxRef = useRef<HTMLDivElement | null>(null);
   const sliderRef = useRef<HTMLDivElement | null>(null);
+  const mSliderRef = useRef<HTMLDivElement | null>(null);
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -100,6 +101,7 @@ const Section1 = () => {
       const icons = iconsRef.current;
       const patternBox = patternBoxRef.current;
       const slider = sliderRef.current;
+      const mSlider = mSliderRef.current;
       if (!container) return;
 
       gsap.to(box, {
@@ -334,7 +336,7 @@ const Section1 = () => {
             10
           )
           .to(
-            slider,
+            mSlider,
             {
               y: 0,
               duration: 8,
@@ -465,7 +467,7 @@ const Section1 = () => {
             8
           )
           .to(
-            slider,
+            mSlider,
             {
               y: -160,
               duration: 8,
@@ -587,7 +589,35 @@ const Section1 = () => {
       </div>
       <div
         ref={sliderRef}
-        className="absolute bottom-0 translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 grid md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%] md:grid lg:pl-[112px] lg:flex lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
+        className="absolute bottom-0 translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 hidden  lg:flex md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%] lg:pl-[112px] lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
+      >
+        {list.map((item, index) => (
+          <div
+            className="flex-shrink-0 w-[332px] h-[378px] bg-[#0d0d0d] tracking-wide rounded-[18px] overflow-hidden flex-col justify-start items-start relative lg:w-[356px] lg:h-[480px]"
+            key={index}
+          >
+            <div className="relative h-[292px] lg:h-[364px]">
+              <Image
+                src={`/images/${item.image}`}
+                fill
+                alt=""
+                style={{ objectFit: "cover" }}
+              ></Image>
+            </div>
+            <div className="relative px-6 pb-4 gap-3 flex flex-col -mt-6 lg:-mt-4 z-10">
+              <div className="text-2xl font-medium leading-[34px] lg:text-[28px] ">
+                {item.title}
+              </div>
+              <div className="text-sm  leading-snug lg:text-[17px]">
+                {item.desc}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div
+        ref={mSliderRef}
+        className="absolute bottom-0 translate-y-full lg:bottom-[80px] text-white  lg:right-0 md:w-[688px] lg:min-w-full gap-6 lg:flex-nowrap lg:justify-end z-10 grid lg:hidden md:grid-cols-2  md:justify-items-center md:left-1/2 md:-translate-x-1/2 md:translate-y-[150%]  lg:pl-[112px]  lg:left-auto lg:translate-y-0 lg:translate-x-[150%]"
       >
         {list.map((item, index) => (
           <div
