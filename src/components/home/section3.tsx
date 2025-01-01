@@ -386,7 +386,7 @@ const Section3 = () => {
           <SvgIcon name="realfi" className="mb-10 w-[128px] md:w-[172px]" />
         </div>
         <div className="realfi-box2-item mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3  lg:w-[900px] xl:w-[1168px]">
-          <div className="flex flex-col justify-start p-6 text-[#181818] items-end h-[400px] relative rounded-[18px] border border-[#d7b094] bg-[#E2C7B2] overflow-hidden ">
+          <div className="flex flex-col justify-start p-6 text-[#181818] h-[400px] relative rounded-[18px] border border-[#d7b094] bg-[#E2C7B2] overflow-hidden ">
             <div className="absolute z-0 top-0 left-0 right-0 bottom-0 mix-blend-multiply opacity-50">
               <SvgIcon name="pattern" className=" text-[#E6C7AE] scale-110" />
             </div>
@@ -411,7 +411,7 @@ const Section3 = () => {
                 Ideal for: Institutions & HNWI seeking stable yields
               </div>
             </div>
-            <div className="mt-4 items-center gap-[9px] inline-flex z-20">
+            <div className="mt-4 justify-end items-center gap-[9px] inline-flex z-20">
               <span className="text-sm font-medium leading-none tracking-wider">
                 Learn More
               </span>
@@ -421,7 +421,7 @@ const Section3 = () => {
               ></SvgIcon>
             </div>
           </div>
-          <div className="flex flex-col justify-start p-6 text-[#181818] items-end h-[400px] relative rounded-[18px] border border-[#b3b3b3] bg-[#d3d3d3] overflow-hidden ">
+          <div className="flex flex-col justify-start p-6 text-[#181818] h-[400px] relative rounded-[18px] border border-[#b3b3b3] bg-[#d3d3d3] overflow-hidden ">
             <div className="absolute z-0 top-0 left-0 right-0 bottom-0 mix-blend-multiply opacity-50">
               <SvgIcon name="pattern" className=" text-[#E8E8E8] scale-110" />
             </div>
@@ -445,7 +445,7 @@ const Section3 = () => {
                 Ideal for: Experienced investors seeking optimized returns
               </div>
             </div>
-            <div className="mt-4 items-center gap-[9px] inline-flex z-20">
+            <div className="mt-4 justify-end items-center gap-[9px] inline-flex z-20">
               <span className="text-sm font-medium font-['DM Sans'] leading-none tracking-wider">
                 Learn More
               </span>
@@ -455,7 +455,7 @@ const Section3 = () => {
               ></SvgIcon>
             </div>
           </div>
-          <div className="flex flex-col justify-start p-6 text-white items-end h-[400px] relative rounded-[18px] border bg-[#303030] border-[#202020] overflow-hidden ">
+          <div className="flex flex-col justify-start p-6 text-white h-[400px] relative rounded-[18px] border bg-[#303030] border-[#202020] overflow-hidden ">
             <div className="absolute z-0 top-0 left-0 right-0 bottom-0 mix-blend-multiply opacity-50">
               <SvgIcon name="pattern" className="text-[#202020] scale-110" />
             </div>
@@ -481,7 +481,7 @@ const Section3 = () => {
                 Ideal for: Smart traders seeking amplified opportunities
               </div>
             </div>
-            <div className="mt-4 items-center gap-[9px] inline-flex z-20">
+            <div className="mt-4 justify-end items-center gap-[9px] inline-flex z-20">
               <span className="text-sm font-medium font-['DM Sans'] leading-none tracking-wider">
                 Learn More
               </span>

@@ -212,13 +212,14 @@ const Section1 = () => {
               opacity: 0,
               duration: 6,
             },
-            10
+            15
           )
           .to(
             slider,
             {
               x: 0,
               duration: 8,
+              ease: "power1.inOut",
             },
             15
           )

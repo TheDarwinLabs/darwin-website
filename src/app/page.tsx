@@ -65,11 +65,11 @@ export default function Home() {
     () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.to(".slide-up", {
-        opacity: 0,
-        duration: 1,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
+        opacity: 1,
+        duration: 2,
+        // repeat: -1,
+        // yoyo: true,
+        // ease: "power1.inOut",
       });
       gsap
         .timeline({

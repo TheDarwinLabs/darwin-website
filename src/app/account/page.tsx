@@ -245,9 +245,12 @@ function Settings() {
           <span className="w-[144px]">Email Address</span>
           <span>{user?.email}</span>
         </div>
-        <Link href="/account/resetPwd" className="flex gap-[53px] items-center">
+        <Link
+          href="/account/resetPwd"
+          className="flex sm:gap-[53px] items-center"
+        >
           <span className="w-[144px]">Passwords</span>
-          <span className="flex-1">******</span>
+          <span className="flex-1 text-left ">******</span>
           <SvgIcon name="right"></SvgIcon>
         </Link>
       </div>
