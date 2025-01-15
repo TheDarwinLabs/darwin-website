@@ -8,10 +8,11 @@ import { useAuth } from "@/providers/AuthProvider";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 interface HeaderProps {
   olnyLogo?: boolean;
   isAccount?: boolean;
-  accountTabs?: { title: string; icon: string; link?: string }[];
+  accountTabs?: { title: string; icon: string; href: string }[];
   onAccountTabClick?: (index: number) => void;
 }
 
@@ -19,7 +20,6 @@ const Header: React.FC<HeaderProps> = ({
   olnyLogo,
   isAccount,
   accountTabs,
-  onAccountTabClick,
 }) => {
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({
             )}
             {user?.email && (
               <Link
-                href="/account"
+                href="/account/dashboard"
                 className="bg-[#d49e80] rounded-full w-[46px] h-[46px] text-[17px]  flex items-center justify-center uppercase"
               >
                 {user?.email.substring(0, 1)}
@@ -166,19 +166,17 @@ const Header: React.FC<HeaderProps> = ({
               open ? "" : "hidden"
             )}
           >
-            {accountTabs?.map((item, index) => (
-              <div
+            {accountTabs?.map((item) => (
+              <Link
                 key={item.title}
-                onClick={() => {
-                  onAccountTabClick?.(index);
-                  setOpen((preValue) => !preValue);
-                }}
-                className=" relative flex items-center justify-between text-xl font-medium py-5  pl-5 pr-6"
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="relative flex items-center justify-between text-xl font-medium py-5  pl-5 pr-6"
               >
                 <span>{item.title}</span>
                 <SvgIcon name="right"></SvgIcon>
                 <div className="absolute h-[1px] bg-[#c9c8c8] w-full bottom-0"></div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
@@ -212,7 +210,7 @@ const Header: React.FC<HeaderProps> = ({
             </div>
             {user?.email ? (
               <Link
-                href="/account"
+                href="/account/dashboard"
                 className="relative flex items-center justify-between text-xl font-medium py-5 pl-5 pr-6"
               >
                 <div className="bg-[#d49e80] rounded-full w-[46px] h-[46px] text-[17px]  flex items-center justify-center uppercase">

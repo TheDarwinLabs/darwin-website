@@ -123,7 +123,16 @@ input[type="password"] {
   background-image: url(/images/noise.png);
 }
 
+.btn{
+  @apply bg-[#ff764a] hover:bg-[#FFA58A] rounded-[99px];
+}
+
 @layer utilities {
+  
+  .custom-gradient {
+    background: linear-gradient(120.5deg, #FFDEBD 44.38%, #FF764A 153.46%);
+  }
+  
   @keyframes glow {
     0%, 100% {
       box-shadow: 0 0 4px #FF764A, 0 0 8px #FF764A, 0 0 12px #FF764A;

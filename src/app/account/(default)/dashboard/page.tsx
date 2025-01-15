@@ -1,91 +1,48 @@
 "use client";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import SvgIcon from "@/components/SvgIcon";
-import { cn, productList } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+
+export const runtime = "edge";
+
+import { useToast } from "@/hooks/use-toast";
+import { fetcher } from "@/lib/fetcher";
+import { productList } from "@/lib/utils";
+import { useAuth } from "@/providers/AuthProvider";
+import { queryClient } from "@/providers/ReactQueryProvider";
+import { useMutation } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useMutation } from "@tanstack/react-query";
-import { queryClient } from "@/providers/ReactQueryProvider";
-import { useAuth } from "@/providers/AuthProvider";
-import { fetcher } from "@/lib/fetcher";
-import { useToast } from "@/hooks/use-toast";
 import CopyToClipboard from "@/components/copyToClipboard";
-import Cookies from "js-cookie";
+import { Button } from "@/components/ui/button";
+import SvgIcon from "@/components/SvgIcon";
+import Link from "next/link";
 
-const tabs = [
-  { title: "Dashboard", icon: "app", component: Dashboard },
-  { title: "Settings", icon: "setting", component: Settings },
-  { title: "Terms", icon: "terms", link: "/terms" },
-  { title: "Services", icon: "file-check", link: "/privacy" },
-  { title: "Documentation", icon: "app" },
-];
-
-const Account = () => {
-  const router = useRouter();
-  const { user, loading } = useAuth();
-
-  useEffect(() => {
-    if (!loading && !user) {
-      router.replace("/");
-    }
-  }, [loading, user, router]);
-
-  const [active, setActive] = useState(0);
-  const ActiveComponent = tabs[active]?.component;
-
-  const onTabClick = (index: number) => {
-    if (tabs[index].link) {
-      router.push(tabs[index].link);
-      return;
-    }
-    setActive(index);
-  };
-
-  if (loading || !user) return;
-
-  return (
-    <>
-      <Header
-        olnyLogo
-        isAccount
-        accountTabs={tabs}
-        onAccountTabClick={onTabClick}
-      />
-      <div className="w-full min-h-screen flex flex-col pt-[96px]  px-5 md:px-0 ">
-        <div className="flex-1 flex gap-7 xl:gap-[90px] pb-[88px]">
-          <div className="hidden flex-col sm:flex sm:w-[50px] md:w-[100px] lg:w-[28%] xl:w-[25%] text-[17px] py-1">
-            {tabs.map((item, index) => (
-              <div
-                key={item.title}
-                className={cn(
-                  "flex py-5 pr-4 justify-end gap-2 rounded-tr-xl rounded-br-xl cursor-pointer",
-                  active === index ? "bg-[#FFDEBD]" : ""
-                )}
-                onClick={() => onTabClick(index)}
-              >
-                <SvgIcon name={item.icon}></SvgIcon>
-                <div className="w-[150px] hidden lg:block">{item.title}</div>
-              </div>
-            ))}
-          </div>
-          <div className="flex-1 sm:pr-[43px] xl:pr-[300px]">
-            {ActiveComponent && <ActiveComponent />}
-          </div>
-        </div>
-        <Footer />
-      </div>
-    </>
-  );
-};
-
-function Dashboard() {
+export default function DashBoardPage() {
   const { user } = useAuth();
   const { toast } = useToast();
   const [inviteCode, setInviteCode] = useState("");
+
+  const { mutate, data, isError } = useMutation({
+    mutationFn: async () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const isSuccess = Math.random() < 0.8;
+          if (isSuccess) {
+            resolve("Card issued successfully!");
+          } else {
+            reject(new Error("Failed to issue card. Please try again."));
+          }
+        }, 1000);
+      });
+    },
+    onSuccess: () => {},
+    onError: (err) => {
+      toast({
+        variant: "destructive",
+        title: err.message,
+      });
+    },
+  });
+
+  console.log(data);
 
   useEffect(() => {
     setInviteCode(user?.inviteCode ?? "");
@@ -132,14 +89,104 @@ function Dashboard() {
       joinMutation.mutate(item.product);
     }
   };
+
+  const getCard = () => {
+    mutate();
+  };
+
   return (
-    <div className="">
+    <div className="w-[1020px] mx-auto">
       <div className="text-[28px] font-medium ">Your Account</div>
       <div className="mt-3 bg-white rounded-[18px] p-5 text-[17px] flex gap-2 items-center">
         <div className="bg-[#d49e80] rounded-full w-[46px] h-[46px] flex items-center justify-center uppercase">
           {user?.email.substring(0, 1)}
         </div>
         <span className="flex-1">{user?.email}</span>
+      </div>
+      <div className="text-[28px] font-medium mt-8 mb-5">Real Card</div>
+      <div className="mt-3 bg-white rounded-[18px] p-5 flex items-center">
+        {isError ? (
+          <div className="flex-1">
+            <SvgIcon name="card"></SvgIcon>
+            <div className="text-[#212121] text-2xl font-bold my-[14px]">
+              Get your Real Card
+            </div>
+            <div className="text-[#212121]">
+              Your Real Card application is now open！here to get your card
+            </div>
+          </div>
+        ) : data ? (
+          <div className="flex gap-6 items-center flex-1">
+            <div className="w-[293px] h-[185px] relative">
+              <Image
+                src="/images/realcard.jpg"
+                fill
+                alt=""
+                className="rounded-2xl"
+              />
+            </div>
+            <div className="flex flex-col gap-4">
+              <div>Available for Card</div>
+              <div className="">
+                <span className="">$</span>
+                <span className="text-5xl font-bold mx-[10px]">8520.00</span>
+                <span className="">USDC</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="flex">
+                  <SvgIcon name="darwin" className="w-7"></SvgIcon>
+                  <SvgIcon name="iost" className="-translate-x-3 w-7"></SvgIcon>
+                </div>
+                <span className="text-[34px] font-bold flex-1">+ 262.3</span>
+                <span className="text-[#757575]">USDC</span>
+                <SvgIcon name="chevron-down" className="w-6"></SvgIcon>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="flex-1">
+            <SvgIcon name="re-card"></SvgIcon>
+            <div className="text-[#212121] text-2xl font-bold my-[14px]">
+              Get your Real Card
+            </div>
+            <div className="text-[#212121]">
+              Your Real Card application is now open！here to get your card
+            </div>
+          </div>
+        )}
+
+        {isError ? (
+          <div>
+            <Button
+              className="rounded-full border-[#ff764a] text-[#ff764a] hover:bg-white hover:text-[#ff764a]"
+              variant="outline"
+            >
+              Contact Us
+            </Button>
+          </div>
+        ) : data ? (
+          <div>
+            <Button
+              className=" rounded-full border-[#ff764a] text-[#ff764a] hover:bg-white hover:text-[#ff764a]"
+              variant="outline"
+              asChild
+            >
+              <Link href="/account/realcard">Check My Card</Link>
+            </Button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-3">
+            <Button className="btn hover:bg-[#FFA58A]" onClick={getCard}>
+              Get My Card
+            </Button>
+            <Button
+              className=" rounded-full border-[#ff764a] text-[#ff764a] hover:bg-white hover:text-[#ff764a]"
+              variant="outline"
+            >
+              Learn More
+            </Button>
+          </div>
+        )}
       </div>
       <div className="text-[28px] font-medium mt-8 mb-5">Your Application</div>
       <div className="flex gap-6 flex-col sm:flex-row">
@@ -206,64 +253,3 @@ function Dashboard() {
     </div>
   );
 }
-
-function Settings() {
-  const { user, logout } = useAuth();
-  const { toast } = useToast();
-
-  const logoutMutation = useMutation({
-    mutationFn: async () => {
-      const response = await fetcher("/api/user/logout", {
-        method: "POST",
-      });
-
-      return response;
-    },
-    onSuccess: async () => {
-      // await queryClient.invalidateQueries({
-      //   queryKey: ["user", "info"],
-      // });
-      // logout();
-    },
-    onError: (err) => {
-      toast({
-        variant: "destructive",
-        title: err.message,
-      });
-    },
-  });
-  const onLogout = () => {
-    logoutMutation.mutate();
-    Cookies.remove("token");
-    logout();
-  };
-  return (
-    <div>
-      <div className="text-[28px] font-medium ">Your Account</div>
-      <div className="mt-3 bg-white rounded-[18px] px-2 py-4 sm:p-7 text-sm sm:text-[17px] flex flex-col gap-9">
-        <div className="flex sm:gap-[53px] items-center">
-          <span className="w-[144px]">Email Address</span>
-          <span>{user?.email}</span>
-        </div>
-        <Link
-          href="/account/resetPwd"
-          className="flex sm:gap-[53px] items-center"
-        >
-          <span className="w-[144px]">Passwords</span>
-          <span className="flex-1 text-left ">******</span>
-          <SvgIcon name="right"></SvgIcon>
-        </Link>
-      </div>
-      <Button
-        variant="ghost"
-        className="underline mx-auto block mt-10 text-[17px] hover:bg-transparent "
-        onClick={onLogout}
-        disabled={logoutMutation.isPending}
-      >
-        Sign out
-      </Button>
-    </div>
-  );
-}
-
-export default Account;

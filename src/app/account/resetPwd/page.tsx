@@ -104,7 +104,7 @@ const ResetPwd = () => {
               asChild
               className="bg-[#ff764a] hover:bg-[#FFA58A] h-[52px] w-full text-white"
             >
-              <Link href="/account">Back to My Info Page</Link>
+              <Link href="/account/profile">Back to My Info Page</Link>
             </Button>
           </div>
         ) : (

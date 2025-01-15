@@ -55,7 +55,7 @@ export default function SignIn() {
       await queryClient.invalidateQueries({
         queryKey: ["user", "info"],
       });
-      router.push(`/account`);
+      router.push(`/account/dashboard`);
     },
     onError: (err) => {
       toast({
